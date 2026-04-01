@@ -1,0 +1,595 @@
+---
+title: "Genomics Fundamentals"
+subtitle: "Core concepts for dementia research"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+
+## Introduction to Genomics in Dementia Research
+
+Understanding the genetic basis of dementia is crucial for developing new diagnostics and therapeutics. This section covers fundamental genomics concepts with applications to dementia research.
+
+::: {.callout-note}
+## Why Genomics Matters for Dementia
+Genetic factors play significant roles in both familial and sporadic forms of dementia. Genomics helps us understand disease mechanisms, identify at-risk individuals, and discover therapeutic targets.
+:::
+
+---
+
+## Key Dementia-Related Genes
+
+### Alzheimer's Disease
+
+**APOE (Apolipoprotein E)**
+
+- Most significant genetic risk factor for late-onset AD
+- APOE ε4 allele increases risk; ε2 may be protective
+- Involved in lipid metabolism and Aβ clearance
+
+**APP (Amyloid Precursor Protein)**
+
+- Mutations cause early-onset familial AD
+- Processed to produce Aβ peptide
+- Key target for therapeutic interventions
+
+**PSEN1 & PSEN2 (Presenilin 1 & 2)**
+
+- Mutations cause early-onset familial AD
+- Components of γ-secretase complex
+- Affect APP processing
+
+**Risk Genes from GWAS**
+
+- TREM2, CLU, CR1, BIN1, ABCA7, CD33, SORL1
+- Involved in immune response, lipid metabolism, endocytosis
+
+### Frontotemporal Dementia
+
+**MAPT (Microtubule-Associated Protein Tau)**
+
+- Causes FTD with parkinsonism
+- Tau protein aggregation
+
+**GRN (Progranulin)**
+
+- Haploinsufficiency causes FTD
+- Role in inflammation and neuronal survival
+
+**C9orf72**
+
+- Hexanucleotide repeat expansion
+- Most common genetic cause of FTD and ALS
+
+### Lewy Body Dementia & Parkinson's
+
+**SNCA (α-synuclein)**
+
+- Linked to both PD and DLB
+- Protein aggregation in Lewy bodies
+
+**LRRK2, GBA, PARK genes**
+
+- Associated with increased PD/DLB risk
+
+---
+
+## Genomic Data Types
+
+### Sequencing Technologies
+
+#### Whole Genome Sequencing (WGS)
+**What it measures:** Complete DNA sequence of an organism
+
+**Applications in dementia research:**
+
+- Discovering rare variants
+- Structural variation detection
+- Non-coding region analysis
+- Complete genetic risk profiling
+
+**Typical coverage:** 30x for germline studies
+
+---
+
+#### Whole Exome Sequencing (WES)
+**What it measures:** Protein-coding regions (~1% of genome)
+
+**Applications:**
+
+- Finding disease-causing variants in genes
+- Cost-effective for coding variant discovery
+- Useful for familial dementia studies
+
+**Typical coverage:** 100x or higher
+
+---
+
+#### Targeted/Panel Sequencing
+**What it measures:** Specific genes or regions of interest
+
+**Applications:**
+
+- Clinical diagnostic panels (e.g., AD/FTD gene panels)
+- Validating variants found in WGS/WES
+- Large cohort studies of known risk loci
+
+---
+
+#### RNA Sequencing (RNA-seq)
+**What it measures:** Gene expression levels, transcript isoforms
+
+**Applications in dementia:**
+
+- Differential gene expression in disease vs. control
+- Identifying dysregulated pathways
+- Alternative splicing analysis
+- Single-cell RNA-seq for cell-type-specific changes
+
+---
+
+#### Long-Read Sequencing
+**Technologies:** PacBio, Oxford Nanopore
+
+**Advantages:**
+
+- Better for structural variants
+- Phasing variants
+- Resolving repetitive regions (like C9orf72 repeats)
+- Detecting epigenetic modifications
+
+---
+
+### Genomic Data Formats
+
+#### FASTQ
+**What it is:** Raw sequencing reads with quality scores
+
+**Structure:**
+```
+@SEQ_ID
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF>>>>>>CCCCCCC65
+```
+
+**Each read has:**
+
+- Sequence identifier (@)
+- DNA sequence
+- Quality scores (+ separator)
+- ASCII-encoded quality values
+
+---
+
+#### SAM/BAM/CRAM
+**What it is:** Aligned sequence data
+
+- **SAM:** Text format (human-readable)
+- **BAM:** Binary compressed SAM (smaller, faster)
+- **CRAM:** Further compressed (reference-based)
+
+**Key fields:**
+
+- Read name, flag, chromosome, position
+- CIGAR string (alignment representation)
+- Mapping quality, mate pair info
+
+**Example SAM line:**
+```
+READ1  99  chr1  12345  60  100M  =  12445  200  ACGT...  IIII...
+```
+
+---
+
+#### VCF (Variant Call Format)
+**What it is:** Standard format for variant data
+
+**Contains:**
+
+- Chromosome, position, reference allele
+- Alternate allele(s)
+- Quality scores
+- Genotype information
+- Annotations (if added)
+
+**Example:**
+```
+#CHROM  POS     ID      REF  ALT  QUAL  FILTER  INFO
+chr19   45411941  rs429358  T   C   100   PASS   ...
+```
+
+---
+
+#### BED
+**What it is:** Simple format for genomic regions/features
+
+**Structure:**
+```
+chr1  1000  2000  feature1  100  +
+chr1  3000  4000  feature2  200  -
+```
+
+**Columns:** chromosome, start, end, (optional: name, score, strand)
+
+**Uses:**
+
+- Defining regions of interest
+- Gene annotations
+- Coverage calculations
+
+---
+
+#### GFF/GTF
+**What it is:** Gene annotation formats
+
+**Contains:**
+
+- Gene, transcript, exon coordinates
+- Gene IDs, names, biotypes
+- Used by RNA-seq quantification tools
+
+---
+
+## Common Analysis Workflows
+
+### Variant Calling Pipeline
+
+```
+Raw FASTQ reads
+    ↓
+Quality Control (FastQC)
+    ↓
+Read Trimming (Trimmomatic/cutadapt)
+    ↓
+Alignment to Reference (BWA/Bowtie2)
+    ↓
+BAM Processing (SAMtools: sort, index)
+    ↓
+Mark Duplicates (GATK/Picard)
+    ↓
+Base Quality Recalibration (GATK)
+    ↓
+Variant Calling (GATK/FreeBayes)
+    ↓
+Variant Filtering
+    ↓
+Variant Annotation (VEP/SnpEff)
+    ↓
+Downstream Analysis
+```
+
+---
+
+### RNA-seq Analysis Pipeline
+
+```
+Raw FASTQ reads
+    ↓
+Quality Control (FastQC)
+    ↓
+Trimming (if needed)
+    ↓
+Alignment (STAR/HISAT2) OR Pseudo-alignment (Salmon/Kallisto)
+    ↓
+Quantification (featureCounts/Salmon)
+    ↓
+Quality Control (MultiQC)
+    ↓
+Differential Expression (DESeq2/edgeR)
+    ↓
+Pathway Analysis
+    ↓
+Visualization
+```
+
+---
+
+## GWAS Concepts
+
+### What is GWAS?
+Genome-Wide Association Study identifies genetic variants associated with traits or diseases by scanning genomes of many individuals.
+
+### Key Components
+
+**SNP Arrays/Genotyping**
+
+- Common variants (MAF > 1%)
+- Millions of SNPs tested simultaneously
+- Cost-effective for large cohorts
+
+**Statistical Associations**
+
+- Testing each SNP for association with disease
+- P-value threshold: typically 5×10⁻⁸ (genome-wide significance)
+- Multiple testing correction
+
+**Manhattan Plots**
+
+- Visualize GWAS results
+- X-axis: chromosomal position
+- Y-axis: -log10(p-value)
+- Peaks indicate associated loci
+
+---
+
+### GWAS in Dementia Research
+
+Major GWAS findings for Alzheimer's:
+
+- APOE region (chromosome 19) - strongest signal
+- Immune-related genes (TREM2, CR1, CD33)
+- Lipid metabolism genes (CLU, ABCA7)
+- Endocytosis genes (BIN1, PICALM)
+
+**Polygenic Risk Scores (PRS)**
+
+- Combines effects of many variants
+- Predicts individual genetic risk
+- Useful for risk stratification in clinical studies
+
+---
+
+## Linkage Disequilibrium (LD)
+
+**What it is:** Non-random association of alleles at different loci
+
+**Why it matters:**
+
+- GWAS signals often tag multiple correlated variants
+- Fine-mapping needed to identify causal variants
+- Different LD patterns across populations
+
+**Tools for LD analysis:**
+
+- PLINK
+- LDLink (online)
+- Ensembl browser
+
+---
+
+## Functional Genomics
+
+### Understanding Variant Effects
+
+Not all variants are equal:
+
+**Variant Types by Impact:**
+
+- **High impact:** Stop gained/lost, frameshift
+- **Moderate impact:** Missense, in-frame indels
+- **Low impact:** Synonymous variants
+- **Modifier:** Intronic, intergenic
+
+**Regulatory Variants**
+
+- Affect gene expression
+- Located in enhancers, promoters
+- Can be more common than coding variants
+- Harder to interpret but equally important
+
+---
+
+### Expression QTLs (eQTLs)
+
+**What they are:** Genetic variants associated with gene expression levels
+
+**Applications in dementia:**
+
+- Connect GWAS variants to affected genes
+- Understand mechanisms
+- Brain-specific eQTL databases (GTEx, BrainSeq)
+
+---
+
+### Multi-Omics Integration
+
+Combining data types for comprehensive understanding:
+
+- **Genomics + Transcriptomics:** Which variants affect gene expression?
+- **Genomics + Proteomics:** Protein-level effects of variants
+- **Genomics + Epigenomics:** DNA methylation, histone modifications
+- **Single-cell multi-omics:** Cell-type-specific effects
+
+---
+
+## Population Genetics Considerations
+
+### Ancestry and Dementia Risk
+
+**Why it matters:**
+
+- Allele frequencies vary by ancestry
+- APOE ε4 prevalence differs across populations
+- PRS trained on European ancestry may not transfer well
+
+**Best Practices:**
+
+- Include diverse populations in studies
+- Report ancestry-specific results
+- Consider population stratification
+- Use ancestry-informed analyses
+
+---
+
+### Family-Based Studies
+
+**Approaches:**
+
+- Linkage analysis for rare familial forms
+- Segregation analysis
+- Parent-offspring trios for de novo mutations
+
+**Advantages:**
+
+- More power for rare variants
+- Phasing information
+- Controls for population structure
+
+---
+
+## Reference Genomes
+
+### Human Reference Assembly
+
+**Current versions:**
+
+- **GRCh38/hg38:** Current standard (2013, regularly updated)
+- **GRCh37/hg19:** Previous version (still widely used)
+
+::: {.callout-important}
+## Critical: Check Your Reference!
+Always verify which reference genome was used. Coordinates differ between versions. Mixing them causes errors.
+:::
+
+---
+
+### Reference Files Needed
+
+For variant calling you'll need:
+
+- Reference FASTA file (`.fasta` or `.fa`)
+- Index files (`.fai`, `.dict`)
+- Known variants (dbSNP, 1000 Genomes)
+- Gene annotations (GTF/GFF)
+
+**Where to download:**
+
+- NCBI, Ensembl, UCSC Genome Browser
+- GATK Resource Bundle
+- Illumina iGenomes
+
+---
+
+## Quality Metrics
+
+### Sequencing Quality
+
+**Key metrics to check:**
+
+- **Q30:** Percentage of bases with quality score ≥ 30 (99.9% accuracy)
+- **Coverage:** Average depth across genome/exome
+- **Uniformity:** Even coverage distribution
+- **Duplication rate:** PCR duplicates (should be <20%)
+
+---
+
+### Alignment Quality
+
+- **Mapping rate:** % reads that align (should be >90%)
+- **Properly paired:** For paired-end data
+- **Insert size distribution:** Expected range for library
+- **Chimeric reads:** Abnormally high suggests contamination
+
+---
+
+### Variant Quality
+
+- **Transition/transversion ratio (Ti/Tv):** ~2.0-2.1 for WGS (whole genome)
+- **Het/hom ratio:** Expected ranges vary by analysis type
+- **Mendelian errors:** For family data
+- **Known variant concordance:** Compare to dbSNP
+
+---
+
+## Ethical Considerations
+
+### APOE Genotyping
+
+::: {.callout-important}
+## Ethical Note
+APOE status has implications for AD risk. Special consent and genetic counseling considerations apply.
+:::
+
+---
+
+### Incidental Findings
+
+When sequencing, you may discover:
+
+- Pathogenic variants unrelated to dementia
+- Carrier status for recessive conditions
+- Pharmacogenetic variants
+
+**Best practices:**
+
+- Follow institutional policies
+- Consider secondary findings policies (ACMG guidelines)
+- Prepare return of results protocols
+
+---
+
+## Data Management
+
+### Storage Requirements
+
+Typical file sizes:
+
+- Raw FASTQ (30x WGS): ~100-200 GB per sample
+- BAM file: ~30-50 GB per sample
+- VCF file: 1-10 GB (depending on samples)
+
+**Tips:**
+
+- Compress files (gzip, bgzip)
+- Use CRAM instead of BAM when possible
+- Archive raw data, keep processed files accessible
+- Plan for backups!
+
+---
+
+### Data Sharing
+
+**Public repositories:**
+
+- **dbGaP:** Controlled access for human data
+- **European Genome-phenome Archive (EGA)**
+- **Sequence Read Archive (SRA):** Raw sequencing data
+
+**Considerations:**
+
+- Patient consent for data sharing
+- De-identification requirements
+- Institutional data sharing policies
+
+---
+
+## Dementia Genomics Resources
+
+### Databases
+
+- [AlzGene](http://www.alzgene.org/): AD genetic association database
+- [GWAS Catalog](https://www.ebi.ac.uk/gwas/): All GWAS results
+- [PGS Catalog](https://www.pgscatalog.org/): Polygenic scores
+- [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/): Clinical variant interpretations
+- [gnomAD](https://gnomad.broadinstitute.org/): Population allele frequencies
+
+### Consortia
+
+- **IGAP** (International Genomics of Alzheimer's Project)
+- **ADGC** (Alzheimer Disease Genetics Consortium)
+- **CHARGE** (Cohorts for Heart and Aging Research in Genomic Epidemiology)
+
+---
+
+## Next Steps
+
+Now that you understand the fundamentals:
+
+1. Practice with [Tutorials & Workshops](tutorials-workshops.qmd)
+2. Set up [Essential Tools](tools-setup.qmd) for your analyses
+3. Implement [Best Practices](best-practices.qmd) for reproducibility
+4. Explore additional [Resources](resources.qmd) for deeper learning
+
+---
+
+## Further Reading
+
+::: {.callout-tip}
+## Recommended Papers
+
+- Lambert et al. (2013) "Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer's disease"
+- Kunkle et al. (2019) "Genetic meta-analysis of diagnosed Alzheimer's disease identifies new risk loci"
+- Bellenguez et al. (2022) "New insights into the genetic etiology of Alzheimer's disease and related dementias"
+:::

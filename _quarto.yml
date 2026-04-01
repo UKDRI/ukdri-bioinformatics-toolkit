@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "UKDRI Bioinformatics Toolkit"
+  site-url: https://ukdri.github.io/ukdri-bioinformatics-toolkit/
+  page-navigation: true
+  navbar:
+    background: primary
+    logo: ""
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Tools & Setup"
+        file: tools-setup.qmd
+      - text: "Genomics Fundamentals"
+        file: genomics-fundamentals.qmd
+      - text: "Tutorials & Workshops"
+        file: tutorials-workshops.qmd
+      - text: "Best Practices"
+        file: best-practices.qmd
+      - text: "Resources"
+        file: resources.qmd
+  
+  page-footer:
+    left: "UK Dementia Research Institute"
+    right: 
+      - icon: github
+        href: https://github.com
+      - text: "UKDRI"
+        href: https://www.ukdri.ac.uk/
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-fold: false
+    code-tools: true
+    smooth-scroll: true
+    highlight-style: github

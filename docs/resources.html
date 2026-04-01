@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Resources &amp; References – UKDRI Bioinformatics Toolkit</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4c29adad017bb1baa061f3a64c16486a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UKDRI Bioinformatics Toolkit</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tools-setup.html"> 
+<span class="menu-text">Tools &amp; Setup</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./genomics-fundamentals.html"> 
+<span class="menu-text">Genomics Fundamentals</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorials-workshops.html"> 
+<span class="menu-text">Tutorials &amp; Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./best-practices.html"> 
+<span class="menu-text">Best Practices</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" aria-current="page"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#genomics-databases" id="toc-genomics-databases" class="nav-link" data-scroll-target="#genomics-databases">Genomics Databases</a>
+  <ul class="collapse">
+  <li><a href="#reference-genomes-annotations" id="toc-reference-genomes-annotations" class="nav-link" data-scroll-target="#reference-genomes-annotations">Reference Genomes &amp; Annotations</a></li>
+  <li><a href="#variant-databases" id="toc-variant-databases" class="nav-link" data-scroll-target="#variant-databases">Variant Databases</a></li>
+  <li><a href="#gwas-association-studies" id="toc-gwas-association-studies" class="nav-link" data-scroll-target="#gwas-association-studies">GWAS &amp; Association Studies</a></li>
+  <li><a href="#dementia-specific-resources" id="toc-dementia-specific-resources" class="nav-link" data-scroll-target="#dementia-specific-resources">Dementia-Specific Resources</a></li>
+  <li><a href="#expression-functional-databases" id="toc-expression-functional-databases" class="nav-link" data-scroll-target="#expression-functional-databases">Expression &amp; Functional Databases</a></li>
+  </ul></li>
+  <li><a href="#data-repositories" id="toc-data-repositories" class="nav-link" data-scroll-target="#data-repositories">Data Repositories</a>
+  <ul class="collapse">
+  <li><a href="#sequence-read-archive-sra" id="toc-sequence-read-archive-sra" class="nav-link" data-scroll-target="#sequence-read-archive-sra">Sequence Read Archive (SRA)</a></li>
+  <li><a href="#european-nucleotide-archive-ena" id="toc-european-nucleotide-archive-ena" class="nav-link" data-scroll-target="#european-nucleotide-archive-ena">European Nucleotide Archive (ENA)</a></li>
+  <li><a href="#gene-expression-omnibus-geo" id="toc-gene-expression-omnibus-geo" class="nav-link" data-scroll-target="#gene-expression-omnibus-geo">Gene Expression Omnibus (GEO)</a></li>
+  <li><a href="#dbgap-database-of-genotypes-and-phenotypes" id="toc-dbgap-database-of-genotypes-and-phenotypes" class="nav-link" data-scroll-target="#dbgap-database-of-genotypes-and-phenotypes">dbGaP (Database of Genotypes and Phenotypes)</a></li>
+  <li><a href="#european-genome-phenome-archive-ega" id="toc-european-genome-phenome-archive-ega" class="nav-link" data-scroll-target="#european-genome-phenome-archive-ega">European Genome-phenome Archive (EGA)</a></li>
+  </ul></li>
+  <li><a href="#online-communities-forums" id="toc-online-communities-forums" class="nav-link" data-scroll-target="#online-communities-forums">Online Communities &amp; Forums</a>
+  <ul class="collapse">
+  <li><a href="#biostars" id="toc-biostars" class="nav-link" data-scroll-target="#biostars">Biostars</a></li>
+  <li><a href="#seqanswers" id="toc-seqanswers" class="nav-link" data-scroll-target="#seqanswers">SEQanswers</a></li>
+  <li><a href="#stack-overflow-bioinformatics-tags" id="toc-stack-overflow-bioinformatics-tags" class="nav-link" data-scroll-target="#stack-overflow-bioinformatics-tags">Stack Overflow (Bioinformatics tags)</a></li>
+  <li><a href="#reddit-communities" id="toc-reddit-communities" class="nav-link" data-scroll-target="#reddit-communities">Reddit Communities</a></li>
+  <li><a href="#twitterx-mastodon" id="toc-twitterx-mastodon" class="nav-link" data-scroll-target="#twitterx-mastodon">Twitter/X &amp; Mastodon</a></li>
+  </ul></li>
+  <li><a href="#software-repositories" id="toc-software-repositories" class="nav-link" data-scroll-target="#software-repositories">Software Repositories</a>
+  <ul class="collapse">
+  <li><a href="#bioconda" id="toc-bioconda" class="nav-link" data-scroll-target="#bioconda">Bioconda</a></li>
+  <li><a href="#bioconductor" id="toc-bioconductor" class="nav-link" data-scroll-target="#bioconductor">Bioconductor</a></li>
+  <li><a href="#biopython" id="toc-biopython" class="nav-link" data-scroll-target="#biopython">BioPython</a></li>
+  <li><a href="#github-topics" id="toc-github-topics" class="nav-link" data-scroll-target="#github-topics">GitHub Topics</a></li>
+  </ul></li>
+  <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources">Learning Resources</a>
+  <ul class="collapse">
+  <li><a href="#journals-to-follow" id="toc-journals-to-follow" class="nav-link" data-scroll-target="#journals-to-follow">Journals to Follow</a></li>
+  <li><a href="#preprint-servers" id="toc-preprint-servers" class="nav-link" data-scroll-target="#preprint-servers">Preprint Servers</a></li>
+  <li><a href="#blogs-websites" id="toc-blogs-websites" class="nav-link" data-scroll-target="#blogs-websites">Blogs &amp; Websites</a></li>
+  <li><a href="#youtube-channels" id="toc-youtube-channels" class="nav-link" data-scroll-target="#youtube-channels">YouTube Channels</a></li>
+  </ul></li>
+  <li><a href="#books" id="toc-books" class="nav-link" data-scroll-target="#books">Books</a>
+  <ul class="collapse">
+  <li><a href="#bioinformatics-data-skills" id="toc-bioinformatics-data-skills" class="nav-link" data-scroll-target="#bioinformatics-data-skills">Bioinformatics Data Skills</a></li>
+  <li><a href="#bioinformatics-algorithms-an-active-learning-approach" id="toc-bioinformatics-algorithms-an-active-learning-approach" class="nav-link" data-scroll-target="#bioinformatics-algorithms-an-active-learning-approach">Bioinformatics Algorithms: An Active Learning Approach</a></li>
+  <li><a href="#introduction-to-genomics" id="toc-introduction-to-genomics" class="nav-link" data-scroll-target="#introduction-to-genomics">Introduction to Genomics</a></li>
+  <li><a href="#rna-seq-data-analysis-a-practical-approach" id="toc-rna-seq-data-analysis-a-practical-approach" class="nav-link" data-scroll-target="#rna-seq-data-analysis-a-practical-approach">RNA-seq Data Analysis: A Practical Approach</a></li>
+  </ul></li>
+  <li><a href="#podcasts" id="toc-podcasts" class="nav-link" data-scroll-target="#podcasts">Podcasts</a>
+  <ul class="collapse">
+  <li><a href="#the-bioinformatics-chat" id="toc-the-bioinformatics-chat" class="nav-link" data-scroll-target="#the-bioinformatics-chat">The Bioinformatics Chat</a></li>
+  <li><a href="#the-genetics-podcast" id="toc-the-genetics-podcast" class="nav-link" data-scroll-target="#the-genetics-podcast">The Genetics Podcast</a></li>
+  </ul></li>
+  <li><a href="#professional-organizations" id="toc-professional-organizations" class="nav-link" data-scroll-target="#professional-organizations">Professional Organizations</a>
+  <ul class="collapse">
+  <li><a href="#international-society-for-computational-biology-iscb" id="toc-international-society-for-computational-biology-iscb" class="nav-link" data-scroll-target="#international-society-for-computational-biology-iscb">International Society for Computational Biology (ISCB)</a></li>
+  <li><a href="#european-society-of-human-genetics-eshg" id="toc-european-society-of-human-genetics-eshg" class="nav-link" data-scroll-target="#european-society-of-human-genetics-eshg">European Society of Human Genetics (ESHG)</a></li>
+  <li><a href="#american-society-of-human-genetics-ashg" id="toc-american-society-of-human-genetics-ashg" class="nav-link" data-scroll-target="#american-society-of-human-genetics-ashg">American Society of Human Genetics (ASHG)</a></li>
+  </ul></li>
+  <li><a href="#conferences" id="toc-conferences" class="nav-link" data-scroll-target="#conferences">Conferences</a>
+  <ul class="collapse">
+  <li><a href="#major-bioinformatics-conferences" id="toc-major-bioinformatics-conferences" class="nav-link" data-scroll-target="#major-bioinformatics-conferences">Major Bioinformatics Conferences</a></li>
+  <li><a href="#dementia-research-conferences" id="toc-dementia-research-conferences" class="nav-link" data-scroll-target="#dementia-research-conferences">Dementia Research Conferences</a></li>
+  </ul></li>
+  <li><a href="#cheat-sheets-quick-references" id="toc-cheat-sheets-quick-references" class="nav-link" data-scroll-target="#cheat-sheets-quick-references">Cheat Sheets &amp; Quick References</a>
+  <ul class="collapse">
+  <li><a href="#command-line-cheat-sheets" id="toc-command-line-cheat-sheets" class="nav-link" data-scroll-target="#command-line-cheat-sheets">Command Line Cheat Sheets</a></li>
+  <li><a href="#bioinformatics-specific" id="toc-bioinformatics-specific" class="nav-link" data-scroll-target="#bioinformatics-specific">Bioinformatics-Specific</a></li>
+  </ul></li>
+  <li><a href="#useful-tools-utilities" id="toc-useful-tools-utilities" class="nav-link" data-scroll-target="#useful-tools-utilities">Useful Tools &amp; Utilities</a>
+  <ul class="collapse">
+  <li><a href="#file-format-converters" id="toc-file-format-converters" class="nav-link" data-scroll-target="#file-format-converters">File Format Converters</a></li>
+  <li><a href="#genome-browsers-local" id="toc-genome-browsers-local" class="nav-link" data-scroll-target="#genome-browsers-local">Genome Browsers (Local)</a></li>
+  <li><a href="#visualization-tools" id="toc-visualization-tools" class="nav-link" data-scroll-target="#visualization-tools">Visualization Tools</a></li>
+  </ul></li>
+  <li><a href="#how-to-stay-current" id="toc-how-to-stay-current" class="nav-link" data-scroll-target="#how-to-stay-current">How to Stay Current</a>
+  <ul class="collapse">
+  <li><a href="#daily-habits" id="toc-daily-habits" class="nav-link" data-scroll-target="#daily-habits">Daily Habits</a></li>
+  <li><a href="#weekly-habits" id="toc-weekly-habits" class="nav-link" data-scroll-target="#weekly-habits">Weekly Habits</a></li>
+  <li><a href="#monthly-habits" id="toc-monthly-habits" class="nav-link" data-scroll-target="#monthly-habits">Monthly Habits</a></li>
+  </ul></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a>
+  <ul class="collapse">
+  <li><a href="#before-asking-questions" id="toc-before-asking-questions" class="nav-link" data-scroll-target="#before-asking-questions">Before Asking Questions</a></li>
+  <li><a href="#how-to-ask-good-questions" id="toc-how-to-ask-good-questions" class="nav-link" data-scroll-target="#how-to-ask-good-questions">How to Ask Good Questions</a></li>
+  </ul></li>
+  <li><a href="#tips-for-continuous-learning" id="toc-tips-for-continuous-learning" class="nav-link" data-scroll-target="#tips-for-continuous-learning">Tips for Continuous Learning</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#quick-links-summary" id="toc-quick-links-summary" class="nav-link" data-scroll-target="#quick-links-summary">Quick Links Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Resources &amp; References</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Databases, communities, and ongoing learning resources</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page compiles essential databases, online communities, and additional resources to support your bioinformatics journey. Bookmark this page for quick reference!</p>
+<hr>
+</section>
+<section id="genomics-databases" class="level2">
+<h2 class="anchored" data-anchor-id="genomics-databases">Genomics Databases</h2>
+<section id="reference-genomes-annotations" class="level3">
+<h3 class="anchored" data-anchor-id="reference-genomes-annotations">Reference Genomes &amp; Annotations</h3>
+<section id="ensembl" class="level4">
+<h4 class="anchored" data-anchor-id="ensembl">Ensembl</h4>
+<p><strong>What it is:</strong> Genome browser for vertebrate genomes<br>
+<strong>Use for:</strong> Browsing genes, transcripts, variants, regulatory elements<br>
+<strong>Link:</strong> <a href="https://www.ensembl.org/">ensembl.org</a><br>
+<strong>Features:</strong> Genome browser, BioMart data mining, REST API</p>
+<hr>
+</section>
+<section id="ucsc-genome-browser" class="level4">
+<h4 class="anchored" data-anchor-id="ucsc-genome-browser">UCSC Genome Browser</h4>
+<p><strong>What it is:</strong> Web-based genome browser<br>
+<strong>Use for:</strong> Visualizing genomic data, downloading reference files<br>
+<strong>Link:</strong> <a href="https://genome.ucsc.edu/">genome.ucsc.edu</a><br>
+<strong>Features:</strong> Custom tracks, table browser, liftOver tool</p>
+<hr>
+</section>
+<section id="ncbi-refseq" class="level4">
+<h4 class="anchored" data-anchor-id="ncbi-refseq">NCBI RefSeq</h4>
+<p><strong>What it is:</strong> Curated collection of genomic, transcript, and protein sequences<br>
+<strong>Use for:</strong> Reference sequences, gene information<br>
+<strong>Link:</strong> <a href="https://www.ncbi.nlm.nih.gov/refseq/">ncbi.nlm.nih.gov/refseq</a></p>
+<hr>
+</section>
+</section>
+<section id="variant-databases" class="level3">
+<h3 class="anchored" data-anchor-id="variant-databases">Variant Databases</h3>
+<section id="dbsnp" class="level4">
+<h4 class="anchored" data-anchor-id="dbsnp">dbSNP</h4>
+<p><strong>What it is:</strong> Database of single nucleotide polymorphisms and short variants<br>
+<strong>Use for:</strong> Variant IDs (rs numbers), allele frequencies<br>
+<strong>Link:</strong> <a href="https://www.ncbi.nlm.nih.gov/snp/">ncbi.nlm.nih.gov/snp</a></p>
+<hr>
+</section>
+<section id="gnomad-genome-aggregation-database" class="level4">
+<h4 class="anchored" data-anchor-id="gnomad-genome-aggregation-database">gnomAD (Genome Aggregation Database)</h4>
+<p><strong>What it is:</strong> Population allele frequency database (&gt;140,000 genomes)<br>
+<strong>Use for:</strong> Determining if variants are common or rare, filtering<br>
+<strong>Link:</strong> <a href="https://gnomad.broadinstitute.org/">gnomad.broadinstitute.org</a><br>
+<strong>Key feature:</strong> Allele frequencies across diverse populations</p>
+<hr>
+</section>
+<section id="clinvar" class="level4">
+<h4 class="anchored" data-anchor-id="clinvar">ClinVar</h4>
+<p><strong>What it is:</strong> Public archive of relationships between variants and phenotypes<br>
+<strong>Use for:</strong> Clinical significance of variants, pathogenicity<br>
+<strong>Link:</strong> <a href="https://www.ncbi.nlm.nih.gov/clinvar/">ncbi.nlm.nih.gov/clinvar</a></p>
+<hr>
+</section>
+<section id="cosmic-catalogue-of-somatic-mutations-in-cancer" class="level4">
+<h4 class="anchored" data-anchor-id="cosmic-catalogue-of-somatic-mutations-in-cancer">COSMIC (Catalogue of Somatic Mutations in Cancer)</h4>
+<p><strong>What it is:</strong> Database of somatic mutations in cancer<br>
+<strong>Use for:</strong> Cancer genomics, somatic variant annotation<br>
+<strong>Link:</strong> <a href="https://cancer.sanger.ac.uk/cosmic">cancer.sanger.ac.uk/cosmic</a></p>
+<hr>
+</section>
+</section>
+<section id="gwas-association-studies" class="level3">
+<h3 class="anchored" data-anchor-id="gwas-association-studies">GWAS &amp; Association Studies</h3>
+<section id="gwas-catalog" class="level4">
+<h4 class="anchored" data-anchor-id="gwas-catalog">GWAS Catalog</h4>
+<p><strong>What it is:</strong> Curated collection of published GWAS results<br>
+<strong>Use for:</strong> Finding known genetic associations, exploring traits<br>
+<strong>Link:</strong> <a href="https://www.ebi.ac.uk/gwas/">ebi.ac.uk/gwas</a><br>
+<strong>Key feature:</strong> Searchable by trait, gene, variant</p>
+<hr>
+</section>
+<section id="pgs-catalog-polygenic-score-catalog" class="level4">
+<h4 class="anchored" data-anchor-id="pgs-catalog-polygenic-score-catalog">PGS Catalog (Polygenic Score Catalog)</h4>
+<p><strong>What it is:</strong> Open database of published polygenic scores<br>
+<strong>Use for:</strong> Calculating polygenic risk scores, risk prediction<br>
+<strong>Link:</strong> <a href="https://www.pgscatalog.org/">pgscatalog.org</a><br>
+<strong>Includes:</strong> Calculator tool, score downloads</p>
+<hr>
+</section>
+<section id="opentargets" class="level4">
+<h4 class="anchored" data-anchor-id="opentargets">OpenTargets</h4>
+<p><strong>What it is:</strong> Platform integrating genetics and genomics for target identification<br>
+<strong>Use for:</strong> Connecting genetic evidence to drug targets<br>
+<strong>Link:</strong> <a href="https://platform.opentargets.org/">platform.opentargets.org</a></p>
+<hr>
+</section>
+</section>
+<section id="dementia-specific-resources" class="level3">
+<h3 class="anchored" data-anchor-id="dementia-specific-resources">Dementia-Specific Resources</h3>
+<section id="alzgene" class="level4">
+<h4 class="anchored" data-anchor-id="alzgene">AlzGene</h4>
+<p><strong>What it is:</strong> Field synopsis of genetic association studies in Alzheimer’s disease<br>
+<strong>Use for:</strong> Known AD risk loci, meta-analysis results<br>
+<strong>Link:</strong> <a href="http://www.alzgene.org/">alzgene.org</a><br>
+<strong>Note:</strong> Last updated 2014, but comprehensive for established loci</p>
+<hr>
+</section>
+<section id="alzforum" class="level4">
+<h4 class="anchored" data-anchor-id="alzforum">Alzforum</h4>
+<p><strong>What it is:</strong> Networking site for Alzheimer’s research<br>
+<strong>Use for:</strong> News, mutations database, research tools<br>
+<strong>Link:</strong> <a href="https://www.alzforum.org/">alzforum.org</a><br>
+<strong>Features:</strong> Mutations database, biomarkers, protocols</p>
+<hr>
+</section>
+<section id="niagads-national-institute-on-aging-genetics-of-alzheimers-disease-data-storage" class="level4">
+<h4 class="anchored" data-anchor-id="niagads-national-institute-on-aging-genetics-of-alzheimers-disease-data-storage">NIAGADS (National Institute on Aging Genetics of Alzheimer’s Disease Data Storage)</h4>
+<p><strong>What it is:</strong> Repository for AD genetics data<br>
+<strong>Use for:</strong> Accessing AD genomics datasets<br>
+<strong>Link:</strong> <a href="https://www.niagads.org/">niagads.org</a><br>
+<strong>Access:</strong> Requires application/approval</p>
+<hr>
+</section>
+</section>
+<section id="expression-functional-databases" class="level3">
+<h3 class="anchored" data-anchor-id="expression-functional-databases">Expression &amp; Functional Databases</h3>
+<section id="gtex-genotype-tissue-expression" class="level4">
+<h4 class="anchored" data-anchor-id="gtex-genotype-tissue-expression">GTEx (Genotype-Tissue Expression)</h4>
+<p><strong>What it is:</strong> Resource on human gene expression and regulation across tissues<br>
+<strong>Use for:</strong> Tissue-specific expression, eQTLs<br>
+<strong>Link:</strong> <a href="https://gtexportal.org/">gtexportal.org</a><br>
+<strong>Includes:</strong> Brain-specific data (multiple regions)</p>
+<hr>
+</section>
+<section id="encode" class="level4">
+<h4 class="anchored" data-anchor-id="encode">ENCODE</h4>
+<p><strong>What it is:</strong> Encyclopedia of DNA Elements<br>
+<strong>Use for:</strong> Regulatory elements, transcription factors, chromatin states<br>
+<strong>Link:</strong> <a href="https://www.encodeproject.org/">encodeproject.org</a></p>
+<hr>
+</section>
+<section id="string" class="level4">
+<h4 class="anchored" data-anchor-id="string">STRING</h4>
+<p><strong>What it is:</strong> Protein-protein interaction networks<br>
+<strong>Use for:</strong> Understanding protein interactions, pathway analysis<br>
+<strong>Link:</strong> <a href="https://string-db.org/">string-db.org</a></p>
+<hr>
+</section>
+<section id="reactome" class="level4">
+<h4 class="anchored" data-anchor-id="reactome">Reactome</h4>
+<p><strong>What it is:</strong> Pathway database<br>
+<strong>Use for:</strong> Pathway analysis, understanding biological processes<br>
+<strong>Link:</strong> <a href="https://reactome.org/">reactome.org</a></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="data-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="data-repositories">Data Repositories</h2>
+<section id="sequence-read-archive-sra" class="level3">
+<h3 class="anchored" data-anchor-id="sequence-read-archive-sra">Sequence Read Archive (SRA)</h3>
+<p><strong>What it is:</strong> NCBI’s repository for raw sequencing data<br>
+<strong>Use for:</strong> Downloading/uploading sequencing data<br>
+<strong>Link:</strong> <a href="https://www.ncbi.nlm.nih.gov/sra/">ncbi.nlm.nih.gov/sra</a><br>
+<strong>Tool:</strong> SRA Toolkit for downloading</p>
+<hr>
+</section>
+<section id="european-nucleotide-archive-ena" class="level3">
+<h3 class="anchored" data-anchor-id="european-nucleotide-archive-ena">European Nucleotide Archive (ENA)</h3>
+<p><strong>What it is:</strong> European equivalent of SRA<br>
+<strong>Use for:</strong> Raw sequencing data (often faster downloads in Europe)<br>
+<strong>Link:</strong> <a href="https://www.ebi.ac.uk/ena/">ebi.ac.uk/ena</a></p>
+<hr>
+</section>
+<section id="gene-expression-omnibus-geo" class="level3">
+<h3 class="anchored" data-anchor-id="gene-expression-omnibus-geo">Gene Expression Omnibus (GEO)</h3>
+<p><strong>What it is:</strong> Repository for gene expression and genomics data<br>
+<strong>Use for:</strong> Finding published expression datasets<br>
+<strong>Link:</strong> <a href="https://www.ncbi.nlm.nih.gov/geo/">ncbi.nlm.nih.gov/geo</a></p>
+<hr>
+</section>
+<section id="dbgap-database-of-genotypes-and-phenotypes" class="level3">
+<h3 class="anchored" data-anchor-id="dbgap-database-of-genotypes-and-phenotypes">dbGaP (Database of Genotypes and Phenotypes)</h3>
+<p><strong>What it is:</strong> Controlled-access archive for human genetic/phenotypic data<br>
+<strong>Use for:</strong> Accessing large-scale human genomics studies<br>
+<strong>Link:</strong> <a href="https://www.ncbi.nlm.nih.gov/gap/">ncbi.nlm.nih.gov/gap</a><br>
+<strong>Access:</strong> Requires application through your institution</p>
+<hr>
+</section>
+<section id="european-genome-phenome-archive-ega" class="level3">
+<h3 class="anchored" data-anchor-id="european-genome-phenome-archive-ega">European Genome-phenome Archive (EGA)</h3>
+<p><strong>What it is:</strong> European archive for sensitive human data<br>
+<strong>Use for:</strong> Controlled-access human genomics data<br>
+<strong>Link:</strong> <a href="https://ega-archive.org/">ega-archive.org</a></p>
+<hr>
+</section>
+</section>
+<section id="online-communities-forums" class="level2">
+<h2 class="anchored" data-anchor-id="online-communities-forums">Online Communities &amp; Forums</h2>
+<section id="biostars" class="level3">
+<h3 class="anchored" data-anchor-id="biostars">Biostars</h3>
+<p><strong>What it is:</strong> Q&amp;A forum for bioinformatics<br>
+<strong>Best for:</strong> Getting help with specific analysis problems<br>
+<strong>Link:</strong> <a href="https://www.biostars.org/">biostars.org</a><br>
+<strong>Tip:</strong> Search before posting - your question may already be answered!</p>
+<hr>
+</section>
+<section id="seqanswers" class="level3">
+<h3 class="anchored" data-anchor-id="seqanswers">SEQanswers</h3>
+<p><strong>What it is:</strong> Forum focused on sequencing technologies and analysis<br>
+<strong>Best for:</strong> NGS-specific discussions, troubleshooting<br>
+<strong>Link:</strong> <a href="http://seqanswers.com/">seqanswers.com</a></p>
+<hr>
+</section>
+<section id="stack-overflow-bioinformatics-tags" class="level3">
+<h3 class="anchored" data-anchor-id="stack-overflow-bioinformatics-tags">Stack Overflow (Bioinformatics tags)</h3>
+<p><strong>What it is:</strong> Programming Q&amp;A site<br>
+<strong>Best for:</strong> Coding questions, debugging<br>
+<strong>Link:</strong> <a href="https://stackoverflow.com/">stackoverflow.com</a><br>
+<strong>Search tags:</strong> <code>bioinformatics</code>, <code>biopython</code>, <code>bioconductor</code>, <code>genomics</code></p>
+<hr>
+</section>
+<section id="reddit-communities" class="level3">
+<h3 class="anchored" data-anchor-id="reddit-communities">Reddit Communities</h3>
+<ul>
+<li><strong>r/bioinformatics:</strong> General bioinformatics discussion<br>
+<a href="https://www.reddit.com/r/bioinformatics/">reddit.com/r/bioinformatics</a></li>
+<li><strong>r/genomics:</strong> Genomics-focused<br>
+<a href="https://www.reddit.com/r/genomics/">reddit.com/r/genomics</a></li>
+<li><strong>r/learnbioinformatics:</strong> For learning and education<br>
+<a href="https://www.reddit.com/r/learnbioinformatics/">reddit.com/r/learnbioinformatics</a></li>
+</ul>
+<hr>
+</section>
+<section id="twitterx-mastodon" class="level3">
+<h3 class="anchored" data-anchor-id="twitterx-mastodon">Twitter/X &amp; Mastodon</h3>
+<p><strong>Follow these tags/communities:</strong> - #bioinformatics - #genomics - #scicomm - #epitwitter (for epidemiology/public health)</p>
+<p><strong>Active bioinformatics community on Mastodon:</strong> - genomic.social (Mastodon instance for genomics researchers)</p>
+<hr>
+</section>
+</section>
+<section id="software-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="software-repositories">Software Repositories</h2>
+<section id="bioconda" class="level3">
+<h3 class="anchored" data-anchor-id="bioconda">Bioconda</h3>
+<p><strong>What it is:</strong> Package repository for bioinformatics software<br>
+<strong>Why essential:</strong> Easy installation of bioinformatics tools<br>
+<strong>Link:</strong> <a href="https://bioconda.github.io/">bioconda.github.io</a><br>
+<strong>Usage:</strong> <code>conda install -c bioconda toolname</code></p>
+<hr>
+</section>
+<section id="bioconductor" class="level3">
+<h3 class="anchored" data-anchor-id="bioconductor">Bioconductor</h3>
+<p><strong>What it is:</strong> R packages for genomic data analysis<br>
+<strong>Why essential:</strong> Statistical analysis and visualization of genomics data<br>
+<strong>Link:</strong> <a href="https://bioconductor.org/">bioconductor.org</a><br>
+<strong>Note:</strong> Over 2,000 packages for all types of genomic analyses</p>
+<hr>
+</section>
+<section id="biopython" class="level3">
+<h3 class="anchored" data-anchor-id="biopython">BioPython</h3>
+<p><strong>What it is:</strong> Python tools for computational biology<br>
+<strong>Use for:</strong> Parsing biological file formats, sequence analysis<br>
+<strong>Link:</strong> <a href="https://biopython.org/">biopython.org</a><br>
+<strong>Docs:</strong> Excellent tutorials available</p>
+<hr>
+</section>
+<section id="github-topics" class="level3">
+<h3 class="anchored" data-anchor-id="github-topics">GitHub Topics</h3>
+<p>Search these topics to find relevant bioinformatics tools: - <a href="https://github.com/topics/bioinformatics">bioinformatics</a> - <a href="https://github.com/topics/genomics">genomics</a> - <a href="https://github.com/topics/variant-calling">variant-calling</a> - <a href="https://github.com/topics/rna-seq">rna-seq</a></p>
+<hr>
+</section>
+</section>
+<section id="learning-resources" class="level2">
+<h2 class="anchored" data-anchor-id="learning-resources">Learning Resources</h2>
+<section id="journals-to-follow" class="level3">
+<h3 class="anchored" data-anchor-id="journals-to-follow">Journals to Follow</h3>
+<p><strong>Methods/Tools:</strong> - <em>Nature Methods</em> - <em>Bioinformatics</em> - <em>Genome Biology</em> - <em>BMC Bioinformatics</em> - <em>GigaScience</em></p>
+<p><strong>Disease/Dementia-focused:</strong> - <em>Alzheimer’s &amp; Dementia</em> - <em>Neurology</em> - <em>Molecular Neurodegeneration</em> - <em>Acta Neuropathologica</em></p>
+<hr>
+</section>
+<section id="preprint-servers" class="level3">
+<h3 class="anchored" data-anchor-id="preprint-servers">Preprint Servers</h3>
+<section id="biorxiv" class="level4">
+<h4 class="anchored" data-anchor-id="biorxiv">bioRxiv</h4>
+<p><strong>What it is:</strong> Preprint server for biology<br>
+<strong>Why follow:</strong> See cutting-edge research before peer review<br>
+<strong>Link:</strong> <a href="https://www.biorxiv.org/">biorxiv.org</a><br>
+<strong>Tip:</strong> Set up alerts for topics of interest</p>
+<hr>
+</section>
+<section id="medrxiv" class="level4">
+<h4 class="anchored" data-anchor-id="medrxiv">medRxiv</h4>
+<p><strong>What it is:</strong> Preprint server for medical sciences<br>
+<strong>Link:</strong> <a href="https://www.medrxiv.org/">medrxiv.org</a></p>
+<hr>
+</section>
+</section>
+<section id="blogs-websites" class="level3">
+<h3 class="anchored" data-anchor-id="blogs-websites">Blogs &amp; Websites</h3>
+<section id="the-bioinformatics-cro" class="level4">
+<h4 class="anchored" data-anchor-id="the-bioinformatics-cro">The Bioinformatics CRO</h4>
+<p><strong>What it is:</strong> Blog with practical bioinformatics tutorials<br>
+<strong>Link:</strong> <a href="https://www.thebioinformaticscro.co.uk/">thebioinformaticscro.co.uk</a></p>
+<hr>
+</section>
+<section id="living-in-an-ivory-basement" class="level4">
+<h4 class="anchored" data-anchor-id="living-in-an-ivory-basement">Living in an Ivory Basement</h4>
+<p><strong>What it is:</strong> Titus Brown’s blog on bioinformatics and open science<br>
+<strong>Link:</strong> <a href="http://ivory.idyll.org/blog/">ivory.idyll.org/blog</a></p>
+<hr>
+</section>
+<section id="embl-ebi-training-blog" class="level4">
+<h4 class="anchored" data-anchor-id="embl-ebi-training-blog">EMBL-EBI Training Blog</h4>
+<p><strong>What it is:</strong> Updates on courses and bioinformatics training<br>
+<strong>Link:</strong> <a href="https://www.ebi.ac.uk/training/">ebi.ac.uk/training</a></p>
+<hr>
+</section>
+<section id="omicstutorials" class="level4">
+<h4 class="anchored" data-anchor-id="omicstutorials">OmicsTutorials</h4>
+<p><strong>What it is:</strong> Comprehensive bioinformatics tutorials and guides<br>
+<strong>Link:</strong> <a href="https://omicstutorials.com/">omicstutorials.com</a></p>
+<hr>
+</section>
+</section>
+<section id="youtube-channels" class="level3">
+<h3 class="anchored" data-anchor-id="youtube-channels">YouTube Channels</h3>
+<p><strong>StatQuest with Josh Starmer</strong> - Excellent explanations of statistical concepts - Covers RNA-seq, PCA, machine learning - <a href="https://www.youtube.com/@statquest">youtube.com/<span class="citation" data-cites="statquest">@statquest</span></a></p>
+<p><strong>EMBL-EBI Training</strong> - Webinars and training videos - <a href="https://www.youtube.com/@EBITraining">youtube.com/<span class="citation" data-cites="EBITraining">@EBITraining</span></a></p>
+<p><strong>Computational Biology Core Leuven</strong> - Bioinformatics tutorials - <a href="https://www.youtube.com/@ComputationalBiologyCoreLeuven">youtube.com/<span class="citation" data-cites="ComputationalBiologyCoreLeuven">@ComputationalBiologyCoreLeuven</span></a></p>
+<hr>
+</section>
+</section>
+<section id="books" class="level2">
+<h2 class="anchored" data-anchor-id="books">Books</h2>
+<section id="bioinformatics-data-skills" class="level3">
+<h3 class="anchored" data-anchor-id="bioinformatics-data-skills">Bioinformatics Data Skills</h3>
+<p><strong>Author:</strong> Vince Buffalo<br>
+<strong>Best for:</strong> Learning Unix, version control, and working with genomic data<br>
+<strong>Why read:</strong> Comprehensive practical guide to bioinformatics infrastructure</p>
+<hr>
+</section>
+<section id="bioinformatics-algorithms-an-active-learning-approach" class="level3">
+<h3 class="anchored" data-anchor-id="bioinformatics-algorithms-an-active-learning-approach">Bioinformatics Algorithms: An Active Learning Approach</h3>
+<p><strong>Authors:</strong> Compeau &amp; Pevzner<br>
+<strong>Best for:</strong> Understanding algorithms behind bioinformatics tools<br>
+<strong>Why read:</strong> Learn how tools actually work under the hood</p>
+<hr>
+</section>
+<section id="introduction-to-genomics" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-genomics">Introduction to Genomics</h3>
+<p><strong>Author:</strong> Arthur Lesk<br>
+<strong>Best for:</strong> Biological background on genomics<br>
+<strong>Why read:</strong> Understand the biology behind the data</p>
+<hr>
+</section>
+<section id="rna-seq-data-analysis-a-practical-approach" class="level3">
+<h3 class="anchored" data-anchor-id="rna-seq-data-analysis-a-practical-approach">RNA-seq Data Analysis: A Practical Approach</h3>
+<p><strong>Editors:</strong> Eija Korpelainen et al.<br>
+<strong>Best for:</strong> Comprehensive RNA-seq analysis guide<br>
+<strong>Why read:</strong> End-to-end RNA-seq workflows with practical examples</p>
+<hr>
+</section>
+</section>
+<section id="podcasts" class="level2">
+<h2 class="anchored" data-anchor-id="podcasts">Podcasts</h2>
+<section id="the-bioinformatics-chat" class="level3">
+<h3 class="anchored" data-anchor-id="the-bioinformatics-chat">The Bioinformatics Chat</h3>
+<p><strong>What it is:</strong> Interviews with bioinformatics researchers and developers<br>
+<strong>Link:</strong> <a href="https://bioinformatics.chat/">bioinformatics.chat</a><br>
+<strong>Great for:</strong> Staying current with methods and hearing about career paths</p>
+<hr>
+</section>
+<section id="the-genetics-podcast" class="level3">
+<h3 class="anchored" data-anchor-id="the-genetics-podcast">The Genetics Podcast</h3>
+<p><strong>What it is:</strong> Genomics and genetics interviews<br>
+<strong>Topics:</strong> From GWAS to clinical genomics<br>
+<strong>Link:</strong> <a href="https://thegeneticspodcast.com/">thegeneticspodcast.com</a></p>
+<hr>
+</section>
+</section>
+<section id="professional-organizations" class="level2">
+<h2 class="anchored" data-anchor-id="professional-organizations">Professional Organizations</h2>
+<section id="international-society-for-computational-biology-iscb" class="level3">
+<h3 class="anchored" data-anchor-id="international-society-for-computational-biology-iscb">International Society for Computational Biology (ISCB)</h3>
+<p><strong>What it is:</strong> Premier bioinformatics professional organization<br>
+<strong>Benefits:</strong> Conferences (ISMB, RECOMB), journals, student fellowships<br>
+<strong>Link:</strong> <a href="https://www.iscb.org/">iscb.org</a></p>
+<hr>
+</section>
+<section id="european-society-of-human-genetics-eshg" class="level3">
+<h3 class="anchored" data-anchor-id="european-society-of-human-genetics-eshg">European Society of Human Genetics (ESHG)</h3>
+<p><strong>What it is:</strong> Organization for human genetics professionals<br>
+<strong>Link:</strong> <a href="https://www.eshg.org/">eshg.org</a></p>
+<hr>
+</section>
+<section id="american-society-of-human-genetics-ashg" class="level3">
+<h3 class="anchored" data-anchor-id="american-society-of-human-genetics-ashg">American Society of Human Genetics (ASHG)</h3>
+<p><strong>What it is:</strong> Leading organization for human genetics<br>
+<strong>Link:</strong> <a href="https://www.ashg.org/">ashg.org</a></p>
+<hr>
+</section>
+</section>
+<section id="conferences" class="level2">
+<h2 class="anchored" data-anchor-id="conferences">Conferences</h2>
+<section id="major-bioinformatics-conferences" class="level3">
+<h3 class="anchored" data-anchor-id="major-bioinformatics-conferences">Major Bioinformatics Conferences</h3>
+<ul>
+<li><strong>ISMB</strong> (Intelligent Systems for Molecular Biology) - Annual, July</li>
+<li><strong>RECOMB</strong> (Research in Computational Molecular Biology) - Annual, Spring</li>
+<li><strong>ASHG</strong> (American Society of Human Genetics) - Annual, Fall</li>
+<li><strong>ESHG</strong> (European Society of Human Genetics) - Annual, Spring</li>
+<li><strong>Advances in Genome Biology and Technology (AGBT)</strong> - Annual, February</li>
+</ul>
+</section>
+<section id="dementia-research-conferences" class="level3">
+<h3 class="anchored" data-anchor-id="dementia-research-conferences">Dementia Research Conferences</h3>
+<ul>
+<li><strong>Alzheimer’s Association International Conference (AAIC)</strong> - Annual, Summer</li>
+<li><strong>Clinical Trials on Alzheimer’s Disease (CTAD)</strong> - Annual, Fall</li>
+<li><strong>AD/PD™</strong> (Alzheimer’s and Parkinson’s Diseases) - Biennial</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="cheat-sheets-quick-references" class="level2">
+<h2 class="anchored" data-anchor-id="cheat-sheets-quick-references">Cheat Sheets &amp; Quick References</h2>
+<section id="command-line-cheat-sheets" class="level3">
+<h3 class="anchored" data-anchor-id="command-line-cheat-sheets">Command Line Cheat Sheets</h3>
+<ul>
+<li><a href="https://files.fosswire.com/2007/08/fwunixref.pdf">Linux Command Line Cheat Sheet</a></li>
+<li><a href="https://devhints.io/bash">Bash Scripting Cheat Sheet</a></li>
+<li><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git Cheat Sheet</a></li>
+</ul>
+</section>
+<section id="bioinformatics-specific" class="level3">
+<h3 class="anchored" data-anchor-id="bioinformatics-specific">Bioinformatics-Specific</h3>
+<ul>
+<li><a href="http://www.htslib.org/doc/#manual-pages">SAMtools/BCFtools Cheat Sheet</a></li>
+<li><a href="https://gist.github.com/ilevantis/6d6ecf8718a5803acff736c2dffc933e">BEDtools Cheat Sheet</a></li>
+<li><a href="https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows">GATK Best Practices</a></li>
+<li><a href="https://bioconda.github.io/contributor/index.html">Bioconda Cheat Sheet</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="useful-tools-utilities" class="level2">
+<h2 class="anchored" data-anchor-id="useful-tools-utilities">Useful Tools &amp; Utilities</h2>
+<section id="file-format-converters" class="level3">
+<h3 class="anchored" data-anchor-id="file-format-converters">File Format Converters</h3>
+<p><strong>BAM/SAM/CRAM</strong>: SAMtools<br>
+<strong>BED/GFF/GTF</strong>: BEDtools, gffread<br>
+<strong>FASTQ quality encoding</strong>: seqtk<br>
+<strong>VCF/BCF</strong>: BCFtools</p>
+<hr>
+</section>
+<section id="genome-browsers-local" class="level3">
+<h3 class="anchored" data-anchor-id="genome-browsers-local">Genome Browsers (Local)</h3>
+<p><strong>IGV (Integrative Genomics Viewer)</strong> - Visualize alignments, variants, annotations - <a href="https://software.broadinstitute.org/software/igv/">software.broadinstitute.org/software/igv</a></p>
+<p><strong>JBrowse</strong> - Web-based genome browser - <a href="https://jbrowse.org/">jbrowse.org</a></p>
+<hr>
+</section>
+<section id="visualization-tools" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-tools">Visualization Tools</h3>
+<p><strong>R packages:</strong> - ggplot2 (general plotting) - ggbio (genomic data) - ComplexHeatmap (heatmaps) - circlize (circular plots, genomic rearrangements)</p>
+<p><strong>Python:</strong> - matplotlib/seaborn (general plotting) - plotly (interactive plots) - pysam (BAM file visualization)</p>
+<hr>
+</section>
+</section>
+<section id="how-to-stay-current" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-stay-current">How to Stay Current</h2>
+<section id="daily-habits" class="level3">
+<h3 class="anchored" data-anchor-id="daily-habits">Daily Habits</h3>
+<ol type="1">
+<li><strong>Set up Google Scholar alerts</strong> for key topics (e.g., “Alzheimer’s genomics”)</li>
+<li><strong>Follow key researchers</strong> on Twitter/Mastodon</li>
+<li><strong>Subscribe to journal TOC alerts</strong> (Table of Contents)</li>
+<li><strong>Check bioRxiv</strong> weekly for preprints in your area</li>
+</ol>
+</section>
+<section id="weekly-habits" class="level3">
+<h3 class="anchored" data-anchor-id="weekly-habits">Weekly Habits</h3>
+<ol type="1">
+<li><strong>Read 1-2 papers</strong> in depth (not just abstracts)</li>
+<li><strong>Try a new tool</strong> or technique from tutorials</li>
+<li><strong>Participate in forums</strong> - answer questions when you can</li>
+<li><strong>Review your analysis catalogue</strong> and project progress</li>
+</ol>
+</section>
+<section id="monthly-habits" class="level3">
+<h3 class="anchored" data-anchor-id="monthly-habits">Monthly Habits</h3>
+<ol type="1">
+<li><strong>Attend a webinar or virtual conference</strong></li>
+<li><strong>Deep dive</strong> into one new method or tool</li>
+<li><strong>Update your skills</strong> with a new tutorial</li>
+<li><strong>Write about what you learned</strong> (blog, notes, or share with lab)</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<section id="before-asking-questions" class="level3">
+<h3 class="anchored" data-anchor-id="before-asking-questions">Before Asking Questions</h3>
+<ol type="1">
+<li><strong>Search first:</strong> Google, Biostars, Stack Overflow</li>
+<li><strong>Check documentation:</strong> Tool manuals, GitHub issues</li>
+<li><strong>Try debugging yourself:</strong> Error messages often have clues</li>
+<li><strong>Isolate the problem:</strong> Minimal reproducible example</li>
+</ol>
+</section>
+<section id="how-to-ask-good-questions" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-ask-good-questions">How to Ask Good Questions</h3>
+<p><strong>Include:</strong> - What you’re trying to do - What you’ve tried already - Exact error messages (full output) - Software versions - Minimal code example - Expected vs.&nbsp;actual output</p>
+<p><strong>Good question template:</strong></p>
+<pre><code>Title: SAMtools sort fails with "truncated file" error
+
+I'm trying to sort a BAM file but getting an error.
+
+Command:
+samtools sort input.bam -o sorted.bam
+
+Error:
+[E::bgzf_read] Read 0 bytes from input.bam.bam; 7 expected
+samtools sort: truncated file. Aborting
+
+What I've tried:
+- Checked file isn't corrupted (md5sum matches)
+- Tried with different BAM files
+- Reinstalled samtools
+
+Environment:
+- samtools version: 1.15
+- OS: Ubuntu 20.04
+- Input file size: 50GB
+
+Any suggestions on what might be causing this?</code></pre>
+<hr>
+</section>
+</section>
+<section id="tips-for-continuous-learning" class="level2">
+<h2 class="anchored" data-anchor-id="tips-for-continuous-learning">Tips for Continuous Learning</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Strategies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Learn by doing:</strong> Work with real data whenever possible</li>
+<li><strong>Read the papers:</strong> Don’t just use tools - understand the methods</li>
+<li><strong>Teach others:</strong> Best way to solidify your understanding</li>
+<li><strong>Build a portfolio:</strong> Document your projects publicly</li>
+<li><strong>Contribute:</strong> Report bugs, improve documentation, answer questions</li>
+<li><strong>Network:</strong> Join local bioinformatics groups, attend meetups</li>
+<li><strong>Stay humble:</strong> Bioinformatics is vast - no one knows everything</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This toolkit provides a foundation, but bioinformatics is a journey of continuous learning. Use these resources, stay curious, and don’t hesitate to reach out to the community when you need help.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remember
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The best bioinformaticians are those who: - Document their work thoroughly - Ask questions when stuck - Share their knowledge - Keep learning new methods - Stay engaged with the community</p>
+<p>Good luck on your bioinformatics journey! 🧬</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="quick-links-summary" class="level2">
+<h2 class="anchored" data-anchor-id="quick-links-summary">Quick Links Summary</h2>
+<p><strong>Start Here:</strong> - <a href="./index.html">Home</a> - Getting started guide - <a href="./tools-setup.html">Tools &amp; Setup</a> - Essential software - <a href="./genomics-fundamentals.html">Genomics Fundamentals</a> - Core concepts - <a href="./tutorials-workshops.html">Tutorials &amp; Workshops</a> - Learning resources - <a href="./best-practices.html">Best Practices</a> - Reproducible research</p>
+<p><strong>Essential Databases:</strong> - <a href="https://www.ensembl.org/">Ensembl</a> - <a href="https://gnomad.broadinstitute.org/">gnomAD</a> - <a href="https://www.ebi.ac.uk/gwas/">GWAS Catalog</a> - <a href="https://www.pgscatalog.org/">PGS Catalog</a></p>
+<p><strong>Get Help:</strong> - <a href="https://www.biostars.org/">Biostars</a> - <a href="https://stackoverflow.com/">Stack Overflow</a> - <a href="https://www.reddit.com/r/bioinformatics/">r/bioinformatics</a></p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/418f28b3-7758-49f6-b5eb-4b5c0868fcbd\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Resources &amp; References"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Databases, communities, and ongoing learning resources"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>This page compiles essential databases, online communities, and additional resources to support your bioinformatics journey. Bookmark this page for quick reference!</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Genomics Databases</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reference Genomes &amp; Annotations</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Ensembl</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>**What it is:** Genome browser for vertebrate genomes  </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>**Use for:** Browsing genes, transcripts, variants, regulatory elements  </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ensembl.org</span><span class="co">](https://www.ensembl.org/)</span>  </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>**Features:** Genome browser, BioMart data mining, REST API</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">#### UCSC Genome Browser</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>**What it is:** Web-based genome browser  </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>**Use for:** Visualizing genomic data, downloading reference files  </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">genome.ucsc.edu</span><span class="co">](https://genome.ucsc.edu/)</span>  </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>**Features:** Custom tracks, table browser, liftOver tool</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">#### NCBI RefSeq</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>**What it is:** Curated collection of genomic, transcript, and protein sequences  </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>**Use for:** Reference sequences, gene information  </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ncbi.nlm.nih.gov/refseq</span><span class="co">](https://www.ncbi.nlm.nih.gov/refseq/)</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variant Databases</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">#### dbSNP</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>**What it is:** Database of single nucleotide polymorphisms and short variants  </span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>**Use for:** Variant IDs (rs numbers), allele frequencies  </span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ncbi.nlm.nih.gov/snp</span><span class="co">](https://www.ncbi.nlm.nih.gov/snp/)</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="fu">#### gnomAD (Genome Aggregation Database)</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>**What it is:** Population allele frequency database (&gt;140,000 genomes)  </span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>**Use for:** Determining if variants are common or rare, filtering  </span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">gnomad.broadinstitute.org</span><span class="co">](https://gnomad.broadinstitute.org/)</span>  </span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>**Key feature:** Allele frequencies across diverse populations</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="fu">#### ClinVar</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>**What it is:** Public archive of relationships between variants and phenotypes  </span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>**Use for:** Clinical significance of variants, pathogenicity  </span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ncbi.nlm.nih.gov/clinvar</span><span class="co">](https://www.ncbi.nlm.nih.gov/clinvar/)</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">#### COSMIC (Catalogue of Somatic Mutations in Cancer)</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>**What it is:** Database of somatic mutations in cancer  </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>**Use for:** Cancer genomics, somatic variant annotation  </span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">cancer.sanger.ac.uk/cosmic</span><span class="co">](https://cancer.sanger.ac.uk/cosmic)</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">### GWAS &amp; Association Studies</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GWAS Catalog</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>**What it is:** Curated collection of published GWAS results  </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>**Use for:** Finding known genetic associations, exploring traits  </span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ebi.ac.uk/gwas</span><span class="co">](https://www.ebi.ac.uk/gwas/)</span>  </span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>**Key feature:** Searchable by trait, gene, variant</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">#### PGS Catalog (Polygenic Score Catalog)</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>**What it is:** Open database of published polygenic scores  </span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>**Use for:** Calculating polygenic risk scores, risk prediction  </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">pgscatalog.org</span><span class="co">](https://www.pgscatalog.org/)</span>  </span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>**Includes:** Calculator tool, score downloads</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="fu">#### OpenTargets</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>**What it is:** Platform integrating genetics and genomics for target identification  </span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>**Use for:** Connecting genetic evidence to drug targets  </span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">platform.opentargets.org</span><span class="co">](https://platform.opentargets.org/)</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dementia-Specific Resources</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="fu">#### AlzGene</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>**What it is:** Field synopsis of genetic association studies in Alzheimer's disease  </span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>**Use for:** Known AD risk loci, meta-analysis results  </span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">alzgene.org</span><span class="co">](http://www.alzgene.org/)</span>  </span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>**Note:** Last updated 2014, but comprehensive for established loci</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Alzforum</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>**What it is:** Networking site for Alzheimer's research  </span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>**Use for:** News, mutations database, research tools  </span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">alzforum.org</span><span class="co">](https://www.alzforum.org/)</span>  </span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>**Features:** Mutations database, biomarkers, protocols</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="fu">#### NIAGADS (National Institute on Aging Genetics of Alzheimer's Disease Data Storage)</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>**What it is:** Repository for AD genetics data  </span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>**Use for:** Accessing AD genomics datasets  </span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">niagads.org</span><span class="co">](https://www.niagads.org/)</span>  </span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>**Access:** Requires application/approval</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### Expression &amp; Functional Databases</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GTEx (Genotype-Tissue Expression)</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>**What it is:** Resource on human gene expression and regulation across tissues  </span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>**Use for:** Tissue-specific expression, eQTLs  </span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">gtexportal.org</span><span class="co">](https://gtexportal.org/)</span>  </span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>**Includes:** Brain-specific data (multiple regions)</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="fu">#### ENCODE</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>**What it is:** Encyclopedia of DNA Elements  </span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>**Use for:** Regulatory elements, transcription factors, chromatin states  </span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">encodeproject.org</span><span class="co">](https://www.encodeproject.org/)</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="fu">#### STRING</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>**What it is:** Protein-protein interaction networks  </span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>**Use for:** Understanding protein interactions, pathway analysis  </span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">string-db.org</span><span class="co">](https://string-db.org/)</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Reactome</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>**What it is:** Pathway database  </span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>**Use for:** Pathway analysis, understanding biological processes  </span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">reactome.org</span><span class="co">](https://reactome.org/)</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Repositories</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sequence Read Archive (SRA)</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>**What it is:** NCBI's repository for raw sequencing data  </span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>**Use for:** Downloading/uploading sequencing data  </span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ncbi.nlm.nih.gov/sra</span><span class="co">](https://www.ncbi.nlm.nih.gov/sra/)</span>  </span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>**Tool:** SRA Toolkit for downloading</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="fu">### European Nucleotide Archive (ENA)</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>**What it is:** European equivalent of SRA  </span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>**Use for:** Raw sequencing data (often faster downloads in Europe)  </span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ebi.ac.uk/ena</span><span class="co">](https://www.ebi.ac.uk/ena/)</span></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gene Expression Omnibus (GEO)</span></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>**What it is:** Repository for gene expression and genomics data  </span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>**Use for:** Finding published expression datasets  </span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ncbi.nlm.nih.gov/geo</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/)</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### dbGaP (Database of Genotypes and Phenotypes)</span></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>**What it is:** Controlled-access archive for human genetic/phenotypic data  </span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>**Use for:** Accessing large-scale human genomics studies  </span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ncbi.nlm.nih.gov/gap</span><span class="co">](https://www.ncbi.nlm.nih.gov/gap/)</span>  </span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>**Access:** Requires application through your institution</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="fu">### European Genome-phenome Archive (EGA)</span></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>**What it is:** European archive for sensitive human data  </span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>**Use for:** Controlled-access human genomics data  </span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ega-archive.org</span><span class="co">](https://ega-archive.org/)</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="fu">## Online Communities &amp; Forums</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a><span class="fu">### Biostars</span></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>**What it is:** Q&amp;A forum for bioinformatics  </span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>**Best for:** Getting help with specific analysis problems  </span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">biostars.org</span><span class="co">](https://www.biostars.org/)</span>  </span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>**Tip:** Search before posting - your question may already be answered!</span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="fu">### SEQanswers</span></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>**What it is:** Forum focused on sequencing technologies and analysis  </span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>**Best for:** NGS-specific discussions, troubleshooting  </span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">seqanswers.com</span><span class="co">](http://seqanswers.com/)</span></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stack Overflow (Bioinformatics tags)</span></span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a>**What it is:** Programming Q&amp;A site  </span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>**Best for:** Coding questions, debugging  </span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">stackoverflow.com</span><span class="co">](https://stackoverflow.com/)</span>  </span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>**Search tags:** <span class="in">`bioinformatics`</span>, <span class="in">`biopython`</span>, <span class="in">`bioconductor`</span>, <span class="in">`genomics`</span></span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reddit Communities</span></span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**r/bioinformatics:** General bioinformatics discussion  </span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">reddit.com/r/bioinformatics</span><span class="co">](https://www.reddit.com/r/bioinformatics/)</span></span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**r/genomics:** Genomics-focused  </span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">reddit.com/r/genomics</span><span class="co">](https://www.reddit.com/r/genomics/)</span></span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**r/learnbioinformatics:** For learning and education  </span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">reddit.com/r/learnbioinformatics</span><span class="co">](https://www.reddit.com/r/learnbioinformatics/)</span></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a><span class="fu">### Twitter/X &amp; Mastodon</span></span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a>**Follow these tags/communities:**</span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>#bioinformatics</span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>#genomics</span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>#scicomm</span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>#epitwitter (for epidemiology/public health)</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a>**Active bioinformatics community on Mastodon:**</span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>genomic.social (Mastodon instance for genomics researchers)</span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software Repositories</span></span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bioconda</span></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>**What it is:** Package repository for bioinformatics software  </span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>**Why essential:** Easy installation of bioinformatics tools  </span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">bioconda.github.io</span><span class="co">](https://bioconda.github.io/)</span>  </span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>**Usage:** <span class="in">`conda install -c bioconda toolname`</span></span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bioconductor</span></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>**What it is:** R packages for genomic data analysis  </span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>**Why essential:** Statistical analysis and visualization of genomics data  </span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">bioconductor.org</span><span class="co">](https://bioconductor.org/)</span>  </span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a>**Note:** Over 2,000 packages for all types of genomic analyses</span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a><span class="fu">### BioPython</span></span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a>**What it is:** Python tools for computational biology  </span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a>**Use for:** Parsing biological file formats, sequence analysis  </span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">biopython.org</span><span class="co">](https://biopython.org/)</span>  </span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a>**Docs:** Excellent tutorials available</span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a><span class="fu">### GitHub Topics</span></span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a>Search these topics to find relevant bioinformatics tools:</span>
+<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">bioinformatics</span><span class="co">](https://github.com/topics/bioinformatics)</span></span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">genomics</span><span class="co">](https://github.com/topics/genomics)</span></span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">variant-calling</span><span class="co">](https://github.com/topics/variant-calling)</span></span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">rna-seq</span><span class="co">](https://github.com/topics/rna-seq)</span></span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Resources</span></span>
+<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a><span class="fu">### Journals to Follow</span></span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a>**Methods/Tools:**</span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Nature Methods*</span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Bioinformatics*</span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Genome Biology*</span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*BMC Bioinformatics*</span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*GigaScience*</span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a>**Disease/Dementia-focused:**</span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Alzheimer's &amp; Dementia*</span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Neurology*</span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Molecular Neurodegeneration*</span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Acta Neuropathologica*</span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### Preprint Servers</span></span>
+<span id="cb2-300"><a href="#cb2-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a><span class="fu">#### bioRxiv</span></span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a>**What it is:** Preprint server for biology  </span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a>**Why follow:** See cutting-edge research before peer review  </span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">biorxiv.org</span><span class="co">](https://www.biorxiv.org/)</span>  </span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a>**Tip:** Set up alerts for topics of interest</span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-308"><a href="#cb2-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-309"><a href="#cb2-309" aria-hidden="true" tabindex="-1"></a><span class="fu">#### medRxiv</span></span>
+<span id="cb2-310"><a href="#cb2-310" aria-hidden="true" tabindex="-1"></a>**What it is:** Preprint server for medical sciences  </span>
+<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">medrxiv.org</span><span class="co">](https://www.medrxiv.org/)</span></span>
+<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-314"><a href="#cb2-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-315"><a href="#cb2-315" aria-hidden="true" tabindex="-1"></a><span class="fu">### Blogs &amp; Websites</span></span>
+<span id="cb2-316"><a href="#cb2-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The Bioinformatics CRO</span></span>
+<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a>**What it is:** Blog with practical bioinformatics tutorials  </span>
+<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">thebioinformaticscro.co.uk</span><span class="co">](https://www.thebioinformaticscro.co.uk/)</span></span>
+<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-322"><a href="#cb2-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-323"><a href="#cb2-323" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Living in an Ivory Basement</span></span>
+<span id="cb2-324"><a href="#cb2-324" aria-hidden="true" tabindex="-1"></a>**What it is:** Titus Brown's blog on bioinformatics and open science  </span>
+<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ivory.idyll.org/blog</span><span class="co">](http://ivory.idyll.org/blog/)</span></span>
+<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a><span class="fu">#### EMBL-EBI Training Blog</span></span>
+<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a>**What it is:** Updates on courses and bioinformatics training  </span>
+<span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ebi.ac.uk/training</span><span class="co">](https://www.ebi.ac.uk/training/)</span></span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a><span class="fu">#### OmicsTutorials</span></span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a>**What it is:** Comprehensive bioinformatics tutorials and guides  </span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">omicstutorials.com</span><span class="co">](https://omicstutorials.com/)</span></span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a><span class="fu">### YouTube Channels</span></span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a>**StatQuest with Josh Starmer**</span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Excellent explanations of statistical concepts</span>
+<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Covers RNA-seq, PCA, machine learning</span>
+<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">youtube.com/@statquest</span><span class="co">](https://www.youtube.com/@statquest)</span></span>
+<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a>**EMBL-EBI Training**</span>
+<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Webinars and training videos</span>
+<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">youtube.com/@EBITraining</span><span class="co">](https://www.youtube.com/@EBITraining)</span></span>
+<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a>**Computational Biology Core Leuven**</span>
+<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bioinformatics tutorials</span>
+<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">youtube.com/@ComputationalBiologyCoreLeuven</span><span class="co">](https://www.youtube.com/@ComputationalBiologyCoreLeuven)</span></span>
+<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-358"><a href="#cb2-358" aria-hidden="true" tabindex="-1"></a><span class="fu">## Books</span></span>
+<span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bioinformatics Data Skills</span></span>
+<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a>**Author:** Vince Buffalo  </span>
+<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a>**Best for:** Learning Unix, version control, and working with genomic data  </span>
+<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a>**Why read:** Comprehensive practical guide to bioinformatics infrastructure</span>
+<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bioinformatics Algorithms: An Active Learning Approach</span></span>
+<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a>**Authors:** Compeau &amp; Pevzner  </span>
+<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a>**Best for:** Understanding algorithms behind bioinformatics tools  </span>
+<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a>**Why read:** Learn how tools actually work under the hood</span>
+<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-373"><a href="#cb2-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-374"><a href="#cb2-374" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction to Genomics</span></span>
+<span id="cb2-375"><a href="#cb2-375" aria-hidden="true" tabindex="-1"></a>**Author:** Arthur Lesk  </span>
+<span id="cb2-376"><a href="#cb2-376" aria-hidden="true" tabindex="-1"></a>**Best for:** Biological background on genomics  </span>
+<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a>**Why read:** Understand the biology behind the data</span>
+<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a><span class="fu">### RNA-seq Data Analysis: A Practical Approach</span></span>
+<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a>**Editors:** Eija Korpelainen et al.  </span>
+<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a>**Best for:** Comprehensive RNA-seq analysis guide  </span>
+<span id="cb2-384"><a href="#cb2-384" aria-hidden="true" tabindex="-1"></a>**Why read:** End-to-end RNA-seq workflows with practical examples</span>
+<span id="cb2-385"><a href="#cb2-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-386"><a href="#cb2-386" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a><span class="fu">## Podcasts</span></span>
+<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Bioinformatics Chat</span></span>
+<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a>**What it is:** Interviews with bioinformatics researchers and developers  </span>
+<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">bioinformatics.chat</span><span class="co">](https://bioinformatics.chat/)</span>  </span>
+<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a>**Great for:** Staying current with methods and hearing about career paths</span>
+<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Genetics Podcast</span></span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a>**What it is:** Genomics and genetics interviews  </span>
+<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a>**Topics:** From GWAS to clinical genomics  </span>
+<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">thegeneticspodcast.com</span><span class="co">](https://thegeneticspodcast.com/)</span></span>
+<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-404"><a href="#cb2-404" aria-hidden="true" tabindex="-1"></a><span class="fu">## Professional Organizations</span></span>
+<span id="cb2-405"><a href="#cb2-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-406"><a href="#cb2-406" aria-hidden="true" tabindex="-1"></a><span class="fu">### International Society for Computational Biology (ISCB)</span></span>
+<span id="cb2-407"><a href="#cb2-407" aria-hidden="true" tabindex="-1"></a>**What it is:** Premier bioinformatics professional organization  </span>
+<span id="cb2-408"><a href="#cb2-408" aria-hidden="true" tabindex="-1"></a>**Benefits:** Conferences (ISMB, RECOMB), journals, student fellowships  </span>
+<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">iscb.org</span><span class="co">](https://www.iscb.org/)</span></span>
+<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a><span class="fu">### European Society of Human Genetics (ESHG)</span></span>
+<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a>**What it is:** Organization for human genetics professionals  </span>
+<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">eshg.org</span><span class="co">](https://www.eshg.org/)</span></span>
+<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a><span class="fu">### American Society of Human Genetics (ASHG)</span></span>
+<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a>**What it is:** Leading organization for human genetics  </span>
+<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a>**Link:** <span class="co">[</span><span class="ot">ashg.org</span><span class="co">](https://www.ashg.org/)</span></span>
+<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conferences</span></span>
+<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a><span class="fu">### Major Bioinformatics Conferences</span></span>
+<span id="cb2-428"><a href="#cb2-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-429"><a href="#cb2-429" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**ISMB** (Intelligent Systems for Molecular Biology) - Annual, July</span>
+<span id="cb2-430"><a href="#cb2-430" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**RECOMB** (Research in Computational Molecular Biology) - Annual, Spring</span>
+<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**ASHG** (American Society of Human Genetics) - Annual, Fall</span>
+<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**ESHG** (European Society of Human Genetics) - Annual, Spring</span>
+<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Advances in Genome Biology and Technology (AGBT)** - Annual, February</span>
+<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dementia Research Conferences</span></span>
+<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-437"><a href="#cb2-437" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Alzheimer's Association International Conference (AAIC)** - Annual, Summer</span>
+<span id="cb2-438"><a href="#cb2-438" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Clinical Trials on Alzheimer's Disease (CTAD)** - Annual, Fall</span>
+<span id="cb2-439"><a href="#cb2-439" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**AD/PD™** (Alzheimer's and Parkinson's Diseases) - Biennial</span>
+<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cheat Sheets &amp; Quick References</span></span>
+<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a><span class="fu">### Command Line Cheat Sheets</span></span>
+<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Linux Command Line Cheat Sheet</span><span class="co">](https://files.fosswire.com/2007/08/fwunixref.pdf)</span></span>
+<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Bash Scripting Cheat Sheet</span><span class="co">](https://devhints.io/bash)</span></span>
+<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Git Cheat Sheet</span><span class="co">](https://education.github.com/git-cheat-sheet-education.pdf)</span></span>
+<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bioinformatics-Specific</span></span>
+<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">SAMtools/BCFtools Cheat Sheet</span><span class="co">](http://www.htslib.org/doc/#manual-pages)</span></span>
+<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">BEDtools Cheat Sheet</span><span class="co">](https://gist.github.com/ilevantis/6d6ecf8718a5803acff736c2dffc933e)</span></span>
+<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GATK Best Practices</span><span class="co">](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows)</span></span>
+<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Bioconda Cheat Sheet</span><span class="co">](https://bioconda.github.io/contributor/index.html)</span></span>
+<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a><span class="fu">## Useful Tools &amp; Utilities</span></span>
+<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Format Converters</span></span>
+<span id="cb2-463"><a href="#cb2-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-464"><a href="#cb2-464" aria-hidden="true" tabindex="-1"></a>**BAM/SAM/CRAM**: SAMtools  </span>
+<span id="cb2-465"><a href="#cb2-465" aria-hidden="true" tabindex="-1"></a>**BED/GFF/GTF**: BEDtools, gffread  </span>
+<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a>**FASTQ quality encoding**: seqtk  </span>
+<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a>**VCF/BCF**: BCFtools</span>
+<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a><span class="fu">### Genome Browsers (Local)</span></span>
+<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a>**IGV (Integrative Genomics Viewer)**</span>
+<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Visualize alignments, variants, annotations</span>
+<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">software.broadinstitute.org/software/igv</span><span class="co">](https://software.broadinstitute.org/software/igv/)</span></span>
+<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a>**JBrowse**</span>
+<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Web-based genome browser</span>
+<span id="cb2-479"><a href="#cb2-479" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">jbrowse.org</span><span class="co">](https://jbrowse.org/)</span></span>
+<span id="cb2-480"><a href="#cb2-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-481"><a href="#cb2-481" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualization Tools</span></span>
+<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-485"><a href="#cb2-485" aria-hidden="true" tabindex="-1"></a>**R packages:**</span>
+<span id="cb2-486"><a href="#cb2-486" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ggplot2 (general plotting)</span>
+<span id="cb2-487"><a href="#cb2-487" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ggbio (genomic data)</span>
+<span id="cb2-488"><a href="#cb2-488" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ComplexHeatmap (heatmaps)</span>
+<span id="cb2-489"><a href="#cb2-489" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>circlize (circular plots, genomic rearrangements)</span>
+<span id="cb2-490"><a href="#cb2-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-491"><a href="#cb2-491" aria-hidden="true" tabindex="-1"></a>**Python:**</span>
+<span id="cb2-492"><a href="#cb2-492" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>matplotlib/seaborn (general plotting)</span>
+<span id="cb2-493"><a href="#cb2-493" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>plotly (interactive plots)</span>
+<span id="cb2-494"><a href="#cb2-494" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>pysam (BAM file visualization)</span>
+<span id="cb2-495"><a href="#cb2-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-496"><a href="#cb2-496" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-497"><a href="#cb2-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-498"><a href="#cb2-498" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to Stay Current</span></span>
+<span id="cb2-499"><a href="#cb2-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-500"><a href="#cb2-500" aria-hidden="true" tabindex="-1"></a><span class="fu">### Daily Habits</span></span>
+<span id="cb2-501"><a href="#cb2-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-502"><a href="#cb2-502" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Set up Google Scholar alerts** for key topics (e.g., "Alzheimer's genomics")</span>
+<span id="cb2-503"><a href="#cb2-503" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Follow key researchers** on Twitter/Mastodon</span>
+<span id="cb2-504"><a href="#cb2-504" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Subscribe to journal TOC alerts** (Table of Contents)</span>
+<span id="cb2-505"><a href="#cb2-505" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Check bioRxiv** weekly for preprints in your area</span>
+<span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a><span class="fu">### Weekly Habits</span></span>
+<span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Read 1-2 papers** in depth (not just abstracts)</span>
+<span id="cb2-510"><a href="#cb2-510" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Try a new tool** or technique from tutorials</span>
+<span id="cb2-511"><a href="#cb2-511" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Participate in forums** - answer questions when you can</span>
+<span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Review your analysis catalogue** and project progress</span>
+<span id="cb2-513"><a href="#cb2-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-514"><a href="#cb2-514" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monthly Habits</span></span>
+<span id="cb2-515"><a href="#cb2-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-516"><a href="#cb2-516" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Attend a webinar or virtual conference**</span>
+<span id="cb2-517"><a href="#cb2-517" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Deep dive** into one new method or tool</span>
+<span id="cb2-518"><a href="#cb2-518" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Update your skills** with a new tutorial</span>
+<span id="cb2-519"><a href="#cb2-519" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Write about what you learned** (blog, notes, or share with lab)</span>
+<span id="cb2-520"><a href="#cb2-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-521"><a href="#cb2-521" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-522"><a href="#cb2-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-523"><a href="#cb2-523" aria-hidden="true" tabindex="-1"></a><span class="fu">## Getting Help</span></span>
+<span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-525"><a href="#cb2-525" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before Asking Questions</span></span>
+<span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Search first:** Google, Biostars, Stack Overflow</span>
+<span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Check documentation:** Tool manuals, GitHub issues</span>
+<span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Try debugging yourself:** Error messages often have clues</span>
+<span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Isolate the problem:** Minimal reproducible example</span>
+<span id="cb2-531"><a href="#cb2-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-532"><a href="#cb2-532" aria-hidden="true" tabindex="-1"></a><span class="fu">### How to Ask Good Questions</span></span>
+<span id="cb2-533"><a href="#cb2-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a>**Include:**</span>
+<span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What you're trying to do</span>
+<span id="cb2-536"><a href="#cb2-536" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What you've tried already</span>
+<span id="cb2-537"><a href="#cb2-537" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exact error messages (full output)</span>
+<span id="cb2-538"><a href="#cb2-538" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Software versions</span>
+<span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Minimal code example</span>
+<span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Expected vs. actual output</span>
+<span id="cb2-541"><a href="#cb2-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a>**Good question template:**</span>
+<span id="cb2-543"><a href="#cb2-543" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-544"><a href="#cb2-544" aria-hidden="true" tabindex="-1"></a><span class="in">Title: SAMtools sort fails with "truncated file" error</span></span>
+<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a><span class="in">I'm trying to sort a BAM file but getting an error.</span></span>
+<span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a><span class="in">Command:</span></span>
+<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a><span class="in">samtools sort input.bam -o sorted.bam</span></span>
+<span id="cb2-550"><a href="#cb2-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-551"><a href="#cb2-551" aria-hidden="true" tabindex="-1"></a><span class="in">Error:</span></span>
+<span id="cb2-552"><a href="#cb2-552" aria-hidden="true" tabindex="-1"></a><span class="in">[E::bgzf_read] Read 0 bytes from input.bam.bam; 7 expected</span></span>
+<span id="cb2-553"><a href="#cb2-553" aria-hidden="true" tabindex="-1"></a><span class="in">samtools sort: truncated file. Aborting</span></span>
+<span id="cb2-554"><a href="#cb2-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-555"><a href="#cb2-555" aria-hidden="true" tabindex="-1"></a><span class="in">What I've tried:</span></span>
+<span id="cb2-556"><a href="#cb2-556" aria-hidden="true" tabindex="-1"></a><span class="in">- Checked file isn't corrupted (md5sum matches)</span></span>
+<span id="cb2-557"><a href="#cb2-557" aria-hidden="true" tabindex="-1"></a><span class="in">- Tried with different BAM files</span></span>
+<span id="cb2-558"><a href="#cb2-558" aria-hidden="true" tabindex="-1"></a><span class="in">- Reinstalled samtools</span></span>
+<span id="cb2-559"><a href="#cb2-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-560"><a href="#cb2-560" aria-hidden="true" tabindex="-1"></a><span class="in">Environment:</span></span>
+<span id="cb2-561"><a href="#cb2-561" aria-hidden="true" tabindex="-1"></a><span class="in">- samtools version: 1.15</span></span>
+<span id="cb2-562"><a href="#cb2-562" aria-hidden="true" tabindex="-1"></a><span class="in">- OS: Ubuntu 20.04</span></span>
+<span id="cb2-563"><a href="#cb2-563" aria-hidden="true" tabindex="-1"></a><span class="in">- Input file size: 50GB</span></span>
+<span id="cb2-564"><a href="#cb2-564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-565"><a href="#cb2-565" aria-hidden="true" tabindex="-1"></a><span class="in">Any suggestions on what might be causing this?</span></span>
+<span id="cb2-566"><a href="#cb2-566" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-567"><a href="#cb2-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-568"><a href="#cb2-568" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-569"><a href="#cb2-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-570"><a href="#cb2-570" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tips for Continuous Learning</span></span>
+<span id="cb2-571"><a href="#cb2-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-572"><a href="#cb2-572" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb2-573"><a href="#cb2-573" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Strategies</span></span>
+<span id="cb2-574"><a href="#cb2-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-575"><a href="#cb2-575" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Learn by doing:** Work with real data whenever possible</span>
+<span id="cb2-576"><a href="#cb2-576" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Read the papers:** Don't just use tools - understand the methods</span>
+<span id="cb2-577"><a href="#cb2-577" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Teach others:** Best way to solidify your understanding</span>
+<span id="cb2-578"><a href="#cb2-578" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Build a portfolio:** Document your projects publicly</span>
+<span id="cb2-579"><a href="#cb2-579" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Contribute:** Report bugs, improve documentation, answer questions</span>
+<span id="cb2-580"><a href="#cb2-580" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Network:** Join local bioinformatics groups, attend meetups</span>
+<span id="cb2-581"><a href="#cb2-581" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Stay humble:** Bioinformatics is vast - no one knows everything</span>
+<span id="cb2-582"><a href="#cb2-582" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-583"><a href="#cb2-583" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-584"><a href="#cb2-584" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-585"><a href="#cb2-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-586"><a href="#cb2-586" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb2-587"><a href="#cb2-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-588"><a href="#cb2-588" aria-hidden="true" tabindex="-1"></a>This toolkit provides a foundation, but bioinformatics is a journey of continuous learning. Use these resources, stay curious, and don't hesitate to reach out to the community when you need help.</span>
+<span id="cb2-589"><a href="#cb2-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-590"><a href="#cb2-590" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb2-591"><a href="#cb2-591" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remember</span></span>
+<span id="cb2-592"><a href="#cb2-592" aria-hidden="true" tabindex="-1"></a>The best bioinformaticians are those who:</span>
+<span id="cb2-593"><a href="#cb2-593" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Document their work thoroughly</span>
+<span id="cb2-594"><a href="#cb2-594" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ask questions when stuck</span>
+<span id="cb2-595"><a href="#cb2-595" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Share their knowledge</span>
+<span id="cb2-596"><a href="#cb2-596" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep learning new methods</span>
+<span id="cb2-597"><a href="#cb2-597" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stay engaged with the community</span>
+<span id="cb2-598"><a href="#cb2-598" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-599"><a href="#cb2-599" aria-hidden="true" tabindex="-1"></a>Good luck on your bioinformatics journey! 🧬</span>
+<span id="cb2-600"><a href="#cb2-600" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-601"><a href="#cb2-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-602"><a href="#cb2-602" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-603"><a href="#cb2-603" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-604"><a href="#cb2-604" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Links Summary</span></span>
+<span id="cb2-605"><a href="#cb2-605" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-606"><a href="#cb2-606" aria-hidden="true" tabindex="-1"></a>**Start Here:**</span>
+<span id="cb2-607"><a href="#cb2-607" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Home</span><span class="co">](index.qmd)</span> - Getting started guide</span>
+<span id="cb2-608"><a href="#cb2-608" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Tools &amp; Setup</span><span class="co">](tools-setup.qmd)</span> - Essential software</span>
+<span id="cb2-609"><a href="#cb2-609" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Genomics Fundamentals</span><span class="co">](genomics-fundamentals.qmd)</span> - Core concepts</span>
+<span id="cb2-610"><a href="#cb2-610" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Tutorials &amp; Workshops</span><span class="co">](tutorials-workshops.qmd)</span> - Learning resources</span>
+<span id="cb2-611"><a href="#cb2-611" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span> - Reproducible research</span>
+<span id="cb2-612"><a href="#cb2-612" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-613"><a href="#cb2-613" aria-hidden="true" tabindex="-1"></a>**Essential Databases:**</span>
+<span id="cb2-614"><a href="#cb2-614" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ensembl</span><span class="co">](https://www.ensembl.org/)</span></span>
+<span id="cb2-615"><a href="#cb2-615" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">gnomAD</span><span class="co">](https://gnomad.broadinstitute.org/)</span></span>
+<span id="cb2-616"><a href="#cb2-616" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GWAS Catalog</span><span class="co">](https://www.ebi.ac.uk/gwas/)</span></span>
+<span id="cb2-617"><a href="#cb2-617" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">PGS Catalog</span><span class="co">](https://www.pgscatalog.org/)</span></span>
+<span id="cb2-618"><a href="#cb2-618" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-619"><a href="#cb2-619" aria-hidden="true" tabindex="-1"></a>**Get Help:**</span>
+<span id="cb2-620"><a href="#cb2-620" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Biostars</span><span class="co">](https://www.biostars.org/)</span></span>
+<span id="cb2-621"><a href="#cb2-621" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Stack Overflow</span><span class="co">](https://stackoverflow.com/)</span></span>
+<span id="cb2-622"><a href="#cb2-622" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">r/bioinformatics</span><span class="co">](https://www.reddit.com/r/bioinformatics/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>UK Dementia Research Institute</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.ukdri.ac.uk/">
+<p>UKDRI</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,636 @@
+---
+title: "Best Practices for Reproducible Research"
+subtitle: "Essential workflows for maintaining high-quality bioinformatics analyses"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+
+## Why Best Practices Matter
+
+::: callout-important
+## The Golden Rule
+
+**Your most important collaborator is your future self 6 months from now.**
+
+Document everything as if you'll need to re-run the analysis later (you will), or explain it to someone else (you will).
+:::
+
+Maintaining good practices from day one:
+
+-   Saves time in the long run
+-   Prevents errors and lost work
+-   Enables reproducibility
+-   Facilitates collaboration
+-   Makes your research more impactful
+
+------------------------------------------------------------------------
+
+## Analysis Catalogue {#analysis-catalogue}
+
+### What is an Analysis Catalogue?
+
+An analysis catalogue is a **structured record of every analysis you perform**. It's your lab notebook for bioinformatics - tracking what you did, when, why, and what you found.
+
+### Why Keep One?
+
+-   **Remember what you did:** Months later, you'll need to recall exact parameters
+-   **Avoid duplication:** Quickly check if you've already run similar analyses
+-   **Share with collaborators:** Clear documentation helps others understand your work
+-   **Publication requirements:** Journals require detailed methods - your catalogue has it all
+-   **Troubleshoot issues:** When something goes wrong, trace back your steps
+
+------------------------------------------------------------------------
+
+### Analysis Catalogue Template
+
+Below is a template you can adapt. Keep it in a spreadsheet (Excel, Google Sheets) or as a CSV file in your project directory.
+
+#### Download Template
+
+::: card
+**Copy this table structure** to create your own analysis catalogue:
+
+| ID | Name | Description | Link | Data | Status | Notes | Report/Output |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| `anAD001` | GWAS APOE variants | Test association between APOE variants and AD age of onset in cohort | `/scripts/gwas/run_gwas_apoe.sh` | `/data/cohort1/genotypes_QC.vcf` (n=5,432: 2,100 cases, 3,332 controls) | Complete | Removed 3 outlier samples, see QC log | `anAD001_report` |
+| `anAD002` | RNA-seq differential expression | Identify differentially expressed genes in AD vs control brain tissue | `/scripts/rnaseq/deseq2_analysis.R` | `/data/rnaseq/batch2/fastq/` (n=40: 20 AD, 20 controls, frontal cortex) | In Progress | Waiting for additional samples | \- |
+| `anAD003` | Variant calling WGS | Call germline variants from 30x WGS data, focus on dementia genes | `/workflows/wgs_pipeline.snakefile` | `/data/wgs/batch1/` (n=100, 30x coverage, Illumina NovaSeq) | On Hold | Need more compute resources | \- |
+| `anFTD001` | C9orf72 repeat expansion | Screen for C9orf72 hexanucleotide repeat expansions in FTD cohort | `/scripts/str/c9orf72_screen.sh` | `/data/pcr_data/c9_screening.csv` (n=250 FTD patients) | Complete | 15 patients positive for expansion | `anFTD001_summary.xlsx` |
+
+**Field Descriptions:**
+
+-   **ID**: Short unique identifier with project prefix (e.g., anAD001, anFTD002, anLBD001)
+-   **Name**: Short descriptive name of the analysis
+-   **Description**: Brief explanation of what you're analyzing and why
+-   **Link**: Path to main script/workflow, or URL to documentation
+-   **Data**: Path to input data + brief description (sample size, data type, source)
+-   **Status**: Current state (Complete, In Progress, On Hold, Failed, Planned)
+-   **Notes**: Important details, issues encountered, decisions made
+-   **Report/Output**: Link to results folder, report file, or final output location
+:::
+
+------------------------------------------------------------------------
+
+### Example Filled Catalogue Entry
+
+Here's what a completed entry looks like:
+
+``` markdown
+ID: anAD004
+Name: WGS Variant Calling - Batch 1
+Description: Called germline variants from WGS data (30x coverage) in 100 
+             dementia patients to identify rare pathogenic variants in 
+             known dementia genes (PSEN1, APP, MAPT, GRN, etc.)
+Link: /scripts/variant_calling/wgs_pipeline_v2.3.snakefile
+Data: /data/wgs/raw_fastq/batch1/ (n=100: 75 AD, 15 FTD, 10 LBD; 
+      Illumina NovaSeq 6000, 30x coverage, paired-end 150bp)
+Status: Complete
+Notes: Sample WGS_045 failed QC (coverage 18x), excluded from analysis. 
+       Re-ran BQSR after initial Ti/Tv ratio was low (1.8). Used hg38 
+       reference, GATK v4.2.6, filtered to 45 dementia genes.
+       Final n=99 samples passed QC.
+Report/Output: /results/wgs/batch1_variants/anAD004_final_report.html
+               Key finding: 12 rare pathogenic/likely pathogenic variants 
+               identified, 8 previously reported in ClinVar
+```
+
+**What to include in the Data column:**
+
+-   **File path or location**: Where the input data is stored
+-   **Sample size**: Number of individuals/samples (n=X)
+-   **Breakdown**: Cases vs controls, disease subtypes
+-   **Data type**: WGS, WES, RNA-seq, genotyping array, etc.
+-   **Sequencing details**: Platform, coverage, read length (if relevant)
+-   **Tissue/source**: Brain region, blood, etc.
+
+**Examples of good Data entries:**
+
+-   `/data/genotypes/cohort_A.bed` (n=1,200: 600 AD cases, 600 controls; Illumina GSAMD v3 array)
+-   `/data/rnaseq/hippocampus/batch3/` (n=50: 25 AD, 25 controls; 50M reads/sample, PE100)
+-   `/data/methylation/frontal_cortex.csv` (n=80, Illumina EPIC array, 850K CpGs)
+-   UKDRI WGS Cohort, Batch 2: `/project/wgs_b2/` (n=200, 30x WGS, NovaSeq)
+-   Public data: GEO:GSE12345 (n=36, Affymetrix microarray, temporal cortex)
+
+------------------------------------------------------------------------
+
+### Tips for Maintaining Your Catalogue
+
+1.  **Update in real-time:** Fill in fields as you go, not after the fact
+2.  **Be specific:** Future you won't remember vague descriptions
+3.  **Version everything:** Note exact software versions
+4.  **Link to everything:** Include full paths to data, scripts, results
+5.  **Note failures too:** Document what didn't work and why
+6.  **Regular reviews:** Weekly, check status and update priorities
+
+------------------------------------------------------------------------
+
+## Project Folder Structure {#project-folder-structure}
+
+### Why Standard Structure Matters
+
+Using a consistent folder structure for every analysis:
+
+-   You always know where to find things
+-   Collaborators can navigate your projects
+-   Scripts can use predictable paths
+-   Easier to share and archive projects
+
+------------------------------------------------------------------------
+
+### Recommended Structure
+
+#### Visual Representation
+
+```         
+project_name/
+│
+├── README.md                      # Project overview and getting started
+├── config.yml                     # Configuration file (if using workflows)
+├── environment.yml                # Conda environment specification
+│
+├── data/                          # All input data
+│   ├── raw/                       # Original, unmodified data (READ-ONLY)
+│   │   ├── fastq/
+│   │   ├── vcf/
+│   │   └── metadata.csv
+│   ├── processed/                 # Cleaned/processed data
+│   │   ├── aligned/
+│   │   ├── filtered/
+│   │   └── normalized/
+│   └── reference/                 # Reference genomes, annotations
+│       ├── hg38.fa
+│       ├── genes.gtf
+│       └── dbsnp.vcf
+│
+├── scripts/                       # All analysis code
+│   ├── 01_qc_and_trimming.sh
+│   ├── 02_alignment.sh
+│   ├── 03_variant_calling.sh
+│   ├── 04_annotation.R
+│   └── utils/                     # Helper functions/modules
+│       ├── plot_functions.R
+│       └── filter_variants.py
+│
+├── workflows/                     # Workflow files (Snakemake/Nextflow)
+│   ├── Snakefile
+│   └── nextflow.config
+│
+├── results/                       # All analysis outputs
+│   ├── qc/
+│   │   ├── fastqc/
+│   │   └── multiqc_report.html
+│   ├── alignments/
+│   │   └── stats/
+│   ├── variants/
+│   │   ├── raw_variants.vcf
+│   │   ├── filtered_variants.vcf
+│   │   └── annotated_variants.vcf
+│   └── figures/
+│       ├── pca_plot.png
+│       ├── manhattan_plot.png
+│       └── expression_heatmap.pdf
+│
+├── reports/                       # Written reports, presentations
+│   ├── analysis_report.html       # Quarto/Rmarkdown output
+│   ├── weekly_updates/
+│   └── manuscript_figures/
+│
+├── logs/                          # Log files from analysis runs
+│   ├── slurm/                     # SLURM job logs
+│   ├── snakemake.log
+│   └── error_logs/
+│
+├── docs/                          # Additional documentation
+│   ├── methods.md
+│   ├── data_dictionary.md
+│   └── analysis_notes.md
+│
+└── archive/                       # Old/deprecated files (for reference)
+    └── old_scripts/
+```
+
+------------------------------------------------------------------------
+
+### Code to Create This Structure
+
+Copy and run this bash script to automatically create the folder structure:
+
+``` bash
+#!/bin/bash
+# Script to create standard bioinformatics project structure
+# Usage: bash create_project_structure.sh project_name
+
+PROJECT_NAME=$1
+
+if [ -z "$PROJECT_NAME" ]; then
+    echo "Error: Please provide a project name"
+    echo "Usage: bash create_project_structure.sh project_name"
+    exit 1
+fi
+
+echo "Creating project structure for: $PROJECT_NAME"
+
+# Create main project directory
+mkdir -p $PROJECT_NAME
+cd $PROJECT_NAME
+
+# Create directory structure
+mkdir -p data/{raw,processed,reference}/{fastq,vcf,bam}
+mkdir -p scripts/utils
+mkdir -p workflows
+mkdir -p results/{qc/{fastqc,multiqc},alignments/stats,variants,figures}
+mkdir -p reports/{weekly_updates,manuscript_figures}
+mkdir -p logs/{slurm,error_logs}
+mkdir -p docs
+mkdir -p archive/old_scripts
+
+# Create README template
+cat > README.md << 'EOF'
+# Project Name
+
+## Overview
+Brief description of the project, research question, and goals.
+
+## Data
+- **Source:** Where data comes from
+- **Sample size:** Number of samples/individuals
+- **Data type:** WGS, WES, RNA-seq, etc.
+
+## Analysis Pipeline
+1. Quality control
+2. Alignment/Mapping
+3. Variant calling / Quantification
+4. Annotation
+5. Statistical analysis
+
+## Key Results
+Summary of main findings (update as project progresses)
+
+## Requirements
+- Software dependencies (see environment.yml)
+- Computing resources needed
+- Reference data required
+
+## Usage
+How to reproduce the analysis:
+```bash
+# Example commands
+conda env create -f environment.yml
+conda activate project_env
+snakemake --cores 8
+```
+     
+
+---
+
+### How to Use the Folder Structure Script
+
+The bash script above automatically creates all the folders and files. Here's how to use it:
+
+**Step 1: Save the script**
+
+Copy the entire bash script above (everything between the ` ```bash ` markers) and save it to a file called `create_project_structure.sh`
+
+You can do this by:
+- Opening a text editor (nano, vim, VS Code, etc.)
+- Pasting the script
+- Saving as `create_project_structure.sh`
+
+**Step 2: Make it executable**
+
+```bash
+chmod +x create_project_structure.sh
+```
+
+**Step 3: Run it with your project name**
+
+``` bash
+./create_project_structure.sh my_analysis_name
+```
+
+Replace `my_analysis_name` with whatever you want to call your project, for example: - `./create_project_structure.sh anAD001` - `./create_project_structure.sh rnaseq_hippocampus` - `./create_project_structure.sh variant_calling_batch1`
+
+**What happens:** The script creates a new folder with your project name, containing all the organized subfolders (data/, scripts/, results/, etc.) plus template files (README.md, .gitignore, etc.)
+
+::: callout-tip
+## Quick Tip
+
+You only need to create and save this script once. Then you can use it to set up the folder structure for all your future projects!
+:::
+
+------------------------------------------------------------------------
+
+### Key Principles
+
+::: callout-tip
+## Folder Structure Best Practices
+
+1.  **Never modify raw data:** Keep `data/raw/` read-only, always work with copies in `data/processed/`
+2.  **Number your scripts:** Prefix with numbers (01\_, 02\_) to show analysis order
+3.  **Use relative paths:** Scripts should work regardless of where the project is located
+4.  **One result, one file:** Don't overwrite results; create new files with dates/versions
+5.  **Document everything:** README files in each major directory explaining contents
+:::
+
+------------------------------------------------------------------------
+
+## Documentation Best Practices
+
+### README Files
+
+Every project needs a good README. Include:
+
+**Essential sections:** - Project overview and goals - Data sources and description - How to run the analysis - Software requirements - Key results/conclusions - Authors and dates
+
+**Example README template:**
+
+```` markdown
+# Dementia GWAS Analysis - APOE Region
+
+## Overview
+Genome-wide association study focused on APOE region in 5,000 AD cases 
+and 10,000 controls to identify rare protective variants.
+
+## Data
+- **Source:** UKDRI Dementia Cohort
+- **Platform:** Illumina GSAMD v3 Array
+- **QC:** Standard QC applied (call rate >95%, HWE p>1e-6, MAF >0.01)
+
+## Analysis Pipeline
+```bash
+# 1. Quality control
+plink --bfile raw_data --geno 0.05 --mind 0.05 --hwe 1e-6 --maf 0.01 --make-bed --out qc_pass
+
+# 2. Association testing
+plink --bfile qc_pass --logistic --covar age_sex.txt --out gwas_results
+
+# 3. Annotation
+./scripts/annotate_variants.R gwas_results.assoc.logistic
+```
+
+## Key Results
+- Genome-wide significant signal at rs429358 (APOE ε4, p=2.3e-125)
+- Novel suggestive signal at rs75627662 (p=3.2e-7)
+- See `results/figures/manhattan_plot.png`
+
+## Requirements
+See `environment.yml` for full list
+- PLINK v1.9
+- R v4.2 with ggplot2, data.table
+
+## Author
+Your Name (your.email@ukdri.ac.uk)
+Date: 2025-10-16
+````
+
+------------------------------------------------------------------------
+
+### Inline Code Comments
+
+**Good commenting practices:**
+
+``` python
+# BAD: Obvious comment
+x = x + 1  # increment x
+
+# GOOD: Explains WHY
+x = x + 1  # adjust for 0-based indexing
+
+# BAD: No context
+threshold = 5e-8
+
+# GOOD: Clear reasoning
+threshold = 5e-8  # genome-wide significance threshold for GWAS
+
+# EXCELLENT: Document complex logic
+# Filter variants: keep only those with:
+# - MAF > 0.01 (common variants for this analysis)
+# - INFO score > 0.8 (well-imputed)
+# - HWE p > 1e-6 (not deviated in controls)
+filtered_vars = variants[
+    (variants['MAF'] > 0.01) & 
+    (variants['INFO'] > 0.8) & 
+    (variants['HWE_P'] > 1e-6)
+]
+```
+
+------------------------------------------------------------------------
+
+### Version Control with Git
+
+::: callout-important
+## Use Git from Day One
+
+Even if working alone, version control is essential for tracking changes, reverting mistakes, and understanding your analysis evolution.
+:::
+
+**Basic Git workflow:**
+
+``` bash
+# Initialize repository
+cd my_project
+git init
+
+# Add files
+git add scripts/analysis.py
+git add README.md
+
+# Commit with meaningful message
+git commit -m "Add initial variant filtering script"
+
+# Continue working...
+# Make changes, then:
+git add scripts/analysis.py
+git commit -m "Fix bug in MAF filtering, now correctly filters < 0.01"
+
+# View history
+git log
+
+# Create branch for experimental analysis
+git branch experimental_method
+git checkout experimental_method
+# ... work on experimental method ...
+
+# Merge back if successful
+git checkout main
+git merge experimental_method
+```
+
+**Commit message best practices:**
+
+``` bash
+# BAD
+git commit -m "fixed stuff"
+git commit -m "update"
+
+# GOOD
+git commit -m "Fix MAF calculation bug causing incorrect filtering"
+git commit -m "Add PCA plot generation to QC script"
+git commit -m "Update README with new analysis pipeline steps"
+```
+
+------------------------------------------------------------------------
+
+## Analysis Reproducibility Checklist
+
+Before considering an analysis complete, verify:
+
+-   [ ] **All code is version controlled** (Git)
+-   [ ] **Software versions documented** (environment.yml or equivalent)
+-   [ ] **Random seeds set** (for any stochastic processes)
+-   [ ] **README explains how to run analysis** from start to finish
+-   [ ] **Analysis catalogue updated** with all key information
+-   [ ] **Folder structure organized** and logical
+-   [ ] **Code commented** explaining complex or non-obvious steps
+-   [ ] **Parameters documented** (all important thresholds, filters, etc.)
+-   [ ] **Input data described** (source, processing, QC)
+-   [ ] **Output data described** (what files contain, how to interpret)
+-   [ ] **Dependencies listed** (all required software, libraries, data)
+-   [ ] **Test data provided** (or documented where to get it)
+
+------------------------------------------------------------------------
+
+## Referencing & Citations
+
+### Why Proper Citation Matters
+
+-   Give credit to tool developers
+-   Allow others to reproduce your work
+-   Required by publishers
+-   Helps track method usage/impact
+
+------------------------------------------------------------------------
+
+### What to Cite
+
+**Always cite:** - Analysis software and tools - Reference genomes and databases - Published methods/algorithms - R packages and Python libraries - Workflow managers - Pre-processing pipelines
+
+------------------------------------------------------------------------
+
+### How to Find Citations
+
+**For bioinformatics tools:**
+
+1.  Check tool's documentation or website
+2.  Look in GitHub README
+3.  Search on PubMed for the tool name
+4.  Check tool's --cite or --citation flag
+5.  Use Bioconda: `conda search <tool> --info`
+
+**Example:**
+
+``` bash
+# Many tools have citation info
+samtools --version  # includes citation
+gatk --version      # includes citation
+```
+
+------------------------------------------------------------------------
+
+### Citation Management
+
+**Use reference managers:** - **Zotero** (free, open-source) - **Mendeley** (free) - **EndNote** (institutional license often available) - **Papers** (Mac)
+
+**Bioinformatics-specific tip:** Create a collection/folder specifically for software/tools cited in your analyses.
+
+------------------------------------------------------------------------
+
+### Example Citations Section
+
+**In your methods:**
+
+``` markdown
+## Software and Tools
+
+Quality control was performed using FastQC v0.11.9 (Andrews, 2010) 
+and MultiQC v1.12 (Ewels et al., 2016). Reads were aligned to the 
+GRCh38 reference genome using BWA-MEM v0.7.17 (Li & Durbin, 2009). 
+Variant calling was performed using GATK v4.2.6 (McKenna et al., 2010), 
+and variants were annotated with VEP v106 (McLaren et al., 2016). 
+Statistical analyses were conducted in R v4.2.0 (R Core Team, 2022) 
+using the following packages: ggplot2 v3.3.6 (Wickham, 2016), 
+data.table v1.14.2 (Dowle & Srinivasan, 2021).
+
+References:
+Andrews, S. (2010). FastQC: a quality control tool for high throughput 
+sequence data.
+
+Ewels, P., Magnusson, M., Lundin, S., & Käller, M. (2016). MultiQC: 
+summarize analysis results for multiple tools and samples in a single 
+report. Bioinformatics, 32(19), 3047-3048.
+
+Li, H., & Durbin, R. (2009). Fast and accurate short read alignment 
+with Burrows-Wheeler transform. Bioinformatics, 25(14), 1754-1760.
+
+[etc.]
+```
+
+------------------------------------------------------------------------
+
+### Quick Reference: Common Tool Citations
+
+**Alignment:** - BWA: Li & Durbin (2009, 2010) - Bowtie2: Langmead & Salzberg (2012) - STAR: Dobin et al. (2013)
+
+**Variant Calling:** - GATK: McKenna et al. (2010), Van der Auwera et al. (2013) - FreeBayes: Garrison & Marth (2012) - BCFtools: Danecek et al. (2021)
+
+**File Processing:** - SAMtools: Li et al. (2009), Danecek et al. (2021) - BEDtools: Quinlan & Hall (2010) - Picard: Broad Institute
+
+**Annotation:** - VEP: McLaren et al. (2016) - ANNOVAR: Wang et al. (2010) - SnpEff: Cingolani et al. (2012)
+
+**Workflows:** - Snakemake: Mölder et al. (2021) - Nextflow: Di Tommaso et al. (2017)
+
+------------------------------------------------------------------------
+
+## Sharing Your Analysis
+
+### When Ready to Share
+
+**For publication:** 1. Clean up code (remove dead code, add comments) 2. Create comprehensive README 3. Test that analysis runs from scratch 4. Upload code to GitHub/GitLab 5. Archive data (if appropriate) to public repository 6. Get DOI for code (Zenodo integration with GitHub)
+
+**For collaboration:** 1. Share via Git repository 2. Include environment file for easy setup 3. Provide example/test data 4. Walk through README together
+
+**For archiving:** - GitHub/GitLab for code - Zenodo for DOIs - Figshare for datasets - dbGaP/EGA for human genomics data (controlled access)
+
+------------------------------------------------------------------------
+
+## Additional Resources
+
+### Templates and Tools
+
+-   [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/): Project template generator
+-   [Snakemake profiles](https://github.com/Snakemake-Profiles): Workflow config templates
+-   [Awesome README](https://github.com/matiassingers/awesome-readme): README examples
+
+### Reproducibility Guides
+
+-   [British Ecological Society Guide to Reproducible Code](https://www.britishecologicalsociety.org/publications/guides-to/)
+-   [rOpenSci Reproducibility Guide](https://ropensci.github.io/reproducibility-guide/)
+-   [The Turing Way](https://the-turing-way.netlify.app/): Handbook for reproducible data science
+
+------------------------------------------------------------------------
+
+## Summary
+
+::: callout-note
+## Key Takeaways
+
+✅ **Keep an analysis catalogue** tracking every analysis\
+✅ **Use consistent folder structures** for all projects\
+✅ **Document everything** with READMEs and comments\
+✅ **Version control with Git** from day one\
+✅ **Cite all tools and resources** properly\
+✅ **Test reproducibility** before sharing or publishing
+
+Your future self will thank you!
+:::
+
+------------------------------------------------------------------------
+
+## Next Steps
+
+-   Download the [analysis catalogue template](#analysis-catalogue) and start using it today
+-   Set up your next project with the [standard folder structure](#project-folder-structure)
+-   Review [Tutorials & Workshops](tutorials-workshops.qmd) for more on reproducibility
+-   Explore [Tools & Setup](tools-setup.qmd) for workflow managers

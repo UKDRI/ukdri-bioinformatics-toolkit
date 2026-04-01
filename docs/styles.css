@@ -1,0 +1,83 @@
+/* Additional custom styles for UKDRI Bioinformatics Toolkit */
+
+/* Improve code block styling */
+pre.sourceCode {
+  background-color: #f8f9fa;
+  border-left: 3px solid #7c3aed;
+  padding: 1rem;
+}
+
+/* Style for inline code */
+code {
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+/* Improve link styling */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Enhance table styling */
+.table {
+  margin: 1.5rem 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 0.75rem;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Improve blockquote styling */
+blockquote {
+  border-left: 4px solid #7c3aed;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Enhance navbar */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styling */
+.nav-footer {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Improve heading anchors */
+h2, h3 {
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar, .nav-footer {
+    display: none;
+  }
+}

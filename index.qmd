@@ -1,0 +1,167 @@
+---
+title: "Welcome to the UKDRI Bioinformatics Toolkit"
+subtitle: "Your comprehensive guide to genomics and bioinformatics for dementia research"
+format:
+  html:
+    toc: true
+---
+
+## About This Toolkit
+
+Welcome! This toolkit is designed to help students and researchers at all levels get started with bioinformatics, with a special focus on genomics and dementia research. Whether you're an undergraduate taking your first steps, a PhD student diving deep into genomics data, or a career changer entering bioinformatics, you'll find resources here tailored to your needs.
+
+::: {.callout-tip}
+## Quick Start
+New to bioinformatics? Start with the [Tools & Setup](tools-setup.qmd) page, then explore our curated [Tutorials & Workshops](tutorials-workshops.qmd).
+:::
+
+## What You'll Find Here
+
+This toolkit is organized into several sections to help you navigate your bioinformatics journey:
+
+### 🛠️ [Tools & Setup](tools-setup.qmd)
+Essential software, databases, and computational tools you'll need, with installation guides and brief descriptions of what each tool does.
+
+### 🧬 [Genomics Fundamentals](genomics-fundamentals.qmd)
+Core concepts in genomics, with a focus on dementia-related research applications.
+
+### 📚 [Tutorials & Workshops](tutorials-workshops.qmd)
+A comprehensive, searchable catalogue of tutorials, courses, and workshops from leading institutions (EMBL-EBI, Carpentries, ARCCA, and more).
+
+### ✅ [Best Practices](best-practices.qmd)
+Critical skills for maintaining reproducible research:
+
+- How to structure your analysis folders
+- Maintaining an analysis catalogue (with downloadable template)
+- Documentation best practices
+- Referencing and citation management
+
+### 🔗 [Resources](resources.qmd)
+Additional databases, tools, communities, and resources for ongoing learning.
+
+---
+
+## Prerequisites
+
+### Background Knowledge
+This toolkit assumes mixed backgrounds - you might come from:
+
+- **Biology/Genetics**: Strong domain knowledge, learning computational skills
+- **Computer Science**: Strong programming skills, learning biology
+- **Statistics/Mathematics**: Strong analytical skills, learning both biology and implementation
+- **Complete beginner**: That's okay! Start with the fundamentals and work your way through
+
+### What You'll Need
+
+::: {.card}
+**Computing Setup**
+
+- Access to a Unix/Linux environment (native, WSL, or virtual machine)
+- Terminal/command line access
+- Text editor (VS Code, Sublime, nano, vim, etc.)
+- Access to HPC/cluster resources (recommended for large-scale analyses)
+:::
+
+::: {.card}
+**Programming Languages**
+
+We recommend familiarity with at least one of:
+
+- **Python**: Widely used for bioinformatics scripting and analysis
+- **R**: Essential for statistical analysis and visualization
+- **Bash/Shell**: Critical for working with command-line tools
+
+Don't worry if you're not proficient yet - we have tutorial links in the [Tutorials & Workshops](tutorials-workshops.qmd) section.
+:::
+
+---
+
+## Learning Pathway Suggestions
+
+### For Complete Beginners
+
+1. Start with [Linux command line basics](tutorials-workshops.qmd#command-line)
+2. Learn [Git for version control](tutorials-workshops.qmd#version-control)
+3. Pick up [Python](tutorials-workshops.qmd#python) or [R basics](tutorials-workshops.qmd#r-programming)
+4. Explore [genomics data wrangling](tutorials-workshops.qmd#genomics-data)
+5. Begin with simple [variant calling tutorials](tutorials-workshops.qmd#variant-calling)
+
+### For Those with Biology Background
+
+1. Strengthen [command line skills](tutorials-workshops.qmd#command-line)
+2. Learn one scripting language ([Python](tutorials-workshops.qmd#python) recommended)
+3. Understand [NGS data types and formats](genomics-fundamentals.qmd)
+4. Practice with [workflow tools](tutorials-workshops.qmd#workflows) (Nextflow/Snakemake)
+5. Apply to [dementia genomics projects](genomics-fundamentals.qmd#dementia-genomics)
+
+### For Those with Computational Background
+
+1. Learn [biology and genomics fundamentals](genomics-fundamentals.qmd)
+2. Understand [NGS technologies](tutorials-workshops.qmd#ngs)
+3. Get familiar with [genomics file formats](genomics-fundamentals.qmd#file-formats)
+4. Explore [bioinformatics-specific tools](tools-setup.qmd)
+5. Apply skills to [functional genomics](tutorials-workshops.qmd#functional-genomics)
+
+---
+
+## Key Principles for Success
+
+::: {.callout-important}
+## Documentation is Everything
+From day one, document your analyses thoroughly. Your future self (and collaborators) will thank you. See our [Best Practices](best-practices.qmd) page for templates and tips.
+:::
+
+### Essential Habits
+
+**📝 Keep an Analysis Catalogue**
+Track every analysis you run - parameters, data sources, results, and interpretations. We provide a template in the [Best Practices](best-practices.qmd) section.
+
+**📁 Consistent Folder Structure**
+Use a standardized folder structure for all projects. This makes your work reproducible and easier to navigate.
+
+**🔄 Version Control Everything**
+Use Git for code and analysis scripts. Future you will be grateful.
+
+**📊 Reproducibility First**
+Write code that others (including future you) can run and understand. Use workflow management tools, document dependencies, and create clear README files.
+
+**🧪 Validate Your Results**
+Always sanity-check your results. Use positive/negative controls, compare methods, and understand the biology behind your findings.
+
+---
+
+## How to Use This Toolkit
+
+This is a **living resource** you can return to whenever you have questions:
+
+- 🔍 **Use the search function** to find specific topics
+- 📑 **Bookmark pages** you reference frequently  
+- 💻 **Copy code snippets** directly from examples
+- 🔗 **Follow tutorial links** for deeper dives
+- 📧 **Share with colleagues** who might benefit
+
+::: {.callout-note}
+## Keep Learning
+Bioinformatics is a rapidly evolving field. The tutorials and resources linked here are regularly updated by their maintainers. Set aside time for continuous learning!
+:::
+
+---
+
+## Support and Community
+
+### Getting Help
+
+- Consult this toolkit first
+- Check tool documentation and GitHub issues
+- Ask colleagues and local bioinformatics support
+- Engage with online communities (Biostars, Stack Overflow, etc.)
+
+### Contributing
+
+If you find broken links, have suggestions for additional resources, or want to contribute content, please reach out to the toolkit maintainers.
+
+---
+
+## Ready to Begin?
+
+👉 Head to [Tools & Setup](tools-setup.qmd) to get your environment configured, or explore [Tutorials & Workshops](tutorials-workshops.qmd) to start learning!

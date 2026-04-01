@@ -1,0 +1,606 @@
+---
+title: "Essential Tools & Setup"
+subtitle: "Genomics and bioinformatics software you need to know"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+---
+
+## Overview
+
+This page covers essential tools for genomics analysis, particularly focused on dementia research applications. Each tool includes a description, use cases, and installation instructions.
+
+::: {.callout-tip}
+## Installation Tip
+Many bioinformatics tools can be installed via package managers like `conda` or `mamba`, which handle dependencies automatically. We recommend setting up a conda environment for your projects.
+:::
+
+---
+
+## Setting Up Your Environment
+
+### Conda/Mamba Setup
+
+```bash
+# Install Miniconda (if not already installed)
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# Install mamba (faster alternative to conda)
+conda install -c conda-forge mamba
+
+# Create a bioinformatics environment
+mamba create -n bioinfo python=3.10
+conda activate bioinfo
+```
+
+---
+
+## Core Genomics Tools
+
+### Sequence Alignment & Mapping
+
+#### BWA (Burrows-Wheeler Aligner)
+**What it does:** Fast alignment of short DNA sequences to a reference genome. Industry standard for DNA-seq alignment.
+
+**Use cases:** Whole genome sequencing, exome sequencing, variant calling
+
+**Installation:**
+```bash
+# Via conda
+mamba install -c bioconda bwa
+
+# Or from source
+git clone https://github.com/lh3/bwa.git
+cd bwa
+make
+```
+
+**Basic usage:**
+```bash
+# Index reference genome
+bwa index reference.fasta
+
+# Align paired-end reads
+bwa mem reference.fasta read1.fq read2.fq > aligned.sam
+```
+
+---
+
+#### Bowtie2
+**What it does:** Ultra-fast alignment tool for sequencing reads, especially good for reads >50bp.
+
+**Use cases:** RNA-seq, ChIP-seq, ATAC-seq alignment
+
+**Installation:**
+```bash
+mamba install -c bioconda bowtie2
+```
+
+---
+
+#### STAR (Spliced Transcripts Alignment to a Reference)
+**What it does:** Fast RNA-seq aligner that handles splicing. Designed specifically for aligning RNA-seq reads to genomes.
+
+**Use cases:** RNA-seq analysis, identifying splice junctions, gene expression quantification
+
+**Installation:**
+```bash
+mamba install -c bioconda star
+```
+
+**Basic usage:**
+```bash
+# Generate genome index
+STAR --runMode genomeGenerate --genomeDir genome_index \
+     --genomeFastaFiles reference.fasta --sjdbGTFfile annotations.gtf
+
+# Align reads
+STAR --genomeDir genome_index --readFilesIn read1.fq read2.fq \
+     --outFileNamePrefix sample_ --outSAMtype BAM SortedByCoordinate
+```
+
+---
+
+### File Processing & Manipulation
+
+#### SAMtools
+**What it does:** Swiss army knife for manipulating SAM/BAM/CRAM files. Essential for sorting, indexing, filtering, and viewing alignment files.
+
+**Use cases:** Post-alignment processing, file format conversion, basic statistics, variant calling prep
+
+**Installation:**
+```bash
+mamba install -c bioconda samtools
+```
+
+**Common commands:**
+```bash
+# Convert SAM to BAM
+samtools view -b input.sam > output.bam
+
+# Sort BAM file
+samtools sort input.bam -o sorted.bam
+
+# Index BAM file
+samtools index sorted.bam
+
+# View alignment statistics
+samtools flagstat sorted.bam
+
+# Extract specific region
+samtools view sorted.bam chr1:1000000-2000000
+```
+
+---
+
+#### BCFtools
+**What it does:** Utilities for variant calling and manipulating VCF/BCF files. Part of the SAMtools suite.
+
+**Use cases:** Variant calling, filtering variants, merging VCF files, format conversion
+
+**Installation:**
+```bash
+mamba install -c bioconda bcftools
+```
+
+**Basic usage:**
+```bash
+# Call variants
+bcftools mpileup -f reference.fasta sorted.bam | bcftools call -mv -O v -o variants.vcf
+
+# Filter variants by quality
+bcftools filter -i 'QUAL>20' variants.vcf -o filtered.vcf
+
+# Extract sample statistics
+bcftools stats variants.vcf
+```
+
+---
+
+#### BEDtools
+**What it does:** Powerful toolkit for genome arithmetic - comparing, manipulating, and annotating genomic features in BED, VCF, BAM, and GFF formats.
+
+**Use cases:** Finding overlapping regions, calculating coverage, extracting sequences, intersecting genomic intervals
+
+**Installation:**
+```bash
+mamba install -c bioconda bedtools
+```
+
+**Example operations:**
+```bash
+# Intersect two BED files
+bedtools intersect -a file1.bed -b file2.bed > overlap.bed
+
+# Calculate coverage
+bedtools coverage -a regions.bed -b alignments.bam > coverage.txt
+
+# Extract FASTA sequences from BED intervals
+bedtools getfasta -fi genome.fa -bed regions.bed -fo output.fa
+```
+
+---
+
+### Variant Calling
+
+#### GATK (Genome Analysis Toolkit)
+**What it does:** Comprehensive toolkit for variant discovery, particularly SNPs and indels. Gold standard for germline variant calling.
+
+**Use cases:** Germline variant calling (SNPs/indels), somatic variant calling, copy number variation, genotyping
+
+**Installation:**
+```bash
+# Via conda
+mamba install -c bioconda gatk4
+
+# Or download directly
+wget https://github.com/broadinstitute/gatk/releases/download/4.x.x.x/gatk-4.x.x.x.zip
+unzip gatk-4.x.x.x.zip
+```
+
+**Key GATK workflow steps:**
+```bash
+# Mark duplicates
+gatk MarkDuplicates -I sorted.bam -O marked.bam -M metrics.txt
+
+# Base quality score recalibration
+gatk BaseRecalibrator -I marked.bam -R reference.fasta \
+     --known-sites dbsnp.vcf -O recal_data.table
+
+gatk ApplyBQSR -I marked.bam -R reference.fasta \
+     --bqsr-recal-file recal_data.table -O recalibrated.bam
+
+# Call variants
+gatk HaplotypeCaller -R reference.fasta -I recalibrated.bam \
+     -O variants.vcf
+```
+
+---
+
+#### FreeBayes
+**What it does:** Bayesian genetic variant detector. Good alternative to GATK, simpler to use for basic variant calling.
+
+**Use cases:** SNP/indel discovery, population genetics, simpler variant calling workflows
+
+**Installation:**
+```bash
+mamba install -c bioconda freebayes
+```
+
+---
+
+#### VarScan
+**What it does:** Variant detection in massively parallel sequencing data. Particularly good for somatic mutation detection.
+
+**Use cases:** Somatic mutations, copy number alterations, comparing tumor/normal samples
+
+**Installation:**
+```bash
+mamba install -c bioconda varscan
+```
+
+---
+
+### Variant Annotation
+
+#### VEP (Variant Effect Predictor)
+**What it does:** Determines the effect of variants (SNPs, insertions, deletions) on genes, transcripts, and protein sequence. From Ensembl.
+
+**Use cases:** Functional annotation, predicting consequences of variants, prioritizing variants
+
+**Installation:**
+```bash
+mamba install -c bioconda ensembl-vep
+
+# Download cache (required for offline use)
+vep_install -a cf -s homo_sapiens -y GRCh38
+```
+
+**Basic usage:**
+```bash
+vep -i variants.vcf -o annotated.vcf --cache --assembly GRCh38 \
+    --everything --vcf --force_overwrite
+```
+
+---
+
+#### SnpEff
+**What it does:** Genetic variant annotation and effect prediction. Simpler alternative to VEP.
+
+**Use cases:** Variant annotation, functional effect prediction
+
+**Installation:**
+```bash
+mamba install -c bioconda snpeff
+
+# Download database
+snpeff download GRCh38.99
+```
+
+---
+
+#### ANNOVAR
+**What it does:** Efficient annotation of genetic variants with diverse databases.
+
+**Use cases:** Variant annotation, integrating multiple annotation sources
+
+**Installation:** Download from [ANNOVAR website](https://annovar.openbioinformatics.org/)
+
+---
+
+### Quality Control
+
+#### FastQC
+**What it does:** Quality control tool for high throughput sequence data. Generates reports on read quality, GC content, adapter contamination, etc.
+
+**Use cases:** Pre- and post-processing QC, identifying problems with sequencing data
+
+**Installation:**
+```bash
+mamba install -c bioconda fastqc
+```
+
+**Usage:**
+```bash
+# Run on single file
+fastqc sample.fastq.gz
+
+# Run on multiple files
+fastqc *.fastq.gz -o qc_results/
+```
+
+---
+
+#### MultiQC
+**What it does:** Aggregates results from multiple bioinformatics analyses into a single report. Works with FastQC, STAR, GATK, and many other tools.
+
+**Use cases:** Summarizing QC across multiple samples, project-wide quality reports
+
+**Installation:**
+```bash
+mamba install -c bioconda multiqc
+```
+
+**Usage:**
+```bash
+# Run in directory containing analysis results
+multiqc .
+```
+
+---
+
+#### Trimmomatic
+**What it does:** Flexible read trimming tool for Illumina NGS data. Removes adapters and low-quality bases.
+
+**Use cases:** Pre-processing raw reads, adapter removal, quality trimming
+
+**Installation:**
+```bash
+mamba install -c bioconda trimmomatic
+```
+
+---
+
+### Long-Read Sequencing
+
+#### Minimap2
+**What it does:** Versatile sequence alignment program for long reads (PacBio, Oxford Nanopore). Very fast.
+
+**Use cases:** Long-read alignment, genome assembly, RNA isoform detection
+
+**Installation:**
+```bash
+mamba install -c bioconda minimap2
+```
+
+---
+
+#### Canu
+**What it does:** Long-read assembler for high-noise single-molecule sequencing.
+
+**Use cases:** De novo genome assembly from PacBio/Nanopore reads
+
+**Installation:**
+```bash
+mamba install -c bioconda canu
+```
+
+---
+
+### Structural Variation
+
+#### Manta
+**What it does:** Structural variant caller for Illumina sequencing data.
+
+**Use cases:** Detecting deletions, insertions, inversions, duplications, translocations
+
+**Installation:**
+```bash
+mamba install -c bioconda manta
+```
+
+---
+
+#### Delly
+**What it does:** Integrated structural variant prediction method.
+
+**Use cases:** SV detection in germline and somatic contexts
+
+**Installation:**
+```bash
+mamba install -c bioconda delly
+```
+
+---
+
+## RNA-seq Specific Tools
+
+### Quantification
+
+#### Salmon
+**What it does:** Ultra-fast transcript quantification from RNA-seq data. Uses pseudoalignment.
+
+**Use cases:** Gene/transcript expression quantification
+
+**Installation:**
+```bash
+mamba install -c bioconda salmon
+```
+
+---
+
+#### featureCounts (from Subread package)
+**What it does:** Counts reads mapping to genomic features (genes, exons, etc.).
+
+**Use cases:** RNA-seq read counting for differential expression analysis
+
+**Installation:**
+```bash
+mamba install -c bioconda subread
+```
+
+---
+
+#### RSEM
+**What it does:** Accurate transcript quantification from RNA-seq data.
+
+**Use cases:** Isoform-level expression estimation
+
+**Installation:**
+```bash
+mamba install -c bioconda rsem
+```
+
+---
+
+### Differential Expression
+
+#### DESeq2
+**What it does:** R package for differential gene expression analysis using count data.
+
+**Use cases:** Finding differentially expressed genes between conditions
+
+**Installation (in R):**
+```r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("DESeq2")
+```
+
+---
+
+#### edgeR
+**What it does:** R package for differential expression analysis of RNA-seq data.
+
+**Use cases:** Differential expression, particularly for datasets with biological replication
+
+**Installation (in R):**
+```r
+BiocManager::install("edgeR")
+```
+
+---
+
+## Workflow Management
+
+### Nextflow
+**What it does:** Workflow management system for data-driven computational pipelines.
+
+**Use cases:** Building reproducible, scalable bioinformatics pipelines
+
+**Installation:**
+```bash
+# Via conda
+mamba install -c bioconda nextflow
+
+# Or direct download
+curl -s https://get.nextflow.io | bash
+```
+
+---
+
+### Snakemake
+**What it does:** Python-based workflow management system.
+
+**Use cases:** Creating reproducible and scalable data analyses
+
+**Installation:**
+```bash
+mamba install -c conda-forge -c bioconda snakemake
+```
+
+---
+
+## Containerization
+
+### Docker
+**What it does:** Platform for developing, shipping, and running applications in containers.
+
+**Use cases:** Reproducible environments, sharing analyses
+
+**Installation:** See [Docker documentation](https://docs.docker.com/get-docker/)
+
+---
+
+### Singularity/Apptainer
+**What it does:** Container platform designed for HPC environments. More HPC-friendly than Docker.
+
+**Use cases:** Running containers on HPC clusters
+
+**Installation:**
+```bash
+mamba install -c conda-forge singularity
+```
+
+---
+
+## Dementia-Relevant Databases & Tools
+
+### PGS Catalog
+**What it does:** Repository of polygenic scores (PGS) for various traits and diseases, including neurodegenerative conditions.
+
+**Use cases:** Calculating polygenic risk scores for dementia and related traits
+
+**Access:** [PGS Catalog](https://www.pgscatalog.org/)
+
+---
+
+### GWAS Catalog
+**What it does:** Curated collection of genome-wide association studies.
+
+**Use cases:** Finding known genetic associations with dementia, AD, other neurodegenerative diseases
+
+**Access:** [GWAS Catalog](https://www.ebi.ac.uk/gwas/)
+
+---
+
+### Ensembl
+**What it does:** Genome browser and database for vertebrate genomes.
+
+**Use cases:** Genome annotation, variant annotation, accessing reference genomes
+
+**Access:** [Ensembl](https://www.ensembl.org/)
+
+---
+
+### AlzGene
+**What it does:** Field synopsis of genetic association studies in Alzheimer's disease.
+
+**Use cases:** AD genetics research, known genetic risk factors
+
+**Access:** [AlzGene](http://www.alzgene.org/)
+
+---
+
+## Tips for Tool Management
+
+::: {.callout-important}
+## Version Control is Critical
+Always document which version of each tool you used. Results can vary between versions.
+:::
+
+### Best Practices
+
+1. **Use environment management** (conda, mamba) to keep projects isolated
+2. **Document versions** in your README and analysis catalogue
+3. **Create environment files** for reproducibility:
+   ```bash
+   conda env export > environment.yml
+   ```
+4. **Test on small datasets first** before running large analyses
+5. **Read the documentation** - most tools have excellent docs with examples
+
+---
+
+## Quick Reference Commands
+
+```bash
+# Check if tool is installed
+which bwa
+samtools --version
+
+# List conda environments
+conda env list
+
+# Activate environment
+conda activate bioinfo
+
+# Export environment for reproducibility
+conda env export > environment.yml
+
+# Create environment from file
+conda env create -f environment.yml
+```
+
+---
+
+## Next Steps
+
+Now that you know what tools are available:
+
+1. Set up your computing environment with the essential tools
+2. Explore [Genomics Fundamentals](genomics-fundamentals.qmd) to understand the data types
+3. Try hands-on [Tutorials & Workshops](tutorials-workshops.qmd)
+4. Establish [Best Practices](best-practices.qmd) for your analyses

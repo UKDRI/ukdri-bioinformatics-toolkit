@@ -1,0 +1,574 @@
+---
+title: "Tutorials & Workshops"
+subtitle: "Curated learning resources for bioinformatics"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+
+## Overview
+
+This page contains a comprehensive, searchable catalogue of tutorials, courses, and workshops for bioinformatics. Resources are organized by topic and source, with most being free and self-paced.
+
+::: {.callout-tip}
+## How to Use This Catalogue
+- Use browser search (Ctrl/Cmd+F) to find specific topics
+- Start with foundational skills (Linux, programming) before diving into advanced genomics
+- Many courses can be audited for free - look for "Free/self-paced" access
+- Track your progress using the [Analysis Catalogue Template](best-practices.qmd#analysis-catalogue)
+:::
+
+---
+
+## Genomics & NGS {#genomics-ngs}
+
+### Short-Read Sequencing
+
+#### Genome bioinformatics: from short- to long-read sequencing
+**Provider:** EMBL-EBI  
+**Topics:** NGS & long-read sequencing, variant calling, workflows  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://www.ebi.ac.uk/training/events/genome-bioinformatics-from-short-to-long-read-sequencing)
+
+**What you'll learn:** Comprehensive introduction to genome sequencing technologies, transitioning from short-read to long-read approaches, with practical variant calling examples.
+
+---
+
+#### Genome bioinformatics: resequencing & variant calling {#variant-calling}
+**Provider:** EMBL-EBI  
+**Topics:** Short-read variant calling, quality control  
+**Access:** Free / self-paced  
+**Link:** [Course Materials](https://www.ebi.ac.uk/training/materials/genome-bioinformatics-resequencing-and-variant-calling-materials)
+
+**What you'll learn:** Hands-on variant calling workflow from raw sequencing data through to filtered, annotated variants.
+
+---
+
+#### Data Wrangling and Processing for Genomics {#genomics-data}
+**Provider:** The Carpentries  
+**Topics:** FASTQ, QC, mapping, variant calling preparation  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://datacarpentry.org/wrangling-genomics/)
+
+**What you'll learn:** Essential skills for processing genomic data including quality control, trimming, alignment, and preparing data for variant calling.
+
+---
+
+#### Introduction to Next-Generation Sequencing Technologies {#ngs}
+**Provider:** OmicsTutorials  
+**Topics:** NGS background  
+**Access:** Video tutorial  
+**Link:** [Watch Video](https://omicstutorials.com/introduction-to-next-generation-sequencing-technologies-video/)
+
+---
+
+### Structural Variants
+
+#### Structural Variant detection and comparison (SVs)
+**Provider:** Physalia Courses  
+**Topics:** SV detection, SV comparison  
+**Access:** Some materials open  
+**Link:** [Course Page](https://www.physalia-courses.org/courses-workshops/svs)
+
+**What you'll learn:** Methods for detecting and analyzing structural variations including deletions, duplications, inversions, and translocations.
+
+---
+
+### Variant Annotation & Analysis
+
+#### Exploring genotype–phenotype data using Ensembl
+**Provider:** EMBL-EBI  
+**Topics:** Variant annotation, phenotype links  
+**Access:** Self-paced  
+**Link:** [Course Page](https://www.ebi.ac.uk/training/online/courses/exploring-genotype-phenotype-data-using-the-ensembl-tools)
+
+---
+
+#### Variant calling and annotation (FutureLearn)
+**Provider:** FutureLearn  
+**Topics:** SNV/indel calling, annotation  
+**Access:** Free (register to audit)  
+**Link:** [Course Page](https://www.futurelearn.com/info/courses/making-sense-of-genomic-data-covid-19-web-based-bioinformatics/0/steps/319530)
+
+---
+
+## Population & Complex Trait Genetics
+
+### GWAS & Polygenic Scores
+
+#### GWAS Catalog
+**Provider:** EMBL-EBI  
+**Topics:** GWAS data exploration, variant annotation  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://www.ebi.ac.uk/training/online/courses/gwas-catalog)
+
+**What you'll learn:** How to navigate and interpret GWAS results, understand genome-wide significance, and explore disease-associated variants.
+
+---
+
+#### Calculating polygenic scores with the Polygenic Score Catalog Calculator
+**Provider:** EMBL-EBI  
+**Topics:** PRS / PGS Catalog usage  
+**Access:** Webinar (on-demand)  
+**Link:** [Webinar](https://www.ebi.ac.uk/training/events/calculating-polygenic-scores-polygenic-score-catalog-calculator)
+
+**What you'll learn:** How to calculate and interpret polygenic risk scores for complex traits and diseases.
+
+---
+
+#### Analysing linkage disequilibrium with Ensembl
+**Provider:** EMBL-EBI  
+**Topics:** LD analysis, population genetics  
+**Access:** Webinar (on-demand)  
+**Link:** [Webinar](https://www.ebi.ac.uk/training/events/analysing-linkage-disequilibrium-ensembl)
+
+---
+
+### Translational Genomics
+
+#### From variant to drug target: using the expanded toolbox
+**Provider:** EMBL-EBI  
+**Topics:** Translational genomics, target prioritisation  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://www.ebi.ac.uk/training/online/courses/from-variant-to-drug-target-using-the-expanded-toolbox)
+
+**What you'll learn:** How to move from genetic variants identified in GWAS to potential therapeutic targets.
+
+---
+
+## Functional Genomics
+
+#### Functional Genomics I–III
+**Provider:** EMBL-EBI  
+**Topics:** Experimental design, gene regulation, functional assays  
+**Access:** Free / self-paced  
+**Link:** [Course Series](https://www.ebi.ac.uk/training/online/courses/functional-genomics-i-introduction-and-design)
+
+**What you'll learn:** Comprehensive introduction to functional genomics including ChIP-seq, ATAC-seq, and other regulatory genomics approaches.
+
+---
+
+#### Functional Genomics: From Data to Biological Insight
+**Provider:** OmicsTutorials  
+**Topics:** Functional genomics overview & tools  
+**Access:** Article / guide  
+**Link:** [Read Article](https://omicstutorials.com/functional-genomics-from-data-to-biological-insight/)
+
+---
+
+## Multi-Omics & Integration
+
+#### Introduction to multi-omics data integration and visualisation
+**Provider:** EMBL-EBI  
+**Topics:** Multi-omics integration, visualization  
+**Access:** Self-paced  
+**Link:** [Course Materials](https://www.ebi.ac.uk/training/materials/introduction-to-multiomics-data-integration-and-visualisation-materials)
+
+**What you'll learn:** Methods for integrating genomics, transcriptomics, proteomics, and other omics data types for comprehensive biological insights.
+
+---
+
+## Dementia-Specific Resources
+
+#### Data-driven approaches to understanding dementia
+**Provider:** EMBL-EBI  
+**Topics:** Systems / omics approaches to dementia  
+**Access:** Webinar (on-demand)  
+**Link:** [Webinar](https://www.ebi.ac.uk/training/events/data-driven-approaches-to-understanding-dementia)
+
+**What you'll learn:** How genomics, transcriptomics, and other data-driven approaches are being applied to understand dementia mechanisms and identify therapeutic targets.
+
+---
+
+## Workflow Management {#workflows}
+
+### Snakemake
+
+#### Snakemake for Bioinformatics
+**Provider:** Carpentries Incubator  
+**Topics:** Snakemake basics, rules, conda, workflows  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://carpentries-incubator.github.io/snakemake-novice-bioinformatics)
+
+**What you'll learn:** Build reproducible, scalable bioinformatics pipelines using Snakemake.
+
+---
+
+#### Galaxy Training: Snakemake Tutorial
+**Provider:** Galaxy Project  
+**Topics:** Workflow automation, Make → Snakemake transition  
+**Access:** Free / self-paced  
+**Link:** [Tutorial](https://training.galaxyproject.org/training-material/topics/data-science/tutorials/snakemake/tutorial.html)
+
+---
+
+#### Reproducible and Scalable Research with Snakemake & Containers
+**Provider:** SIB Swiss Institute of Bioinformatics  
+**Topics:** Snakemake, Docker/Singularity, reproducibility  
+**Access:** Free materials  
+**Link:** [Training Materials](https://sib-swiss.github.io/containers-snakemake-training)
+
+---
+
+### Nextflow
+
+#### Deploying Nextflow pipelines in the cloud
+**Provider:** EMBL-EBI  
+**Topics:** Nextflow, workflow management  
+**Access:** Webinar (on-demand)  
+**Link:** [Webinar](https://www.ebi.ac.uk/training/events/deploying-nextflow-pipelines-in-the-cloud)
+
+---
+
+#### Introduction to Workflow Tool Nextflow
+**Provider:** ARCCA  
+**Topics:** Workflow management with Nextflow  
+**Access:** Recorded sessions / material  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+### Reproducibility
+
+#### Reproducibility in Bioinformatics
+**Provider:** Physalia Courses  
+**Topics:** Containers, versioning, Snakemake  
+**Access:** Some slides/materials open  
+**Link:** [Course Page](https://www.physalia-courses.org/courses-workshops/bioinformatics-reproducibility)
+
+---
+
+## Programming Languages
+
+### Python {#python}
+
+#### Programming with Python
+**Provider:** Software Carpentry  
+**Topics:** Python basics  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://swcarpentry.github.io/python-novice-inflammation/)
+
+**What you'll learn:** Python fundamentals including variables, loops, functions, and data structures - essential for bioinformatics scripting.
+
+---
+
+#### Plotting and Programming in Python
+**Provider:** Data Carpentry  
+**Topics:** Python + matplotlib  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://datacarpentry.org/python-ecology-lesson/)
+
+**What you'll learn:** Python programming with a focus on data analysis and visualization using matplotlib and pandas.
+
+---
+
+#### Introduction to Python
+**Provider:** ARCCA  
+**Topics:** Python basics, HPC adaptation  
+**Access:** Recorded sessions  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+#### Advanced Python
+**Provider:** ARCCA  
+**Topics:** Advanced Python programming  
+**Access:** Recorded sessions  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+### R Programming {#r-programming}
+
+#### Programming with R
+**Provider:** Software Carpentry  
+**Topics:** R basics  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://swcarpentry.github.io/r-novice-gapminder/)
+
+**What you'll learn:** R fundamentals for data analysis and statistical computing.
+
+---
+
+#### R for Reproducible Scientific Analysis
+**Provider:** Software Carpentry  
+**Topics:** R workflows, reproducibility  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://swcarpentry.github.io/r-novice-gapminder/)
+
+---
+
+### Databases & SQL
+
+#### Databases and SQL
+**Provider:** Software Carpentry  
+**Topics:** SQL basics, relational queries  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://swcarpentry.github.io/sql-novice-survey/)
+
+**What you'll learn:** Query databases using SQL - useful for working with genomic databases and large datasets.
+
+---
+
+## Version Control {#version-control}
+
+#### Version Control with Git
+**Provider:** Software Carpentry  
+**Topics:** Git, commits, branches, GitHub  
+**Access:** Free / self-paced  
+**Link:** [Course Page](https://swcarpentry.github.io/git-novice/)
+
+**What you'll learn:** Essential Git skills for version controlling code and collaborating on projects. **Critical skill for reproducible research.**
+
+---
+
+## Linux & Command Line {#command-line}
+
+#### Introduction to Linux with Command Line
+**Provider:** ARCCA  
+**Topics:** Linux CLI basics, navigation, commands  
+**Access:** Recorded sessions + material  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+**What you'll learn:** Navigate and use the Linux command line - absolutely essential for bioinformatics work.
+
+---
+
+#### Introduction to Linux Shell Scripting
+**Provider:** ARCCA  
+**Topics:** Writing shell scripts, loops, automation  
+**Access:** Recorded sessions + material  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+#### Comprehensive Guide to Setting up and Using Linux for Bioinformatics Analysis
+**Provider:** OmicsTutorials  
+**Topics:** Linux setup, shell basics, tooling for bioinformatics  
+**Access:** Article / guide  
+**Link:** [Read Guide](https://omicstutorials.com/comprehensive-guide-to-setting-up-and-using-linux-for-bioinformatics-analysis/)
+
+---
+
+#### Mastering Bioinformatics Analysis with FASTA Sequences
+**Provider:** OmicsTutorials  
+**Topics:** FASTA workflows, Unix/Linux skills  
+**Access:** Article / guide  
+**Link:** [Read Guide](https://omicstutorials.com/mastering-bioinformatics-analysis-with-fasta-sequences-a-biologists-guide-to-unix-and-linux/)
+
+---
+
+## High-Performance Computing (HPC)
+
+#### Supercomputing for Beginners
+**Provider:** ARCCA  
+**Topics:** HPC basics, job submission, SLURM  
+**Access:** Recorded material  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+**What you'll learn:** How to use HPC clusters for large-scale bioinformatics analyses, job scheduling with SLURM.
+
+---
+
+#### SLURM – Advanced Topics
+**Provider:** ARCCA  
+**Topics:** Job arrays, resource management  
+**Access:** Recorded / material  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+#### Introduction to Parallel Programming (OpenMP & MPI)
+**Provider:** ARCCA  
+**Topics:** Parallelisation, shared/distributed memory  
+**Access:** Recorded sessions / slides  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+## Containers & Reproducibility
+
+#### Introduction to Containers and Singularity
+**Provider:** ARCCA  
+**Topics:** Containerisation, reproducible environments  
+**Access:** Recorded sessions + material  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+**What you'll learn:** Use containers (Docker/Singularity) to create reproducible computational environments for bioinformatics pipelines.
+
+---
+
+## Machine Learning & AI
+
+#### Introduction to Machine Learning Applications
+**Provider:** ARCCA  
+**Topics:** ML basics, HPC applications  
+**Access:** Recorded sessions  
+**Link:** [ARCCA Training](https://arcca.github.io/index.html)
+
+---
+
+#### Basics of Large Language Models – transformers to LLMs
+**Provider:** EMBL-EBI  
+**Topics:** Transformer & LLM foundations  
+**Access:** Webinar (on-demand)  
+**Link:** [Webinar](https://www.ebi.ac.uk/training/events/basics-large-language-models-transformers-llms)
+
+---
+
+#### Developing a dataset for LLM projects
+**Provider:** EMBL-EBI  
+**Topics:** Data curation for LLMs  
+**Access:** Webinar (on-demand)  
+**Link:** [Webinar](https://www.ebi.ac.uk/training/events/developing-a-dataset-for-llm-projects)
+
+---
+
+#### How to Apply LLM Models in Bioinformatics Research (2025)
+**Provider:** OmicsTutorials  
+**Topics:** LLMs in bioinformatics  
+**Access:** Articles / guides  
+**Link:** [Category Page](https://omicstutorials.com/category/bioinformatics/)
+
+---
+
+## Comprehensive Guides & Best Practices
+
+#### Comprehensive Bioinformatics Analysis Guide
+**Provider:** OmicsTutorials  
+**Topics:** End-to-end overview (data → modeling), pipeline thinking  
+**Access:** Article / guide  
+**Link:** [Read Guide](https://omicstutorials.com/comprehensive-bioinformatics-analysis-guide-from-data-acquisition-to-advanced-predictive-modeling-real-time-implementation/)
+
+**What you'll learn:** Complete workflow from data acquisition through advanced analysis and modeling.
+
+---
+
+#### Things I Wish I Knew When Entering the Bioinformatics Field
+**Provider:** OmicsTutorials  
+**Topics:** Variant calling, long-read assembly (Canu), workflow tips  
+**Access:** Article / guide  
+**Link:** [Read Article](https://omicstutorials.com/things-i-wish-i-knew-when-entering-the-bioinformatics-field/)
+
+**What you'll learn:** Practical advice and lessons learned - highly recommended for beginners!
+
+---
+
+#### 52 Common Mistakes in Bioinformatics and How to Avoid Them
+**Provider:** OmicsTutorials  
+**Topics:** Pitfalls incl. alignment/variant calling, parallelising jobs  
+**Access:** Article / guide  
+**Link:** [Read Guide](https://omicstutorials.com/step-by-step-guide-52-common-mistakes-in-bioinformatics-and-how-to-avoid-them/)
+
+**What you'll learn:** Common pitfalls and how to avoid them - save yourself time and frustration!
+
+---
+
+#### Quick Guide Tutorial: Challenges in Big Data and Bioinformatics
+**Provider:** OmicsTutorials  
+**Topics:** SAMtools, BEDTools, variant calling basics  
+**Access:** Article / guide  
+**Link:** [Read Guide](https://omicstutorials.com/quick-guide-tutorial-challenges-in-big-data-and-bioinformatics/)
+
+---
+
+#### Introduction to bioinformatics Sequencing resource
+**Provider:** OmicsTutorials  
+**Topics:** Sequencing resources overview  
+**Access:** Video tutorial  
+**Link:** [Watch Video](https://omicstutorials.com/introduction-to-bioinformatics-sequencing-resource-video-tutorial/)
+
+---
+
+## Recommended Learning Paths
+
+### Path 1: Complete Beginner to Variant Calling
+
+1. [Introduction to Linux](#command-line)
+2. [Version Control with Git](#version-control)
+3. [Programming with Python](#python) or [R](#r-programming)
+4. [Data Wrangling and Processing for Genomics](#genomics-data)
+5. [Genome bioinformatics: resequencing & variant calling](#variant-calling)
+6. [Snakemake for Bioinformatics](#workflows)
+
+---
+
+### Path 2: RNA-seq Analysis
+
+1. Ensure Linux/command line proficiency
+2. Learn R ([Programming with R](#r-programming))
+3. [Functional Genomics series](#functional-genomics)
+4. Practice with RNA-seq specific tools (see [Tools & Setup](tools-setup.qmd))
+
+---
+
+### Path 3: Population Genetics & GWAS
+
+1. Strengthen programming skills (Python or R)
+2. [GWAS Catalog course](#gwas)
+3. [Analysing linkage disequilibrium](#ld)
+4. [Calculating polygenic scores](#prs)
+5. Population genetics tutorials
+
+---
+
+### Path 4: Reproducible Research Focus
+
+1. [Version Control with Git](#version-control)
+2. [Introduction to Containers](#containers)
+3. [Snakemake](#workflows) or [Nextflow](#nextflow) workflows
+4. [Reproducibility in Bioinformatics](#reproducibility)
+5. Implement [Best Practices](best-practices.qmd)
+
+---
+
+## Tips for Self-Study
+
+::: {.callout-tip}
+## Learning Strategies
+
+**Set aside dedicated time**
+- Block out specific times for learning
+- Consistency matters more than long sessions
+
+**Learn by doing**
+- Work through all the examples
+- Apply concepts to your own data/projects
+- Don't just read - actually run the code!
+
+**Take notes**
+- Document commands that work
+- Note common error messages and solutions
+- Build your own reference guide
+
+**Join communities**
+- Biostars, Stack Overflow for Q&A
+- Twitter/Mastodon for staying current
+- Local bioinformatics groups or journal clubs
+
+**Track your learning**
+- Use our [Analysis Catalogue](best-practices.qmd) to track courses
+- Set goals and milestones
+- Revisit topics periodically for reinforcement
+:::
+
+---
+
+## Staying Current
+
+Bioinformatics evolves rapidly. Ways to keep learning:
+
+- Subscribe to journal tables of contents (Nature Methods, Bioinformatics, etc.)
+- Follow method developers on social media
+- Attend conferences and webinars
+- Read preprints (bioRxiv)
+- Take advanced courses yearly
+
+---
+
+## Next Steps
+
+- Implement what you've learned with [Best Practices](best-practices.qmd)
+- Explore [Essential Tools](tools-setup.qmd) for your workflow
+- Check [Resources](resources.qmd) for additional databases and communities

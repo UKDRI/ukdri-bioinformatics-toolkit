@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Best Practices for Reproducible Research – UKDRI Bioinformatics Toolkit</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4c29adad017bb1baa061f3a64c16486a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UKDRI Bioinformatics Toolkit</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tools-setup.html"> 
+<span class="menu-text">Tools &amp; Setup</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./genomics-fundamentals.html"> 
+<span class="menu-text">Genomics Fundamentals</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorials-workshops.html"> 
+<span class="menu-text">Tutorials &amp; Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./best-practices.html" aria-current="page"> 
+<span class="menu-text">Best Practices</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-best-practices-matter" id="toc-why-best-practices-matter" class="nav-link active" data-scroll-target="#why-best-practices-matter">Why Best Practices Matter</a></li>
+  <li><a href="#analysis-catalogue" id="toc-analysis-catalogue" class="nav-link" data-scroll-target="#analysis-catalogue">Analysis Catalogue</a>
+  <ul class="collapse">
+  <li><a href="#what-is-an-analysis-catalogue" id="toc-what-is-an-analysis-catalogue" class="nav-link" data-scroll-target="#what-is-an-analysis-catalogue">What is an Analysis Catalogue?</a></li>
+  <li><a href="#why-keep-one" id="toc-why-keep-one" class="nav-link" data-scroll-target="#why-keep-one">Why Keep One?</a></li>
+  <li><a href="#analysis-catalogue-template" id="toc-analysis-catalogue-template" class="nav-link" data-scroll-target="#analysis-catalogue-template">Analysis Catalogue Template</a></li>
+  <li><a href="#example-filled-catalogue-entry" id="toc-example-filled-catalogue-entry" class="nav-link" data-scroll-target="#example-filled-catalogue-entry">Example Filled Catalogue Entry</a></li>
+  <li><a href="#tips-for-maintaining-your-catalogue" id="toc-tips-for-maintaining-your-catalogue" class="nav-link" data-scroll-target="#tips-for-maintaining-your-catalogue">Tips for Maintaining Your Catalogue</a></li>
+  </ul></li>
+  <li><a href="#project-folder-structure" id="toc-project-folder-structure" class="nav-link" data-scroll-target="#project-folder-structure">Project Folder Structure</a>
+  <ul class="collapse">
+  <li><a href="#why-standard-structure-matters" id="toc-why-standard-structure-matters" class="nav-link" data-scroll-target="#why-standard-structure-matters">Why Standard Structure Matters</a></li>
+  <li><a href="#recommended-structure" id="toc-recommended-structure" class="nav-link" data-scroll-target="#recommended-structure">Recommended Structure</a></li>
+  <li><a href="#code-to-create-this-structure" id="toc-code-to-create-this-structure" class="nav-link" data-scroll-target="#code-to-create-this-structure">Code to Create This Structure</a></li>
+  <li><a href="#how-to-use-the-folder-structure-script" id="toc-how-to-use-the-folder-structure-script" class="nav-link" data-scroll-target="#how-to-use-the-folder-structure-script">How to Use the Folder Structure Script</a></li>
+  <li><a href="#key-principles" id="toc-key-principles" class="nav-link" data-scroll-target="#key-principles">Key Principles</a></li>
+  </ul></li>
+  <li><a href="#documentation-best-practices" id="toc-documentation-best-practices" class="nav-link" data-scroll-target="#documentation-best-practices">Documentation Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#readme-files" id="toc-readme-files" class="nav-link" data-scroll-target="#readme-files">README Files</a></li>
+  <li><a href="#inline-code-comments" id="toc-inline-code-comments" class="nav-link" data-scroll-target="#inline-code-comments">Inline Code Comments</a></li>
+  <li><a href="#version-control-with-git" id="toc-version-control-with-git" class="nav-link" data-scroll-target="#version-control-with-git">Version Control with Git</a></li>
+  </ul></li>
+  <li><a href="#analysis-reproducibility-checklist" id="toc-analysis-reproducibility-checklist" class="nav-link" data-scroll-target="#analysis-reproducibility-checklist">Analysis Reproducibility Checklist</a></li>
+  <li><a href="#referencing-citations" id="toc-referencing-citations" class="nav-link" data-scroll-target="#referencing-citations">Referencing &amp; Citations</a>
+  <ul class="collapse">
+  <li><a href="#why-proper-citation-matters" id="toc-why-proper-citation-matters" class="nav-link" data-scroll-target="#why-proper-citation-matters">Why Proper Citation Matters</a></li>
+  <li><a href="#what-to-cite" id="toc-what-to-cite" class="nav-link" data-scroll-target="#what-to-cite">What to Cite</a></li>
+  <li><a href="#how-to-find-citations" id="toc-how-to-find-citations" class="nav-link" data-scroll-target="#how-to-find-citations">How to Find Citations</a></li>
+  <li><a href="#citation-management" id="toc-citation-management" class="nav-link" data-scroll-target="#citation-management">Citation Management</a></li>
+  <li><a href="#example-citations-section" id="toc-example-citations-section" class="nav-link" data-scroll-target="#example-citations-section">Example Citations Section</a></li>
+  <li><a href="#quick-reference-common-tool-citations" id="toc-quick-reference-common-tool-citations" class="nav-link" data-scroll-target="#quick-reference-common-tool-citations">Quick Reference: Common Tool Citations</a></li>
+  </ul></li>
+  <li><a href="#sharing-your-analysis" id="toc-sharing-your-analysis" class="nav-link" data-scroll-target="#sharing-your-analysis">Sharing Your Analysis</a>
+  <ul class="collapse">
+  <li><a href="#when-ready-to-share" id="toc-when-ready-to-share" class="nav-link" data-scroll-target="#when-ready-to-share">When Ready to Share</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a>
+  <ul class="collapse">
+  <li><a href="#templates-and-tools" id="toc-templates-and-tools" class="nav-link" data-scroll-target="#templates-and-tools">Templates and Tools</a></li>
+  <li><a href="#reproducibility-guides" id="toc-reproducibility-guides" class="nav-link" data-scroll-target="#reproducibility-guides">Reproducibility Guides</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Best Practices for Reproducible Research</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Essential workflows for maintaining high-quality bioinformatics analyses</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="why-best-practices-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-best-practices-matter">Why Best Practices Matter</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Golden Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Your most important collaborator is your future self 6 months from now.</strong></p>
+<p>Document everything as if you’ll need to re-run the analysis later (you will), or explain it to someone else (you will).</p>
+</div>
+</div>
+<p>Maintaining good practices from day one:</p>
+<ul>
+<li>Saves time in the long run</li>
+<li>Prevents errors and lost work</li>
+<li>Enables reproducibility</li>
+<li>Facilitates collaboration</li>
+<li>Makes your research more impactful</li>
+</ul>
+<hr>
+</section>
+<section id="analysis-catalogue" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-catalogue">Analysis Catalogue</h2>
+<section id="what-is-an-analysis-catalogue" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-an-analysis-catalogue">What is an Analysis Catalogue?</h3>
+<p>An analysis catalogue is a <strong>structured record of every analysis you perform</strong>. It’s your lab notebook for bioinformatics - tracking what you did, when, why, and what you found.</p>
+</section>
+<section id="why-keep-one" class="level3">
+<h3 class="anchored" data-anchor-id="why-keep-one">Why Keep One?</h3>
+<ul>
+<li><strong>Remember what you did:</strong> Months later, you’ll need to recall exact parameters</li>
+<li><strong>Avoid duplication:</strong> Quickly check if you’ve already run similar analyses</li>
+<li><strong>Share with collaborators:</strong> Clear documentation helps others understand your work</li>
+<li><strong>Publication requirements:</strong> Journals require detailed methods - your catalogue has it all</li>
+<li><strong>Troubleshoot issues:</strong> When something goes wrong, trace back your steps</li>
+</ul>
+<hr>
+</section>
+<section id="analysis-catalogue-template" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-catalogue-template">Analysis Catalogue Template</h3>
+<p>Below is a template you can adapt. Keep it in a spreadsheet (Excel, Google Sheets) or as a CSV file in your project directory.</p>
+<section id="download-template" class="level4">
+<h4 class="anchored" data-anchor-id="download-template">Download Template</h4>
+<div class="card">
+<p><strong>Copy this table structure</strong> to create your own analysis catalogue:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Name</th>
+<th>Description</th>
+<th>Link</th>
+<th>Data</th>
+<th>Status</th>
+<th>Notes</th>
+<th>Report/Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>anAD001</code></td>
+<td>GWAS APOE variants</td>
+<td>Test association between APOE variants and AD age of onset in cohort</td>
+<td><code>/scripts/gwas/run_gwas_apoe.sh</code></td>
+<td><code>/data/cohort1/genotypes_QC.vcf</code> (n=5,432: 2,100 cases, 3,332 controls)</td>
+<td>Complete</td>
+<td>Removed 3 outlier samples, see QC log</td>
+<td><code>anAD001_report</code></td>
+</tr>
+<tr class="even">
+<td><code>anAD002</code></td>
+<td>RNA-seq differential expression</td>
+<td>Identify differentially expressed genes in AD vs control brain tissue</td>
+<td><code>/scripts/rnaseq/deseq2_analysis.R</code></td>
+<td><code>/data/rnaseq/batch2/fastq/</code> (n=40: 20 AD, 20 controls, frontal cortex)</td>
+<td>In Progress</td>
+<td>Waiting for additional samples</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><code>anAD003</code></td>
+<td>Variant calling WGS</td>
+<td>Call germline variants from 30x WGS data, focus on dementia genes</td>
+<td><code>/workflows/wgs_pipeline.snakefile</code></td>
+<td><code>/data/wgs/batch1/</code> (n=100, 30x coverage, Illumina NovaSeq)</td>
+<td>On Hold</td>
+<td>Need more compute resources</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td><code>anFTD001</code></td>
+<td>C9orf72 repeat expansion</td>
+<td>Screen for C9orf72 hexanucleotide repeat expansions in FTD cohort</td>
+<td><code>/scripts/str/c9orf72_screen.sh</code></td>
+<td><code>/data/pcr_data/c9_screening.csv</code> (n=250 FTD patients)</td>
+<td>Complete</td>
+<td>15 patients positive for expansion</td>
+<td><code>anFTD001_summary.xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Field Descriptions:</strong></p>
+<ul>
+<li><strong>ID</strong>: Short unique identifier with project prefix (e.g., anAD001, anFTD002, anLBD001)</li>
+<li><strong>Name</strong>: Short descriptive name of the analysis</li>
+<li><strong>Description</strong>: Brief explanation of what you’re analyzing and why</li>
+<li><strong>Link</strong>: Path to main script/workflow, or URL to documentation</li>
+<li><strong>Data</strong>: Path to input data + brief description (sample size, data type, source)</li>
+<li><strong>Status</strong>: Current state (Complete, In Progress, On Hold, Failed, Planned)</li>
+<li><strong>Notes</strong>: Important details, issues encountered, decisions made</li>
+<li><strong>Report/Output</strong>: Link to results folder, report file, or final output location</li>
+</ul>
+</div>
+<hr>
+</section>
+</section>
+<section id="example-filled-catalogue-entry" class="level3">
+<h3 class="anchored" data-anchor-id="example-filled-catalogue-entry">Example Filled Catalogue Entry</h3>
+<p>Here’s what a completed entry looks like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">ID:</span><span class="co"> anAD004</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">Name:</span><span class="co"> WGS Variant Calling - Batch 1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">Description:</span><span class="co"> Called germline variants from WGS data (30x coverage) in 100 </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">             dementia patients to identify rare pathogenic variants in </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">             known dementia genes (PSEN1, APP, MAPT, GRN, etc.)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">Link:</span><span class="co"> /scripts/variant_calling/wgs_pipeline_v2.3.snakefile</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">Data:</span><span class="co"> /data/wgs/raw_fastq/batch1/ (n=100: 75 AD, 15 FTD, 10 LBD; </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">      Illumina NovaSeq 6000, 30x coverage, paired-end 150bp)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">Status:</span><span class="co"> Complete</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="an">Notes:</span><span class="co"> Sample WGS_045 failed QC (coverage 18x), excluded from analysis. </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">       Re-ran BQSR after initial Ti/Tv ratio was low (1.8). Used hg38 </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">       reference, GATK v4.2.6, filtered to 45 dementia genes.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">       Final n=99 samples passed QC.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Report/Output: /results/wgs/batch1_variants/anAD004_final_report.html</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>               Key finding: 12 rare pathogenic/likely pathogenic variants </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>               identified, 8 previously reported in ClinVar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>What to include in the Data column:</strong></p>
+<ul>
+<li><strong>File path or location</strong>: Where the input data is stored</li>
+<li><strong>Sample size</strong>: Number of individuals/samples (n=X)</li>
+<li><strong>Breakdown</strong>: Cases vs controls, disease subtypes</li>
+<li><strong>Data type</strong>: WGS, WES, RNA-seq, genotyping array, etc.</li>
+<li><strong>Sequencing details</strong>: Platform, coverage, read length (if relevant)</li>
+<li><strong>Tissue/source</strong>: Brain region, blood, etc.</li>
+</ul>
+<p><strong>Examples of good Data entries:</strong></p>
+<ul>
+<li><code>/data/genotypes/cohort_A.bed</code> (n=1,200: 600 AD cases, 600 controls; Illumina GSAMD v3 array)</li>
+<li><code>/data/rnaseq/hippocampus/batch3/</code> (n=50: 25 AD, 25 controls; 50M reads/sample, PE100)</li>
+<li><code>/data/methylation/frontal_cortex.csv</code> (n=80, Illumina EPIC array, 850K CpGs)</li>
+<li>UKDRI WGS Cohort, Batch 2: <code>/project/wgs_b2/</code> (n=200, 30x WGS, NovaSeq)</li>
+<li>Public data: GEO:GSE12345 (n=36, Affymetrix microarray, temporal cortex)</li>
+</ul>
+<hr>
+</section>
+<section id="tips-for-maintaining-your-catalogue" class="level3">
+<h3 class="anchored" data-anchor-id="tips-for-maintaining-your-catalogue">Tips for Maintaining Your Catalogue</h3>
+<ol type="1">
+<li><strong>Update in real-time:</strong> Fill in fields as you go, not after the fact</li>
+<li><strong>Be specific:</strong> Future you won’t remember vague descriptions</li>
+<li><strong>Version everything:</strong> Note exact software versions</li>
+<li><strong>Link to everything:</strong> Include full paths to data, scripts, results</li>
+<li><strong>Note failures too:</strong> Document what didn’t work and why</li>
+<li><strong>Regular reviews:</strong> Weekly, check status and update priorities</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="project-folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="project-folder-structure">Project Folder Structure</h2>
+<section id="why-standard-structure-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-standard-structure-matters">Why Standard Structure Matters</h3>
+<p>Using a consistent folder structure for every analysis:</p>
+<ul>
+<li>You always know where to find things</li>
+<li>Collaborators can navigate your projects</li>
+<li>Scripts can use predictable paths</li>
+<li>Easier to share and archive projects</li>
+</ul>
+<hr>
+</section>
+<section id="recommended-structure" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-structure">Recommended Structure</h3>
+<section id="visual-representation" class="level4">
+<h4 class="anchored" data-anchor-id="visual-representation">Visual Representation</h4>
+<pre><code>project_name/
+│
+├── README.md                      # Project overview and getting started
+├── config.yml                     # Configuration file (if using workflows)
+├── environment.yml                # Conda environment specification
+│
+├── data/                          # All input data
+│   ├── raw/                       # Original, unmodified data (READ-ONLY)
+│   │   ├── fastq/
+│   │   ├── vcf/
+│   │   └── metadata.csv
+│   ├── processed/                 # Cleaned/processed data
+│   │   ├── aligned/
+│   │   ├── filtered/
+│   │   └── normalized/
+│   └── reference/                 # Reference genomes, annotations
+│       ├── hg38.fa
+│       ├── genes.gtf
+│       └── dbsnp.vcf
+│
+├── scripts/                       # All analysis code
+│   ├── 01_qc_and_trimming.sh
+│   ├── 02_alignment.sh
+│   ├── 03_variant_calling.sh
+│   ├── 04_annotation.R
+│   └── utils/                     # Helper functions/modules
+│       ├── plot_functions.R
+│       └── filter_variants.py
+│
+├── workflows/                     # Workflow files (Snakemake/Nextflow)
+│   ├── Snakefile
+│   └── nextflow.config
+│
+├── results/                       # All analysis outputs
+│   ├── qc/
+│   │   ├── fastqc/
+│   │   └── multiqc_report.html
+│   ├── alignments/
+│   │   └── stats/
+│   ├── variants/
+│   │   ├── raw_variants.vcf
+│   │   ├── filtered_variants.vcf
+│   │   └── annotated_variants.vcf
+│   └── figures/
+│       ├── pca_plot.png
+│       ├── manhattan_plot.png
+│       └── expression_heatmap.pdf
+│
+├── reports/                       # Written reports, presentations
+│   ├── analysis_report.html       # Quarto/Rmarkdown output
+│   ├── weekly_updates/
+│   └── manuscript_figures/
+│
+├── logs/                          # Log files from analysis runs
+│   ├── slurm/                     # SLURM job logs
+│   ├── snakemake.log
+│   └── error_logs/
+│
+├── docs/                          # Additional documentation
+│   ├── methods.md
+│   ├── data_dictionary.md
+│   └── analysis_notes.md
+│
+└── archive/                       # Old/deprecated files (for reference)
+    └── old_scripts/</code></pre>
+<hr>
+</section>
+</section>
+<section id="code-to-create-this-structure" class="level3">
+<h3 class="anchored" data-anchor-id="code-to-create-this-structure">Code to Create This Structure</h3>
+<p>Copy and run this bash script to automatically create the folder structure:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Script to create standard bioinformatics project structure</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage: bash create_project_structure.sh project_name</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="va">PROJECT_NAME</span><span class="op">=</span><span class="va">$1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">"</span><span class="va">$PROJECT_NAME</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Error: Please provide a project name"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Usage: bash create_project_structure.sh project_name"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Creating project structure for: </span><span class="va">$PROJECT_NAME</span><span class="st">"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create main project directory</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$PROJECT_NAME</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$PROJECT_NAME</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directory structure</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> data/<span class="dt">{raw</span><span class="op">,</span><span class="dt">processed</span><span class="op">,</span><span class="dt">reference}</span>/<span class="dt">{fastq</span><span class="op">,</span><span class="dt">vcf</span><span class="op">,</span><span class="dt">bam}</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> scripts/utils</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> workflows</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> results/<span class="dt">{qc/{fastqc</span><span class="op">,</span><span class="dt">multiqc}</span><span class="op">,</span><span class="dt">alignments/stats</span><span class="op">,</span><span class="dt">variants</span><span class="op">,</span><span class="dt">figures}</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> reports/<span class="dt">{weekly_updates</span><span class="op">,</span><span class="dt">manuscript_figures}</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> logs/<span class="dt">{slurm</span><span class="op">,</span><span class="dt">error_logs}</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> docs</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> archive/old_scripts</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Create README template</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> README.md <span class="op">&lt;&lt; 'EOF'</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="st"># Project Name</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="st">## Overview</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="st">Brief description of the project, research question, and goals.</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="st">## Data</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="st">- **Source:** Where data comes from</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="st">- **Sample size:** Number of samples/individuals</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="st">- **Data type:** WGS, WES, RNA-seq, etc.</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="st">## Analysis Pipeline</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="st">1. Quality control</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="st">2. Alignment/Mapping</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="st">3. Variant calling / Quantification</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="st">4. Annotation</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="st">5. Statistical analysis</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="st">## Key Results</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="st">Summary of main findings (update as project progresses)</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="st">## Requirements</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="st">- Software dependencies (see environment.yml)</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="st">- Computing resources needed</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="st">- Reference data required</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="st">## Usage</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="st">How to reproduce the analysis:</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="st">```bash</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="st"># Example commands</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="st">conda env create -f environment.yml</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="st">conda activate project_env</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="st">snakemake --cores 8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="how-to-use-the-folder-structure-script" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-the-folder-structure-script">How to Use the Folder Structure Script</h3>
+<p>The bash script above automatically creates all the folders and files. Here’s how to use it:</p>
+<p><strong>Step 1: Save the script</strong></p>
+<p>Copy the entire bash script above (everything between the <code>```bash</code> markers) and save it to a file called <code>create_project_structure.sh</code></p>
+<p>You can do this by: - Opening a text editor (nano, vim, VS Code, etc.) - Pasting the script - Saving as <code>create_project_structure.sh</code></p>
+<p><strong>Step 2: Make it executable</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x create_project_structure.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Step 3: Run it with your project name</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./create_project_structure.sh</span> my_analysis_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace <code>my_analysis_name</code> with whatever you want to call your project, for example: - <code>./create_project_structure.sh anAD001</code> - <code>./create_project_structure.sh rnaseq_hippocampus</code> - <code>./create_project_structure.sh variant_calling_batch1</code></p>
+<p><strong>What happens:</strong> The script creates a new folder with your project name, containing all the organized subfolders (data/, scripts/, results/, etc.) plus template files (README.md, .gitignore, etc.)</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quick Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You only need to create and save this script once. Then you can use it to set up the folder structure for all your future projects!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="key-principles" class="level3">
+<h3 class="anchored" data-anchor-id="key-principles">Key Principles</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Folder Structure Best Practices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Never modify raw data:</strong> Keep <code>data/raw/</code> read-only, always work with copies in <code>data/processed/</code></li>
+<li><strong>Number your scripts:</strong> Prefix with numbers (01_, 02_) to show analysis order</li>
+<li><strong>Use relative paths:</strong> Scripts should work regardless of where the project is located</li>
+<li><strong>One result, one file:</strong> Don’t overwrite results; create new files with dates/versions</li>
+<li><strong>Document everything:</strong> README files in each major directory explaining contents</li>
+</ol>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="documentation-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-best-practices">Documentation Best Practices</h2>
+<section id="readme-files" class="level3">
+<h3 class="anchored" data-anchor-id="readme-files">README Files</h3>
+<p>Every project needs a good README. Include:</p>
+<p><strong>Essential sections:</strong> - Project overview and goals - Data sources and description - How to run the analysis - Software requirements - Key results/conclusions - Authors and dates</p>
+<p><strong>Example README template:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Dementia GWAS Analysis - APOE Region</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Genome-wide association study focused on APOE region in 5,000 AD cases </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>and 10,000 controls to identify rare protective variants.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Source:** UKDRI Dementia Cohort</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Platform:** Illumina GSAMD v3 Array</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**QC:** Standard QC applied (call rate &gt;95%, HWE p&gt;1e-6, MAF &gt;0.01)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis Pipeline</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Quality control</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--bfile</span> raw_data <span class="at">--geno</span> 0.05 <span class="at">--mind</span> 0.05 <span class="at">--hwe</span> 1e-6 <span class="at">--maf</span> 0.01 <span class="at">--make-bed</span> <span class="at">--out</span> qc_pass</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Association testing</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--bfile</span> qc_pass <span class="at">--logistic</span> <span class="at">--covar</span> age_sex.txt <span class="at">--out</span> gwas_results</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Annotation</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/annotate_variants.R</span> gwas_results.assoc.logistic</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Results</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Genome-wide significant signal at rs429358 (APOE ε4, p=2.3e-125)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Novel suggestive signal at rs75627662 (p=3.2e-7)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>See <span class="in">`results/figures/manhattan_plot.png`</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Requirements</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>See <span class="in">`environment.yml`</span> for full list</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PLINK v1.9</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>R v4.2 with ggplot2, data.table</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Author</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>Your Name (your.email@ukdri.ac.uk)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>Date: 2025-10-16</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="inline-code-comments" class="level3">
+<h3 class="anchored" data-anchor-id="inline-code-comments">Inline Code Comments</h3>
+<p><strong>Good commenting practices:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD: Obvious comment</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span>  <span class="co"># increment x</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># GOOD: Explains WHY</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span>  <span class="co"># adjust for 0-based indexing</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD: No context</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="fl">5e-8</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># GOOD: Clear reasoning</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="fl">5e-8</span>  <span class="co"># genome-wide significance threshold for GWAS</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># EXCELLENT: Document complex logic</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter variants: keep only those with:</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># - MAF &gt; 0.01 (common variants for this analysis)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># - INFO score &gt; 0.8 (well-imputed)</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># - HWE p &gt; 1e-6 (not deviated in controls)</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>filtered_vars <span class="op">=</span> variants[</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    (variants[<span class="st">'MAF'</span>] <span class="op">&gt;</span> <span class="fl">0.01</span>) <span class="op">&amp;</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    (variants[<span class="st">'INFO'</span>] <span class="op">&gt;</span> <span class="fl">0.8</span>) <span class="op">&amp;</span> </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    (variants[<span class="st">'HWE_P'</span>] <span class="op">&gt;</span> <span class="fl">1e-6</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="version-control-with-git" class="level3">
+<h3 class="anchored" data-anchor-id="version-control-with-git">Version Control with Git</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use Git from Day One
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even if working alone, version control is essential for tracking changes, reverting mistakes, and understanding your analysis evolution.</p>
+</div>
+</div>
+<p><strong>Basic Git workflow:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize repository</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_project</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add files</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add scripts/analysis.py</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit with meaningful message</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add initial variant filtering script"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Continue working...</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Make changes, then:</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add scripts/analysis.py</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Fix bug in MAF filtering, now correctly filters &lt; 0.01"</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># View history</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Create branch for experimental analysis</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch experimental_method</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout experimental_method</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># ... work on experimental method ...</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge back if successful</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge experimental_method</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Commit message best practices:</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"fixed stuff"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"update"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># GOOD</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Fix MAF calculation bug causing incorrect filtering"</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add PCA plot generation to QC script"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Update README with new analysis pipeline steps"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="analysis-reproducibility-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-reproducibility-checklist">Analysis Reproducibility Checklist</h2>
+<p>Before considering an analysis complete, verify:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>All code is version controlled</strong> (Git)</label></li>
+<li><label><input type="checkbox"><strong>Software versions documented</strong> (environment.yml or equivalent)</label></li>
+<li><label><input type="checkbox"><strong>Random seeds set</strong> (for any stochastic processes)</label></li>
+<li><label><input type="checkbox"><strong>README explains how to run analysis</strong> from start to finish</label></li>
+<li><label><input type="checkbox"><strong>Analysis catalogue updated</strong> with all key information</label></li>
+<li><label><input type="checkbox"><strong>Folder structure organized</strong> and logical</label></li>
+<li><label><input type="checkbox"><strong>Code commented</strong> explaining complex or non-obvious steps</label></li>
+<li><label><input type="checkbox"><strong>Parameters documented</strong> (all important thresholds, filters, etc.)</label></li>
+<li><label><input type="checkbox"><strong>Input data described</strong> (source, processing, QC)</label></li>
+<li><label><input type="checkbox"><strong>Output data described</strong> (what files contain, how to interpret)</label></li>
+<li><label><input type="checkbox"><strong>Dependencies listed</strong> (all required software, libraries, data)</label></li>
+<li><label><input type="checkbox"><strong>Test data provided</strong> (or documented where to get it)</label></li>
+</ul>
+<hr>
+</section>
+<section id="referencing-citations" class="level2">
+<h2 class="anchored" data-anchor-id="referencing-citations">Referencing &amp; Citations</h2>
+<section id="why-proper-citation-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-proper-citation-matters">Why Proper Citation Matters</h3>
+<ul>
+<li>Give credit to tool developers</li>
+<li>Allow others to reproduce your work</li>
+<li>Required by publishers</li>
+<li>Helps track method usage/impact</li>
+</ul>
+<hr>
+</section>
+<section id="what-to-cite" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-cite">What to Cite</h3>
+<p><strong>Always cite:</strong> - Analysis software and tools - Reference genomes and databases - Published methods/algorithms - R packages and Python libraries - Workflow managers - Pre-processing pipelines</p>
+<hr>
+</section>
+<section id="how-to-find-citations" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-find-citations">How to Find Citations</h3>
+<p><strong>For bioinformatics tools:</strong></p>
+<ol type="1">
+<li>Check tool’s documentation or website</li>
+<li>Look in GitHub README</li>
+<li>Search on PubMed for the tool name</li>
+<li>Check tool’s –cite or –citation flag</li>
+<li>Use Bioconda: <code>conda search &lt;tool&gt; --info</code></li>
+</ol>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Many tools have citation info</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> <span class="at">--version</span>  <span class="co"># includes citation</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gatk</span> <span class="at">--version</span>      <span class="co"># includes citation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="citation-management" class="level3">
+<h3 class="anchored" data-anchor-id="citation-management">Citation Management</h3>
+<p><strong>Use reference managers:</strong> - <strong>Zotero</strong> (free, open-source) - <strong>Mendeley</strong> (free) - <strong>EndNote</strong> (institutional license often available) - <strong>Papers</strong> (Mac)</p>
+<p><strong>Bioinformatics-specific tip:</strong> Create a collection/folder specifically for software/tools cited in your analyses.</p>
+<hr>
+</section>
+<section id="example-citations-section" class="level3">
+<h3 class="anchored" data-anchor-id="example-citations-section">Example Citations Section</h3>
+<p><strong>In your methods:</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software and Tools</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Quality control was performed using FastQC v0.11.9 (Andrews, 2010) </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>and MultiQC v1.12 (Ewels et al., 2016). Reads were aligned to the </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>GRCh38 reference genome using BWA-MEM v0.7.17 (Li &amp; Durbin, 2009). </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>Variant calling was performed using GATK v4.2.6 (McKenna et al., 2010), </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>and variants were annotated with VEP v106 (McLaren et al., 2016). </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>Statistical analyses were conducted in R v4.2.0 (R Core Team, 2022) </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>using the following packages: ggplot2 v3.3.6 (Wickham, 2016), </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>data.table v1.14.2 (Dowle &amp; Srinivasan, 2021).</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>References:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>Andrews, S. (2010). FastQC: a quality control tool for high throughput </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>sequence data.</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>Ewels, P., Magnusson, M., Lundin, S., &amp; Käller, M. (2016). MultiQC: </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>summarize analysis results for multiple tools and samples in a single </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>report. Bioinformatics, 32(19), 3047-3048.</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>Li, H., &amp; Durbin, R. (2009). Fast and accurate short read alignment </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>with Burrows-Wheeler transform. Bioinformatics, 25(14), 1754-1760.</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">etc.</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="quick-reference-common-tool-citations" class="level3">
+<h3 class="anchored" data-anchor-id="quick-reference-common-tool-citations">Quick Reference: Common Tool Citations</h3>
+<p><strong>Alignment:</strong> - BWA: Li &amp; Durbin (2009, 2010) - Bowtie2: Langmead &amp; Salzberg (2012) - STAR: Dobin et al.&nbsp;(2013)</p>
+<p><strong>Variant Calling:</strong> - GATK: McKenna et al.&nbsp;(2010), Van der Auwera et al.&nbsp;(2013) - FreeBayes: Garrison &amp; Marth (2012) - BCFtools: Danecek et al.&nbsp;(2021)</p>
+<p><strong>File Processing:</strong> - SAMtools: Li et al.&nbsp;(2009), Danecek et al.&nbsp;(2021) - BEDtools: Quinlan &amp; Hall (2010) - Picard: Broad Institute</p>
+<p><strong>Annotation:</strong> - VEP: McLaren et al.&nbsp;(2016) - ANNOVAR: Wang et al.&nbsp;(2010) - SnpEff: Cingolani et al.&nbsp;(2012)</p>
+<p><strong>Workflows:</strong> - Snakemake: Mölder et al.&nbsp;(2021) - Nextflow: Di Tommaso et al.&nbsp;(2017)</p>
+<hr>
+</section>
+</section>
+<section id="sharing-your-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="sharing-your-analysis">Sharing Your Analysis</h2>
+<section id="when-ready-to-share" class="level3">
+<h3 class="anchored" data-anchor-id="when-ready-to-share">When Ready to Share</h3>
+<p><strong>For publication:</strong> 1. Clean up code (remove dead code, add comments) 2. Create comprehensive README 3. Test that analysis runs from scratch 4. Upload code to GitHub/GitLab 5. Archive data (if appropriate) to public repository 6. Get DOI for code (Zenodo integration with GitHub)</p>
+<p><strong>For collaboration:</strong> 1. Share via Git repository 2. Include environment file for easy setup 3. Provide example/test data 4. Walk through README together</p>
+<p><strong>For archiving:</strong> - GitHub/GitLab for code - Zenodo for DOIs - Figshare for datasets - dbGaP/EGA for human genomics data (controlled access)</p>
+<hr>
+</section>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<section id="templates-and-tools" class="level3">
+<h3 class="anchored" data-anchor-id="templates-and-tools">Templates and Tools</h3>
+<ul>
+<li><a href="https://drivendata.github.io/cookiecutter-data-science/">Cookiecutter Data Science</a>: Project template generator</li>
+<li><a href="https://github.com/Snakemake-Profiles">Snakemake profiles</a>: Workflow config templates</li>
+<li><a href="https://github.com/matiassingers/awesome-readme">Awesome README</a>: README examples</li>
+</ul>
+</section>
+<section id="reproducibility-guides" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility-guides">Reproducibility Guides</h3>
+<ul>
+<li><a href="https://www.britishecologicalsociety.org/publications/guides-to/">British Ecological Society Guide to Reproducible Code</a></li>
+<li><a href="https://ropensci.github.io/reproducibility-guide/">rOpenSci Reproducibility Guide</a></li>
+<li><a href="https://the-turing-way.netlify.app/">The Turing Way</a>: Handbook for reproducible data science</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Takeaways
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>✅ <strong>Keep an analysis catalogue</strong> tracking every analysis<br>
+✅ <strong>Use consistent folder structures</strong> for all projects<br>
+✅ <strong>Document everything</strong> with READMEs and comments<br>
+✅ <strong>Version control with Git</strong> from day one<br>
+✅ <strong>Cite all tools and resources</strong> properly<br>
+✅ <strong>Test reproducibility</strong> before sharing or publishing</p>
+<p>Your future self will thank you!</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li>Download the <a href="#analysis-catalogue">analysis catalogue template</a> and start using it today</li>
+<li>Set up your next project with the <a href="#project-folder-structure">standard folder structure</a></li>
+<li>Review <a href="./tutorials-workshops.html">Tutorials &amp; Workshops</a> for more on reproducibility</li>
+<li>Explore <a href="./tools-setup.html">Tools &amp; Setup</a> for workflow managers</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/418f28b3-7758-49f6-b5eb-4b5c0868fcbd\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Best Practices for Reproducible Research"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Essential workflows for maintaining high-quality bioinformatics analyses"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Best Practices Matter</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Golden Rule</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>**Your most important collaborator is your future self 6 months from now.**</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>Document everything as if you'll need to re-run the analysis later (you will), or explain it to someone else (you will).</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>Maintaining good practices from day one:</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Saves time in the long run</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Prevents errors and lost work</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Enables reproducibility</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Facilitates collaboration</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Makes your research more impactful</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis Catalogue {#analysis-catalogue}</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### What is an Analysis Catalogue?</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>An analysis catalogue is a **structured record of every analysis you perform**. It's your lab notebook for bioinformatics - tracking what you did, when, why, and what you found.</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why Keep One?</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Remember what you did:** Months later, you'll need to recall exact parameters</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Avoid duplication:** Quickly check if you've already run similar analyses</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Share with collaborators:** Clear documentation helps others understand your work</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Publication requirements:** Journals require detailed methods - your catalogue has it all</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Troubleshoot issues:** When something goes wrong, trace back your steps</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Analysis Catalogue Template</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>Below is a template you can adapt. Keep it in a spreadsheet (Excel, Google Sheets) or as a CSV file in your project directory.</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Download Template</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>::: card</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>**Copy this table structure** to create your own analysis catalogue:</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>| ID | Name | Description | Link | Data | Status | Notes | Report/Output |</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>|---------|---------|---------|---------|---------|---------|---------|---------|</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>| <span class="in">`anAD001`</span> | GWAS APOE variants | Test association between APOE variants and AD age of onset in cohort | <span class="in">`/scripts/gwas/run_gwas_apoe.sh`</span> | <span class="in">`/data/cohort1/genotypes_QC.vcf`</span> (n=5,432: 2,100 cases, 3,332 controls) | Complete | Removed 3 outlier samples, see QC log | <span class="in">`anAD001_report`</span> |</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>| <span class="in">`anAD002`</span> | RNA-seq differential expression | Identify differentially expressed genes in AD vs control brain tissue | <span class="in">`/scripts/rnaseq/deseq2_analysis.R`</span> | <span class="in">`/data/rnaseq/batch2/fastq/`</span> (n=40: 20 AD, 20 controls, frontal cortex) | In Progress | Waiting for additional samples | <span class="sc">\-</span> |</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>| <span class="in">`anAD003`</span> | Variant calling WGS | Call germline variants from 30x WGS data, focus on dementia genes | <span class="in">`/workflows/wgs_pipeline.snakefile`</span> | <span class="in">`/data/wgs/batch1/`</span> (n=100, 30x coverage, Illumina NovaSeq) | On Hold | Need more compute resources | <span class="sc">\-</span> |</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>| <span class="in">`anFTD001`</span> | C9orf72 repeat expansion | Screen for C9orf72 hexanucleotide repeat expansions in FTD cohort | <span class="in">`/scripts/str/c9orf72_screen.sh`</span> | <span class="in">`/data/pcr_data/c9_screening.csv`</span> (n=250 FTD patients) | Complete | 15 patients positive for expansion | <span class="in">`anFTD001_summary.xlsx`</span> |</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>**Field Descriptions:**</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**ID**: Short unique identifier with project prefix (e.g., anAD001, anFTD002, anLBD001)</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Name**: Short descriptive name of the analysis</span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Description**: Brief explanation of what you're analyzing and why</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Link**: Path to main script/workflow, or URL to documentation</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Data**: Path to input data + brief description (sample size, data type, source)</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Status**: Current state (Complete, In Progress, On Hold, Failed, Planned)</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Notes**: Important details, issues encountered, decisions made</span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Report/Output**: Link to results folder, report file, or final output location</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="fu">### Example Filled Catalogue Entry</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>Here's what a completed entry looks like:</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>ID: anAD004</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>Name: WGS Variant Calling - Batch 1</span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>Description: Called germline variants from WGS data (30x coverage) in 100 </span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>             dementia patients to identify rare pathogenic variants in </span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>             known dementia genes (PSEN1, APP, MAPT, GRN, etc.)</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>Link: /scripts/variant_calling/wgs_pipeline_v2.3.snakefile</span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>Data: /data/wgs/raw_fastq/batch1/ (n=100: 75 AD, 15 FTD, 10 LBD; </span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>      Illumina NovaSeq 6000, 30x coverage, paired-end 150bp)</span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>Status: Complete</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>Notes: Sample WGS_045 failed QC (coverage 18x), excluded from analysis. </span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>       Re-ran BQSR after initial Ti/Tv ratio was low (1.8). Used hg38 </span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>       reference, GATK v4.2.6, filtered to 45 dementia genes.</span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>       Final n=99 samples passed QC.</span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>Report/Output: /results/wgs/batch1_variants/anAD004_final_report.html</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a>               Key finding: 12 rare pathogenic/likely pathogenic variants </span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>               identified, 8 previously reported in ClinVar</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>**What to include in the Data column:**</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**File path or location**: Where the input data is stored</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Sample size**: Number of individuals/samples (n=X)</span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Breakdown**: Cases vs controls, disease subtypes</span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Data type**: WGS, WES, RNA-seq, genotyping array, etc.</span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Sequencing details**: Platform, coverage, read length (if relevant)</span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Tissue/source**: Brain region, blood, etc.</span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a>**Examples of good Data entries:**</span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`/data/genotypes/cohort_A.bed`</span> (n=1,200: 600 AD cases, 600 controls; Illumina GSAMD v3 array)</span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`/data/rnaseq/hippocampus/batch3/`</span> (n=50: 25 AD, 25 controls; 50M reads/sample, PE100)</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`/data/methylation/frontal_cortex.csv`</span> (n=80, Illumina EPIC array, 850K CpGs)</span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>UKDRI WGS Cohort, Batch 2: <span class="in">`/project/wgs_b2/`</span> (n=200, 30x WGS, NovaSeq)</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Public data: GEO:GSE12345 (n=36, Affymetrix microarray, temporal cortex)</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tips for Maintaining Your Catalogue</span></span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Update in real-time:** Fill in fields as you go, not after the fact</span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Be specific:** Future you won't remember vague descriptions</span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Version everything:** Note exact software versions</span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Link to everything:** Include full paths to data, scripts, results</span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Note failures too:** Document what didn't work and why</span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>**Regular reviews:** Weekly, check status and update priorities</span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project Folder Structure {#project-folder-structure}</span></span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why Standard Structure Matters</span></span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>Using a consistent folder structure for every analysis:</span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>You always know where to find things</span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Collaborators can navigate your projects</span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Scripts can use predictable paths</span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Easier to share and archive projects</span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### Recommended Structure</span></span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Visual Representation</span></span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a><span class="in">project_name/</span></span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md                      # Project overview and getting started</span></span>
+<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a><span class="in">├── config.yml                     # Configuration file (if using workflows)</span></span>
+<span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a><span class="in">├── environment.yml                # Conda environment specification</span></span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a><span class="in">├── data/                          # All input data</span></span>
+<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── raw/                       # Original, unmodified data (READ-ONLY)</span></span>
+<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── fastq/</span></span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── vcf/</span></span>
+<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   └── metadata.csv</span></span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── processed/                 # Cleaned/processed data</span></span>
+<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── aligned/</span></span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── filtered/</span></span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   └── normalized/</span></span>
+<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── reference/                 # Reference genomes, annotations</span></span>
+<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a><span class="in">│       ├── hg38.fa</span></span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a><span class="in">│       ├── genes.gtf</span></span>
+<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a><span class="in">│       └── dbsnp.vcf</span></span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a><span class="in">├── scripts/                       # All analysis code</span></span>
+<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 01_qc_and_trimming.sh</span></span>
+<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 02_alignment.sh</span></span>
+<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 03_variant_calling.sh</span></span>
+<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 04_annotation.R</span></span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── utils/                     # Helper functions/modules</span></span>
+<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a><span class="in">│       ├── plot_functions.R</span></span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a><span class="in">│       └── filter_variants.py</span></span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a><span class="in">├── workflows/                     # Workflow files (Snakemake/Nextflow)</span></span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── Snakefile</span></span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── nextflow.config</span></span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a><span class="in">├── results/                       # All analysis outputs</span></span>
+<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── qc/</span></span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── fastqc/</span></span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   └── multiqc_report.html</span></span>
+<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── alignments/</span></span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   └── stats/</span></span>
+<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── variants/</span></span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── raw_variants.vcf</span></span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   ├── filtered_variants.vcf</span></span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   └── annotated_variants.vcf</span></span>
+<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── figures/</span></span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a><span class="in">│       ├── pca_plot.png</span></span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a><span class="in">│       ├── manhattan_plot.png</span></span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a><span class="in">│       └── expression_heatmap.pdf</span></span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a><span class="in">├── reports/                       # Written reports, presentations</span></span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── analysis_report.html       # Quarto/Rmarkdown output</span></span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── weekly_updates/</span></span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── manuscript_figures/</span></span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a><span class="in">├── logs/                          # Log files from analysis runs</span></span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── slurm/                     # SLURM job logs</span></span>
+<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── snakemake.log</span></span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── error_logs/</span></span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a><span class="in">├── docs/                          # Additional documentation</span></span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── methods.md</span></span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── data_dictionary.md</span></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── analysis_notes.md</span></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a><span class="in">│</span></span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a><span class="in">└── archive/                       # Old/deprecated files (for reference)</span></span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a><span class="in">    └── old_scripts/</span></span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a><span class="fu">### Code to Create This Structure</span></span>
+<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a>Copy and run this bash script to automatically create the folder structure:</span>
+<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="in">``` bash</span></span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a><span class="co"># Script to create standard bioinformatics project structure</span></span>
+<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage: bash create_project_structure.sh project_name</span></span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a><span class="va">PROJECT_NAME</span><span class="op">=</span><span class="va">$1</span></span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">"</span><span class="va">$PROJECT_NAME</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Error: Please provide a project name"</span></span>
+<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Usage: bash create_project_structure.sh project_name"</span></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Creating project structure for: </span><span class="va">$PROJECT_NAME</span><span class="st">"</span></span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="co"># Create main project directory</span></span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$PROJECT_NAME</span></span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$PROJECT_NAME</span></span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directory structure</span></span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> data/<span class="dt">{raw</span><span class="op">,</span><span class="dt">processed</span><span class="op">,</span><span class="dt">reference}</span>/<span class="dt">{fastq</span><span class="op">,</span><span class="dt">vcf</span><span class="op">,</span><span class="dt">bam}</span></span>
+<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> scripts/utils</span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> workflows</span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> results/<span class="dt">{qc/{fastqc</span><span class="op">,</span><span class="dt">multiqc}</span><span class="op">,</span><span class="dt">alignments/stats</span><span class="op">,</span><span class="dt">variants</span><span class="op">,</span><span class="dt">figures}</span></span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> reports/<span class="dt">{weekly_updates</span><span class="op">,</span><span class="dt">manuscript_figures}</span></span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> logs/<span class="dt">{slurm</span><span class="op">,</span><span class="dt">error_logs}</span></span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> docs</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> archive/old_scripts</span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Create README template</span></span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> README.md <span class="op">&lt;&lt; 'EOF'</span></span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a><span class="st"># Project Name</span></span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a><span class="st">## Overview</span></span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a><span class="st">Brief description of the project, research question, and goals.</span></span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a><span class="st">## Data</span></span>
+<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a><span class="st">- **Source:** Where data comes from</span></span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a><span class="st">- **Sample size:** Number of samples/individuals</span></span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a><span class="st">- **Data type:** WGS, WES, RNA-seq, etc.</span></span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a><span class="st">## Analysis Pipeline</span></span>
+<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a><span class="st">1. Quality control</span></span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a><span class="st">2. Alignment/Mapping</span></span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a><span class="st">3. Variant calling / Quantification</span></span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a><span class="st">4. Annotation</span></span>
+<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a><span class="st">5. Statistical analysis</span></span>
+<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a><span class="st">## Key Results</span></span>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a><span class="st">Summary of main findings (update as project progresses)</span></span>
+<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a><span class="st">## Requirements</span></span>
+<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a><span class="st">- Software dependencies (see environment.yml)</span></span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a><span class="st">- Computing resources needed</span></span>
+<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a><span class="st">- Reference data required</span></span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a><span class="st">## Usage</span></span>
+<span id="cb12-277"><a href="#cb12-277" aria-hidden="true" tabindex="-1"></a><span class="st">How to reproduce the analysis:</span></span>
+<span id="cb12-278"><a href="#cb12-278" aria-hidden="true" tabindex="-1"></a><span class="st">```bash</span></span>
+<span id="cb12-279"><a href="#cb12-279" aria-hidden="true" tabindex="-1"></a><span class="st"># Example commands</span></span>
+<span id="cb12-280"><a href="#cb12-280" aria-hidden="true" tabindex="-1"></a><span class="st">conda env create -f environment.yml</span></span>
+<span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a><span class="st">conda activate project_env</span></span>
+<span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a><span class="st">snakemake --cores 8</span></span>
+<span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a><span class="st">     </span></span>
+<span id="cb12-285"><a href="#cb12-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a><span class="st">---</span></span>
+<span id="cb12-287"><a href="#cb12-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-288"><a href="#cb12-288" aria-hidden="true" tabindex="-1"></a><span class="st">### How to Use the Folder Structure Script</span></span>
+<span id="cb12-289"><a href="#cb12-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-290"><a href="#cb12-290" aria-hidden="true" tabindex="-1"></a><span class="st">The bash script above automatically creates all the folders and files. Here's how to use it:</span></span>
+<span id="cb12-291"><a href="#cb12-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-292"><a href="#cb12-292" aria-hidden="true" tabindex="-1"></a><span class="st">**Step 1: Save the script**</span></span>
+<span id="cb12-293"><a href="#cb12-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-294"><a href="#cb12-294" aria-hidden="true" tabindex="-1"></a><span class="st">Copy the entire bash script above (everything between the ` ```bash ` markers) and save it to a file called `create_project_structure.sh`</span></span>
+<span id="cb12-295"><a href="#cb12-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-296"><a href="#cb12-296" aria-hidden="true" tabindex="-1"></a><span class="st">You can do this by:</span></span>
+<span id="cb12-297"><a href="#cb12-297" aria-hidden="true" tabindex="-1"></a><span class="st">- Opening a text editor (nano, vim, VS Code, etc.)</span></span>
+<span id="cb12-298"><a href="#cb12-298" aria-hidden="true" tabindex="-1"></a><span class="st">- Pasting the script</span></span>
+<span id="cb12-299"><a href="#cb12-299" aria-hidden="true" tabindex="-1"></a><span class="st">- Saving as `create_project_structure.sh`</span></span>
+<span id="cb12-300"><a href="#cb12-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-301"><a href="#cb12-301" aria-hidden="true" tabindex="-1"></a><span class="st">**Step 2: Make it executable**</span></span>
+<span id="cb12-302"><a href="#cb12-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-303"><a href="#cb12-303" aria-hidden="true" tabindex="-1"></a><span class="st">```bash</span></span>
+<span id="cb12-304"><a href="#cb12-304" aria-hidden="true" tabindex="-1"></a><span class="st">chmod +x create_project_structure.sh</span></span>
+<span id="cb12-305"><a href="#cb12-305" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-306"><a href="#cb12-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-307"><a href="#cb12-307" aria-hidden="true" tabindex="-1"></a><span class="st">**Step 3: Run it with your project name**</span></span>
+<span id="cb12-308"><a href="#cb12-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-309"><a href="#cb12-309" aria-hidden="true" tabindex="-1"></a><span class="st">``` bash</span></span>
+<span id="cb12-310"><a href="#cb12-310" aria-hidden="true" tabindex="-1"></a><span class="st">./create_project_structure.sh my_analysis_name</span></span>
+<span id="cb12-311"><a href="#cb12-311" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-312"><a href="#cb12-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-313"><a href="#cb12-313" aria-hidden="true" tabindex="-1"></a><span class="st">Replace `my_analysis_name` with whatever you want to call your project, for example: - `./create_project_structure.sh anAD001` - `./create_project_structure.sh rnaseq_hippocampus` - `./create_project_structure.sh variant_calling_batch1`</span></span>
+<span id="cb12-314"><a href="#cb12-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-315"><a href="#cb12-315" aria-hidden="true" tabindex="-1"></a><span class="st">**What happens:** The script creates a new folder with your project name, containing all the organized subfolders (data/, scripts/, results/, etc.) plus template files (README.md, .gitignore, etc.)</span></span>
+<span id="cb12-316"><a href="#cb12-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-317"><a href="#cb12-317" aria-hidden="true" tabindex="-1"></a><span class="st">::: callout-tip</span></span>
+<span id="cb12-318"><a href="#cb12-318" aria-hidden="true" tabindex="-1"></a><span class="st">## Quick Tip</span></span>
+<span id="cb12-319"><a href="#cb12-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-320"><a href="#cb12-320" aria-hidden="true" tabindex="-1"></a><span class="st">You only need to create and save this script once. Then you can use it to set up the folder structure for all your future projects!</span></span>
+<span id="cb12-321"><a href="#cb12-321" aria-hidden="true" tabindex="-1"></a><span class="st">:::</span></span>
+<span id="cb12-322"><a href="#cb12-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-323"><a href="#cb12-323" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-324"><a href="#cb12-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-325"><a href="#cb12-325" aria-hidden="true" tabindex="-1"></a><span class="st">### Key Principles</span></span>
+<span id="cb12-326"><a href="#cb12-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-327"><a href="#cb12-327" aria-hidden="true" tabindex="-1"></a><span class="st">::: callout-tip</span></span>
+<span id="cb12-328"><a href="#cb12-328" aria-hidden="true" tabindex="-1"></a><span class="st">## Folder Structure Best Practices</span></span>
+<span id="cb12-329"><a href="#cb12-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-330"><a href="#cb12-330" aria-hidden="true" tabindex="-1"></a><span class="st">1.  **Never modify raw data:** Keep `data/raw/` read-only, always work with copies in `data/processed/`</span></span>
+<span id="cb12-331"><a href="#cb12-331" aria-hidden="true" tabindex="-1"></a><span class="st">2.  **Number your scripts:** Prefix with numbers (01\_, 02\_) to show analysis order</span></span>
+<span id="cb12-332"><a href="#cb12-332" aria-hidden="true" tabindex="-1"></a><span class="st">3.  **Use relative paths:** Scripts should work regardless of where the project is located</span></span>
+<span id="cb12-333"><a href="#cb12-333" aria-hidden="true" tabindex="-1"></a><span class="st">4.  **One result, one file:** Don't overwrite results; create new files with dates/versions</span></span>
+<span id="cb12-334"><a href="#cb12-334" aria-hidden="true" tabindex="-1"></a><span class="st">5.  **Document everything:** README files in each major directory explaining contents</span></span>
+<span id="cb12-335"><a href="#cb12-335" aria-hidden="true" tabindex="-1"></a><span class="st">:::</span></span>
+<span id="cb12-336"><a href="#cb12-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-337"><a href="#cb12-337" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-338"><a href="#cb12-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-339"><a href="#cb12-339" aria-hidden="true" tabindex="-1"></a><span class="st">## Documentation Best Practices</span></span>
+<span id="cb12-340"><a href="#cb12-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-341"><a href="#cb12-341" aria-hidden="true" tabindex="-1"></a><span class="st">### README Files</span></span>
+<span id="cb12-342"><a href="#cb12-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-343"><a href="#cb12-343" aria-hidden="true" tabindex="-1"></a><span class="st">Every project needs a good README. Include:</span></span>
+<span id="cb12-344"><a href="#cb12-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-345"><a href="#cb12-345" aria-hidden="true" tabindex="-1"></a><span class="st">**Essential sections:** - Project overview and goals - Data sources and description - How to run the analysis - Software requirements - Key results/conclusions - Authors and dates</span></span>
+<span id="cb12-346"><a href="#cb12-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-347"><a href="#cb12-347" aria-hidden="true" tabindex="-1"></a><span class="st">**Example README template:**</span></span>
+<span id="cb12-348"><a href="#cb12-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-349"><a href="#cb12-349" aria-hidden="true" tabindex="-1"></a><span class="st">```` markdown</span></span>
+<span id="cb12-350"><a href="#cb12-350" aria-hidden="true" tabindex="-1"></a><span class="st"># Dementia GWAS Analysis - APOE Region</span></span>
+<span id="cb12-351"><a href="#cb12-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-352"><a href="#cb12-352" aria-hidden="true" tabindex="-1"></a><span class="st">## Overview</span></span>
+<span id="cb12-353"><a href="#cb12-353" aria-hidden="true" tabindex="-1"></a><span class="st">Genome-wide association study focused on APOE region in 5,000 AD cases </span></span>
+<span id="cb12-354"><a href="#cb12-354" aria-hidden="true" tabindex="-1"></a><span class="st">and 10,000 controls to identify rare protective variants.</span></span>
+<span id="cb12-355"><a href="#cb12-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-356"><a href="#cb12-356" aria-hidden="true" tabindex="-1"></a><span class="st">## Data</span></span>
+<span id="cb12-357"><a href="#cb12-357" aria-hidden="true" tabindex="-1"></a><span class="st">- **Source:** UKDRI Dementia Cohort</span></span>
+<span id="cb12-358"><a href="#cb12-358" aria-hidden="true" tabindex="-1"></a><span class="st">- **Platform:** Illumina GSAMD v3 Array</span></span>
+<span id="cb12-359"><a href="#cb12-359" aria-hidden="true" tabindex="-1"></a><span class="st">- **QC:** Standard QC applied (call rate &gt;95%, HWE p&gt;1e-6, MAF &gt;0.01)</span></span>
+<span id="cb12-360"><a href="#cb12-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-361"><a href="#cb12-361" aria-hidden="true" tabindex="-1"></a><span class="st">## Analysis Pipeline</span></span>
+<span id="cb12-362"><a href="#cb12-362" aria-hidden="true" tabindex="-1"></a><span class="st">```bash</span></span>
+<span id="cb12-363"><a href="#cb12-363" aria-hidden="true" tabindex="-1"></a><span class="st"># 1. Quality control</span></span>
+<span id="cb12-364"><a href="#cb12-364" aria-hidden="true" tabindex="-1"></a><span class="st">plink --bfile raw_data --geno 0.05 --mind 0.05 --hwe 1e-6 --maf 0.01 --make-bed --out qc_pass</span></span>
+<span id="cb12-365"><a href="#cb12-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-366"><a href="#cb12-366" aria-hidden="true" tabindex="-1"></a><span class="st"># 2. Association testing</span></span>
+<span id="cb12-367"><a href="#cb12-367" aria-hidden="true" tabindex="-1"></a><span class="st">plink --bfile qc_pass --logistic --covar age_sex.txt --out gwas_results</span></span>
+<span id="cb12-368"><a href="#cb12-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-369"><a href="#cb12-369" aria-hidden="true" tabindex="-1"></a><span class="st"># 3. Annotation</span></span>
+<span id="cb12-370"><a href="#cb12-370" aria-hidden="true" tabindex="-1"></a><span class="st">./scripts/annotate_variants.R gwas_results.assoc.logistic</span></span>
+<span id="cb12-371"><a href="#cb12-371" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-372"><a href="#cb12-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-373"><a href="#cb12-373" aria-hidden="true" tabindex="-1"></a><span class="st">## Key Results</span></span>
+<span id="cb12-374"><a href="#cb12-374" aria-hidden="true" tabindex="-1"></a><span class="st">- Genome-wide significant signal at rs429358 (APOE ε4, p=2.3e-125)</span></span>
+<span id="cb12-375"><a href="#cb12-375" aria-hidden="true" tabindex="-1"></a><span class="st">- Novel suggestive signal at rs75627662 (p=3.2e-7)</span></span>
+<span id="cb12-376"><a href="#cb12-376" aria-hidden="true" tabindex="-1"></a><span class="st">- See `results/figures/manhattan_plot.png`</span></span>
+<span id="cb12-377"><a href="#cb12-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-378"><a href="#cb12-378" aria-hidden="true" tabindex="-1"></a><span class="st">## Requirements</span></span>
+<span id="cb12-379"><a href="#cb12-379" aria-hidden="true" tabindex="-1"></a><span class="st">See `environment.yml` for full list</span></span>
+<span id="cb12-380"><a href="#cb12-380" aria-hidden="true" tabindex="-1"></a><span class="st">- PLINK v1.9</span></span>
+<span id="cb12-381"><a href="#cb12-381" aria-hidden="true" tabindex="-1"></a><span class="st">- R v4.2 with ggplot2, data.table</span></span>
+<span id="cb12-382"><a href="#cb12-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-383"><a href="#cb12-383" aria-hidden="true" tabindex="-1"></a><span class="st">## Author</span></span>
+<span id="cb12-384"><a href="#cb12-384" aria-hidden="true" tabindex="-1"></a><span class="st">Your Name (your.email@ukdri.ac.uk)</span></span>
+<span id="cb12-385"><a href="#cb12-385" aria-hidden="true" tabindex="-1"></a><span class="st">Date: 2025-10-16</span></span>
+<span id="cb12-386"><a href="#cb12-386" aria-hidden="true" tabindex="-1"></a><span class="st">````</span></span>
+<span id="cb12-387"><a href="#cb12-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-388"><a href="#cb12-388" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-389"><a href="#cb12-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-390"><a href="#cb12-390" aria-hidden="true" tabindex="-1"></a><span class="st">### Inline Code Comments</span></span>
+<span id="cb12-391"><a href="#cb12-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-392"><a href="#cb12-392" aria-hidden="true" tabindex="-1"></a><span class="st">**Good commenting practices:**</span></span>
+<span id="cb12-393"><a href="#cb12-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-394"><a href="#cb12-394" aria-hidden="true" tabindex="-1"></a><span class="st">``` python</span></span>
+<span id="cb12-395"><a href="#cb12-395" aria-hidden="true" tabindex="-1"></a><span class="st"># BAD: Obvious comment</span></span>
+<span id="cb12-396"><a href="#cb12-396" aria-hidden="true" tabindex="-1"></a><span class="st">x = x + 1  # increment x</span></span>
+<span id="cb12-397"><a href="#cb12-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-398"><a href="#cb12-398" aria-hidden="true" tabindex="-1"></a><span class="st"># GOOD: Explains WHY</span></span>
+<span id="cb12-399"><a href="#cb12-399" aria-hidden="true" tabindex="-1"></a><span class="st">x = x + 1  # adjust for 0-based indexing</span></span>
+<span id="cb12-400"><a href="#cb12-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-401"><a href="#cb12-401" aria-hidden="true" tabindex="-1"></a><span class="st"># BAD: No context</span></span>
+<span id="cb12-402"><a href="#cb12-402" aria-hidden="true" tabindex="-1"></a><span class="st">threshold = 5e-8</span></span>
+<span id="cb12-403"><a href="#cb12-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-404"><a href="#cb12-404" aria-hidden="true" tabindex="-1"></a><span class="st"># GOOD: Clear reasoning</span></span>
+<span id="cb12-405"><a href="#cb12-405" aria-hidden="true" tabindex="-1"></a><span class="st">threshold = 5e-8  # genome-wide significance threshold for GWAS</span></span>
+<span id="cb12-406"><a href="#cb12-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-407"><a href="#cb12-407" aria-hidden="true" tabindex="-1"></a><span class="st"># EXCELLENT: Document complex logic</span></span>
+<span id="cb12-408"><a href="#cb12-408" aria-hidden="true" tabindex="-1"></a><span class="st"># Filter variants: keep only those with:</span></span>
+<span id="cb12-409"><a href="#cb12-409" aria-hidden="true" tabindex="-1"></a><span class="st"># - MAF &gt; 0.01 (common variants for this analysis)</span></span>
+<span id="cb12-410"><a href="#cb12-410" aria-hidden="true" tabindex="-1"></a><span class="st"># - INFO score &gt; 0.8 (well-imputed)</span></span>
+<span id="cb12-411"><a href="#cb12-411" aria-hidden="true" tabindex="-1"></a><span class="st"># - HWE p &gt; 1e-6 (not deviated in controls)</span></span>
+<span id="cb12-412"><a href="#cb12-412" aria-hidden="true" tabindex="-1"></a><span class="st">filtered_vars = variants[</span></span>
+<span id="cb12-413"><a href="#cb12-413" aria-hidden="true" tabindex="-1"></a><span class="st">    (variants['MAF'] &gt; 0.01) &amp; </span></span>
+<span id="cb12-414"><a href="#cb12-414" aria-hidden="true" tabindex="-1"></a><span class="st">    (variants['INFO'] &gt; 0.8) &amp; </span></span>
+<span id="cb12-415"><a href="#cb12-415" aria-hidden="true" tabindex="-1"></a><span class="st">    (variants['HWE_P'] &gt; 1e-6)</span></span>
+<span id="cb12-416"><a href="#cb12-416" aria-hidden="true" tabindex="-1"></a><span class="st">]</span></span>
+<span id="cb12-417"><a href="#cb12-417" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-418"><a href="#cb12-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-419"><a href="#cb12-419" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-420"><a href="#cb12-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-421"><a href="#cb12-421" aria-hidden="true" tabindex="-1"></a><span class="st">### Version Control with Git</span></span>
+<span id="cb12-422"><a href="#cb12-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-423"><a href="#cb12-423" aria-hidden="true" tabindex="-1"></a><span class="st">::: callout-important</span></span>
+<span id="cb12-424"><a href="#cb12-424" aria-hidden="true" tabindex="-1"></a><span class="st">## Use Git from Day One</span></span>
+<span id="cb12-425"><a href="#cb12-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-426"><a href="#cb12-426" aria-hidden="true" tabindex="-1"></a><span class="st">Even if working alone, version control is essential for tracking changes, reverting mistakes, and understanding your analysis evolution.</span></span>
+<span id="cb12-427"><a href="#cb12-427" aria-hidden="true" tabindex="-1"></a><span class="st">:::</span></span>
+<span id="cb12-428"><a href="#cb12-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-429"><a href="#cb12-429" aria-hidden="true" tabindex="-1"></a><span class="st">**Basic Git workflow:**</span></span>
+<span id="cb12-430"><a href="#cb12-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-431"><a href="#cb12-431" aria-hidden="true" tabindex="-1"></a><span class="st">``` bash</span></span>
+<span id="cb12-432"><a href="#cb12-432" aria-hidden="true" tabindex="-1"></a><span class="st"># Initialize repository</span></span>
+<span id="cb12-433"><a href="#cb12-433" aria-hidden="true" tabindex="-1"></a><span class="st">cd my_project</span></span>
+<span id="cb12-434"><a href="#cb12-434" aria-hidden="true" tabindex="-1"></a><span class="st">git init</span></span>
+<span id="cb12-435"><a href="#cb12-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-436"><a href="#cb12-436" aria-hidden="true" tabindex="-1"></a><span class="st"># Add files</span></span>
+<span id="cb12-437"><a href="#cb12-437" aria-hidden="true" tabindex="-1"></a><span class="st">git add scripts/analysis.py</span></span>
+<span id="cb12-438"><a href="#cb12-438" aria-hidden="true" tabindex="-1"></a><span class="st">git add README.md</span></span>
+<span id="cb12-439"><a href="#cb12-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-440"><a href="#cb12-440" aria-hidden="true" tabindex="-1"></a><span class="st"># Commit with meaningful message</span></span>
+<span id="cb12-441"><a href="#cb12-441" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "Add initial variant filtering script"</span></span>
+<span id="cb12-442"><a href="#cb12-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-443"><a href="#cb12-443" aria-hidden="true" tabindex="-1"></a><span class="st"># Continue working...</span></span>
+<span id="cb12-444"><a href="#cb12-444" aria-hidden="true" tabindex="-1"></a><span class="st"># Make changes, then:</span></span>
+<span id="cb12-445"><a href="#cb12-445" aria-hidden="true" tabindex="-1"></a><span class="st">git add scripts/analysis.py</span></span>
+<span id="cb12-446"><a href="#cb12-446" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "Fix bug in MAF filtering, now correctly filters &lt; 0.01"</span></span>
+<span id="cb12-447"><a href="#cb12-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-448"><a href="#cb12-448" aria-hidden="true" tabindex="-1"></a><span class="st"># View history</span></span>
+<span id="cb12-449"><a href="#cb12-449" aria-hidden="true" tabindex="-1"></a><span class="st">git log</span></span>
+<span id="cb12-450"><a href="#cb12-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-451"><a href="#cb12-451" aria-hidden="true" tabindex="-1"></a><span class="st"># Create branch for experimental analysis</span></span>
+<span id="cb12-452"><a href="#cb12-452" aria-hidden="true" tabindex="-1"></a><span class="st">git branch experimental_method</span></span>
+<span id="cb12-453"><a href="#cb12-453" aria-hidden="true" tabindex="-1"></a><span class="st">git checkout experimental_method</span></span>
+<span id="cb12-454"><a href="#cb12-454" aria-hidden="true" tabindex="-1"></a><span class="st"># ... work on experimental method ...</span></span>
+<span id="cb12-455"><a href="#cb12-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-456"><a href="#cb12-456" aria-hidden="true" tabindex="-1"></a><span class="st"># Merge back if successful</span></span>
+<span id="cb12-457"><a href="#cb12-457" aria-hidden="true" tabindex="-1"></a><span class="st">git checkout main</span></span>
+<span id="cb12-458"><a href="#cb12-458" aria-hidden="true" tabindex="-1"></a><span class="st">git merge experimental_method</span></span>
+<span id="cb12-459"><a href="#cb12-459" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-460"><a href="#cb12-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-461"><a href="#cb12-461" aria-hidden="true" tabindex="-1"></a><span class="st">**Commit message best practices:**</span></span>
+<span id="cb12-462"><a href="#cb12-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-463"><a href="#cb12-463" aria-hidden="true" tabindex="-1"></a><span class="st">``` bash</span></span>
+<span id="cb12-464"><a href="#cb12-464" aria-hidden="true" tabindex="-1"></a><span class="st"># BAD</span></span>
+<span id="cb12-465"><a href="#cb12-465" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "fixed stuff"</span></span>
+<span id="cb12-466"><a href="#cb12-466" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "update"</span></span>
+<span id="cb12-467"><a href="#cb12-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-468"><a href="#cb12-468" aria-hidden="true" tabindex="-1"></a><span class="st"># GOOD</span></span>
+<span id="cb12-469"><a href="#cb12-469" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "Fix MAF calculation bug causing incorrect filtering"</span></span>
+<span id="cb12-470"><a href="#cb12-470" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "Add PCA plot generation to QC script"</span></span>
+<span id="cb12-471"><a href="#cb12-471" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m "Update README with new analysis pipeline steps"</span></span>
+<span id="cb12-472"><a href="#cb12-472" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-473"><a href="#cb12-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-474"><a href="#cb12-474" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-475"><a href="#cb12-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-476"><a href="#cb12-476" aria-hidden="true" tabindex="-1"></a><span class="st">## Analysis Reproducibility Checklist</span></span>
+<span id="cb12-477"><a href="#cb12-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-478"><a href="#cb12-478" aria-hidden="true" tabindex="-1"></a><span class="st">Before considering an analysis complete, verify:</span></span>
+<span id="cb12-479"><a href="#cb12-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-480"><a href="#cb12-480" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **All code is version controlled** (Git)</span></span>
+<span id="cb12-481"><a href="#cb12-481" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Software versions documented** (environment.yml or equivalent)</span></span>
+<span id="cb12-482"><a href="#cb12-482" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Random seeds set** (for any stochastic processes)</span></span>
+<span id="cb12-483"><a href="#cb12-483" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **README explains how to run analysis** from start to finish</span></span>
+<span id="cb12-484"><a href="#cb12-484" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Analysis catalogue updated** with all key information</span></span>
+<span id="cb12-485"><a href="#cb12-485" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Folder structure organized** and logical</span></span>
+<span id="cb12-486"><a href="#cb12-486" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Code commented** explaining complex or non-obvious steps</span></span>
+<span id="cb12-487"><a href="#cb12-487" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Parameters documented** (all important thresholds, filters, etc.)</span></span>
+<span id="cb12-488"><a href="#cb12-488" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Input data described** (source, processing, QC)</span></span>
+<span id="cb12-489"><a href="#cb12-489" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Output data described** (what files contain, how to interpret)</span></span>
+<span id="cb12-490"><a href="#cb12-490" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Dependencies listed** (all required software, libraries, data)</span></span>
+<span id="cb12-491"><a href="#cb12-491" aria-hidden="true" tabindex="-1"></a><span class="st">-   [ ] **Test data provided** (or documented where to get it)</span></span>
+<span id="cb12-492"><a href="#cb12-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-493"><a href="#cb12-493" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-494"><a href="#cb12-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-495"><a href="#cb12-495" aria-hidden="true" tabindex="-1"></a><span class="st">## Referencing &amp; Citations</span></span>
+<span id="cb12-496"><a href="#cb12-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-497"><a href="#cb12-497" aria-hidden="true" tabindex="-1"></a><span class="st">### Why Proper Citation Matters</span></span>
+<span id="cb12-498"><a href="#cb12-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-499"><a href="#cb12-499" aria-hidden="true" tabindex="-1"></a><span class="st">-   Give credit to tool developers</span></span>
+<span id="cb12-500"><a href="#cb12-500" aria-hidden="true" tabindex="-1"></a><span class="st">-   Allow others to reproduce your work</span></span>
+<span id="cb12-501"><a href="#cb12-501" aria-hidden="true" tabindex="-1"></a><span class="st">-   Required by publishers</span></span>
+<span id="cb12-502"><a href="#cb12-502" aria-hidden="true" tabindex="-1"></a><span class="st">-   Helps track method usage/impact</span></span>
+<span id="cb12-503"><a href="#cb12-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-504"><a href="#cb12-504" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-505"><a href="#cb12-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-506"><a href="#cb12-506" aria-hidden="true" tabindex="-1"></a><span class="st">### What to Cite</span></span>
+<span id="cb12-507"><a href="#cb12-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-508"><a href="#cb12-508" aria-hidden="true" tabindex="-1"></a><span class="st">**Always cite:** - Analysis software and tools - Reference genomes and databases - Published methods/algorithms - R packages and Python libraries - Workflow managers - Pre-processing pipelines</span></span>
+<span id="cb12-509"><a href="#cb12-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-510"><a href="#cb12-510" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-511"><a href="#cb12-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-512"><a href="#cb12-512" aria-hidden="true" tabindex="-1"></a><span class="st">### How to Find Citations</span></span>
+<span id="cb12-513"><a href="#cb12-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-514"><a href="#cb12-514" aria-hidden="true" tabindex="-1"></a><span class="st">**For bioinformatics tools:**</span></span>
+<span id="cb12-515"><a href="#cb12-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-516"><a href="#cb12-516" aria-hidden="true" tabindex="-1"></a><span class="st">1.  Check tool's documentation or website</span></span>
+<span id="cb12-517"><a href="#cb12-517" aria-hidden="true" tabindex="-1"></a><span class="st">2.  Look in GitHub README</span></span>
+<span id="cb12-518"><a href="#cb12-518" aria-hidden="true" tabindex="-1"></a><span class="st">3.  Search on PubMed for the tool name</span></span>
+<span id="cb12-519"><a href="#cb12-519" aria-hidden="true" tabindex="-1"></a><span class="st">4.  Check tool's --cite or --citation flag</span></span>
+<span id="cb12-520"><a href="#cb12-520" aria-hidden="true" tabindex="-1"></a><span class="st">5.  Use Bioconda: `conda search &lt;tool&gt; --info`</span></span>
+<span id="cb12-521"><a href="#cb12-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-522"><a href="#cb12-522" aria-hidden="true" tabindex="-1"></a><span class="st">**Example:**</span></span>
+<span id="cb12-523"><a href="#cb12-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-524"><a href="#cb12-524" aria-hidden="true" tabindex="-1"></a><span class="st">``` bash</span></span>
+<span id="cb12-525"><a href="#cb12-525" aria-hidden="true" tabindex="-1"></a><span class="st"># Many tools have citation info</span></span>
+<span id="cb12-526"><a href="#cb12-526" aria-hidden="true" tabindex="-1"></a><span class="st">samtools --version  # includes citation</span></span>
+<span id="cb12-527"><a href="#cb12-527" aria-hidden="true" tabindex="-1"></a><span class="st">gatk --version      # includes citation</span></span>
+<span id="cb12-528"><a href="#cb12-528" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-529"><a href="#cb12-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-530"><a href="#cb12-530" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-531"><a href="#cb12-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-532"><a href="#cb12-532" aria-hidden="true" tabindex="-1"></a><span class="st">### Citation Management</span></span>
+<span id="cb12-533"><a href="#cb12-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-534"><a href="#cb12-534" aria-hidden="true" tabindex="-1"></a><span class="st">**Use reference managers:** - **Zotero** (free, open-source) - **Mendeley** (free) - **EndNote** (institutional license often available) - **Papers** (Mac)</span></span>
+<span id="cb12-535"><a href="#cb12-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-536"><a href="#cb12-536" aria-hidden="true" tabindex="-1"></a><span class="st">**Bioinformatics-specific tip:** Create a collection/folder specifically for software/tools cited in your analyses.</span></span>
+<span id="cb12-537"><a href="#cb12-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-538"><a href="#cb12-538" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-539"><a href="#cb12-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-540"><a href="#cb12-540" aria-hidden="true" tabindex="-1"></a><span class="st">### Example Citations Section</span></span>
+<span id="cb12-541"><a href="#cb12-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-542"><a href="#cb12-542" aria-hidden="true" tabindex="-1"></a><span class="st">**In your methods:**</span></span>
+<span id="cb12-543"><a href="#cb12-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-544"><a href="#cb12-544" aria-hidden="true" tabindex="-1"></a><span class="st">``` markdown</span></span>
+<span id="cb12-545"><a href="#cb12-545" aria-hidden="true" tabindex="-1"></a><span class="st">## Software and Tools</span></span>
+<span id="cb12-546"><a href="#cb12-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-547"><a href="#cb12-547" aria-hidden="true" tabindex="-1"></a><span class="st">Quality control was performed using FastQC v0.11.9 (Andrews, 2010) </span></span>
+<span id="cb12-548"><a href="#cb12-548" aria-hidden="true" tabindex="-1"></a><span class="st">and MultiQC v1.12 (Ewels et al., 2016). Reads were aligned to the </span></span>
+<span id="cb12-549"><a href="#cb12-549" aria-hidden="true" tabindex="-1"></a><span class="st">GRCh38 reference genome using BWA-MEM v0.7.17 (Li &amp; Durbin, 2009). </span></span>
+<span id="cb12-550"><a href="#cb12-550" aria-hidden="true" tabindex="-1"></a><span class="st">Variant calling was performed using GATK v4.2.6 (McKenna et al., 2010), </span></span>
+<span id="cb12-551"><a href="#cb12-551" aria-hidden="true" tabindex="-1"></a><span class="st">and variants were annotated with VEP v106 (McLaren et al., 2016). </span></span>
+<span id="cb12-552"><a href="#cb12-552" aria-hidden="true" tabindex="-1"></a><span class="st">Statistical analyses were conducted in R v4.2.0 (R Core Team, 2022) </span></span>
+<span id="cb12-553"><a href="#cb12-553" aria-hidden="true" tabindex="-1"></a><span class="st">using the following packages: ggplot2 v3.3.6 (Wickham, 2016), </span></span>
+<span id="cb12-554"><a href="#cb12-554" aria-hidden="true" tabindex="-1"></a><span class="st">data.table v1.14.2 (Dowle &amp; Srinivasan, 2021).</span></span>
+<span id="cb12-555"><a href="#cb12-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-556"><a href="#cb12-556" aria-hidden="true" tabindex="-1"></a><span class="st">References:</span></span>
+<span id="cb12-557"><a href="#cb12-557" aria-hidden="true" tabindex="-1"></a><span class="st">Andrews, S. (2010). FastQC: a quality control tool for high throughput </span></span>
+<span id="cb12-558"><a href="#cb12-558" aria-hidden="true" tabindex="-1"></a><span class="st">sequence data.</span></span>
+<span id="cb12-559"><a href="#cb12-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-560"><a href="#cb12-560" aria-hidden="true" tabindex="-1"></a><span class="st">Ewels, P., Magnusson, M., Lundin, S., &amp; Käller, M. (2016). MultiQC: </span></span>
+<span id="cb12-561"><a href="#cb12-561" aria-hidden="true" tabindex="-1"></a><span class="st">summarize analysis results for multiple tools and samples in a single </span></span>
+<span id="cb12-562"><a href="#cb12-562" aria-hidden="true" tabindex="-1"></a><span class="st">report. Bioinformatics, 32(19), 3047-3048.</span></span>
+<span id="cb12-563"><a href="#cb12-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-564"><a href="#cb12-564" aria-hidden="true" tabindex="-1"></a><span class="st">Li, H., &amp; Durbin, R. (2009). Fast and accurate short read alignment </span></span>
+<span id="cb12-565"><a href="#cb12-565" aria-hidden="true" tabindex="-1"></a><span class="st">with Burrows-Wheeler transform. Bioinformatics, 25(14), 1754-1760.</span></span>
+<span id="cb12-566"><a href="#cb12-566" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-567"><a href="#cb12-567" aria-hidden="true" tabindex="-1"></a><span class="st">[etc.]</span></span>
+<span id="cb12-568"><a href="#cb12-568" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb12-569"><a href="#cb12-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-570"><a href="#cb12-570" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-571"><a href="#cb12-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-572"><a href="#cb12-572" aria-hidden="true" tabindex="-1"></a><span class="st">### Quick Reference: Common Tool Citations</span></span>
+<span id="cb12-573"><a href="#cb12-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-574"><a href="#cb12-574" aria-hidden="true" tabindex="-1"></a><span class="st">**Alignment:** - BWA: Li &amp; Durbin (2009, 2010) - Bowtie2: Langmead &amp; Salzberg (2012) - STAR: Dobin et al. (2013)</span></span>
+<span id="cb12-575"><a href="#cb12-575" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-576"><a href="#cb12-576" aria-hidden="true" tabindex="-1"></a><span class="st">**Variant Calling:** - GATK: McKenna et al. (2010), Van der Auwera et al. (2013) - FreeBayes: Garrison &amp; Marth (2012) - BCFtools: Danecek et al. (2021)</span></span>
+<span id="cb12-577"><a href="#cb12-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-578"><a href="#cb12-578" aria-hidden="true" tabindex="-1"></a><span class="st">**File Processing:** - SAMtools: Li et al. (2009), Danecek et al. (2021) - BEDtools: Quinlan &amp; Hall (2010) - Picard: Broad Institute</span></span>
+<span id="cb12-579"><a href="#cb12-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-580"><a href="#cb12-580" aria-hidden="true" tabindex="-1"></a><span class="st">**Annotation:** - VEP: McLaren et al. (2016) - ANNOVAR: Wang et al. (2010) - SnpEff: Cingolani et al. (2012)</span></span>
+<span id="cb12-581"><a href="#cb12-581" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-582"><a href="#cb12-582" aria-hidden="true" tabindex="-1"></a><span class="st">**Workflows:** - Snakemake: Mölder et al. (2021) - Nextflow: Di Tommaso et al. (2017)</span></span>
+<span id="cb12-583"><a href="#cb12-583" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-584"><a href="#cb12-584" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-585"><a href="#cb12-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-586"><a href="#cb12-586" aria-hidden="true" tabindex="-1"></a><span class="st">## Sharing Your Analysis</span></span>
+<span id="cb12-587"><a href="#cb12-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-588"><a href="#cb12-588" aria-hidden="true" tabindex="-1"></a><span class="st">### When Ready to Share</span></span>
+<span id="cb12-589"><a href="#cb12-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-590"><a href="#cb12-590" aria-hidden="true" tabindex="-1"></a><span class="st">**For publication:** 1. Clean up code (remove dead code, add comments) 2. Create comprehensive README 3. Test that analysis runs from scratch 4. Upload code to GitHub/GitLab 5. Archive data (if appropriate) to public repository 6. Get DOI for code (Zenodo integration with GitHub)</span></span>
+<span id="cb12-591"><a href="#cb12-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-592"><a href="#cb12-592" aria-hidden="true" tabindex="-1"></a><span class="st">**For collaboration:** 1. Share via Git repository 2. Include environment file for easy setup 3. Provide example/test data 4. Walk through README together</span></span>
+<span id="cb12-593"><a href="#cb12-593" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-594"><a href="#cb12-594" aria-hidden="true" tabindex="-1"></a><span class="st">**For archiving:** - GitHub/GitLab for code - Zenodo for DOIs - Figshare for datasets - dbGaP/EGA for human genomics data (controlled access)</span></span>
+<span id="cb12-595"><a href="#cb12-595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-596"><a href="#cb12-596" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-597"><a href="#cb12-597" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-598"><a href="#cb12-598" aria-hidden="true" tabindex="-1"></a><span class="st">## Additional Resources</span></span>
+<span id="cb12-599"><a href="#cb12-599" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-600"><a href="#cb12-600" aria-hidden="true" tabindex="-1"></a><span class="st">### Templates and Tools</span></span>
+<span id="cb12-601"><a href="#cb12-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-602"><a href="#cb12-602" aria-hidden="true" tabindex="-1"></a><span class="st">-   [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/): Project template generator</span></span>
+<span id="cb12-603"><a href="#cb12-603" aria-hidden="true" tabindex="-1"></a><span class="st">-   [Snakemake profiles](https://github.com/Snakemake-Profiles): Workflow config templates</span></span>
+<span id="cb12-604"><a href="#cb12-604" aria-hidden="true" tabindex="-1"></a><span class="st">-   [Awesome README](https://github.com/matiassingers/awesome-readme): README examples</span></span>
+<span id="cb12-605"><a href="#cb12-605" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-606"><a href="#cb12-606" aria-hidden="true" tabindex="-1"></a><span class="st">### Reproducibility Guides</span></span>
+<span id="cb12-607"><a href="#cb12-607" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-608"><a href="#cb12-608" aria-hidden="true" tabindex="-1"></a><span class="st">-   [British Ecological Society Guide to Reproducible Code](https://www.britishecologicalsociety.org/publications/guides-to/)</span></span>
+<span id="cb12-609"><a href="#cb12-609" aria-hidden="true" tabindex="-1"></a><span class="st">-   [rOpenSci Reproducibility Guide](https://ropensci.github.io/reproducibility-guide/)</span></span>
+<span id="cb12-610"><a href="#cb12-610" aria-hidden="true" tabindex="-1"></a><span class="st">-   [The Turing Way](https://the-turing-way.netlify.app/): Handbook for reproducible data science</span></span>
+<span id="cb12-611"><a href="#cb12-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-612"><a href="#cb12-612" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-613"><a href="#cb12-613" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-614"><a href="#cb12-614" aria-hidden="true" tabindex="-1"></a><span class="st">## Summary</span></span>
+<span id="cb12-615"><a href="#cb12-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-616"><a href="#cb12-616" aria-hidden="true" tabindex="-1"></a><span class="st">::: callout-note</span></span>
+<span id="cb12-617"><a href="#cb12-617" aria-hidden="true" tabindex="-1"></a><span class="st">## Key Takeaways</span></span>
+<span id="cb12-618"><a href="#cb12-618" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-619"><a href="#cb12-619" aria-hidden="true" tabindex="-1"></a><span class="st">✅ **Keep an analysis catalogue** tracking every analysis\</span></span>
+<span id="cb12-620"><a href="#cb12-620" aria-hidden="true" tabindex="-1"></a><span class="st">✅ **Use consistent folder structures** for all projects\</span></span>
+<span id="cb12-621"><a href="#cb12-621" aria-hidden="true" tabindex="-1"></a><span class="st">✅ **Document everything** with READMEs and comments\</span></span>
+<span id="cb12-622"><a href="#cb12-622" aria-hidden="true" tabindex="-1"></a><span class="st">✅ **Version control with Git** from day one\</span></span>
+<span id="cb12-623"><a href="#cb12-623" aria-hidden="true" tabindex="-1"></a><span class="st">✅ **Cite all tools and resources** properly\</span></span>
+<span id="cb12-624"><a href="#cb12-624" aria-hidden="true" tabindex="-1"></a><span class="st">✅ **Test reproducibility** before sharing or publishing</span></span>
+<span id="cb12-625"><a href="#cb12-625" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-626"><a href="#cb12-626" aria-hidden="true" tabindex="-1"></a><span class="st">Your future self will thank you!</span></span>
+<span id="cb12-627"><a href="#cb12-627" aria-hidden="true" tabindex="-1"></a><span class="st">:::</span></span>
+<span id="cb12-628"><a href="#cb12-628" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-629"><a href="#cb12-629" aria-hidden="true" tabindex="-1"></a><span class="st">------------------------------------------------------------------------</span></span>
+<span id="cb12-630"><a href="#cb12-630" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-631"><a href="#cb12-631" aria-hidden="true" tabindex="-1"></a><span class="st">## Next Steps</span></span>
+<span id="cb12-632"><a href="#cb12-632" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-633"><a href="#cb12-633" aria-hidden="true" tabindex="-1"></a><span class="st">-   Download the [analysis catalogue template](#analysis-catalogue) and start using it today</span></span>
+<span id="cb12-634"><a href="#cb12-634" aria-hidden="true" tabindex="-1"></a><span class="st">-   Set up your next project with the [standard folder structure](#project-folder-structure)</span></span>
+<span id="cb12-635"><a href="#cb12-635" aria-hidden="true" tabindex="-1"></a><span class="st">-   Review [Tutorials &amp; Workshops](tutorials-workshops.qmd) for more on reproducibility</span></span>
+<span id="cb12-636"><a href="#cb12-636" aria-hidden="true" tabindex="-1"></a><span class="st">-   Explore [Tools &amp; Setup](tools-setup.qmd) for workflow managers</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>UK Dementia Research Institute</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.ukdri.ac.uk/">
+<p>UKDRI</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

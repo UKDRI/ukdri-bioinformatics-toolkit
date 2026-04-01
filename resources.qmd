@@ -1,0 +1,622 @@
+---
+title: "Resources & References"
+subtitle: "Databases, communities, and ongoing learning resources"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+
+## Overview
+
+This page compiles essential databases, online communities, and additional resources to support your bioinformatics journey. Bookmark this page for quick reference!
+
+---
+
+## Genomics Databases
+
+### Reference Genomes & Annotations
+
+#### Ensembl
+**What it is:** Genome browser for vertebrate genomes  
+**Use for:** Browsing genes, transcripts, variants, regulatory elements  
+**Link:** [ensembl.org](https://www.ensembl.org/)  
+**Features:** Genome browser, BioMart data mining, REST API
+
+---
+
+#### UCSC Genome Browser
+**What it is:** Web-based genome browser  
+**Use for:** Visualizing genomic data, downloading reference files  
+**Link:** [genome.ucsc.edu](https://genome.ucsc.edu/)  
+**Features:** Custom tracks, table browser, liftOver tool
+
+---
+
+#### NCBI RefSeq
+**What it is:** Curated collection of genomic, transcript, and protein sequences  
+**Use for:** Reference sequences, gene information  
+**Link:** [ncbi.nlm.nih.gov/refseq](https://www.ncbi.nlm.nih.gov/refseq/)
+
+---
+
+### Variant Databases
+
+#### dbSNP
+**What it is:** Database of single nucleotide polymorphisms and short variants  
+**Use for:** Variant IDs (rs numbers), allele frequencies  
+**Link:** [ncbi.nlm.nih.gov/snp](https://www.ncbi.nlm.nih.gov/snp/)
+
+---
+
+#### gnomAD (Genome Aggregation Database)
+**What it is:** Population allele frequency database (>140,000 genomes)  
+**Use for:** Determining if variants are common or rare, filtering  
+**Link:** [gnomad.broadinstitute.org](https://gnomad.broadinstitute.org/)  
+**Key feature:** Allele frequencies across diverse populations
+
+---
+
+#### ClinVar
+**What it is:** Public archive of relationships between variants and phenotypes  
+**Use for:** Clinical significance of variants, pathogenicity  
+**Link:** [ncbi.nlm.nih.gov/clinvar](https://www.ncbi.nlm.nih.gov/clinvar/)
+
+---
+
+#### COSMIC (Catalogue of Somatic Mutations in Cancer)
+**What it is:** Database of somatic mutations in cancer  
+**Use for:** Cancer genomics, somatic variant annotation  
+**Link:** [cancer.sanger.ac.uk/cosmic](https://cancer.sanger.ac.uk/cosmic)
+
+---
+
+### GWAS & Association Studies
+
+#### GWAS Catalog
+**What it is:** Curated collection of published GWAS results  
+**Use for:** Finding known genetic associations, exploring traits  
+**Link:** [ebi.ac.uk/gwas](https://www.ebi.ac.uk/gwas/)  
+**Key feature:** Searchable by trait, gene, variant
+
+---
+
+#### PGS Catalog (Polygenic Score Catalog)
+**What it is:** Open database of published polygenic scores  
+**Use for:** Calculating polygenic risk scores, risk prediction  
+**Link:** [pgscatalog.org](https://www.pgscatalog.org/)  
+**Includes:** Calculator tool, score downloads
+
+---
+
+#### OpenTargets
+**What it is:** Platform integrating genetics and genomics for target identification  
+**Use for:** Connecting genetic evidence to drug targets  
+**Link:** [platform.opentargets.org](https://platform.opentargets.org/)
+
+---
+
+### Dementia-Specific Resources
+
+#### AlzGene
+**What it is:** Field synopsis of genetic association studies in Alzheimer's disease  
+**Use for:** Known AD risk loci, meta-analysis results  
+**Link:** [alzgene.org](http://www.alzgene.org/)  
+**Note:** Last updated 2014, but comprehensive for established loci
+
+---
+
+#### Alzforum
+**What it is:** Networking site for Alzheimer's research  
+**Use for:** News, mutations database, research tools  
+**Link:** [alzforum.org](https://www.alzforum.org/)  
+**Features:** Mutations database, biomarkers, protocols
+
+---
+
+#### NIAGADS (National Institute on Aging Genetics of Alzheimer's Disease Data Storage)
+**What it is:** Repository for AD genetics data  
+**Use for:** Accessing AD genomics datasets  
+**Link:** [niagads.org](https://www.niagads.org/)  
+**Access:** Requires application/approval
+
+---
+
+### Expression & Functional Databases
+
+#### GTEx (Genotype-Tissue Expression)
+**What it is:** Resource on human gene expression and regulation across tissues  
+**Use for:** Tissue-specific expression, eQTLs  
+**Link:** [gtexportal.org](https://gtexportal.org/)  
+**Includes:** Brain-specific data (multiple regions)
+
+---
+
+#### ENCODE
+**What it is:** Encyclopedia of DNA Elements  
+**Use for:** Regulatory elements, transcription factors, chromatin states  
+**Link:** [encodeproject.org](https://www.encodeproject.org/)
+
+---
+
+#### STRING
+**What it is:** Protein-protein interaction networks  
+**Use for:** Understanding protein interactions, pathway analysis  
+**Link:** [string-db.org](https://string-db.org/)
+
+---
+
+#### Reactome
+**What it is:** Pathway database  
+**Use for:** Pathway analysis, understanding biological processes  
+**Link:** [reactome.org](https://reactome.org/)
+
+---
+
+## Data Repositories
+
+### Sequence Read Archive (SRA)
+**What it is:** NCBI's repository for raw sequencing data  
+**Use for:** Downloading/uploading sequencing data  
+**Link:** [ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/sra/)  
+**Tool:** SRA Toolkit for downloading
+
+---
+
+### European Nucleotide Archive (ENA)
+**What it is:** European equivalent of SRA  
+**Use for:** Raw sequencing data (often faster downloads in Europe)  
+**Link:** [ebi.ac.uk/ena](https://www.ebi.ac.uk/ena/)
+
+---
+
+### Gene Expression Omnibus (GEO)
+**What it is:** Repository for gene expression and genomics data  
+**Use for:** Finding published expression datasets  
+**Link:** [ncbi.nlm.nih.gov/geo](https://www.ncbi.nlm.nih.gov/geo/)
+
+---
+
+### dbGaP (Database of Genotypes and Phenotypes)
+**What it is:** Controlled-access archive for human genetic/phenotypic data  
+**Use for:** Accessing large-scale human genomics studies  
+**Link:** [ncbi.nlm.nih.gov/gap](https://www.ncbi.nlm.nih.gov/gap/)  
+**Access:** Requires application through your institution
+
+---
+
+### European Genome-phenome Archive (EGA)
+**What it is:** European archive for sensitive human data  
+**Use for:** Controlled-access human genomics data  
+**Link:** [ega-archive.org](https://ega-archive.org/)
+
+---
+
+## Online Communities & Forums
+
+### Biostars
+**What it is:** Q&A forum for bioinformatics  
+**Best for:** Getting help with specific analysis problems  
+**Link:** [biostars.org](https://www.biostars.org/)  
+**Tip:** Search before posting - your question may already be answered!
+
+---
+
+### SEQanswers
+**What it is:** Forum focused on sequencing technologies and analysis  
+**Best for:** NGS-specific discussions, troubleshooting  
+**Link:** [seqanswers.com](http://seqanswers.com/)
+
+---
+
+### Stack Overflow (Bioinformatics tags)
+**What it is:** Programming Q&A site  
+**Best for:** Coding questions, debugging  
+**Link:** [stackoverflow.com](https://stackoverflow.com/)  
+**Search tags:** `bioinformatics`, `biopython`, `bioconductor`, `genomics`
+
+---
+
+### Reddit Communities
+
+- **r/bioinformatics:** General bioinformatics discussion  
+  [reddit.com/r/bioinformatics](https://www.reddit.com/r/bioinformatics/)
+- **r/genomics:** Genomics-focused  
+  [reddit.com/r/genomics](https://www.reddit.com/r/genomics/)
+- **r/learnbioinformatics:** For learning and education  
+  [reddit.com/r/learnbioinformatics](https://www.reddit.com/r/learnbioinformatics/)
+
+---
+
+### Twitter/X & Mastodon
+
+**Follow these tags/communities:**
+- #bioinformatics
+- #genomics
+- #scicomm
+- #epitwitter (for epidemiology/public health)
+
+**Active bioinformatics community on Mastodon:**
+- genomic.social (Mastodon instance for genomics researchers)
+
+---
+
+## Software Repositories
+
+### Bioconda
+**What it is:** Package repository for bioinformatics software  
+**Why essential:** Easy installation of bioinformatics tools  
+**Link:** [bioconda.github.io](https://bioconda.github.io/)  
+**Usage:** `conda install -c bioconda toolname`
+
+---
+
+### Bioconductor
+**What it is:** R packages for genomic data analysis  
+**Why essential:** Statistical analysis and visualization of genomics data  
+**Link:** [bioconductor.org](https://bioconductor.org/)  
+**Note:** Over 2,000 packages for all types of genomic analyses
+
+---
+
+### BioPython
+**What it is:** Python tools for computational biology  
+**Use for:** Parsing biological file formats, sequence analysis  
+**Link:** [biopython.org](https://biopython.org/)  
+**Docs:** Excellent tutorials available
+
+---
+
+### GitHub Topics
+
+Search these topics to find relevant bioinformatics tools:
+- [bioinformatics](https://github.com/topics/bioinformatics)
+- [genomics](https://github.com/topics/genomics)
+- [variant-calling](https://github.com/topics/variant-calling)
+- [rna-seq](https://github.com/topics/rna-seq)
+
+---
+
+## Learning Resources
+
+### Journals to Follow
+
+**Methods/Tools:**
+- *Nature Methods*
+- *Bioinformatics*
+- *Genome Biology*
+- *BMC Bioinformatics*
+- *GigaScience*
+
+**Disease/Dementia-focused:**
+- *Alzheimer's & Dementia*
+- *Neurology*
+- *Molecular Neurodegeneration*
+- *Acta Neuropathologica*
+
+---
+
+### Preprint Servers
+
+#### bioRxiv
+**What it is:** Preprint server for biology  
+**Why follow:** See cutting-edge research before peer review  
+**Link:** [biorxiv.org](https://www.biorxiv.org/)  
+**Tip:** Set up alerts for topics of interest
+
+---
+
+#### medRxiv
+**What it is:** Preprint server for medical sciences  
+**Link:** [medrxiv.org](https://www.medrxiv.org/)
+
+---
+
+### Blogs & Websites
+
+#### The Bioinformatics CRO
+**What it is:** Blog with practical bioinformatics tutorials  
+**Link:** [thebioinformaticscro.co.uk](https://www.thebioinformaticscro.co.uk/)
+
+---
+
+#### Living in an Ivory Basement
+**What it is:** Titus Brown's blog on bioinformatics and open science  
+**Link:** [ivory.idyll.org/blog](http://ivory.idyll.org/blog/)
+
+---
+
+#### EMBL-EBI Training Blog
+**What it is:** Updates on courses and bioinformatics training  
+**Link:** [ebi.ac.uk/training](https://www.ebi.ac.uk/training/)
+
+---
+
+#### OmicsTutorials
+**What it is:** Comprehensive bioinformatics tutorials and guides  
+**Link:** [omicstutorials.com](https://omicstutorials.com/)
+
+---
+
+### YouTube Channels
+
+**StatQuest with Josh Starmer**
+- Excellent explanations of statistical concepts
+- Covers RNA-seq, PCA, machine learning
+- [youtube.com/@statquest](https://www.youtube.com/@statquest)
+
+**EMBL-EBI Training**
+- Webinars and training videos
+- [youtube.com/@EBITraining](https://www.youtube.com/@EBITraining)
+
+**Computational Biology Core Leuven**
+- Bioinformatics tutorials
+- [youtube.com/@ComputationalBiologyCoreLeuven](https://www.youtube.com/@ComputationalBiologyCoreLeuven)
+
+---
+
+## Books
+
+### Bioinformatics Data Skills
+**Author:** Vince Buffalo  
+**Best for:** Learning Unix, version control, and working with genomic data  
+**Why read:** Comprehensive practical guide to bioinformatics infrastructure
+
+---
+
+### Bioinformatics Algorithms: An Active Learning Approach
+**Authors:** Compeau & Pevzner  
+**Best for:** Understanding algorithms behind bioinformatics tools  
+**Why read:** Learn how tools actually work under the hood
+
+---
+
+### Introduction to Genomics
+**Author:** Arthur Lesk  
+**Best for:** Biological background on genomics  
+**Why read:** Understand the biology behind the data
+
+---
+
+### RNA-seq Data Analysis: A Practical Approach
+**Editors:** Eija Korpelainen et al.  
+**Best for:** Comprehensive RNA-seq analysis guide  
+**Why read:** End-to-end RNA-seq workflows with practical examples
+
+---
+
+## Podcasts
+
+### The Bioinformatics Chat
+**What it is:** Interviews with bioinformatics researchers and developers  
+**Link:** [bioinformatics.chat](https://bioinformatics.chat/)  
+**Great for:** Staying current with methods and hearing about career paths
+
+---
+
+### The Genetics Podcast
+**What it is:** Genomics and genetics interviews  
+**Topics:** From GWAS to clinical genomics  
+**Link:** [thegeneticspodcast.com](https://thegeneticspodcast.com/)
+
+---
+
+## Professional Organizations
+
+### International Society for Computational Biology (ISCB)
+**What it is:** Premier bioinformatics professional organization  
+**Benefits:** Conferences (ISMB, RECOMB), journals, student fellowships  
+**Link:** [iscb.org](https://www.iscb.org/)
+
+---
+
+### European Society of Human Genetics (ESHG)
+**What it is:** Organization for human genetics professionals  
+**Link:** [eshg.org](https://www.eshg.org/)
+
+---
+
+### American Society of Human Genetics (ASHG)
+**What it is:** Leading organization for human genetics  
+**Link:** [ashg.org](https://www.ashg.org/)
+
+---
+
+## Conferences
+
+### Major Bioinformatics Conferences
+
+- **ISMB** (Intelligent Systems for Molecular Biology) - Annual, July
+- **RECOMB** (Research in Computational Molecular Biology) - Annual, Spring
+- **ASHG** (American Society of Human Genetics) - Annual, Fall
+- **ESHG** (European Society of Human Genetics) - Annual, Spring
+- **Advances in Genome Biology and Technology (AGBT)** - Annual, February
+
+### Dementia Research Conferences
+
+- **Alzheimer's Association International Conference (AAIC)** - Annual, Summer
+- **Clinical Trials on Alzheimer's Disease (CTAD)** - Annual, Fall
+- **AD/PD™** (Alzheimer's and Parkinson's Diseases) - Biennial
+
+---
+
+## Cheat Sheets & Quick References
+
+### Command Line Cheat Sheets
+
+- [Linux Command Line Cheat Sheet](https://files.fosswire.com/2007/08/fwunixref.pdf)
+- [Bash Scripting Cheat Sheet](https://devhints.io/bash)
+- [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
+### Bioinformatics-Specific
+
+- [SAMtools/BCFtools Cheat Sheet](http://www.htslib.org/doc/#manual-pages)
+- [BEDtools Cheat Sheet](https://gist.github.com/ilevantis/6d6ecf8718a5803acff736c2dffc933e)
+- [GATK Best Practices](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows)
+- [Bioconda Cheat Sheet](https://bioconda.github.io/contributor/index.html)
+
+---
+
+## Useful Tools & Utilities
+
+### File Format Converters
+
+**BAM/SAM/CRAM**: SAMtools  
+**BED/GFF/GTF**: BEDtools, gffread  
+**FASTQ quality encoding**: seqtk  
+**VCF/BCF**: BCFtools
+
+---
+
+### Genome Browsers (Local)
+
+**IGV (Integrative Genomics Viewer)**
+- Visualize alignments, variants, annotations
+- [software.broadinstitute.org/software/igv](https://software.broadinstitute.org/software/igv/)
+
+**JBrowse**
+- Web-based genome browser
+- [jbrowse.org](https://jbrowse.org/)
+
+---
+
+### Visualization Tools
+
+**R packages:**
+- ggplot2 (general plotting)
+- ggbio (genomic data)
+- ComplexHeatmap (heatmaps)
+- circlize (circular plots, genomic rearrangements)
+
+**Python:**
+- matplotlib/seaborn (general plotting)
+- plotly (interactive plots)
+- pysam (BAM file visualization)
+
+---
+
+## How to Stay Current
+
+### Daily Habits
+
+1. **Set up Google Scholar alerts** for key topics (e.g., "Alzheimer's genomics")
+2. **Follow key researchers** on Twitter/Mastodon
+3. **Subscribe to journal TOC alerts** (Table of Contents)
+4. **Check bioRxiv** weekly for preprints in your area
+
+### Weekly Habits
+
+1. **Read 1-2 papers** in depth (not just abstracts)
+2. **Try a new tool** or technique from tutorials
+3. **Participate in forums** - answer questions when you can
+4. **Review your analysis catalogue** and project progress
+
+### Monthly Habits
+
+1. **Attend a webinar or virtual conference**
+2. **Deep dive** into one new method or tool
+3. **Update your skills** with a new tutorial
+4. **Write about what you learned** (blog, notes, or share with lab)
+
+---
+
+## Getting Help
+
+### Before Asking Questions
+
+1. **Search first:** Google, Biostars, Stack Overflow
+2. **Check documentation:** Tool manuals, GitHub issues
+3. **Try debugging yourself:** Error messages often have clues
+4. **Isolate the problem:** Minimal reproducible example
+
+### How to Ask Good Questions
+
+**Include:**
+- What you're trying to do
+- What you've tried already
+- Exact error messages (full output)
+- Software versions
+- Minimal code example
+- Expected vs. actual output
+
+**Good question template:**
+```
+Title: SAMtools sort fails with "truncated file" error
+
+I'm trying to sort a BAM file but getting an error.
+
+Command:
+samtools sort input.bam -o sorted.bam
+
+Error:
+[E::bgzf_read] Read 0 bytes from input.bam.bam; 7 expected
+samtools sort: truncated file. Aborting
+
+What I've tried:
+- Checked file isn't corrupted (md5sum matches)
+- Tried with different BAM files
+- Reinstalled samtools
+
+Environment:
+- samtools version: 1.15
+- OS: Ubuntu 20.04
+- Input file size: 50GB
+
+Any suggestions on what might be causing this?
+```
+
+---
+
+## Tips for Continuous Learning
+
+::: {.callout-tip}
+## Learning Strategies
+
+1. **Learn by doing:** Work with real data whenever possible
+2. **Read the papers:** Don't just use tools - understand the methods
+3. **Teach others:** Best way to solidify your understanding
+4. **Build a portfolio:** Document your projects publicly
+5. **Contribute:** Report bugs, improve documentation, answer questions
+6. **Network:** Join local bioinformatics groups, attend meetups
+7. **Stay humble:** Bioinformatics is vast - no one knows everything
+:::
+
+---
+
+## Conclusion
+
+This toolkit provides a foundation, but bioinformatics is a journey of continuous learning. Use these resources, stay curious, and don't hesitate to reach out to the community when you need help.
+
+::: {.callout-note}
+## Remember
+The best bioinformaticians are those who:
+- Document their work thoroughly
+- Ask questions when stuck
+- Share their knowledge
+- Keep learning new methods
+- Stay engaged with the community
+
+Good luck on your bioinformatics journey! 🧬
+:::
+
+---
+
+## Quick Links Summary
+
+**Start Here:**
+- [Home](index.qmd) - Getting started guide
+- [Tools & Setup](tools-setup.qmd) - Essential software
+- [Genomics Fundamentals](genomics-fundamentals.qmd) - Core concepts
+- [Tutorials & Workshops](tutorials-workshops.qmd) - Learning resources
+- [Best Practices](best-practices.qmd) - Reproducible research
+
+**Essential Databases:**
+- [Ensembl](https://www.ensembl.org/)
+- [gnomAD](https://gnomad.broadinstitute.org/)
+- [GWAS Catalog](https://www.ebi.ac.uk/gwas/)
+- [PGS Catalog](https://www.pgscatalog.org/)
+
+**Get Help:**
+- [Biostars](https://www.biostars.org/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [r/bioinformatics](https://www.reddit.com/r/bioinformatics/)
