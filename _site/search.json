@@ -1,0 +1,744 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "",
+    "text": "This toolkit is designed to help new and continuing researchers get started with bioinformatics work in a way that is organised, reproducible, and easy to hand over. It is especially aimed at people working in institutional research settings, where projects need to remain understandable and usable beyond the person who first set them up.\n\n\n\n\n\n\nStart Here\n\n\n\nIf you are beginning a new piece of work, start with Start Here, then set up a consistent layout on Reproducible Project Structure, and review Institutional GitHub before you begin sharing or collaborating."
+  },
+  {
+    "objectID": "index.html#about-this-toolkit",
+    "href": "index.html#about-this-toolkit",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "",
+    "text": "This toolkit is designed to help new and continuing researchers get started with bioinformatics work in a way that is organised, reproducible, and easy to hand over. It is especially aimed at people working in institutional research settings, where projects need to remain understandable and usable beyond the person who first set them up.\n\n\n\n\n\n\nStart Here\n\n\n\nIf you are beginning a new piece of work, start with Start Here, then set up a consistent layout on Reproducible Project Structure, and review Institutional GitHub before you begin sharing or collaborating."
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "What You’ll Find Here",
+    "text": "What You’ll Find Here\nThis site is organised around a simple idea: start well, organise work consistently, document decisions, and use GitHub intentionally.\n\nStart Here\nA simple pathway for beginning a new project: decide where the work belongs, create the repository, add a README, define the structure, document the data, and make the first commit.\n\n\nTools & Setup\nEssential software and environment setup for day-to-day bioinformatics work.\n\n\nReproducible Project Structure\nA practical guide to organising folders, scripts, data, results, documentation, and environment information using a consistent structure influenced by the same principles covered in our GitHub reproducibility session.\n\n\nBest Practices\nCore habits that keep work understandable and maintainable:\n\nMaintaining an analysis catalogue (with downloadable template)\nDocumentation best practices\nReferencing and citation management\n\n\n\nInstitutional GitHub\nHow and when to use the institutional GitHub, what belongs there, and what minimum standards make shared repositories useful for collaboration and continuity.\n\n\nTutorials & Workshops\nCurated learning resources when you need to build specific technical skills.\n\n\nResources\nDatabases, communities, and reference material for ongoing work."
+  },
+  {
+    "objectID": "index.html#key-principles-for-success",
+    "href": "index.html#key-principles-for-success",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "Key Principles for Success",
+    "text": "Key Principles for Success\n\n\n\n\n\n\nDocumentation is Everything\n\n\n\nFrom day one, document your analyses thoroughly. Your future self (and collaborators) will thank you. See our Best Practices page for templates and tips.\n\n\n\nEssential Habits\n📝 Keep an Analysis Catalogue Track every analysis you run - parameters, data sources, results, and interpretations. We provide a template in the Best Practices section.\n📁 Consistent Folder Structure Use the same basic layout for every project so collaborators can immediately tell where scripts, data, results, and documentation live. See Reproducible Project Structure.\n🔄 Version Control Everything Use Git for code, documentation, and lightweight configuration. Decide early whether the work should live on a personal repository or on the Institutional GitHub.\n📊 Reproducibility First Write code that others (including future you) can run and understand. Use workflow management tools, document dependencies, and create clear README files.\n🧪 Validate Your Results Always sanity-check your results. Use positive/negative controls, compare methods, and understand the biology behind your findings."
+  },
+  {
+    "objectID": "index.html#a-practical-starting-sequence",
+    "href": "index.html#a-practical-starting-sequence",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "A Practical Starting Sequence",
+    "text": "A Practical Starting Sequence\nIf you are unsure where to begin, use this order:\n\nStart Here\nTools & Setup\nReproducible Project Structure\nBest Practices\nInstitutional GitHub\nTutorials & Workshops\n\n\n\n\n\n\n\nUse This as a Working Reference\n\n\n\nThis toolkit is intended to be revisited during real projects, not just read once. Use it when you start new work, when you need to tidy a repository, or when you are handing work over to someone else."
+  },
+  {
+    "objectID": "index.html#support-and-community",
+    "href": "index.html#support-and-community",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "Support and Community",
+    "text": "Support and Community\n\nGetting Help\n\nConsult this toolkit first\nCheck tool documentation and GitHub issues\nAsk colleagues and local bioinformatics support\nEngage with online communities (Biostars, Stack Overflow, etc.)\n\n\n\nContributing\nIf you find broken links, have suggestions for additional resources, or want to contribute content, please reach out to the toolkit maintainers."
+  },
+  {
+    "objectID": "index.html#ready-to-begin",
+    "href": "index.html#ready-to-begin",
+    "title": "Welcome to the UKDRI Bioinformatics Toolkit",
+    "section": "Ready to Begin?",
+    "text": "Ready to Begin?\nStart with Start Here if you are setting up a new project, or go to Tools & Setup if you need to configure your working environment first."
+  },
+  {
+    "objectID": "start-here.html",
+    "href": "start-here.html",
+    "title": "Start Here",
+    "section": "",
+    "text": "Starting well makes everything easier later. The aim is not to create extra process. It is to make sure your work is understandable, reproducible, and easy to continue if someone else needs to pick it up.\n\n\n\n\n\n\nThe Short Version\n\n\n\nBefore you write substantial analysis code, decide where the work belongs, create the repository, add a README, define the project structure, document the data location, and make the first commit."
+  },
+  {
+    "objectID": "start-here.html#why-this-page-exists",
+    "href": "start-here.html#why-this-page-exists",
+    "title": "Start Here",
+    "section": "",
+    "text": "Starting well makes everything easier later. The aim is not to create extra process. It is to make sure your work is understandable, reproducible, and easy to continue if someone else needs to pick it up.\n\n\n\n\n\n\nThe Short Version\n\n\n\nBefore you write substantial analysis code, decide where the work belongs, create the repository, add a README, define the project structure, document the data location, and make the first commit."
+  },
+  {
+    "objectID": "start-here.html#new-project-checklist",
+    "href": "start-here.html#new-project-checklist",
+    "title": "Start Here",
+    "section": "New Project Checklist",
+    "text": "New Project Checklist\n\n1. Decide where the work belongs\nAsk early whether this should live on the Institutional GitHub or on a personal GitHub account.\nUse the institutional GitHub when the work is part of a shared project, needs continuity beyond one person, or should be easy for others in the group to discover and maintain.\n\n\n2. Create the repository\nCreate the repository as soon as you know the work is worth keeping. A repository should exist before the project becomes difficult to reconstruct.\nChoose a short, descriptive name and avoid vague repository names such as analysis-new or test-project.\n\n\n3. Add a README immediately\nYour README.md does not need to be long on day one. It should at least state:\n\nwhat the project is for\nwho owns or maintains it\nwhat question or task it addresses\nwhere the data lives\nhow the repository is organised\n\n\n\n4. Set up a consistent project structure\nCreate the basic folders you expect to use before files start accumulating. This reduces confusion and makes it easier to keep raw data, scripts, results, and notes separate.\nUse the structure described on Reproducible Project Structure.\n\n\n5. Document where the data lives\nDo this even if the data cannot be stored in the repository.\nRecord:\n\nthe source of the data\nwhere the raw data is stored\nwhether access is restricted\nwhich files or folders are treated as read-only originals\nwhere processed derivatives will be written\n\n\n\n6. Define the analysis question or plan\nWrite down the initial aim in a few lines. This can be simple. The point is to make the purpose of the repository explicit from the beginning.\nExamples:\n\nidentify differentially expressed genes between two groups\nrun quality control and alignment for a sequencing batch\nprepare a reproducible workflow for a cohort-level variant analysis\n\n\n\n7. Make the first commit\nYour first commit should usually include:\n\nREADME.md\nthe initial folder structure\nany starter scripts or notebooks\nenvironment or dependency files if you already know them\n\nThis gives the project a clear starting point and a visible history."
+  },
+  {
+    "objectID": "start-here.html#what-good-starts-usually-have-in-common",
+    "href": "start-here.html#what-good-starts-usually-have-in-common",
+    "title": "Start Here",
+    "section": "What Good Starts Usually Have in Common",
+    "text": "What Good Starts Usually Have in Common\n\nthe repository has a clear purpose\nthe data location is documented\nthe structure is predictable\nkey decisions are written down early\nthe work can be handed over without explanation in a corridor conversation"
+  },
+  {
+    "objectID": "start-here.html#where-to-go-next",
+    "href": "start-here.html#where-to-go-next",
+    "title": "Start Here",
+    "section": "Where to Go Next",
+    "text": "Where to Go Next\n\nGo to Tools & Setup if you need to configure your environment\nGo to Reproducible Project Structure to set up folders consistently\nGo to Institutional GitHub to decide how the repository should be hosted and managed"
+  },
+  {
+    "objectID": "best-practices.html",
+    "href": "best-practices.html",
+    "title": "Best Practices for Reproducible Research",
+    "section": "",
+    "text": "The Golden Rule\n\n\n\nYour most important collaborator is your future self 6 months from now.\nDocument everything as if you’ll need to re-run the analysis later (you will), or explain it to someone else (you will).\n\n\nMaintaining good practices from day one:\n\nSaves time in the long run\nPrevents errors and lost work\nEnables reproducibility\nFacilitates collaboration\nMakes your research more impactful"
+  },
+  {
+    "objectID": "best-practices.html#why-best-practices-matter",
+    "href": "best-practices.html#why-best-practices-matter",
+    "title": "Best Practices for Reproducible Research",
+    "section": "",
+    "text": "The Golden Rule\n\n\n\nYour most important collaborator is your future self 6 months from now.\nDocument everything as if you’ll need to re-run the analysis later (you will), or explain it to someone else (you will).\n\n\nMaintaining good practices from day one:\n\nSaves time in the long run\nPrevents errors and lost work\nEnables reproducibility\nFacilitates collaboration\nMakes your research more impactful"
+  },
+  {
+    "objectID": "best-practices.html#analysis-catalogue",
+    "href": "best-practices.html#analysis-catalogue",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Analysis Catalogue",
+    "text": "Analysis Catalogue\n\nWhat is an Analysis Catalogue?\nAn analysis catalogue is a structured record of every analysis you perform. It’s your lab notebook for bioinformatics - tracking what you did, when, why, and what you found.\n\n\nWhy Keep One?\n\nRemember what you did: Months later, you’ll need to recall exact parameters\nAvoid duplication: Quickly check if you’ve already run similar analyses\nShare with collaborators: Clear documentation helps others understand your work\nPublication requirements: Journals require detailed methods - your catalogue has it all\nTroubleshoot issues: When something goes wrong, trace back your steps\n\n\n\n\nAnalysis Catalogue Template\nBelow is a template you can adapt. Keep it in a spreadsheet (Excel, Google Sheets) or as a CSV file in your project directory.\n\nDownload Template\n\nCopy this table structure to create your own analysis catalogue:\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\nName\nDescription\nLink\nData\nStatus\nNotes\nReport/Output\n\n\n\n\nanAD001\nGWAS APOE variants\nTest association between APOE variants and AD age of onset in cohort\n/scripts/gwas/run_gwas_apoe.sh\n/data/cohort1/genotypes_QC.vcf (n=5,432: 2,100 cases, 3,332 controls)\nComplete\nRemoved 3 outlier samples, see QC log\nanAD001_report\n\n\nanAD002\nRNA-seq differential expression\nIdentify differentially expressed genes in AD vs control brain tissue\n/scripts/rnaseq/deseq2_analysis.R\n/data/rnaseq/batch2/fastq/ (n=40: 20 AD, 20 controls, frontal cortex)\nIn Progress\nWaiting for additional samples\n-\n\n\nanAD003\nVariant calling WGS\nCall germline variants from 30x WGS data, focus on dementia genes\n/workflows/wgs_pipeline.snakefile\n/data/wgs/batch1/ (n=100, 30x coverage, Illumina NovaSeq)\nOn Hold\nNeed more compute resources\n-\n\n\nanFTD001\nC9orf72 repeat expansion\nScreen for C9orf72 hexanucleotide repeat expansions in FTD cohort\n/scripts/str/c9orf72_screen.sh\n/data/pcr_data/c9_screening.csv (n=250 FTD patients)\nComplete\n15 patients positive for expansion\nanFTD001_summary.xlsx\n\n\n\nField Descriptions:\n\nID: Short unique identifier with project prefix (e.g., anAD001, anFTD002, anLBD001)\nName: Short descriptive name of the analysis\nDescription: Brief explanation of what you’re analyzing and why\nLink: Path to main script/workflow, or URL to documentation\nData: Path to input data + brief description (sample size, data type, source)\nStatus: Current state (Complete, In Progress, On Hold, Failed, Planned)\nNotes: Important details, issues encountered, decisions made\nReport/Output: Link to results folder, report file, or final output location\n\n\n\n\n\n\nExample Filled Catalogue Entry\nHere’s what a completed entry looks like:\nID: anAD004\nName: WGS Variant Calling - Batch 1\nDescription: Called germline variants from WGS data (30x coverage) in 100 \n             dementia patients to identify rare pathogenic variants in \n             known dementia genes (PSEN1, APP, MAPT, GRN, etc.)\nLink: /scripts/variant_calling/wgs_pipeline_v2.3.snakefile\nData: /data/wgs/raw_fastq/batch1/ (n=100: 75 AD, 15 FTD, 10 LBD; \n      Illumina NovaSeq 6000, 30x coverage, paired-end 150bp)\nStatus: Complete\nNotes: Sample WGS_045 failed QC (coverage 18x), excluded from analysis. \n       Re-ran BQSR after initial Ti/Tv ratio was low (1.8). Used hg38 \n       reference, GATK v4.2.6, filtered to 45 dementia genes.\n       Final n=99 samples passed QC.\nReport/Output: /results/wgs/batch1_variants/anAD004_final_report.html\n               Key finding: 12 rare pathogenic/likely pathogenic variants \n               identified, 8 previously reported in ClinVar\nWhat to include in the Data column:\n\nFile path or location: Where the input data is stored\nSample size: Number of individuals/samples (n=X)\nBreakdown: Cases vs controls, disease subtypes\nData type: WGS, WES, RNA-seq, genotyping array, etc.\nSequencing details: Platform, coverage, read length (if relevant)\nTissue/source: Brain region, blood, etc.\n\nExamples of good Data entries:\n\n/data/genotypes/cohort_A.bed (n=1,200: 600 AD cases, 600 controls; Illumina GSAMD v3 array)\n/data/rnaseq/hippocampus/batch3/ (n=50: 25 AD, 25 controls; 50M reads/sample, PE100)\n/data/methylation/frontal_cortex.csv (n=80, Illumina EPIC array, 850K CpGs)\nUKDRI WGS Cohort, Batch 2: /project/wgs_b2/ (n=200, 30x WGS, NovaSeq)\nPublic data: GEO:GSE12345 (n=36, Affymetrix microarray, temporal cortex)\n\n\n\n\nTips for Maintaining Your Catalogue\n\nUpdate in real-time: Fill in fields as you go, not after the fact\nBe specific: Future you won’t remember vague descriptions\nVersion everything: Note exact software versions\nLink to everything: Include full paths to data, scripts, results\nNote failures too: Document what didn’t work and why\nRegular reviews: Weekly, check status and update priorities"
+  },
+  {
+    "objectID": "best-practices.html#project-folder-structure",
+    "href": "best-practices.html#project-folder-structure",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Project Folder Structure",
+    "text": "Project Folder Structure\nDetailed guidance on folder organisation now lives on Reproducible Project Structure.\nThe short version is:\n\nuse the same layout across projects\nkeep raw and processed data separate\nkeep scripts separate from results\ndocument where data lives and how outputs are generated\nmake the repository understandable to someone joining later\n\nFor a new project, the best sequence is:\n\nStart with Start Here\nApply the structure on Reproducible Project Structure\nKeep the repository documented and version controlled from the first commit"
+  },
+  {
+    "objectID": "best-practices.html#documentation-best-practices",
+    "href": "best-practices.html#documentation-best-practices",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Documentation Best Practices",
+    "text": "Documentation Best Practices\n\nREADME Files\nEvery project needs a good README. Include:\nEssential sections: - Project overview and goals - Data sources and description - How to run the analysis - Software requirements - Key results/conclusions - Authors and dates\nExample README template:\n# Dementia GWAS Analysis - APOE Region\n\n## Overview\nGenome-wide association study focused on APOE region in 5,000 AD cases \nand 10,000 controls to identify rare protective variants.\n\n## Data\n- **Source:** UKDRI Dementia Cohort\n- **Platform:** Illumina GSAMD v3 Array\n- **QC:** Standard QC applied (call rate &gt;95%, HWE p&gt;1e-6, MAF &gt;0.01)\n\n## Analysis Pipeline\n```bash\n# 1. Quality control\nplink --bfile raw_data --geno 0.05 --mind 0.05 --hwe 1e-6 --maf 0.01 --make-bed --out qc_pass\n\n# 2. Association testing\nplink --bfile qc_pass --logistic --covar age_sex.txt --out gwas_results\n\n# 3. Annotation\n./scripts/annotate_variants.R gwas_results.assoc.logistic\n```\n\n## Key Results\n- Genome-wide significant signal at rs429358 (APOE ε4, p=2.3e-125)\n- Novel suggestive signal at rs75627662 (p=3.2e-7)\n- See `results/figures/manhattan_plot.png`\n\n## Requirements\nSee `environment.yml` for full list\n- PLINK v1.9\n- R v4.2 with ggplot2, data.table\n\n## Author\nYour Name (your.email@ukdri.ac.uk)\nDate: 2025-10-16\n\n\n\nInline Code Comments\nGood commenting practices:\n# BAD: Obvious comment\nx = x + 1  # increment x\n\n# GOOD: Explains WHY\nx = x + 1  # adjust for 0-based indexing\n\n# BAD: No context\nthreshold = 5e-8\n\n# GOOD: Clear reasoning\nthreshold = 5e-8  # genome-wide significance threshold for GWAS\n\n# EXCELLENT: Document complex logic\n# Filter variants: keep only those with:\n# - MAF &gt; 0.01 (common variants for this analysis)\n# - INFO score &gt; 0.8 (well-imputed)\n# - HWE p &gt; 1e-6 (not deviated in controls)\nfiltered_vars = variants[\n    (variants['MAF'] &gt; 0.01) & \n    (variants['INFO'] &gt; 0.8) & \n    (variants['HWE_P'] &gt; 1e-6)\n]\n\n\n\nVersion Control with Git\n\n\n\n\n\n\nUse Git from Day One\n\n\n\nEven if working alone, version control is essential for tracking changes, reverting mistakes, and understanding your analysis evolution.\n\n\nBasic Git workflow:\n# Initialize repository\ncd my_project\ngit init\n\n# Add files\ngit add scripts/analysis.py\ngit add README.md\n\n# Commit with meaningful message\ngit commit -m \"Add initial variant filtering script\"\n\n# Continue working...\n# Make changes, then:\ngit add scripts/analysis.py\ngit commit -m \"Fix bug in MAF filtering, now correctly filters &lt; 0.01\"\n\n# View history\ngit log\n\n# Create branch for experimental analysis\ngit branch experimental_method\ngit checkout experimental_method\n# ... work on experimental method ...\n\n# Merge back if successful\ngit checkout main\ngit merge experimental_method\nCommit message best practices:\n# BAD\ngit commit -m \"fixed stuff\"\ngit commit -m \"update\"\n\n# GOOD\ngit commit -m \"Fix MAF calculation bug causing incorrect filtering\"\ngit commit -m \"Add PCA plot generation to QC script\"\ngit commit -m \"Update README with new analysis pipeline steps\""
+  },
+  {
+    "objectID": "best-practices.html#analysis-reproducibility-checklist",
+    "href": "best-practices.html#analysis-reproducibility-checklist",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Analysis Reproducibility Checklist",
+    "text": "Analysis Reproducibility Checklist\nBefore considering an analysis complete, verify:\n\nAll code is version controlled (Git)\nSoftware versions documented (environment.yml or equivalent)\nRandom seeds set (for any stochastic processes)\nREADME explains how to run analysis from start to finish\nAnalysis catalogue updated with all key information\nFolder structure organized and logical\nCode commented explaining complex or non-obvious steps\nParameters documented (all important thresholds, filters, etc.)\nInput data described (source, processing, QC)\nOutput data described (what files contain, how to interpret)\nDependencies listed (all required software, libraries, data)\nTest data provided (or documented where to get it)"
+  },
+  {
+    "objectID": "best-practices.html#referencing-citations",
+    "href": "best-practices.html#referencing-citations",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Referencing & Citations",
+    "text": "Referencing & Citations\n\nWhy Proper Citation Matters\n\nGive credit to tool developers\nAllow others to reproduce your work\nRequired by publishers\nHelps track method usage/impact\n\n\n\n\nWhat to Cite\nAlways cite: - Analysis software and tools - Reference genomes and databases - Published methods/algorithms - R packages and Python libraries - Workflow managers - Pre-processing pipelines\n\n\n\nHow to Find Citations\nFor bioinformatics tools:\n\nCheck tool’s documentation or website\nLook in GitHub README\nSearch on PubMed for the tool name\nCheck tool’s –cite or –citation flag\nUse Bioconda: conda search &lt;tool&gt; --info\n\nExample:\n# Many tools have citation info\nsamtools --version  # includes citation\ngatk --version      # includes citation\n\n\n\nCitation Management\nUse reference managers: - Zotero (free, open-source) - Mendeley (free) - EndNote (institutional license often available) - Papers (Mac)\nBioinformatics-specific tip: Create a collection/folder specifically for software/tools cited in your analyses.\n\n\n\nExample Citations Section\nIn your methods:\n## Software and Tools\n\nQuality control was performed using FastQC v0.11.9 (Andrews, 2010) \nand MultiQC v1.12 (Ewels et al., 2016). Reads were aligned to the \nGRCh38 reference genome using BWA-MEM v0.7.17 (Li & Durbin, 2009). \nVariant calling was performed using GATK v4.2.6 (McKenna et al., 2010), \nand variants were annotated with VEP v106 (McLaren et al., 2016). \nStatistical analyses were conducted in R v4.2.0 (R Core Team, 2022) \nusing the following packages: ggplot2 v3.3.6 (Wickham, 2016), \ndata.table v1.14.2 (Dowle & Srinivasan, 2021).\n\nReferences:\nAndrews, S. (2010). FastQC: a quality control tool for high throughput \nsequence data.\n\nEwels, P., Magnusson, M., Lundin, S., & Käller, M. (2016). MultiQC: \nsummarize analysis results for multiple tools and samples in a single \nreport. Bioinformatics, 32(19), 3047-3048.\n\nLi, H., & Durbin, R. (2009). Fast and accurate short read alignment \nwith Burrows-Wheeler transform. Bioinformatics, 25(14), 1754-1760.\n\n[etc.]\n\n\n\nQuick Reference: Common Tool Citations\nAlignment: - BWA: Li & Durbin (2009, 2010) - Bowtie2: Langmead & Salzberg (2012) - STAR: Dobin et al. (2013)\nVariant Calling: - GATK: McKenna et al. (2010), Van der Auwera et al. (2013) - FreeBayes: Garrison & Marth (2012) - BCFtools: Danecek et al. (2021)\nFile Processing: - SAMtools: Li et al. (2009), Danecek et al. (2021) - BEDtools: Quinlan & Hall (2010) - Picard: Broad Institute\nAnnotation: - VEP: McLaren et al. (2016) - ANNOVAR: Wang et al. (2010) - SnpEff: Cingolani et al. (2012)\nWorkflows: - Snakemake: Mölder et al. (2021) - Nextflow: Di Tommaso et al. (2017)"
+  },
+  {
+    "objectID": "best-practices.html#sharing-your-analysis",
+    "href": "best-practices.html#sharing-your-analysis",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Sharing Your Analysis",
+    "text": "Sharing Your Analysis\n\nWhen Ready to Share\nFor publication: 1. Clean up code (remove dead code, add comments) 2. Create comprehensive README 3. Test that analysis runs from scratch 4. Upload code to GitHub/GitLab 5. Archive data (if appropriate) to public repository 6. Get DOI for code (Zenodo integration with GitHub)\nFor collaboration: 1. Share via Git repository 2. Include environment file for easy setup 3. Provide example/test data 4. Walk through README together\nFor archiving: - GitHub/GitLab for code - Zenodo for DOIs - Figshare for datasets - dbGaP/EGA for human genomics data (controlled access)"
+  },
+  {
+    "objectID": "best-practices.html#additional-resources",
+    "href": "best-practices.html#additional-resources",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nTemplates and Tools\n\nCookiecutter Data Science: Project template generator\nSnakemake profiles: Workflow config templates\nAwesome README: README examples\n\n\n\nReproducibility Guides\n\nBritish Ecological Society Guide to Reproducible Code\nrOpenSci Reproducibility Guide\nThe Turing Way: Handbook for reproducible data science"
+  },
+  {
+    "objectID": "best-practices.html#summary",
+    "href": "best-practices.html#summary",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\nKey Takeaways\n\n\n\n✅ Keep an analysis catalogue tracking every analysis\n✅ Use consistent folder structures for all projects\n✅ Document everything with READMEs and comments\n✅ Version control with Git from day one\n✅ Cite all tools and resources properly\n✅ Test reproducibility before sharing or publishing\nYour future self will thank you!"
+  },
+  {
+    "objectID": "best-practices.html#next-steps",
+    "href": "best-practices.html#next-steps",
+    "title": "Best Practices for Reproducible Research",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nDownload the analysis catalogue template and start using it today\nSet up your next project with Reproducible Project Structure\nReview Tutorials & Workshops for more on reproducibility\nExplore Tools & Setup for workflow managers"
+  },
+  {
+    "objectID": "institutional-github.html",
+    "href": "institutional-github.html",
+    "title": "Institutional GitHub",
+    "section": "",
+    "text": "The institutional GitHub exists to give teams a shared place to keep code, lightweight documentation, analysis templates, training material, and project repositories that should outlast any one person.\nIt is not just a storage location. It supports shared ownership, discoverability, and continuity."
+  },
+  {
+    "objectID": "institutional-github.html#what-the-institutional-github-is-for",
+    "href": "institutional-github.html#what-the-institutional-github-is-for",
+    "title": "Institutional GitHub",
+    "section": "",
+    "text": "The institutional GitHub exists to give teams a shared place to keep code, lightweight documentation, analysis templates, training material, and project repositories that should outlast any one person.\nIt is not just a storage location. It supports shared ownership, discoverability, and continuity."
+  },
+  {
+    "objectID": "institutional-github.html#why-it-exists",
+    "href": "institutional-github.html#why-it-exists",
+    "title": "Institutional GitHub",
+    "section": "Why It Exists",
+    "text": "Why It Exists\nInstitutional repositories help with:\n\ncontinuity when staff or students move on\na central place for team, lab, or programme resources\neasier onboarding for new starters\ndiscoverability across groups and projects\nshared responsibility for maintaining useful code and documentation\n\nFor reproducible research, this matters because the work should still make sense when another person needs to rerun it, review it, or extend it."
+  },
+  {
+    "objectID": "institutional-github.html#why-you-should-use-it",
+    "href": "institutional-github.html#why-you-should-use-it",
+    "title": "Institutional GitHub",
+    "section": "Why You Should Use It",
+    "text": "Why You Should Use It\nUse the institutional GitHub when you want your work to be findable, maintainable, and shared appropriately within a group or programme.\nGood candidates include:\n\nanalysis repositories that support an active project\nshared scripts or workflows\ntemplates and starter repositories\ntraining and onboarding material\ncode that multiple people may need to run or improve"
+  },
+  {
+    "objectID": "institutional-github.html#institutional-github-or-personal-github",
+    "href": "institutional-github.html#institutional-github-or-personal-github",
+    "title": "Institutional GitHub",
+    "section": "Institutional GitHub or Personal GitHub?",
+    "text": "Institutional GitHub or Personal GitHub?\n\nUse the institutional GitHub when:\n\nthe work is connected to an institutional project, lab, or team\nthe repository should continue to exist beyond one person\nmultiple people need access or may contribute\nthe repository is part of onboarding, training, or shared infrastructure\n\n\n\nUse a personal GitHub when:\n\nyou are experimenting privately before deciding whether the work should be shared more widely\nthe repository is clearly personal, exploratory, or outside institutional work\nyou are building something that is not yet ready for team visibility\n\nIf a project becomes important for shared work, move it or mirror it into the institutional GitHub rather than leaving critical material tied to one personal account."
+  },
+  {
+    "objectID": "institutional-github.html#how-to-request-access",
+    "href": "institutional-github.html#how-to-request-access",
+    "title": "Institutional GitHub",
+    "section": "How to Request Access",
+    "text": "How to Request Access\nAccess routes vary by group, but the practical principle is simple: ask the relevant repository owner, team lead, or GitHub organisation administrator to add you.\nWhen you ask, include:\n\nyour GitHub username\nthe team, lab, or project you need access to\nwhether you need repository creation rights or access to an existing repository\na short note on what work you need to do"
+  },
+  {
+    "objectID": "institutional-github.html#minimum-expectations-for-institutional-repositories",
+    "href": "institutional-github.html#minimum-expectations-for-institutional-repositories",
+    "title": "Institutional GitHub",
+    "section": "Minimum Expectations for Institutional Repositories",
+    "text": "Minimum Expectations for Institutional Repositories\nRepositories hosted on the institutional GitHub should be usable by someone other than the original author.\nAt minimum, each repository should have:\n\na README.md explaining what the repository is for\na clear folder structure\nenough documentation to understand where scripts, data references, and outputs belong\nmeaningful file and folder names\nno sensitive or restricted data committed to a public repository"
+  },
+  {
+    "objectID": "institutional-github.html#practical-repository-standards",
+    "href": "institutional-github.html#practical-repository-standards",
+    "title": "Institutional GitHub",
+    "section": "Practical Repository Standards",
+    "text": "Practical Repository Standards\nAim for repositories that make the following easy to answer:\n\nwhat is this repository for?\nwho maintains it?\nwhere does the data live?\nhow do I run or reuse this work?\nwhat outputs should I expect?\n\nThis does not require a large amount of documentation. It requires a small amount of clear documentation written early."
+  },
+  {
+    "objectID": "institutional-github.html#what-not-to-put-in-a-public-repository",
+    "href": "institutional-github.html#what-not-to-put-in-a-public-repository",
+    "title": "Institutional GitHub",
+    "section": "What Not to Put in a Public Repository",
+    "text": "What Not to Put in a Public Repository\nDo not commit:\n\nsensitive human data\nidentifiable participant information\ncredentials, keys, or passwords\nfiles that you are not permitted to share\n\nIf data is controlled, document where it lives and how access is managed instead of trying to place it in GitHub."
+  },
+  {
+    "objectID": "institutional-github.html#a-good-default-mindset",
+    "href": "institutional-github.html#a-good-default-mindset",
+    "title": "Institutional GitHub",
+    "section": "A Good Default Mindset",
+    "text": "A Good Default Mindset\nTreat the institutional GitHub as the place for work that should be reproducible, discoverable, and shared responsibly.\nIf someone new joined the project next week, they should be able to find the repository, read the README, understand the structure, and know where to begin."
+  },
+  {
+    "objectID": "tutorials-workshops.html",
+    "href": "tutorials-workshops.html",
+    "title": "Tutorials & Workshops",
+    "section": "",
+    "text": "This page contains a comprehensive, searchable catalogue of tutorials, courses, and workshops for bioinformatics. Resources are organized by topic and source, with most being free and self-paced.\n\n\n\n\n\n\nHow to Use This Catalogue\n\n\n\n\nUse browser search (Ctrl/Cmd+F) to find specific topics\nStart with foundational skills (Linux, programming) before diving into advanced genomics\nMany courses can be audited for free - look for “Free/self-paced” access\nTrack your progress using the Analysis Catalogue Template"
+  },
+  {
+    "objectID": "tutorials-workshops.html#overview",
+    "href": "tutorials-workshops.html#overview",
+    "title": "Tutorials & Workshops",
+    "section": "",
+    "text": "This page contains a comprehensive, searchable catalogue of tutorials, courses, and workshops for bioinformatics. Resources are organized by topic and source, with most being free and self-paced.\n\n\n\n\n\n\nHow to Use This Catalogue\n\n\n\n\nUse browser search (Ctrl/Cmd+F) to find specific topics\nStart with foundational skills (Linux, programming) before diving into advanced genomics\nMany courses can be audited for free - look for “Free/self-paced” access\nTrack your progress using the Analysis Catalogue Template"
+  },
+  {
+    "objectID": "tutorials-workshops.html#genomics-ngs",
+    "href": "tutorials-workshops.html#genomics-ngs",
+    "title": "Tutorials & Workshops",
+    "section": "Genomics & NGS",
+    "text": "Genomics & NGS\n\nShort-Read Sequencing\n\nGenome bioinformatics: from short- to long-read sequencing\nProvider: EMBL-EBI\nTopics: NGS & long-read sequencing, variant calling, workflows\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Comprehensive introduction to genome sequencing technologies, transitioning from short-read to long-read approaches, with practical variant calling examples.\n\n\n\nGenome bioinformatics: resequencing & variant calling\nProvider: EMBL-EBI\nTopics: Short-read variant calling, quality control\nAccess: Free / self-paced\nLink: Course Materials\nWhat you’ll learn: Hands-on variant calling workflow from raw sequencing data through to filtered, annotated variants.\n\n\n\nData Wrangling and Processing for Genomics\nProvider: The Carpentries\nTopics: FASTQ, QC, mapping, variant calling preparation\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Essential skills for processing genomic data including quality control, trimming, alignment, and preparing data for variant calling.\n\n\n\nIntroduction to Next-Generation Sequencing Technologies\nProvider: OmicsTutorials\nTopics: NGS background\nAccess: Video tutorial\nLink: Watch Video\n\n\n\n\nStructural Variants\n\nStructural Variant detection and comparison (SVs)\nProvider: Physalia Courses\nTopics: SV detection, SV comparison\nAccess: Some materials open\nLink: Course Page\nWhat you’ll learn: Methods for detecting and analyzing structural variations including deletions, duplications, inversions, and translocations.\n\n\n\n\nVariant Annotation & Analysis\n\nExploring genotype–phenotype data using Ensembl\nProvider: EMBL-EBI\nTopics: Variant annotation, phenotype links\nAccess: Self-paced\nLink: Course Page\n\n\n\nVariant calling and annotation (FutureLearn)\nProvider: FutureLearn\nTopics: SNV/indel calling, annotation\nAccess: Free (register to audit)\nLink: Course Page"
+  },
+  {
+    "objectID": "tutorials-workshops.html#population-complex-trait-genetics",
+    "href": "tutorials-workshops.html#population-complex-trait-genetics",
+    "title": "Tutorials & Workshops",
+    "section": "Population & Complex Trait Genetics",
+    "text": "Population & Complex Trait Genetics\n\nGWAS & Polygenic Scores\n\nGWAS Catalog\nProvider: EMBL-EBI\nTopics: GWAS data exploration, variant annotation\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: How to navigate and interpret GWAS results, understand genome-wide significance, and explore disease-associated variants.\n\n\n\nCalculating polygenic scores with the Polygenic Score Catalog Calculator\nProvider: EMBL-EBI\nTopics: PRS / PGS Catalog usage\nAccess: Webinar (on-demand)\nLink: Webinar\nWhat you’ll learn: How to calculate and interpret polygenic risk scores for complex traits and diseases.\n\n\n\nAnalysing linkage disequilibrium with Ensembl\nProvider: EMBL-EBI\nTopics: LD analysis, population genetics\nAccess: Webinar (on-demand)\nLink: Webinar\n\n\n\n\nTranslational Genomics\n\nFrom variant to drug target: using the expanded toolbox\nProvider: EMBL-EBI\nTopics: Translational genomics, target prioritisation\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: How to move from genetic variants identified in GWAS to potential therapeutic targets."
+  },
+  {
+    "objectID": "tutorials-workshops.html#functional-genomics",
+    "href": "tutorials-workshops.html#functional-genomics",
+    "title": "Tutorials & Workshops",
+    "section": "Functional Genomics",
+    "text": "Functional Genomics\n\nFunctional Genomics I–III\nProvider: EMBL-EBI\nTopics: Experimental design, gene regulation, functional assays\nAccess: Free / self-paced\nLink: Course Series\nWhat you’ll learn: Comprehensive introduction to functional genomics including ChIP-seq, ATAC-seq, and other regulatory genomics approaches.\n\n\n\nFunctional Genomics: From Data to Biological Insight\nProvider: OmicsTutorials\nTopics: Functional genomics overview & tools\nAccess: Article / guide\nLink: Read Article"
+  },
+  {
+    "objectID": "tutorials-workshops.html#multi-omics-integration",
+    "href": "tutorials-workshops.html#multi-omics-integration",
+    "title": "Tutorials & Workshops",
+    "section": "Multi-Omics & Integration",
+    "text": "Multi-Omics & Integration\n\nIntroduction to multi-omics data integration and visualisation\nProvider: EMBL-EBI\nTopics: Multi-omics integration, visualization\nAccess: Self-paced\nLink: Course Materials\nWhat you’ll learn: Methods for integrating genomics, transcriptomics, proteomics, and other omics data types for comprehensive biological insights."
+  },
+  {
+    "objectID": "tutorials-workshops.html#dementia-specific-resources",
+    "href": "tutorials-workshops.html#dementia-specific-resources",
+    "title": "Tutorials & Workshops",
+    "section": "Dementia-Specific Resources",
+    "text": "Dementia-Specific Resources\n\nData-driven approaches to understanding dementia\nProvider: EMBL-EBI\nTopics: Systems / omics approaches to dementia\nAccess: Webinar (on-demand)\nLink: Webinar\nWhat you’ll learn: How genomics, transcriptomics, and other data-driven approaches are being applied to understand dementia mechanisms and identify therapeutic targets."
+  },
+  {
+    "objectID": "tutorials-workshops.html#workflows",
+    "href": "tutorials-workshops.html#workflows",
+    "title": "Tutorials & Workshops",
+    "section": "Workflow Management",
+    "text": "Workflow Management\n\nSnakemake\n\nSnakemake for Bioinformatics\nProvider: Carpentries Incubator\nTopics: Snakemake basics, rules, conda, workflows\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Build reproducible, scalable bioinformatics pipelines using Snakemake.\n\n\n\nGalaxy Training: Snakemake Tutorial\nProvider: Galaxy Project\nTopics: Workflow automation, Make → Snakemake transition\nAccess: Free / self-paced\nLink: Tutorial\n\n\n\nReproducible and Scalable Research with Snakemake & Containers\nProvider: SIB Swiss Institute of Bioinformatics\nTopics: Snakemake, Docker/Singularity, reproducibility\nAccess: Free materials\nLink: Training Materials\n\n\n\n\nNextflow\n\nDeploying Nextflow pipelines in the cloud\nProvider: EMBL-EBI\nTopics: Nextflow, workflow management\nAccess: Webinar (on-demand)\nLink: Webinar\n\n\n\nIntroduction to Workflow Tool Nextflow\nProvider: ARCCA\nTopics: Workflow management with Nextflow\nAccess: Recorded sessions / material\nLink: ARCCA Training\n\n\n\n\nReproducibility\n\nReproducibility in Bioinformatics\nProvider: Physalia Courses\nTopics: Containers, versioning, Snakemake\nAccess: Some slides/materials open\nLink: Course Page"
+  },
+  {
+    "objectID": "tutorials-workshops.html#programming-languages",
+    "href": "tutorials-workshops.html#programming-languages",
+    "title": "Tutorials & Workshops",
+    "section": "Programming Languages",
+    "text": "Programming Languages\n\nPython\n\nProgramming with Python\nProvider: Software Carpentry\nTopics: Python basics\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Python fundamentals including variables, loops, functions, and data structures - essential for bioinformatics scripting.\n\n\n\nPlotting and Programming in Python\nProvider: Data Carpentry\nTopics: Python + matplotlib\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Python programming with a focus on data analysis and visualization using matplotlib and pandas.\n\n\n\nIntroduction to Python\nProvider: ARCCA\nTopics: Python basics, HPC adaptation\nAccess: Recorded sessions\nLink: ARCCA Training\n\n\n\nAdvanced Python\nProvider: ARCCA\nTopics: Advanced Python programming\nAccess: Recorded sessions\nLink: ARCCA Training\n\n\n\n\nR Programming\n\nProgramming with R\nProvider: Software Carpentry\nTopics: R basics\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: R fundamentals for data analysis and statistical computing.\n\n\n\nR for Reproducible Scientific Analysis\nProvider: Software Carpentry\nTopics: R workflows, reproducibility\nAccess: Free / self-paced\nLink: Course Page\n\n\n\n\nDatabases & SQL\n\nDatabases and SQL\nProvider: Software Carpentry\nTopics: SQL basics, relational queries\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Query databases using SQL - useful for working with genomic databases and large datasets."
+  },
+  {
+    "objectID": "tutorials-workshops.html#version-control",
+    "href": "tutorials-workshops.html#version-control",
+    "title": "Tutorials & Workshops",
+    "section": "Version Control",
+    "text": "Version Control\n\nVersion Control with Git\nProvider: Software Carpentry\nTopics: Git, commits, branches, GitHub\nAccess: Free / self-paced\nLink: Course Page\nWhat you’ll learn: Essential Git skills for version controlling code and collaborating on projects. Critical skill for reproducible research."
+  },
+  {
+    "objectID": "tutorials-workshops.html#command-line",
+    "href": "tutorials-workshops.html#command-line",
+    "title": "Tutorials & Workshops",
+    "section": "Linux & Command Line",
+    "text": "Linux & Command Line\n\nIntroduction to Linux with Command Line\nProvider: ARCCA\nTopics: Linux CLI basics, navigation, commands\nAccess: Recorded sessions + material\nLink: ARCCA Training\nWhat you’ll learn: Navigate and use the Linux command line - absolutely essential for bioinformatics work.\n\n\n\nIntroduction to Linux Shell Scripting\nProvider: ARCCA\nTopics: Writing shell scripts, loops, automation\nAccess: Recorded sessions + material\nLink: ARCCA Training\n\n\n\nComprehensive Guide to Setting up and Using Linux for Bioinformatics Analysis\nProvider: OmicsTutorials\nTopics: Linux setup, shell basics, tooling for bioinformatics\nAccess: Article / guide\nLink: Read Guide\n\n\n\nMastering Bioinformatics Analysis with FASTA Sequences\nProvider: OmicsTutorials\nTopics: FASTA workflows, Unix/Linux skills\nAccess: Article / guide\nLink: Read Guide"
+  },
+  {
+    "objectID": "tutorials-workshops.html#high-performance-computing-hpc",
+    "href": "tutorials-workshops.html#high-performance-computing-hpc",
+    "title": "Tutorials & Workshops",
+    "section": "High-Performance Computing (HPC)",
+    "text": "High-Performance Computing (HPC)\n\nSupercomputing for Beginners\nProvider: ARCCA\nTopics: HPC basics, job submission, SLURM\nAccess: Recorded material\nLink: ARCCA Training\nWhat you’ll learn: How to use HPC clusters for large-scale bioinformatics analyses, job scheduling with SLURM.\n\n\n\nSLURM – Advanced Topics\nProvider: ARCCA\nTopics: Job arrays, resource management\nAccess: Recorded / material\nLink: ARCCA Training\n\n\n\nIntroduction to Parallel Programming (OpenMP & MPI)\nProvider: ARCCA\nTopics: Parallelisation, shared/distributed memory\nAccess: Recorded sessions / slides\nLink: ARCCA Training"
+  },
+  {
+    "objectID": "tutorials-workshops.html#containers-reproducibility",
+    "href": "tutorials-workshops.html#containers-reproducibility",
+    "title": "Tutorials & Workshops",
+    "section": "Containers & Reproducibility",
+    "text": "Containers & Reproducibility\n\nIntroduction to Containers and Singularity\nProvider: ARCCA\nTopics: Containerisation, reproducible environments\nAccess: Recorded sessions + material\nLink: ARCCA Training\nWhat you’ll learn: Use containers (Docker/Singularity) to create reproducible computational environments for bioinformatics pipelines."
+  },
+  {
+    "objectID": "tutorials-workshops.html#machine-learning-ai",
+    "href": "tutorials-workshops.html#machine-learning-ai",
+    "title": "Tutorials & Workshops",
+    "section": "Machine Learning & AI",
+    "text": "Machine Learning & AI\n\nIntroduction to Machine Learning Applications\nProvider: ARCCA\nTopics: ML basics, HPC applications\nAccess: Recorded sessions\nLink: ARCCA Training\n\n\n\nBasics of Large Language Models – transformers to LLMs\nProvider: EMBL-EBI\nTopics: Transformer & LLM foundations\nAccess: Webinar (on-demand)\nLink: Webinar\n\n\n\nDeveloping a dataset for LLM projects\nProvider: EMBL-EBI\nTopics: Data curation for LLMs\nAccess: Webinar (on-demand)\nLink: Webinar\n\n\n\nHow to Apply LLM Models in Bioinformatics Research (2025)\nProvider: OmicsTutorials\nTopics: LLMs in bioinformatics\nAccess: Articles / guides\nLink: Category Page"
+  },
+  {
+    "objectID": "tutorials-workshops.html#comprehensive-guides-best-practices",
+    "href": "tutorials-workshops.html#comprehensive-guides-best-practices",
+    "title": "Tutorials & Workshops",
+    "section": "Comprehensive Guides & Best Practices",
+    "text": "Comprehensive Guides & Best Practices\n\nComprehensive Bioinformatics Analysis Guide\nProvider: OmicsTutorials\nTopics: End-to-end overview (data → modeling), pipeline thinking\nAccess: Article / guide\nLink: Read Guide\nWhat you’ll learn: Complete workflow from data acquisition through advanced analysis and modeling.\n\n\n\nThings I Wish I Knew When Entering the Bioinformatics Field\nProvider: OmicsTutorials\nTopics: Variant calling, long-read assembly (Canu), workflow tips\nAccess: Article / guide\nLink: Read Article\nWhat you’ll learn: Practical advice and lessons learned - highly recommended for beginners!\n\n\n\n52 Common Mistakes in Bioinformatics and How to Avoid Them\nProvider: OmicsTutorials\nTopics: Pitfalls incl. alignment/variant calling, parallelising jobs\nAccess: Article / guide\nLink: Read Guide\nWhat you’ll learn: Common pitfalls and how to avoid them - save yourself time and frustration!\n\n\n\nQuick Guide Tutorial: Challenges in Big Data and Bioinformatics\nProvider: OmicsTutorials\nTopics: SAMtools, BEDTools, variant calling basics\nAccess: Article / guide\nLink: Read Guide\n\n\n\nIntroduction to bioinformatics Sequencing resource\nProvider: OmicsTutorials\nTopics: Sequencing resources overview\nAccess: Video tutorial\nLink: Watch Video"
+  },
+  {
+    "objectID": "tutorials-workshops.html#recommended-learning-paths",
+    "href": "tutorials-workshops.html#recommended-learning-paths",
+    "title": "Tutorials & Workshops",
+    "section": "Recommended Learning Paths",
+    "text": "Recommended Learning Paths\n\nPath 1: Complete Beginner to Variant Calling\n\nIntroduction to Linux\nVersion Control with Git\nProgramming with Python or R\nData Wrangling and Processing for Genomics\nGenome bioinformatics: resequencing & variant calling\nSnakemake for Bioinformatics\n\n\n\n\nPath 2: RNA-seq Analysis\n\nEnsure Linux/command line proficiency\nLearn R (Programming with R)\nFunctional Genomics series\nPractice with RNA-seq specific tools (see Tools & Setup)\n\n\n\n\nPath 3: Population Genetics & GWAS\n\nStrengthen programming skills (Python or R)\nGWAS Catalog course\nAnalysing linkage disequilibrium\nCalculating polygenic scores\nPopulation genetics tutorials\n\n\n\n\nPath 4: Reproducible Research Focus\n\nVersion Control with Git\nIntroduction to Containers\nSnakemake or Nextflow workflows\nReproducibility in Bioinformatics\nImplement Best Practices"
+  },
+  {
+    "objectID": "tutorials-workshops.html#tips-for-self-study",
+    "href": "tutorials-workshops.html#tips-for-self-study",
+    "title": "Tutorials & Workshops",
+    "section": "Tips for Self-Study",
+    "text": "Tips for Self-Study\n\n\n\n\n\n\nLearning Strategies\n\n\n\nSet aside dedicated time - Block out specific times for learning - Consistency matters more than long sessions\nLearn by doing - Work through all the examples - Apply concepts to your own data/projects - Don’t just read - actually run the code!\nTake notes - Document commands that work - Note common error messages and solutions - Build your own reference guide\nJoin communities - Biostars, Stack Overflow for Q&A - Twitter/Mastodon for staying current - Local bioinformatics groups or journal clubs\nTrack your learning - Use our Analysis Catalogue to track courses - Set goals and milestones - Revisit topics periodically for reinforcement"
+  },
+  {
+    "objectID": "tutorials-workshops.html#staying-current",
+    "href": "tutorials-workshops.html#staying-current",
+    "title": "Tutorials & Workshops",
+    "section": "Staying Current",
+    "text": "Staying Current\nBioinformatics evolves rapidly. Ways to keep learning:\n\nSubscribe to journal tables of contents (Nature Methods, Bioinformatics, etc.)\nFollow method developers on social media\nAttend conferences and webinars\nRead preprints (bioRxiv)\nTake advanced courses yearly"
+  },
+  {
+    "objectID": "tutorials-workshops.html#next-steps",
+    "href": "tutorials-workshops.html#next-steps",
+    "title": "Tutorials & Workshops",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nImplement what you’ve learned with Best Practices\nExplore Essential Tools for your workflow\nCheck Resources for additional databases and communities"
+  },
+  {
+    "objectID": "reproducible-project-structure.html",
+    "href": "reproducible-project-structure.html",
+    "title": "Reproducible Project Structure",
+    "section": "",
+    "text": "A consistent project structure makes work easier to understand, review, share, and continue. It reduces the time spent guessing where files live or which script produced which result.\nThis follows the same general logic used in our GitHub reproducibility session and the GIN-tonic approach: keep projects intentional, keep data handling explicit, and separate raw inputs from derived outputs and working code."
+  },
+  {
+    "objectID": "reproducible-project-structure.html#why-consistency-matters",
+    "href": "reproducible-project-structure.html#why-consistency-matters",
+    "title": "Reproducible Project Structure",
+    "section": "",
+    "text": "A consistent project structure makes work easier to understand, review, share, and continue. It reduces the time spent guessing where files live or which script produced which result.\nThis follows the same general logic used in our GitHub reproducibility session and the GIN-tonic approach: keep projects intentional, keep data handling explicit, and separate raw inputs from derived outputs and working code."
+  },
+  {
+    "objectID": "reproducible-project-structure.html#a-simple-standard-layout",
+    "href": "reproducible-project-structure.html#a-simple-standard-layout",
+    "title": "Reproducible Project Structure",
+    "section": "A Simple Standard Layout",
+    "text": "A Simple Standard Layout\nproject_name/\n├── README.md\n├── data/\n│   ├── raw/\n│   ├── processed/\n│   └── reference/\n├── scripts/\n├── results/\n├── docs/\n└── env/\nYou can extend this if needed, but the default layout should stay simple and predictable."
+  },
+  {
+    "objectID": "reproducible-project-structure.html#what-belongs-in-each-folder",
+    "href": "reproducible-project-structure.html#what-belongs-in-each-folder",
+    "title": "Reproducible Project Structure",
+    "section": "What Belongs in Each Folder",
+    "text": "What Belongs in Each Folder\n\nREADME.md\nThe project overview. State the purpose of the repository, who maintains it, where the data lives, and how the repository is organised.\n\n\ndata/raw/\nOriginal input data. Treat this as read-only. Do not manually edit files here.\n\n\ndata/processed/\nDerived data created from raw inputs. Anything here should be reproducible from documented steps.\n\n\ndata/reference/\nReference genomes, annotations, or other static resources needed for analysis.\n\n\nscripts/\nAnalysis code, helper scripts, notebooks that are part of the actual workflow, and small reusable utilities.\n\n\nresults/\nGenerated outputs such as tables, figures, reports, and summary files.\n\n\ndocs/\nSupporting project documentation such as methods notes, data dictionaries, decision logs, or handover notes.\n\n\nenv/\nEnvironment and configuration information such as environment.yml, package lists, container definitions, or config files."
+  },
+  {
+    "objectID": "reproducible-project-structure.html#practical-rules",
+    "href": "reproducible-project-structure.html#practical-rules",
+    "title": "Reproducible Project Structure",
+    "section": "Practical Rules",
+    "text": "Practical Rules\n\nkeep raw data separate from processed data\nkeep code separate from outputs\ngive folders names that reflect their purpose rather than the software used\navoid scattering key files across the repository root\ndocument any departures from the standard structure in the README"
+  },
+  {
+    "objectID": "reproducible-project-structure.html#why-this-helps",
+    "href": "reproducible-project-structure.html#why-this-helps",
+    "title": "Reproducible Project Structure",
+    "section": "Why This Helps",
+    "text": "Why This Helps\nThis kind of structure improves:\n\nreproducibility, because inputs, code, and outputs are clearly separated\nonboarding, because new starters can navigate a repository quickly\ncollaboration, because other people can understand where to add or find material\ncontinuity, because the project does not depend on one person’s memory"
+  },
+  {
+    "objectID": "reproducible-project-structure.html#a-slightly-expanded-example",
+    "href": "reproducible-project-structure.html#a-slightly-expanded-example",
+    "title": "Reproducible Project Structure",
+    "section": "A Slightly Expanded Example",
+    "text": "A Slightly Expanded Example\nproject_name/\n├── README.md\n├── data/\n│   ├── raw/\n│   ├── processed/\n│   └── reference/\n├── scripts/\n│   ├── 01_qc.sh\n│   ├── 02_alignment.sh\n│   └── 03_summary.R\n├── results/\n│   ├── qc/\n│   ├── tables/\n│   └── figures/\n├── docs/\n│   ├── methods.md\n│   └── data-location.md\n└── env/\n    ├── environment.yml\n    └── config.yml"
+  },
+  {
+    "objectID": "reproducible-project-structure.html#relationship-to-github",
+    "href": "reproducible-project-structure.html#relationship-to-github",
+    "title": "Reproducible Project Structure",
+    "section": "Relationship to GitHub",
+    "text": "Relationship to GitHub\nNot every file in a project belongs in GitHub, especially large or controlled data. The important thing is that the repository explains:\n\nwhat data was used\nwhere that data lives\nwhat scripts were run\nwhere outputs are written\nwhat someone else would need in order to rerun or extend the work"
+  },
+  {
+    "objectID": "reproducible-project-structure.html#start-simple",
+    "href": "reproducible-project-structure.html#start-simple",
+    "title": "Reproducible Project Structure",
+    "section": "Start Simple",
+    "text": "Start Simple\nThe goal is not to create a perfect structure up front. The goal is to start with a sensible default and avoid avoidable chaos.\nIf you are beginning a new repository, use Start Here first and then apply this structure immediately."
+  },
+  {
+    "objectID": "genomics-fundamentals.html",
+    "href": "genomics-fundamentals.html",
+    "title": "Genomics Fundamentals",
+    "section": "",
+    "text": "Understanding the genetic basis of dementia is crucial for developing new diagnostics and therapeutics. This section covers fundamental genomics concepts with applications to dementia research.\n\n\n\n\n\n\nWhy Genomics Matters for Dementia\n\n\n\nGenetic factors play significant roles in both familial and sporadic forms of dementia. Genomics helps us understand disease mechanisms, identify at-risk individuals, and discover therapeutic targets."
+  },
+  {
+    "objectID": "genomics-fundamentals.html#introduction-to-genomics-in-dementia-research",
+    "href": "genomics-fundamentals.html#introduction-to-genomics-in-dementia-research",
+    "title": "Genomics Fundamentals",
+    "section": "",
+    "text": "Understanding the genetic basis of dementia is crucial for developing new diagnostics and therapeutics. This section covers fundamental genomics concepts with applications to dementia research.\n\n\n\n\n\n\nWhy Genomics Matters for Dementia\n\n\n\nGenetic factors play significant roles in both familial and sporadic forms of dementia. Genomics helps us understand disease mechanisms, identify at-risk individuals, and discover therapeutic targets."
+  },
+  {
+    "objectID": "genomics-fundamentals.html#key-dementia-related-genes",
+    "href": "genomics-fundamentals.html#key-dementia-related-genes",
+    "title": "Genomics Fundamentals",
+    "section": "Key Dementia-Related Genes",
+    "text": "Key Dementia-Related Genes\n\nAlzheimer’s Disease\nAPOE (Apolipoprotein E)\n\nMost significant genetic risk factor for late-onset AD\nAPOE ε4 allele increases risk; ε2 may be protective\nInvolved in lipid metabolism and Aβ clearance\n\nAPP (Amyloid Precursor Protein)\n\nMutations cause early-onset familial AD\nProcessed to produce Aβ peptide\nKey target for therapeutic interventions\n\nPSEN1 & PSEN2 (Presenilin 1 & 2)\n\nMutations cause early-onset familial AD\nComponents of γ-secretase complex\nAffect APP processing\n\nRisk Genes from GWAS\n\nTREM2, CLU, CR1, BIN1, ABCA7, CD33, SORL1\nInvolved in immune response, lipid metabolism, endocytosis\n\n\n\nFrontotemporal Dementia\nMAPT (Microtubule-Associated Protein Tau)\n\nCauses FTD with parkinsonism\nTau protein aggregation\n\nGRN (Progranulin)\n\nHaploinsufficiency causes FTD\nRole in inflammation and neuronal survival\n\nC9orf72\n\nHexanucleotide repeat expansion\nMost common genetic cause of FTD and ALS\n\n\n\nLewy Body Dementia & Parkinson’s\nSNCA (α-synuclein)\n\nLinked to both PD and DLB\nProtein aggregation in Lewy bodies\n\nLRRK2, GBA, PARK genes\n\nAssociated with increased PD/DLB risk"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#genomic-data-types",
+    "href": "genomics-fundamentals.html#genomic-data-types",
+    "title": "Genomics Fundamentals",
+    "section": "Genomic Data Types",
+    "text": "Genomic Data Types\n\nSequencing Technologies\n\nWhole Genome Sequencing (WGS)\nWhat it measures: Complete DNA sequence of an organism\nApplications in dementia research:\n\nDiscovering rare variants\nStructural variation detection\nNon-coding region analysis\nComplete genetic risk profiling\n\nTypical coverage: 30x for germline studies\n\n\n\nWhole Exome Sequencing (WES)\nWhat it measures: Protein-coding regions (~1% of genome)\nApplications:\n\nFinding disease-causing variants in genes\nCost-effective for coding variant discovery\nUseful for familial dementia studies\n\nTypical coverage: 100x or higher\n\n\n\nTargeted/Panel Sequencing\nWhat it measures: Specific genes or regions of interest\nApplications:\n\nClinical diagnostic panels (e.g., AD/FTD gene panels)\nValidating variants found in WGS/WES\nLarge cohort studies of known risk loci\n\n\n\n\nRNA Sequencing (RNA-seq)\nWhat it measures: Gene expression levels, transcript isoforms\nApplications in dementia:\n\nDifferential gene expression in disease vs. control\nIdentifying dysregulated pathways\nAlternative splicing analysis\nSingle-cell RNA-seq for cell-type-specific changes\n\n\n\n\nLong-Read Sequencing\nTechnologies: PacBio, Oxford Nanopore\nAdvantages:\n\nBetter for structural variants\nPhasing variants\nResolving repetitive regions (like C9orf72 repeats)\nDetecting epigenetic modifications\n\n\n\n\n\nGenomic Data Formats\n\nFASTQ\nWhat it is: Raw sequencing reads with quality scores\nStructure:\n@SEQ_ID\nGATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT\n+\n!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65\nEach read has:\n\nSequence identifier (@)\nDNA sequence\nQuality scores (+ separator)\nASCII-encoded quality values\n\n\n\n\nSAM/BAM/CRAM\nWhat it is: Aligned sequence data\n\nSAM: Text format (human-readable)\nBAM: Binary compressed SAM (smaller, faster)\nCRAM: Further compressed (reference-based)\n\nKey fields:\n\nRead name, flag, chromosome, position\nCIGAR string (alignment representation)\nMapping quality, mate pair info\n\nExample SAM line:\nREAD1  99  chr1  12345  60  100M  =  12445  200  ACGT...  IIII...\n\n\n\nVCF (Variant Call Format)\nWhat it is: Standard format for variant data\nContains:\n\nChromosome, position, reference allele\nAlternate allele(s)\nQuality scores\nGenotype information\nAnnotations (if added)\n\nExample:\n#CHROM  POS     ID      REF  ALT  QUAL  FILTER  INFO\nchr19   45411941  rs429358  T   C   100   PASS   ...\n\n\n\nBED\nWhat it is: Simple format for genomic regions/features\nStructure:\nchr1  1000  2000  feature1  100  +\nchr1  3000  4000  feature2  200  -\nColumns: chromosome, start, end, (optional: name, score, strand)\nUses:\n\nDefining regions of interest\nGene annotations\nCoverage calculations\n\n\n\n\nGFF/GTF\nWhat it is: Gene annotation formats\nContains:\n\nGene, transcript, exon coordinates\nGene IDs, names, biotypes\nUsed by RNA-seq quantification tools"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#common-analysis-workflows",
+    "href": "genomics-fundamentals.html#common-analysis-workflows",
+    "title": "Genomics Fundamentals",
+    "section": "Common Analysis Workflows",
+    "text": "Common Analysis Workflows\n\nVariant Calling Pipeline\nRaw FASTQ reads\n    ↓\nQuality Control (FastQC)\n    ↓\nRead Trimming (Trimmomatic/cutadapt)\n    ↓\nAlignment to Reference (BWA/Bowtie2)\n    ↓\nBAM Processing (SAMtools: sort, index)\n    ↓\nMark Duplicates (GATK/Picard)\n    ↓\nBase Quality Recalibration (GATK)\n    ↓\nVariant Calling (GATK/FreeBayes)\n    ↓\nVariant Filtering\n    ↓\nVariant Annotation (VEP/SnpEff)\n    ↓\nDownstream Analysis\n\n\n\nRNA-seq Analysis Pipeline\nRaw FASTQ reads\n    ↓\nQuality Control (FastQC)\n    ↓\nTrimming (if needed)\n    ↓\nAlignment (STAR/HISAT2) OR Pseudo-alignment (Salmon/Kallisto)\n    ↓\nQuantification (featureCounts/Salmon)\n    ↓\nQuality Control (MultiQC)\n    ↓\nDifferential Expression (DESeq2/edgeR)\n    ↓\nPathway Analysis\n    ↓\nVisualization"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#gwas-concepts",
+    "href": "genomics-fundamentals.html#gwas-concepts",
+    "title": "Genomics Fundamentals",
+    "section": "GWAS Concepts",
+    "text": "GWAS Concepts\n\nWhat is GWAS?\nGenome-Wide Association Study identifies genetic variants associated with traits or diseases by scanning genomes of many individuals.\n\n\nKey Components\nSNP Arrays/Genotyping\n\nCommon variants (MAF &gt; 1%)\nMillions of SNPs tested simultaneously\nCost-effective for large cohorts\n\nStatistical Associations\n\nTesting each SNP for association with disease\nP-value threshold: typically 5×10⁻⁸ (genome-wide significance)\nMultiple testing correction\n\nManhattan Plots\n\nVisualize GWAS results\nX-axis: chromosomal position\nY-axis: -log10(p-value)\nPeaks indicate associated loci\n\n\n\n\nGWAS in Dementia Research\nMajor GWAS findings for Alzheimer’s:\n\nAPOE region (chromosome 19) - strongest signal\nImmune-related genes (TREM2, CR1, CD33)\nLipid metabolism genes (CLU, ABCA7)\nEndocytosis genes (BIN1, PICALM)\n\nPolygenic Risk Scores (PRS)\n\nCombines effects of many variants\nPredicts individual genetic risk\nUseful for risk stratification in clinical studies"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#linkage-disequilibrium-ld",
+    "href": "genomics-fundamentals.html#linkage-disequilibrium-ld",
+    "title": "Genomics Fundamentals",
+    "section": "Linkage Disequilibrium (LD)",
+    "text": "Linkage Disequilibrium (LD)\nWhat it is: Non-random association of alleles at different loci\nWhy it matters:\n\nGWAS signals often tag multiple correlated variants\nFine-mapping needed to identify causal variants\nDifferent LD patterns across populations\n\nTools for LD analysis:\n\nPLINK\nLDLink (online)\nEnsembl browser"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#functional-genomics",
+    "href": "genomics-fundamentals.html#functional-genomics",
+    "title": "Genomics Fundamentals",
+    "section": "Functional Genomics",
+    "text": "Functional Genomics\n\nUnderstanding Variant Effects\nNot all variants are equal:\nVariant Types by Impact:\n\nHigh impact: Stop gained/lost, frameshift\nModerate impact: Missense, in-frame indels\nLow impact: Synonymous variants\nModifier: Intronic, intergenic\n\nRegulatory Variants\n\nAffect gene expression\nLocated in enhancers, promoters\nCan be more common than coding variants\nHarder to interpret but equally important\n\n\n\n\nExpression QTLs (eQTLs)\nWhat they are: Genetic variants associated with gene expression levels\nApplications in dementia:\n\nConnect GWAS variants to affected genes\nUnderstand mechanisms\nBrain-specific eQTL databases (GTEx, BrainSeq)\n\n\n\n\nMulti-Omics Integration\nCombining data types for comprehensive understanding:\n\nGenomics + Transcriptomics: Which variants affect gene expression?\nGenomics + Proteomics: Protein-level effects of variants\nGenomics + Epigenomics: DNA methylation, histone modifications\nSingle-cell multi-omics: Cell-type-specific effects"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#population-genetics-considerations",
+    "href": "genomics-fundamentals.html#population-genetics-considerations",
+    "title": "Genomics Fundamentals",
+    "section": "Population Genetics Considerations",
+    "text": "Population Genetics Considerations\n\nAncestry and Dementia Risk\nWhy it matters:\n\nAllele frequencies vary by ancestry\nAPOE ε4 prevalence differs across populations\nPRS trained on European ancestry may not transfer well\n\nBest Practices:\n\nInclude diverse populations in studies\nReport ancestry-specific results\nConsider population stratification\nUse ancestry-informed analyses\n\n\n\n\nFamily-Based Studies\nApproaches:\n\nLinkage analysis for rare familial forms\nSegregation analysis\nParent-offspring trios for de novo mutations\n\nAdvantages:\n\nMore power for rare variants\nPhasing information\nControls for population structure"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#reference-genomes",
+    "href": "genomics-fundamentals.html#reference-genomes",
+    "title": "Genomics Fundamentals",
+    "section": "Reference Genomes",
+    "text": "Reference Genomes\n\nHuman Reference Assembly\nCurrent versions:\n\nGRCh38/hg38: Current standard (2013, regularly updated)\nGRCh37/hg19: Previous version (still widely used)\n\n\n\n\n\n\n\nCritical: Check Your Reference!\n\n\n\nAlways verify which reference genome was used. Coordinates differ between versions. Mixing them causes errors.\n\n\n\n\n\nReference Files Needed\nFor variant calling you’ll need:\n\nReference FASTA file (.fasta or .fa)\nIndex files (.fai, .dict)\nKnown variants (dbSNP, 1000 Genomes)\nGene annotations (GTF/GFF)\n\nWhere to download:\n\nNCBI, Ensembl, UCSC Genome Browser\nGATK Resource Bundle\nIllumina iGenomes"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#quality-metrics",
+    "href": "genomics-fundamentals.html#quality-metrics",
+    "title": "Genomics Fundamentals",
+    "section": "Quality Metrics",
+    "text": "Quality Metrics\n\nSequencing Quality\nKey metrics to check:\n\nQ30: Percentage of bases with quality score ≥ 30 (99.9% accuracy)\nCoverage: Average depth across genome/exome\nUniformity: Even coverage distribution\nDuplication rate: PCR duplicates (should be &lt;20%)\n\n\n\n\nAlignment Quality\n\nMapping rate: % reads that align (should be &gt;90%)\nProperly paired: For paired-end data\nInsert size distribution: Expected range for library\nChimeric reads: Abnormally high suggests contamination\n\n\n\n\nVariant Quality\n\nTransition/transversion ratio (Ti/Tv): ~2.0-2.1 for WGS (whole genome)\nHet/hom ratio: Expected ranges vary by analysis type\nMendelian errors: For family data\nKnown variant concordance: Compare to dbSNP"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#ethical-considerations",
+    "href": "genomics-fundamentals.html#ethical-considerations",
+    "title": "Genomics Fundamentals",
+    "section": "Ethical Considerations",
+    "text": "Ethical Considerations\n\nAPOE Genotyping\n\n\n\n\n\n\nEthical Note\n\n\n\nAPOE status has implications for AD risk. Special consent and genetic counseling considerations apply.\n\n\n\n\n\nIncidental Findings\nWhen sequencing, you may discover:\n\nPathogenic variants unrelated to dementia\nCarrier status for recessive conditions\nPharmacogenetic variants\n\nBest practices:\n\nFollow institutional policies\nConsider secondary findings policies (ACMG guidelines)\nPrepare return of results protocols"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#data-management",
+    "href": "genomics-fundamentals.html#data-management",
+    "title": "Genomics Fundamentals",
+    "section": "Data Management",
+    "text": "Data Management\n\nStorage Requirements\nTypical file sizes:\n\nRaw FASTQ (30x WGS): ~100-200 GB per sample\nBAM file: ~30-50 GB per sample\nVCF file: 1-10 GB (depending on samples)\n\nTips:\n\nCompress files (gzip, bgzip)\nUse CRAM instead of BAM when possible\nArchive raw data, keep processed files accessible\nPlan for backups!\n\n\n\n\nData Sharing\nPublic repositories:\n\ndbGaP: Controlled access for human data\nEuropean Genome-phenome Archive (EGA)\nSequence Read Archive (SRA): Raw sequencing data\n\nConsiderations:\n\nPatient consent for data sharing\nDe-identification requirements\nInstitutional data sharing policies"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#dementia-genomics-resources",
+    "href": "genomics-fundamentals.html#dementia-genomics-resources",
+    "title": "Genomics Fundamentals",
+    "section": "Dementia Genomics Resources",
+    "text": "Dementia Genomics Resources\n\nDatabases\n\nAlzGene: AD genetic association database\nGWAS Catalog: All GWAS results\nPGS Catalog: Polygenic scores\nClinVar: Clinical variant interpretations\ngnomAD: Population allele frequencies\n\n\n\nConsortia\n\nIGAP (International Genomics of Alzheimer’s Project)\nADGC (Alzheimer Disease Genetics Consortium)\nCHARGE (Cohorts for Heart and Aging Research in Genomic Epidemiology)"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#next-steps",
+    "href": "genomics-fundamentals.html#next-steps",
+    "title": "Genomics Fundamentals",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that you understand the fundamentals:\n\nPractice with Tutorials & Workshops\nSet up Essential Tools for your analyses\nImplement Best Practices for reproducibility\nExplore additional Resources for deeper learning"
+  },
+  {
+    "objectID": "genomics-fundamentals.html#further-reading",
+    "href": "genomics-fundamentals.html#further-reading",
+    "title": "Genomics Fundamentals",
+    "section": "Further Reading",
+    "text": "Further Reading\n\n\n\n\n\n\nRecommended Papers\n\n\n\n\nLambert et al. (2013) “Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer’s disease”\nKunkle et al. (2019) “Genetic meta-analysis of diagnosed Alzheimer’s disease identifies new risk loci”\nBellenguez et al. (2022) “New insights into the genetic etiology of Alzheimer’s disease and related dementias”"
+  },
+  {
+    "objectID": "tools-setup.html",
+    "href": "tools-setup.html",
+    "title": "Essential Tools & Setup",
+    "section": "",
+    "text": "This page covers essential tools for genomics analysis, particularly focused on dementia research applications. Each tool includes a description, use cases, and installation instructions.\n\n\n\n\n\n\nInstallation Tip\n\n\n\nMany bioinformatics tools can be installed via package managers like conda or mamba, which handle dependencies automatically. We recommend setting up a conda environment for your projects."
+  },
+  {
+    "objectID": "tools-setup.html#overview",
+    "href": "tools-setup.html#overview",
+    "title": "Essential Tools & Setup",
+    "section": "",
+    "text": "This page covers essential tools for genomics analysis, particularly focused on dementia research applications. Each tool includes a description, use cases, and installation instructions.\n\n\n\n\n\n\nInstallation Tip\n\n\n\nMany bioinformatics tools can be installed via package managers like conda or mamba, which handle dependencies automatically. We recommend setting up a conda environment for your projects."
+  },
+  {
+    "objectID": "tools-setup.html#setting-up-your-environment",
+    "href": "tools-setup.html#setting-up-your-environment",
+    "title": "Essential Tools & Setup",
+    "section": "Setting Up Your Environment",
+    "text": "Setting Up Your Environment\n\nConda/Mamba Setup\n# Install Miniconda (if not already installed)\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nbash Miniconda3-latest-Linux-x86_64.sh\n\n# Install mamba (faster alternative to conda)\nconda install -c conda-forge mamba\n\n# Create a bioinformatics environment\nmamba create -n bioinfo python=3.10\nconda activate bioinfo"
+  },
+  {
+    "objectID": "tools-setup.html#core-genomics-tools",
+    "href": "tools-setup.html#core-genomics-tools",
+    "title": "Essential Tools & Setup",
+    "section": "Core Genomics Tools",
+    "text": "Core Genomics Tools\n\nSequence Alignment & Mapping\n\nBWA (Burrows-Wheeler Aligner)\nWhat it does: Fast alignment of short DNA sequences to a reference genome. Industry standard for DNA-seq alignment.\nUse cases: Whole genome sequencing, exome sequencing, variant calling\nInstallation:\n# Via conda\nmamba install -c bioconda bwa\n\n# Or from source\ngit clone https://github.com/lh3/bwa.git\ncd bwa\nmake\nBasic usage:\n# Index reference genome\nbwa index reference.fasta\n\n# Align paired-end reads\nbwa mem reference.fasta read1.fq read2.fq &gt; aligned.sam\n\n\n\nBowtie2\nWhat it does: Ultra-fast alignment tool for sequencing reads, especially good for reads &gt;50bp.\nUse cases: RNA-seq, ChIP-seq, ATAC-seq alignment\nInstallation:\nmamba install -c bioconda bowtie2\n\n\n\nSTAR (Spliced Transcripts Alignment to a Reference)\nWhat it does: Fast RNA-seq aligner that handles splicing. Designed specifically for aligning RNA-seq reads to genomes.\nUse cases: RNA-seq analysis, identifying splice junctions, gene expression quantification\nInstallation:\nmamba install -c bioconda star\nBasic usage:\n# Generate genome index\nSTAR --runMode genomeGenerate --genomeDir genome_index \\\n     --genomeFastaFiles reference.fasta --sjdbGTFfile annotations.gtf\n\n# Align reads\nSTAR --genomeDir genome_index --readFilesIn read1.fq read2.fq \\\n     --outFileNamePrefix sample_ --outSAMtype BAM SortedByCoordinate\n\n\n\n\nFile Processing & Manipulation\n\nSAMtools\nWhat it does: Swiss army knife for manipulating SAM/BAM/CRAM files. Essential for sorting, indexing, filtering, and viewing alignment files.\nUse cases: Post-alignment processing, file format conversion, basic statistics, variant calling prep\nInstallation:\nmamba install -c bioconda samtools\nCommon commands:\n# Convert SAM to BAM\nsamtools view -b input.sam &gt; output.bam\n\n# Sort BAM file\nsamtools sort input.bam -o sorted.bam\n\n# Index BAM file\nsamtools index sorted.bam\n\n# View alignment statistics\nsamtools flagstat sorted.bam\n\n# Extract specific region\nsamtools view sorted.bam chr1:1000000-2000000\n\n\n\nBCFtools\nWhat it does: Utilities for variant calling and manipulating VCF/BCF files. Part of the SAMtools suite.\nUse cases: Variant calling, filtering variants, merging VCF files, format conversion\nInstallation:\nmamba install -c bioconda bcftools\nBasic usage:\n# Call variants\nbcftools mpileup -f reference.fasta sorted.bam | bcftools call -mv -O v -o variants.vcf\n\n# Filter variants by quality\nbcftools filter -i 'QUAL&gt;20' variants.vcf -o filtered.vcf\n\n# Extract sample statistics\nbcftools stats variants.vcf\n\n\n\nBEDtools\nWhat it does: Powerful toolkit for genome arithmetic - comparing, manipulating, and annotating genomic features in BED, VCF, BAM, and GFF formats.\nUse cases: Finding overlapping regions, calculating coverage, extracting sequences, intersecting genomic intervals\nInstallation:\nmamba install -c bioconda bedtools\nExample operations:\n# Intersect two BED files\nbedtools intersect -a file1.bed -b file2.bed &gt; overlap.bed\n\n# Calculate coverage\nbedtools coverage -a regions.bed -b alignments.bam &gt; coverage.txt\n\n# Extract FASTA sequences from BED intervals\nbedtools getfasta -fi genome.fa -bed regions.bed -fo output.fa\n\n\n\n\nVariant Calling\n\nGATK (Genome Analysis Toolkit)\nWhat it does: Comprehensive toolkit for variant discovery, particularly SNPs and indels. Gold standard for germline variant calling.\nUse cases: Germline variant calling (SNPs/indels), somatic variant calling, copy number variation, genotyping\nInstallation:\n# Via conda\nmamba install -c bioconda gatk4\n\n# Or download directly\nwget https://github.com/broadinstitute/gatk/releases/download/4.x.x.x/gatk-4.x.x.x.zip\nunzip gatk-4.x.x.x.zip\nKey GATK workflow steps:\n# Mark duplicates\ngatk MarkDuplicates -I sorted.bam -O marked.bam -M metrics.txt\n\n# Base quality score recalibration\ngatk BaseRecalibrator -I marked.bam -R reference.fasta \\\n     --known-sites dbsnp.vcf -O recal_data.table\n\ngatk ApplyBQSR -I marked.bam -R reference.fasta \\\n     --bqsr-recal-file recal_data.table -O recalibrated.bam\n\n# Call variants\ngatk HaplotypeCaller -R reference.fasta -I recalibrated.bam \\\n     -O variants.vcf\n\n\n\nFreeBayes\nWhat it does: Bayesian genetic variant detector. Good alternative to GATK, simpler to use for basic variant calling.\nUse cases: SNP/indel discovery, population genetics, simpler variant calling workflows\nInstallation:\nmamba install -c bioconda freebayes\n\n\n\nVarScan\nWhat it does: Variant detection in massively parallel sequencing data. Particularly good for somatic mutation detection.\nUse cases: Somatic mutations, copy number alterations, comparing tumor/normal samples\nInstallation:\nmamba install -c bioconda varscan\n\n\n\n\nVariant Annotation\n\nVEP (Variant Effect Predictor)\nWhat it does: Determines the effect of variants (SNPs, insertions, deletions) on genes, transcripts, and protein sequence. From Ensembl.\nUse cases: Functional annotation, predicting consequences of variants, prioritizing variants\nInstallation:\nmamba install -c bioconda ensembl-vep\n\n# Download cache (required for offline use)\nvep_install -a cf -s homo_sapiens -y GRCh38\nBasic usage:\nvep -i variants.vcf -o annotated.vcf --cache --assembly GRCh38 \\\n    --everything --vcf --force_overwrite\n\n\n\nSnpEff\nWhat it does: Genetic variant annotation and effect prediction. Simpler alternative to VEP.\nUse cases: Variant annotation, functional effect prediction\nInstallation:\nmamba install -c bioconda snpeff\n\n# Download database\nsnpeff download GRCh38.99\n\n\n\nANNOVAR\nWhat it does: Efficient annotation of genetic variants with diverse databases.\nUse cases: Variant annotation, integrating multiple annotation sources\nInstallation: Download from ANNOVAR website\n\n\n\n\nQuality Control\n\nFastQC\nWhat it does: Quality control tool for high throughput sequence data. Generates reports on read quality, GC content, adapter contamination, etc.\nUse cases: Pre- and post-processing QC, identifying problems with sequencing data\nInstallation:\nmamba install -c bioconda fastqc\nUsage:\n# Run on single file\nfastqc sample.fastq.gz\n\n# Run on multiple files\nfastqc *.fastq.gz -o qc_results/\n\n\n\nMultiQC\nWhat it does: Aggregates results from multiple bioinformatics analyses into a single report. Works with FastQC, STAR, GATK, and many other tools.\nUse cases: Summarizing QC across multiple samples, project-wide quality reports\nInstallation:\nmamba install -c bioconda multiqc\nUsage:\n# Run in directory containing analysis results\nmultiqc .\n\n\n\nTrimmomatic\nWhat it does: Flexible read trimming tool for Illumina NGS data. Removes adapters and low-quality bases.\nUse cases: Pre-processing raw reads, adapter removal, quality trimming\nInstallation:\nmamba install -c bioconda trimmomatic\n\n\n\n\nLong-Read Sequencing\n\nMinimap2\nWhat it does: Versatile sequence alignment program for long reads (PacBio, Oxford Nanopore). Very fast.\nUse cases: Long-read alignment, genome assembly, RNA isoform detection\nInstallation:\nmamba install -c bioconda minimap2\n\n\n\nCanu\nWhat it does: Long-read assembler for high-noise single-molecule sequencing.\nUse cases: De novo genome assembly from PacBio/Nanopore reads\nInstallation:\nmamba install -c bioconda canu\n\n\n\n\nStructural Variation\n\nManta\nWhat it does: Structural variant caller for Illumina sequencing data.\nUse cases: Detecting deletions, insertions, inversions, duplications, translocations\nInstallation:\nmamba install -c bioconda manta\n\n\n\nDelly\nWhat it does: Integrated structural variant prediction method.\nUse cases: SV detection in germline and somatic contexts\nInstallation:\nmamba install -c bioconda delly"
+  },
+  {
+    "objectID": "tools-setup.html#rna-seq-specific-tools",
+    "href": "tools-setup.html#rna-seq-specific-tools",
+    "title": "Essential Tools & Setup",
+    "section": "RNA-seq Specific Tools",
+    "text": "RNA-seq Specific Tools\n\nQuantification\n\nSalmon\nWhat it does: Ultra-fast transcript quantification from RNA-seq data. Uses pseudoalignment.\nUse cases: Gene/transcript expression quantification\nInstallation:\nmamba install -c bioconda salmon\n\n\n\nfeatureCounts (from Subread package)\nWhat it does: Counts reads mapping to genomic features (genes, exons, etc.).\nUse cases: RNA-seq read counting for differential expression analysis\nInstallation:\nmamba install -c bioconda subread\n\n\n\nRSEM\nWhat it does: Accurate transcript quantification from RNA-seq data.\nUse cases: Isoform-level expression estimation\nInstallation:\nmamba install -c bioconda rsem\n\n\n\n\nDifferential Expression\n\nDESeq2\nWhat it does: R package for differential gene expression analysis using count data.\nUse cases: Finding differentially expressed genes between conditions\nInstallation (in R):\nif (!require(\"BiocManager\", quietly = TRUE))\n    install.packages(\"BiocManager\")\nBiocManager::install(\"DESeq2\")\n\n\n\nedgeR\nWhat it does: R package for differential expression analysis of RNA-seq data.\nUse cases: Differential expression, particularly for datasets with biological replication\nInstallation (in R):\nBiocManager::install(\"edgeR\")"
+  },
+  {
+    "objectID": "tools-setup.html#workflow-management",
+    "href": "tools-setup.html#workflow-management",
+    "title": "Essential Tools & Setup",
+    "section": "Workflow Management",
+    "text": "Workflow Management\n\nNextflow\nWhat it does: Workflow management system for data-driven computational pipelines.\nUse cases: Building reproducible, scalable bioinformatics pipelines\nInstallation:\n# Via conda\nmamba install -c bioconda nextflow\n\n# Or direct download\ncurl -s https://get.nextflow.io | bash\n\n\n\nSnakemake\nWhat it does: Python-based workflow management system.\nUse cases: Creating reproducible and scalable data analyses\nInstallation:\nmamba install -c conda-forge -c bioconda snakemake"
+  },
+  {
+    "objectID": "tools-setup.html#containerization",
+    "href": "tools-setup.html#containerization",
+    "title": "Essential Tools & Setup",
+    "section": "Containerization",
+    "text": "Containerization\n\nDocker\nWhat it does: Platform for developing, shipping, and running applications in containers.\nUse cases: Reproducible environments, sharing analyses\nInstallation: See Docker documentation\n\n\n\nSingularity/Apptainer\nWhat it does: Container platform designed for HPC environments. More HPC-friendly than Docker.\nUse cases: Running containers on HPC clusters\nInstallation:\nmamba install -c conda-forge singularity"
+  },
+  {
+    "objectID": "tools-setup.html#dementia-relevant-databases-tools",
+    "href": "tools-setup.html#dementia-relevant-databases-tools",
+    "title": "Essential Tools & Setup",
+    "section": "Dementia-Relevant Databases & Tools",
+    "text": "Dementia-Relevant Databases & Tools\n\nPGS Catalog\nWhat it does: Repository of polygenic scores (PGS) for various traits and diseases, including neurodegenerative conditions.\nUse cases: Calculating polygenic risk scores for dementia and related traits\nAccess: PGS Catalog\n\n\n\nGWAS Catalog\nWhat it does: Curated collection of genome-wide association studies.\nUse cases: Finding known genetic associations with dementia, AD, other neurodegenerative diseases\nAccess: GWAS Catalog\n\n\n\nEnsembl\nWhat it does: Genome browser and database for vertebrate genomes.\nUse cases: Genome annotation, variant annotation, accessing reference genomes\nAccess: Ensembl\n\n\n\nAlzGene\nWhat it does: Field synopsis of genetic association studies in Alzheimer’s disease.\nUse cases: AD genetics research, known genetic risk factors\nAccess: AlzGene"
+  },
+  {
+    "objectID": "tools-setup.html#tips-for-tool-management",
+    "href": "tools-setup.html#tips-for-tool-management",
+    "title": "Essential Tools & Setup",
+    "section": "Tips for Tool Management",
+    "text": "Tips for Tool Management\n\n\n\n\n\n\nVersion Control is Critical\n\n\n\nAlways document which version of each tool you used. Results can vary between versions.\n\n\n\nBest Practices\n\nUse environment management (conda, mamba) to keep projects isolated\nDocument versions in your README and analysis catalogue\nCreate environment files for reproducibility:\nconda env export &gt; environment.yml\nTest on small datasets first before running large analyses\nRead the documentation - most tools have excellent docs with examples"
+  },
+  {
+    "objectID": "tools-setup.html#quick-reference-commands",
+    "href": "tools-setup.html#quick-reference-commands",
+    "title": "Essential Tools & Setup",
+    "section": "Quick Reference Commands",
+    "text": "Quick Reference Commands\n# Check if tool is installed\nwhich bwa\nsamtools --version\n\n# List conda environments\nconda env list\n\n# Activate environment\nconda activate bioinfo\n\n# Export environment for reproducibility\nconda env export &gt; environment.yml\n\n# Create environment from file\nconda env create -f environment.yml"
+  },
+  {
+    "objectID": "tools-setup.html#next-steps",
+    "href": "tools-setup.html#next-steps",
+    "title": "Essential Tools & Setup",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that you know what tools are available:\n\nSet up your computing environment with the essential tools\nExplore Genomics Fundamentals to understand the data types\nTry hands-on Tutorials & Workshops\nEstablish Best Practices for your analyses"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources & References",
+    "section": "",
+    "text": "This page compiles essential databases, online communities, and additional resources to support your bioinformatics journey. Bookmark this page for quick reference!"
+  },
+  {
+    "objectID": "resources.html#overview",
+    "href": "resources.html#overview",
+    "title": "Resources & References",
+    "section": "",
+    "text": "This page compiles essential databases, online communities, and additional resources to support your bioinformatics journey. Bookmark this page for quick reference!"
+  },
+  {
+    "objectID": "resources.html#genomics-databases",
+    "href": "resources.html#genomics-databases",
+    "title": "Resources & References",
+    "section": "Genomics Databases",
+    "text": "Genomics Databases\n\nReference Genomes & Annotations\n\nEnsembl\nWhat it is: Genome browser for vertebrate genomes\nUse for: Browsing genes, transcripts, variants, regulatory elements\nLink: ensembl.org\nFeatures: Genome browser, BioMart data mining, REST API\n\n\n\nUCSC Genome Browser\nWhat it is: Web-based genome browser\nUse for: Visualizing genomic data, downloading reference files\nLink: genome.ucsc.edu\nFeatures: Custom tracks, table browser, liftOver tool\n\n\n\nNCBI RefSeq\nWhat it is: Curated collection of genomic, transcript, and protein sequences\nUse for: Reference sequences, gene information\nLink: ncbi.nlm.nih.gov/refseq\n\n\n\n\nVariant Databases\n\ndbSNP\nWhat it is: Database of single nucleotide polymorphisms and short variants\nUse for: Variant IDs (rs numbers), allele frequencies\nLink: ncbi.nlm.nih.gov/snp\n\n\n\ngnomAD (Genome Aggregation Database)\nWhat it is: Population allele frequency database (&gt;140,000 genomes)\nUse for: Determining if variants are common or rare, filtering\nLink: gnomad.broadinstitute.org\nKey feature: Allele frequencies across diverse populations\n\n\n\nClinVar\nWhat it is: Public archive of relationships between variants and phenotypes\nUse for: Clinical significance of variants, pathogenicity\nLink: ncbi.nlm.nih.gov/clinvar\n\n\n\nCOSMIC (Catalogue of Somatic Mutations in Cancer)\nWhat it is: Database of somatic mutations in cancer\nUse for: Cancer genomics, somatic variant annotation\nLink: cancer.sanger.ac.uk/cosmic\n\n\n\n\nGWAS & Association Studies\n\nGWAS Catalog\nWhat it is: Curated collection of published GWAS results\nUse for: Finding known genetic associations, exploring traits\nLink: ebi.ac.uk/gwas\nKey feature: Searchable by trait, gene, variant\n\n\n\nPGS Catalog (Polygenic Score Catalog)\nWhat it is: Open database of published polygenic scores\nUse for: Calculating polygenic risk scores, risk prediction\nLink: pgscatalog.org\nIncludes: Calculator tool, score downloads\n\n\n\nOpenTargets\nWhat it is: Platform integrating genetics and genomics for target identification\nUse for: Connecting genetic evidence to drug targets\nLink: platform.opentargets.org\n\n\n\n\nDementia-Specific Resources\n\nAlzGene\nWhat it is: Field synopsis of genetic association studies in Alzheimer’s disease\nUse for: Known AD risk loci, meta-analysis results\nLink: alzgene.org\nNote: Last updated 2014, but comprehensive for established loci\n\n\n\nAlzforum\nWhat it is: Networking site for Alzheimer’s research\nUse for: News, mutations database, research tools\nLink: alzforum.org\nFeatures: Mutations database, biomarkers, protocols\n\n\n\nNIAGADS (National Institute on Aging Genetics of Alzheimer’s Disease Data Storage)\nWhat it is: Repository for AD genetics data\nUse for: Accessing AD genomics datasets\nLink: niagads.org\nAccess: Requires application/approval\n\n\n\n\nExpression & Functional Databases\n\nGTEx (Genotype-Tissue Expression)\nWhat it is: Resource on human gene expression and regulation across tissues\nUse for: Tissue-specific expression, eQTLs\nLink: gtexportal.org\nIncludes: Brain-specific data (multiple regions)\n\n\n\nENCODE\nWhat it is: Encyclopedia of DNA Elements\nUse for: Regulatory elements, transcription factors, chromatin states\nLink: encodeproject.org\n\n\n\nSTRING\nWhat it is: Protein-protein interaction networks\nUse for: Understanding protein interactions, pathway analysis\nLink: string-db.org\n\n\n\nReactome\nWhat it is: Pathway database\nUse for: Pathway analysis, understanding biological processes\nLink: reactome.org"
+  },
+  {
+    "objectID": "resources.html#data-repositories",
+    "href": "resources.html#data-repositories",
+    "title": "Resources & References",
+    "section": "Data Repositories",
+    "text": "Data Repositories\n\nSequence Read Archive (SRA)\nWhat it is: NCBI’s repository for raw sequencing data\nUse for: Downloading/uploading sequencing data\nLink: ncbi.nlm.nih.gov/sra\nTool: SRA Toolkit for downloading\n\n\n\nEuropean Nucleotide Archive (ENA)\nWhat it is: European equivalent of SRA\nUse for: Raw sequencing data (often faster downloads in Europe)\nLink: ebi.ac.uk/ena\n\n\n\nGene Expression Omnibus (GEO)\nWhat it is: Repository for gene expression and genomics data\nUse for: Finding published expression datasets\nLink: ncbi.nlm.nih.gov/geo\n\n\n\ndbGaP (Database of Genotypes and Phenotypes)\nWhat it is: Controlled-access archive for human genetic/phenotypic data\nUse for: Accessing large-scale human genomics studies\nLink: ncbi.nlm.nih.gov/gap\nAccess: Requires application through your institution\n\n\n\nEuropean Genome-phenome Archive (EGA)\nWhat it is: European archive for sensitive human data\nUse for: Controlled-access human genomics data\nLink: ega-archive.org"
+  },
+  {
+    "objectID": "resources.html#online-communities-forums",
+    "href": "resources.html#online-communities-forums",
+    "title": "Resources & References",
+    "section": "Online Communities & Forums",
+    "text": "Online Communities & Forums\n\nBiostars\nWhat it is: Q&A forum for bioinformatics\nBest for: Getting help with specific analysis problems\nLink: biostars.org\nTip: Search before posting - your question may already be answered!\n\n\n\nSEQanswers\nWhat it is: Forum focused on sequencing technologies and analysis\nBest for: NGS-specific discussions, troubleshooting\nLink: seqanswers.com\n\n\n\nStack Overflow (Bioinformatics tags)\nWhat it is: Programming Q&A site\nBest for: Coding questions, debugging\nLink: stackoverflow.com\nSearch tags: bioinformatics, biopython, bioconductor, genomics\n\n\n\nReddit Communities\n\nr/bioinformatics: General bioinformatics discussion\nreddit.com/r/bioinformatics\nr/genomics: Genomics-focused\nreddit.com/r/genomics\nr/learnbioinformatics: For learning and education\nreddit.com/r/learnbioinformatics\n\n\n\n\nTwitter/X & Mastodon\nFollow these tags/communities: - #bioinformatics - #genomics - #scicomm - #epitwitter (for epidemiology/public health)\nActive bioinformatics community on Mastodon: - genomic.social (Mastodon instance for genomics researchers)"
+  },
+  {
+    "objectID": "resources.html#software-repositories",
+    "href": "resources.html#software-repositories",
+    "title": "Resources & References",
+    "section": "Software Repositories",
+    "text": "Software Repositories\n\nBioconda\nWhat it is: Package repository for bioinformatics software\nWhy essential: Easy installation of bioinformatics tools\nLink: bioconda.github.io\nUsage: conda install -c bioconda toolname\n\n\n\nBioconductor\nWhat it is: R packages for genomic data analysis\nWhy essential: Statistical analysis and visualization of genomics data\nLink: bioconductor.org\nNote: Over 2,000 packages for all types of genomic analyses\n\n\n\nBioPython\nWhat it is: Python tools for computational biology\nUse for: Parsing biological file formats, sequence analysis\nLink: biopython.org\nDocs: Excellent tutorials available\n\n\n\nGitHub Topics\nSearch these topics to find relevant bioinformatics tools: - bioinformatics - genomics - variant-calling - rna-seq"
+  },
+  {
+    "objectID": "resources.html#learning-resources",
+    "href": "resources.html#learning-resources",
+    "title": "Resources & References",
+    "section": "Learning Resources",
+    "text": "Learning Resources\n\nJournals to Follow\nMethods/Tools: - Nature Methods - Bioinformatics - Genome Biology - BMC Bioinformatics - GigaScience\nDisease/Dementia-focused: - Alzheimer’s & Dementia - Neurology - Molecular Neurodegeneration - Acta Neuropathologica\n\n\n\nPreprint Servers\n\nbioRxiv\nWhat it is: Preprint server for biology\nWhy follow: See cutting-edge research before peer review\nLink: biorxiv.org\nTip: Set up alerts for topics of interest\n\n\n\nmedRxiv\nWhat it is: Preprint server for medical sciences\nLink: medrxiv.org\n\n\n\n\nBlogs & Websites\n\nThe Bioinformatics CRO\nWhat it is: Blog with practical bioinformatics tutorials\nLink: thebioinformaticscro.co.uk\n\n\n\nLiving in an Ivory Basement\nWhat it is: Titus Brown’s blog on bioinformatics and open science\nLink: ivory.idyll.org/blog\n\n\n\nEMBL-EBI Training Blog\nWhat it is: Updates on courses and bioinformatics training\nLink: ebi.ac.uk/training\n\n\n\nOmicsTutorials\nWhat it is: Comprehensive bioinformatics tutorials and guides\nLink: omicstutorials.com\n\n\n\n\nYouTube Channels\nStatQuest with Josh Starmer - Excellent explanations of statistical concepts - Covers RNA-seq, PCA, machine learning - youtube.com/@statquest\nEMBL-EBI Training - Webinars and training videos - youtube.com/@EBITraining\nComputational Biology Core Leuven - Bioinformatics tutorials - youtube.com/@ComputationalBiologyCoreLeuven"
+  },
+  {
+    "objectID": "resources.html#books",
+    "href": "resources.html#books",
+    "title": "Resources & References",
+    "section": "Books",
+    "text": "Books\n\nBioinformatics Data Skills\nAuthor: Vince Buffalo\nBest for: Learning Unix, version control, and working with genomic data\nWhy read: Comprehensive practical guide to bioinformatics infrastructure\n\n\n\nBioinformatics Algorithms: An Active Learning Approach\nAuthors: Compeau & Pevzner\nBest for: Understanding algorithms behind bioinformatics tools\nWhy read: Learn how tools actually work under the hood\n\n\n\nIntroduction to Genomics\nAuthor: Arthur Lesk\nBest for: Biological background on genomics\nWhy read: Understand the biology behind the data\n\n\n\nRNA-seq Data Analysis: A Practical Approach\nEditors: Eija Korpelainen et al.\nBest for: Comprehensive RNA-seq analysis guide\nWhy read: End-to-end RNA-seq workflows with practical examples"
+  },
+  {
+    "objectID": "resources.html#podcasts",
+    "href": "resources.html#podcasts",
+    "title": "Resources & References",
+    "section": "Podcasts",
+    "text": "Podcasts\n\nThe Bioinformatics Chat\nWhat it is: Interviews with bioinformatics researchers and developers\nLink: bioinformatics.chat\nGreat for: Staying current with methods and hearing about career paths\n\n\n\nThe Genetics Podcast\nWhat it is: Genomics and genetics interviews\nTopics: From GWAS to clinical genomics\nLink: thegeneticspodcast.com"
+  },
+  {
+    "objectID": "resources.html#professional-organizations",
+    "href": "resources.html#professional-organizations",
+    "title": "Resources & References",
+    "section": "Professional Organizations",
+    "text": "Professional Organizations\n\nInternational Society for Computational Biology (ISCB)\nWhat it is: Premier bioinformatics professional organization\nBenefits: Conferences (ISMB, RECOMB), journals, student fellowships\nLink: iscb.org\n\n\n\nEuropean Society of Human Genetics (ESHG)\nWhat it is: Organization for human genetics professionals\nLink: eshg.org\n\n\n\nAmerican Society of Human Genetics (ASHG)\nWhat it is: Leading organization for human genetics\nLink: ashg.org"
+  },
+  {
+    "objectID": "resources.html#conferences",
+    "href": "resources.html#conferences",
+    "title": "Resources & References",
+    "section": "Conferences",
+    "text": "Conferences\n\nMajor Bioinformatics Conferences\n\nISMB (Intelligent Systems for Molecular Biology) - Annual, July\nRECOMB (Research in Computational Molecular Biology) - Annual, Spring\nASHG (American Society of Human Genetics) - Annual, Fall\nESHG (European Society of Human Genetics) - Annual, Spring\nAdvances in Genome Biology and Technology (AGBT) - Annual, February\n\n\n\nDementia Research Conferences\n\nAlzheimer’s Association International Conference (AAIC) - Annual, Summer\nClinical Trials on Alzheimer’s Disease (CTAD) - Annual, Fall\nAD/PD™ (Alzheimer’s and Parkinson’s Diseases) - Biennial"
+  },
+  {
+    "objectID": "resources.html#cheat-sheets-quick-references",
+    "href": "resources.html#cheat-sheets-quick-references",
+    "title": "Resources & References",
+    "section": "Cheat Sheets & Quick References",
+    "text": "Cheat Sheets & Quick References\n\nCommand Line Cheat Sheets\n\nLinux Command Line Cheat Sheet\nBash Scripting Cheat Sheet\nGit Cheat Sheet\n\n\n\nBioinformatics-Specific\n\nSAMtools/BCFtools Cheat Sheet\nBEDtools Cheat Sheet\nGATK Best Practices\nBioconda Cheat Sheet"
+  },
+  {
+    "objectID": "resources.html#useful-tools-utilities",
+    "href": "resources.html#useful-tools-utilities",
+    "title": "Resources & References",
+    "section": "Useful Tools & Utilities",
+    "text": "Useful Tools & Utilities\n\nFile Format Converters\nBAM/SAM/CRAM: SAMtools\nBED/GFF/GTF: BEDtools, gffread\nFASTQ quality encoding: seqtk\nVCF/BCF: BCFtools\n\n\n\nGenome Browsers (Local)\nIGV (Integrative Genomics Viewer) - Visualize alignments, variants, annotations - software.broadinstitute.org/software/igv\nJBrowse - Web-based genome browser - jbrowse.org\n\n\n\nVisualization Tools\nR packages: - ggplot2 (general plotting) - ggbio (genomic data) - ComplexHeatmap (heatmaps) - circlize (circular plots, genomic rearrangements)\nPython: - matplotlib/seaborn (general plotting) - plotly (interactive plots) - pysam (BAM file visualization)"
+  },
+  {
+    "objectID": "resources.html#how-to-stay-current",
+    "href": "resources.html#how-to-stay-current",
+    "title": "Resources & References",
+    "section": "How to Stay Current",
+    "text": "How to Stay Current\n\nDaily Habits\n\nSet up Google Scholar alerts for key topics (e.g., “Alzheimer’s genomics”)\nFollow key researchers on Twitter/Mastodon\nSubscribe to journal TOC alerts (Table of Contents)\nCheck bioRxiv weekly for preprints in your area\n\n\n\nWeekly Habits\n\nRead 1-2 papers in depth (not just abstracts)\nTry a new tool or technique from tutorials\nParticipate in forums - answer questions when you can\nReview your analysis catalogue and project progress\n\n\n\nMonthly Habits\n\nAttend a webinar or virtual conference\nDeep dive into one new method or tool\nUpdate your skills with a new tutorial\nWrite about what you learned (blog, notes, or share with lab)"
+  },
+  {
+    "objectID": "resources.html#getting-help",
+    "href": "resources.html#getting-help",
+    "title": "Resources & References",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nBefore Asking Questions\n\nSearch first: Google, Biostars, Stack Overflow\nCheck documentation: Tool manuals, GitHub issues\nTry debugging yourself: Error messages often have clues\nIsolate the problem: Minimal reproducible example\n\n\n\nHow to Ask Good Questions\nInclude: - What you’re trying to do - What you’ve tried already - Exact error messages (full output) - Software versions - Minimal code example - Expected vs. actual output\nGood question template:\nTitle: SAMtools sort fails with \"truncated file\" error\n\nI'm trying to sort a BAM file but getting an error.\n\nCommand:\nsamtools sort input.bam -o sorted.bam\n\nError:\n[E::bgzf_read] Read 0 bytes from input.bam.bam; 7 expected\nsamtools sort: truncated file. Aborting\n\nWhat I've tried:\n- Checked file isn't corrupted (md5sum matches)\n- Tried with different BAM files\n- Reinstalled samtools\n\nEnvironment:\n- samtools version: 1.15\n- OS: Ubuntu 20.04\n- Input file size: 50GB\n\nAny suggestions on what might be causing this?"
+  },
+  {
+    "objectID": "resources.html#tips-for-continuous-learning",
+    "href": "resources.html#tips-for-continuous-learning",
+    "title": "Resources & References",
+    "section": "Tips for Continuous Learning",
+    "text": "Tips for Continuous Learning\n\n\n\n\n\n\nLearning Strategies\n\n\n\n\nLearn by doing: Work with real data whenever possible\nRead the papers: Don’t just use tools - understand the methods\nTeach others: Best way to solidify your understanding\nBuild a portfolio: Document your projects publicly\nContribute: Report bugs, improve documentation, answer questions\nNetwork: Join local bioinformatics groups, attend meetups\nStay humble: Bioinformatics is vast - no one knows everything"
+  },
+  {
+    "objectID": "resources.html#conclusion",
+    "href": "resources.html#conclusion",
+    "title": "Resources & References",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis toolkit provides a foundation, but bioinformatics is a journey of continuous learning. Use these resources, stay curious, and don’t hesitate to reach out to the community when you need help.\n\n\n\n\n\n\nRemember\n\n\n\nThe best bioinformaticians are those who: - Document their work thoroughly - Ask questions when stuck - Share their knowledge - Keep learning new methods - Stay engaged with the community\nGood luck on your bioinformatics journey! 🧬"
+  },
+  {
+    "objectID": "resources.html#quick-links-summary",
+    "href": "resources.html#quick-links-summary",
+    "title": "Resources & References",
+    "section": "Quick Links Summary",
+    "text": "Quick Links Summary\nStart Here: - Home - Getting started guide - Tools & Setup - Essential software - Genomics Fundamentals - Core concepts - Tutorials & Workshops - Learning resources - Best Practices - Reproducible research\nEssential Databases: - Ensembl - gnomAD - GWAS Catalog - PGS Catalog\nGet Help: - Biostars - Stack Overflow - r/bioinformatics"
+  }
+]

@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Genomics Fundamentals – UKDRI Bioinformatics Toolkit</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4c29adad017bb1baa061f3a64c16486a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">UKDRI Bioinformatics Toolkit</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./start-here.html"> 
+<span class="menu-text">Start Here</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tools-setup.html"> 
+<span class="menu-text">Tools &amp; Setup</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducible-project-structure.html"> 
+<span class="menu-text">Project Structure</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./best-practices.html"> 
+<span class="menu-text">Best Practices</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./institutional-github.html"> 
+<span class="menu-text">Institutional GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorials-workshops.html"> 
+<span class="menu-text">Tutorials &amp; Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-genomics-in-dementia-research" id="toc-introduction-to-genomics-in-dementia-research" class="nav-link active" data-scroll-target="#introduction-to-genomics-in-dementia-research">Introduction to Genomics in Dementia Research</a></li>
+  <li><a href="#key-dementia-related-genes" id="toc-key-dementia-related-genes" class="nav-link" data-scroll-target="#key-dementia-related-genes">Key Dementia-Related Genes</a>
+  <ul class="collapse">
+  <li><a href="#alzheimers-disease" id="toc-alzheimers-disease" class="nav-link" data-scroll-target="#alzheimers-disease">Alzheimer’s Disease</a></li>
+  <li><a href="#frontotemporal-dementia" id="toc-frontotemporal-dementia" class="nav-link" data-scroll-target="#frontotemporal-dementia">Frontotemporal Dementia</a></li>
+  <li><a href="#lewy-body-dementia-parkinsons" id="toc-lewy-body-dementia-parkinsons" class="nav-link" data-scroll-target="#lewy-body-dementia-parkinsons">Lewy Body Dementia &amp; Parkinson’s</a></li>
+  </ul></li>
+  <li><a href="#genomic-data-types" id="toc-genomic-data-types" class="nav-link" data-scroll-target="#genomic-data-types">Genomic Data Types</a>
+  <ul class="collapse">
+  <li><a href="#sequencing-technologies" id="toc-sequencing-technologies" class="nav-link" data-scroll-target="#sequencing-technologies">Sequencing Technologies</a></li>
+  <li><a href="#genomic-data-formats" id="toc-genomic-data-formats" class="nav-link" data-scroll-target="#genomic-data-formats">Genomic Data Formats</a></li>
+  </ul></li>
+  <li><a href="#common-analysis-workflows" id="toc-common-analysis-workflows" class="nav-link" data-scroll-target="#common-analysis-workflows">Common Analysis Workflows</a>
+  <ul class="collapse">
+  <li><a href="#variant-calling-pipeline" id="toc-variant-calling-pipeline" class="nav-link" data-scroll-target="#variant-calling-pipeline">Variant Calling Pipeline</a></li>
+  <li><a href="#rna-seq-analysis-pipeline" id="toc-rna-seq-analysis-pipeline" class="nav-link" data-scroll-target="#rna-seq-analysis-pipeline">RNA-seq Analysis Pipeline</a></li>
+  </ul></li>
+  <li><a href="#gwas-concepts" id="toc-gwas-concepts" class="nav-link" data-scroll-target="#gwas-concepts">GWAS Concepts</a>
+  <ul class="collapse">
+  <li><a href="#what-is-gwas" id="toc-what-is-gwas" class="nav-link" data-scroll-target="#what-is-gwas">What is GWAS?</a></li>
+  <li><a href="#key-components" id="toc-key-components" class="nav-link" data-scroll-target="#key-components">Key Components</a></li>
+  <li><a href="#gwas-in-dementia-research" id="toc-gwas-in-dementia-research" class="nav-link" data-scroll-target="#gwas-in-dementia-research">GWAS in Dementia Research</a></li>
+  </ul></li>
+  <li><a href="#linkage-disequilibrium-ld" id="toc-linkage-disequilibrium-ld" class="nav-link" data-scroll-target="#linkage-disequilibrium-ld">Linkage Disequilibrium (LD)</a></li>
+  <li><a href="#functional-genomics" id="toc-functional-genomics" class="nav-link" data-scroll-target="#functional-genomics">Functional Genomics</a>
+  <ul class="collapse">
+  <li><a href="#understanding-variant-effects" id="toc-understanding-variant-effects" class="nav-link" data-scroll-target="#understanding-variant-effects">Understanding Variant Effects</a></li>
+  <li><a href="#expression-qtls-eqtls" id="toc-expression-qtls-eqtls" class="nav-link" data-scroll-target="#expression-qtls-eqtls">Expression QTLs (eQTLs)</a></li>
+  <li><a href="#multi-omics-integration" id="toc-multi-omics-integration" class="nav-link" data-scroll-target="#multi-omics-integration">Multi-Omics Integration</a></li>
+  </ul></li>
+  <li><a href="#population-genetics-considerations" id="toc-population-genetics-considerations" class="nav-link" data-scroll-target="#population-genetics-considerations">Population Genetics Considerations</a>
+  <ul class="collapse">
+  <li><a href="#ancestry-and-dementia-risk" id="toc-ancestry-and-dementia-risk" class="nav-link" data-scroll-target="#ancestry-and-dementia-risk">Ancestry and Dementia Risk</a></li>
+  <li><a href="#family-based-studies" id="toc-family-based-studies" class="nav-link" data-scroll-target="#family-based-studies">Family-Based Studies</a></li>
+  </ul></li>
+  <li><a href="#reference-genomes" id="toc-reference-genomes" class="nav-link" data-scroll-target="#reference-genomes">Reference Genomes</a>
+  <ul class="collapse">
+  <li><a href="#human-reference-assembly" id="toc-human-reference-assembly" class="nav-link" data-scroll-target="#human-reference-assembly">Human Reference Assembly</a></li>
+  <li><a href="#reference-files-needed" id="toc-reference-files-needed" class="nav-link" data-scroll-target="#reference-files-needed">Reference Files Needed</a></li>
+  </ul></li>
+  <li><a href="#quality-metrics" id="toc-quality-metrics" class="nav-link" data-scroll-target="#quality-metrics">Quality Metrics</a>
+  <ul class="collapse">
+  <li><a href="#sequencing-quality" id="toc-sequencing-quality" class="nav-link" data-scroll-target="#sequencing-quality">Sequencing Quality</a></li>
+  <li><a href="#alignment-quality" id="toc-alignment-quality" class="nav-link" data-scroll-target="#alignment-quality">Alignment Quality</a></li>
+  <li><a href="#variant-quality" id="toc-variant-quality" class="nav-link" data-scroll-target="#variant-quality">Variant Quality</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a>
+  <ul class="collapse">
+  <li><a href="#apoe-genotyping" id="toc-apoe-genotyping" class="nav-link" data-scroll-target="#apoe-genotyping">APOE Genotyping</a></li>
+  <li><a href="#incidental-findings" id="toc-incidental-findings" class="nav-link" data-scroll-target="#incidental-findings">Incidental Findings</a></li>
+  </ul></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data Management</a>
+  <ul class="collapse">
+  <li><a href="#storage-requirements" id="toc-storage-requirements" class="nav-link" data-scroll-target="#storage-requirements">Storage Requirements</a></li>
+  <li><a href="#data-sharing" id="toc-data-sharing" class="nav-link" data-scroll-target="#data-sharing">Data Sharing</a></li>
+  </ul></li>
+  <li><a href="#dementia-genomics-resources" id="toc-dementia-genomics-resources" class="nav-link" data-scroll-target="#dementia-genomics-resources">Dementia Genomics Resources</a>
+  <ul class="collapse">
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">Databases</a></li>
+  <li><a href="#consortia" id="toc-consortia" class="nav-link" data-scroll-target="#consortia">Consortia</a></li>
+  </ul></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Genomics Fundamentals</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Core concepts for dementia research</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-to-genomics-in-dementia-research" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-genomics-in-dementia-research">Introduction to Genomics in Dementia Research</h2>
+<p>Understanding the genetic basis of dementia is crucial for developing new diagnostics and therapeutics. This section covers fundamental genomics concepts with applications to dementia research.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why Genomics Matters for Dementia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Genetic factors play significant roles in both familial and sporadic forms of dementia. Genomics helps us understand disease mechanisms, identify at-risk individuals, and discover therapeutic targets.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="key-dementia-related-genes" class="level2">
+<h2 class="anchored" data-anchor-id="key-dementia-related-genes">Key Dementia-Related Genes</h2>
+<section id="alzheimers-disease" class="level3">
+<h3 class="anchored" data-anchor-id="alzheimers-disease">Alzheimer’s Disease</h3>
+<p><strong>APOE (Apolipoprotein E)</strong></p>
+<ul>
+<li>Most significant genetic risk factor for late-onset AD</li>
+<li>APOE ε4 allele increases risk; ε2 may be protective</li>
+<li>Involved in lipid metabolism and Aβ clearance</li>
+</ul>
+<p><strong>APP (Amyloid Precursor Protein)</strong></p>
+<ul>
+<li>Mutations cause early-onset familial AD</li>
+<li>Processed to produce Aβ peptide</li>
+<li>Key target for therapeutic interventions</li>
+</ul>
+<p><strong>PSEN1 &amp; PSEN2 (Presenilin 1 &amp; 2)</strong></p>
+<ul>
+<li>Mutations cause early-onset familial AD</li>
+<li>Components of γ-secretase complex</li>
+<li>Affect APP processing</li>
+</ul>
+<p><strong>Risk Genes from GWAS</strong></p>
+<ul>
+<li>TREM2, CLU, CR1, BIN1, ABCA7, CD33, SORL1</li>
+<li>Involved in immune response, lipid metabolism, endocytosis</li>
+</ul>
+</section>
+<section id="frontotemporal-dementia" class="level3">
+<h3 class="anchored" data-anchor-id="frontotemporal-dementia">Frontotemporal Dementia</h3>
+<p><strong>MAPT (Microtubule-Associated Protein Tau)</strong></p>
+<ul>
+<li>Causes FTD with parkinsonism</li>
+<li>Tau protein aggregation</li>
+</ul>
+<p><strong>GRN (Progranulin)</strong></p>
+<ul>
+<li>Haploinsufficiency causes FTD</li>
+<li>Role in inflammation and neuronal survival</li>
+</ul>
+<p><strong>C9orf72</strong></p>
+<ul>
+<li>Hexanucleotide repeat expansion</li>
+<li>Most common genetic cause of FTD and ALS</li>
+</ul>
+</section>
+<section id="lewy-body-dementia-parkinsons" class="level3">
+<h3 class="anchored" data-anchor-id="lewy-body-dementia-parkinsons">Lewy Body Dementia &amp; Parkinson’s</h3>
+<p><strong>SNCA (α-synuclein)</strong></p>
+<ul>
+<li>Linked to both PD and DLB</li>
+<li>Protein aggregation in Lewy bodies</li>
+</ul>
+<p><strong>LRRK2, GBA, PARK genes</strong></p>
+<ul>
+<li>Associated with increased PD/DLB risk</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="genomic-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="genomic-data-types">Genomic Data Types</h2>
+<section id="sequencing-technologies" class="level3">
+<h3 class="anchored" data-anchor-id="sequencing-technologies">Sequencing Technologies</h3>
+<section id="whole-genome-sequencing-wgs" class="level4">
+<h4 class="anchored" data-anchor-id="whole-genome-sequencing-wgs">Whole Genome Sequencing (WGS)</h4>
+<p><strong>What it measures:</strong> Complete DNA sequence of an organism</p>
+<p><strong>Applications in dementia research:</strong></p>
+<ul>
+<li>Discovering rare variants</li>
+<li>Structural variation detection</li>
+<li>Non-coding region analysis</li>
+<li>Complete genetic risk profiling</li>
+</ul>
+<p><strong>Typical coverage:</strong> 30x for germline studies</p>
+<hr>
+</section>
+<section id="whole-exome-sequencing-wes" class="level4">
+<h4 class="anchored" data-anchor-id="whole-exome-sequencing-wes">Whole Exome Sequencing (WES)</h4>
+<p><strong>What it measures:</strong> Protein-coding regions (~1% of genome)</p>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Finding disease-causing variants in genes</li>
+<li>Cost-effective for coding variant discovery</li>
+<li>Useful for familial dementia studies</li>
+</ul>
+<p><strong>Typical coverage:</strong> 100x or higher</p>
+<hr>
+</section>
+<section id="targetedpanel-sequencing" class="level4">
+<h4 class="anchored" data-anchor-id="targetedpanel-sequencing">Targeted/Panel Sequencing</h4>
+<p><strong>What it measures:</strong> Specific genes or regions of interest</p>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Clinical diagnostic panels (e.g., AD/FTD gene panels)</li>
+<li>Validating variants found in WGS/WES</li>
+<li>Large cohort studies of known risk loci</li>
+</ul>
+<hr>
+</section>
+<section id="rna-sequencing-rna-seq" class="level4">
+<h4 class="anchored" data-anchor-id="rna-sequencing-rna-seq">RNA Sequencing (RNA-seq)</h4>
+<p><strong>What it measures:</strong> Gene expression levels, transcript isoforms</p>
+<p><strong>Applications in dementia:</strong></p>
+<ul>
+<li>Differential gene expression in disease vs.&nbsp;control</li>
+<li>Identifying dysregulated pathways</li>
+<li>Alternative splicing analysis</li>
+<li>Single-cell RNA-seq for cell-type-specific changes</li>
+</ul>
+<hr>
+</section>
+<section id="long-read-sequencing" class="level4">
+<h4 class="anchored" data-anchor-id="long-read-sequencing">Long-Read Sequencing</h4>
+<p><strong>Technologies:</strong> PacBio, Oxford Nanopore</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Better for structural variants</li>
+<li>Phasing variants</li>
+<li>Resolving repetitive regions (like C9orf72 repeats)</li>
+<li>Detecting epigenetic modifications</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="genomic-data-formats" class="level3">
+<h3 class="anchored" data-anchor-id="genomic-data-formats">Genomic Data Formats</h3>
+<section id="fastq" class="level4">
+<h4 class="anchored" data-anchor-id="fastq">FASTQ</h4>
+<p><strong>What it is:</strong> Raw sequencing reads with quality scores</p>
+<p><strong>Structure:</strong></p>
+<pre><code>@SEQ_ID
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65</code></pre>
+<p><strong>Each read has:</strong></p>
+<ul>
+<li>Sequence identifier (@)</li>
+<li>DNA sequence</li>
+<li>Quality scores (+ separator)</li>
+<li>ASCII-encoded quality values</li>
+</ul>
+<hr>
+</section>
+<section id="sambamcram" class="level4">
+<h4 class="anchored" data-anchor-id="sambamcram">SAM/BAM/CRAM</h4>
+<p><strong>What it is:</strong> Aligned sequence data</p>
+<ul>
+<li><strong>SAM:</strong> Text format (human-readable)</li>
+<li><strong>BAM:</strong> Binary compressed SAM (smaller, faster)</li>
+<li><strong>CRAM:</strong> Further compressed (reference-based)</li>
+</ul>
+<p><strong>Key fields:</strong></p>
+<ul>
+<li>Read name, flag, chromosome, position</li>
+<li>CIGAR string (alignment representation)</li>
+<li>Mapping quality, mate pair info</li>
+</ul>
+<p><strong>Example SAM line:</strong></p>
+<pre><code>READ1  99  chr1  12345  60  100M  =  12445  200  ACGT...  IIII...</code></pre>
+<hr>
+</section>
+<section id="vcf-variant-call-format" class="level4">
+<h4 class="anchored" data-anchor-id="vcf-variant-call-format">VCF (Variant Call Format)</h4>
+<p><strong>What it is:</strong> Standard format for variant data</p>
+<p><strong>Contains:</strong></p>
+<ul>
+<li>Chromosome, position, reference allele</li>
+<li>Alternate allele(s)</li>
+<li>Quality scores</li>
+<li>Genotype information</li>
+<li>Annotations (if added)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>#CHROM  POS     ID      REF  ALT  QUAL  FILTER  INFO
+chr19   45411941  rs429358  T   C   100   PASS   ...</code></pre>
+<hr>
+</section>
+<section id="bed" class="level4">
+<h4 class="anchored" data-anchor-id="bed">BED</h4>
+<p><strong>What it is:</strong> Simple format for genomic regions/features</p>
+<p><strong>Structure:</strong></p>
+<pre><code>chr1  1000  2000  feature1  100  +
+chr1  3000  4000  feature2  200  -</code></pre>
+<p><strong>Columns:</strong> chromosome, start, end, (optional: name, score, strand)</p>
+<p><strong>Uses:</strong></p>
+<ul>
+<li>Defining regions of interest</li>
+<li>Gene annotations</li>
+<li>Coverage calculations</li>
+</ul>
+<hr>
+</section>
+<section id="gffgtf" class="level4">
+<h4 class="anchored" data-anchor-id="gffgtf">GFF/GTF</h4>
+<p><strong>What it is:</strong> Gene annotation formats</p>
+<p><strong>Contains:</strong></p>
+<ul>
+<li>Gene, transcript, exon coordinates</li>
+<li>Gene IDs, names, biotypes</li>
+<li>Used by RNA-seq quantification tools</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="common-analysis-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="common-analysis-workflows">Common Analysis Workflows</h2>
+<section id="variant-calling-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="variant-calling-pipeline">Variant Calling Pipeline</h3>
+<pre><code>Raw FASTQ reads
+    ↓
+Quality Control (FastQC)
+    ↓
+Read Trimming (Trimmomatic/cutadapt)
+    ↓
+Alignment to Reference (BWA/Bowtie2)
+    ↓
+BAM Processing (SAMtools: sort, index)
+    ↓
+Mark Duplicates (GATK/Picard)
+    ↓
+Base Quality Recalibration (GATK)
+    ↓
+Variant Calling (GATK/FreeBayes)
+    ↓
+Variant Filtering
+    ↓
+Variant Annotation (VEP/SnpEff)
+    ↓
+Downstream Analysis</code></pre>
+<hr>
+</section>
+<section id="rna-seq-analysis-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="rna-seq-analysis-pipeline">RNA-seq Analysis Pipeline</h3>
+<pre><code>Raw FASTQ reads
+    ↓
+Quality Control (FastQC)
+    ↓
+Trimming (if needed)
+    ↓
+Alignment (STAR/HISAT2) OR Pseudo-alignment (Salmon/Kallisto)
+    ↓
+Quantification (featureCounts/Salmon)
+    ↓
+Quality Control (MultiQC)
+    ↓
+Differential Expression (DESeq2/edgeR)
+    ↓
+Pathway Analysis
+    ↓
+Visualization</code></pre>
+<hr>
+</section>
+</section>
+<section id="gwas-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="gwas-concepts">GWAS Concepts</h2>
+<section id="what-is-gwas" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-gwas">What is GWAS?</h3>
+<p>Genome-Wide Association Study identifies genetic variants associated with traits or diseases by scanning genomes of many individuals.</p>
+</section>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components</h3>
+<p><strong>SNP Arrays/Genotyping</strong></p>
+<ul>
+<li>Common variants (MAF &gt; 1%)</li>
+<li>Millions of SNPs tested simultaneously</li>
+<li>Cost-effective for large cohorts</li>
+</ul>
+<p><strong>Statistical Associations</strong></p>
+<ul>
+<li>Testing each SNP for association with disease</li>
+<li>P-value threshold: typically 5×10⁻⁸ (genome-wide significance)</li>
+<li>Multiple testing correction</li>
+</ul>
+<p><strong>Manhattan Plots</strong></p>
+<ul>
+<li>Visualize GWAS results</li>
+<li>X-axis: chromosomal position</li>
+<li>Y-axis: -log10(p-value)</li>
+<li>Peaks indicate associated loci</li>
+</ul>
+<hr>
+</section>
+<section id="gwas-in-dementia-research" class="level3">
+<h3 class="anchored" data-anchor-id="gwas-in-dementia-research">GWAS in Dementia Research</h3>
+<p>Major GWAS findings for Alzheimer’s:</p>
+<ul>
+<li>APOE region (chromosome 19) - strongest signal</li>
+<li>Immune-related genes (TREM2, CR1, CD33)</li>
+<li>Lipid metabolism genes (CLU, ABCA7)</li>
+<li>Endocytosis genes (BIN1, PICALM)</li>
+</ul>
+<p><strong>Polygenic Risk Scores (PRS)</strong></p>
+<ul>
+<li>Combines effects of many variants</li>
+<li>Predicts individual genetic risk</li>
+<li>Useful for risk stratification in clinical studies</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="linkage-disequilibrium-ld" class="level2">
+<h2 class="anchored" data-anchor-id="linkage-disequilibrium-ld">Linkage Disequilibrium (LD)</h2>
+<p><strong>What it is:</strong> Non-random association of alleles at different loci</p>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>GWAS signals often tag multiple correlated variants</li>
+<li>Fine-mapping needed to identify causal variants</li>
+<li>Different LD patterns across populations</li>
+</ul>
+<p><strong>Tools for LD analysis:</strong></p>
+<ul>
+<li>PLINK</li>
+<li>LDLink (online)</li>
+<li>Ensembl browser</li>
+</ul>
+<hr>
+</section>
+<section id="functional-genomics" class="level2">
+<h2 class="anchored" data-anchor-id="functional-genomics">Functional Genomics</h2>
+<section id="understanding-variant-effects" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-variant-effects">Understanding Variant Effects</h3>
+<p>Not all variants are equal:</p>
+<p><strong>Variant Types by Impact:</strong></p>
+<ul>
+<li><strong>High impact:</strong> Stop gained/lost, frameshift</li>
+<li><strong>Moderate impact:</strong> Missense, in-frame indels</li>
+<li><strong>Low impact:</strong> Synonymous variants</li>
+<li><strong>Modifier:</strong> Intronic, intergenic</li>
+</ul>
+<p><strong>Regulatory Variants</strong></p>
+<ul>
+<li>Affect gene expression</li>
+<li>Located in enhancers, promoters</li>
+<li>Can be more common than coding variants</li>
+<li>Harder to interpret but equally important</li>
+</ul>
+<hr>
+</section>
+<section id="expression-qtls-eqtls" class="level3">
+<h3 class="anchored" data-anchor-id="expression-qtls-eqtls">Expression QTLs (eQTLs)</h3>
+<p><strong>What they are:</strong> Genetic variants associated with gene expression levels</p>
+<p><strong>Applications in dementia:</strong></p>
+<ul>
+<li>Connect GWAS variants to affected genes</li>
+<li>Understand mechanisms</li>
+<li>Brain-specific eQTL databases (GTEx, BrainSeq)</li>
+</ul>
+<hr>
+</section>
+<section id="multi-omics-integration" class="level3">
+<h3 class="anchored" data-anchor-id="multi-omics-integration">Multi-Omics Integration</h3>
+<p>Combining data types for comprehensive understanding:</p>
+<ul>
+<li><strong>Genomics + Transcriptomics:</strong> Which variants affect gene expression?</li>
+<li><strong>Genomics + Proteomics:</strong> Protein-level effects of variants</li>
+<li><strong>Genomics + Epigenomics:</strong> DNA methylation, histone modifications</li>
+<li><strong>Single-cell multi-omics:</strong> Cell-type-specific effects</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="population-genetics-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="population-genetics-considerations">Population Genetics Considerations</h2>
+<section id="ancestry-and-dementia-risk" class="level3">
+<h3 class="anchored" data-anchor-id="ancestry-and-dementia-risk">Ancestry and Dementia Risk</h3>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>Allele frequencies vary by ancestry</li>
+<li>APOE ε4 prevalence differs across populations</li>
+<li>PRS trained on European ancestry may not transfer well</li>
+</ul>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Include diverse populations in studies</li>
+<li>Report ancestry-specific results</li>
+<li>Consider population stratification</li>
+<li>Use ancestry-informed analyses</li>
+</ul>
+<hr>
+</section>
+<section id="family-based-studies" class="level3">
+<h3 class="anchored" data-anchor-id="family-based-studies">Family-Based Studies</h3>
+<p><strong>Approaches:</strong></p>
+<ul>
+<li>Linkage analysis for rare familial forms</li>
+<li>Segregation analysis</li>
+<li>Parent-offspring trios for de novo mutations</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>More power for rare variants</li>
+<li>Phasing information</li>
+<li>Controls for population structure</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="reference-genomes" class="level2">
+<h2 class="anchored" data-anchor-id="reference-genomes">Reference Genomes</h2>
+<section id="human-reference-assembly" class="level3">
+<h3 class="anchored" data-anchor-id="human-reference-assembly">Human Reference Assembly</h3>
+<p><strong>Current versions:</strong></p>
+<ul>
+<li><strong>GRCh38/hg38:</strong> Current standard (2013, regularly updated)</li>
+<li><strong>GRCh37/hg19:</strong> Previous version (still widely used)</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Critical: Check Your Reference!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always verify which reference genome was used. Coordinates differ between versions. Mixing them causes errors.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="reference-files-needed" class="level3">
+<h3 class="anchored" data-anchor-id="reference-files-needed">Reference Files Needed</h3>
+<p>For variant calling you’ll need:</p>
+<ul>
+<li>Reference FASTA file (<code>.fasta</code> or <code>.fa</code>)</li>
+<li>Index files (<code>.fai</code>, <code>.dict</code>)</li>
+<li>Known variants (dbSNP, 1000 Genomes)</li>
+<li>Gene annotations (GTF/GFF)</li>
+</ul>
+<p><strong>Where to download:</strong></p>
+<ul>
+<li>NCBI, Ensembl, UCSC Genome Browser</li>
+<li>GATK Resource Bundle</li>
+<li>Illumina iGenomes</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="quality-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="quality-metrics">Quality Metrics</h2>
+<section id="sequencing-quality" class="level3">
+<h3 class="anchored" data-anchor-id="sequencing-quality">Sequencing Quality</h3>
+<p><strong>Key metrics to check:</strong></p>
+<ul>
+<li><strong>Q30:</strong> Percentage of bases with quality score ≥ 30 (99.9% accuracy)</li>
+<li><strong>Coverage:</strong> Average depth across genome/exome</li>
+<li><strong>Uniformity:</strong> Even coverage distribution</li>
+<li><strong>Duplication rate:</strong> PCR duplicates (should be &lt;20%)</li>
+</ul>
+<hr>
+</section>
+<section id="alignment-quality" class="level3">
+<h3 class="anchored" data-anchor-id="alignment-quality">Alignment Quality</h3>
+<ul>
+<li><strong>Mapping rate:</strong> % reads that align (should be &gt;90%)</li>
+<li><strong>Properly paired:</strong> For paired-end data</li>
+<li><strong>Insert size distribution:</strong> Expected range for library</li>
+<li><strong>Chimeric reads:</strong> Abnormally high suggests contamination</li>
+</ul>
+<hr>
+</section>
+<section id="variant-quality" class="level3">
+<h3 class="anchored" data-anchor-id="variant-quality">Variant Quality</h3>
+<ul>
+<li><strong>Transition/transversion ratio (Ti/Tv):</strong> ~2.0-2.1 for WGS (whole genome)</li>
+<li><strong>Het/hom ratio:</strong> Expected ranges vary by analysis type</li>
+<li><strong>Mendelian errors:</strong> For family data</li>
+<li><strong>Known variant concordance:</strong> Compare to dbSNP</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<section id="apoe-genotyping" class="level3">
+<h3 class="anchored" data-anchor-id="apoe-genotyping">APOE Genotyping</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ethical Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>APOE status has implications for AD risk. Special consent and genetic counseling considerations apply.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="incidental-findings" class="level3">
+<h3 class="anchored" data-anchor-id="incidental-findings">Incidental Findings</h3>
+<p>When sequencing, you may discover:</p>
+<ul>
+<li>Pathogenic variants unrelated to dementia</li>
+<li>Carrier status for recessive conditions</li>
+<li>Pharmacogenetic variants</li>
+</ul>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Follow institutional policies</li>
+<li>Consider secondary findings policies (ACMG guidelines)</li>
+<li>Prepare return of results protocols</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="data-management" class="level2">
+<h2 class="anchored" data-anchor-id="data-management">Data Management</h2>
+<section id="storage-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="storage-requirements">Storage Requirements</h3>
+<p>Typical file sizes:</p>
+<ul>
+<li>Raw FASTQ (30x WGS): ~100-200 GB per sample</li>
+<li>BAM file: ~30-50 GB per sample</li>
+<li>VCF file: 1-10 GB (depending on samples)</li>
+</ul>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Compress files (gzip, bgzip)</li>
+<li>Use CRAM instead of BAM when possible</li>
+<li>Archive raw data, keep processed files accessible</li>
+<li>Plan for backups!</li>
+</ul>
+<hr>
+</section>
+<section id="data-sharing" class="level3">
+<h3 class="anchored" data-anchor-id="data-sharing">Data Sharing</h3>
+<p><strong>Public repositories:</strong></p>
+<ul>
+<li><strong>dbGaP:</strong> Controlled access for human data</li>
+<li><strong>European Genome-phenome Archive (EGA)</strong></li>
+<li><strong>Sequence Read Archive (SRA):</strong> Raw sequencing data</li>
+</ul>
+<p><strong>Considerations:</strong></p>
+<ul>
+<li>Patient consent for data sharing</li>
+<li>De-identification requirements</li>
+<li>Institutional data sharing policies</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="dementia-genomics-resources" class="level2">
+<h2 class="anchored" data-anchor-id="dementia-genomics-resources">Dementia Genomics Resources</h2>
+<section id="databases" class="level3">
+<h3 class="anchored" data-anchor-id="databases">Databases</h3>
+<ul>
+<li><a href="http://www.alzgene.org/">AlzGene</a>: AD genetic association database</li>
+<li><a href="https://www.ebi.ac.uk/gwas/">GWAS Catalog</a>: All GWAS results</li>
+<li><a href="https://www.pgscatalog.org/">PGS Catalog</a>: Polygenic scores</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/clinvar/">ClinVar</a>: Clinical variant interpretations</li>
+<li><a href="https://gnomad.broadinstitute.org/">gnomAD</a>: Population allele frequencies</li>
+</ul>
+</section>
+<section id="consortia" class="level3">
+<h3 class="anchored" data-anchor-id="consortia">Consortia</h3>
+<ul>
+<li><strong>IGAP</strong> (International Genomics of Alzheimer’s Project)</li>
+<li><strong>ADGC</strong> (Alzheimer Disease Genetics Consortium)</li>
+<li><strong>CHARGE</strong> (Cohorts for Heart and Aging Research in Genomic Epidemiology)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Now that you understand the fundamentals:</p>
+<ol type="1">
+<li>Practice with <a href="./tutorials-workshops.html">Tutorials &amp; Workshops</a></li>
+<li>Set up <a href="./tools-setup.html">Essential Tools</a> for your analyses</li>
+<li>Implement <a href="./best-practices.html">Best Practices</a> for reproducibility</li>
+<li>Explore additional <a href="./resources.html">Resources</a> for deeper learning</li>
+</ol>
+<hr>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recommended Papers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Lambert et al.&nbsp;(2013) “Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer’s disease”</li>
+<li>Kunkle et al.&nbsp;(2019) “Genetic meta-analysis of diagnosed Alzheimer’s disease identifies new risk loci”</li>
+<li>Bellenguez et al.&nbsp;(2022) “New insights into the genetic etiology of Alzheimer’s disease and related dementias”</li>
+</ul>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ukdri\.github\.io\/ukdri-bioinformatics-toolkit\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Genomics Fundamentals"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Core concepts for dementia research"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to Genomics in Dementia Research</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>Understanding the genetic basis of dementia is crucial for developing new diagnostics and therapeutics. This section covers fundamental genomics concepts with applications to dementia research.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Genomics Matters for Dementia</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>Genetic factors play significant roles in both familial and sporadic forms of dementia. Genomics helps us understand disease mechanisms, identify at-risk individuals, and discover therapeutic targets.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Dementia-Related Genes</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alzheimer's Disease</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>**APOE (Apolipoprotein E)**</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Most significant genetic risk factor for late-onset AD</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>APOE ε4 allele increases risk; ε2 may be protective</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Involved in lipid metabolism and Aβ clearance</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>**APP (Amyloid Precursor Protein)**</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mutations cause early-onset familial AD</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Processed to produce Aβ peptide</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Key target for therapeutic interventions</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>**PSEN1 &amp; PSEN2 (Presenilin 1 &amp; 2)**</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mutations cause early-onset familial AD</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Components of γ-secretase complex</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Affect APP processing</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>**Risk Genes from GWAS**</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>TREM2, CLU, CR1, BIN1, ABCA7, CD33, SORL1</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Involved in immune response, lipid metabolism, endocytosis</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Frontotemporal Dementia</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>**MAPT (Microtubule-Associated Protein Tau)**</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Causes FTD with parkinsonism</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tau protein aggregation</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>**GRN (Progranulin)**</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Haploinsufficiency causes FTD</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Role in inflammation and neuronal survival</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>**C9orf72**</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hexanucleotide repeat expansion</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Most common genetic cause of FTD and ALS</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### Lewy Body Dementia &amp; Parkinson's</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>**SNCA (α-synuclein)**</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Linked to both PD and DLB</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Protein aggregation in Lewy bodies</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>**LRRK2, GBA, PARK genes**</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Associated with increased PD/DLB risk</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Genomic Data Types</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sequencing Technologies</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Whole Genome Sequencing (WGS)</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>**What it measures:** Complete DNA sequence of an organism</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>**Applications in dementia research:**</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Discovering rare variants</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Structural variation detection</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Non-coding region analysis</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Complete genetic risk profiling</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>**Typical coverage:** 30x for germline studies</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Whole Exome Sequencing (WES)</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>**What it measures:** Protein-coding regions (~1% of genome)</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>**Applications:**</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Finding disease-causing variants in genes</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cost-effective for coding variant discovery</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Useful for familial dementia studies</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>**Typical coverage:** 100x or higher</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Targeted/Panel Sequencing</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>**What it measures:** Specific genes or regions of interest</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>**Applications:**</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Clinical diagnostic panels (e.g., AD/FTD gene panels)</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Validating variants found in WGS/WES</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Large cohort studies of known risk loci</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="fu">#### RNA Sequencing (RNA-seq)</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>**What it measures:** Gene expression levels, transcript isoforms</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>**Applications in dementia:**</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Differential gene expression in disease vs. control</span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identifying dysregulated pathways</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alternative splicing analysis</span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Single-cell RNA-seq for cell-type-specific changes</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Long-Read Sequencing</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>**Technologies:** PacBio, Oxford Nanopore</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>**Advantages:**</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Better for structural variants</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Phasing variants</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resolving repetitive regions (like C9orf72 repeats)</span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detecting epigenetic modifications</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### Genomic Data Formats</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="fu">#### FASTQ</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>**What it is:** Raw sequencing reads with quality scores</span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>**Structure:**</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="in">@SEQ_ID</span></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="in">GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="in">+</span></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="in">!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65</span></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>**Each read has:**</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sequence identifier (@)</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>DNA sequence</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quality scores (+ separator)</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ASCII-encoded quality values</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="fu">#### SAM/BAM/CRAM</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>**What it is:** Aligned sequence data</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**SAM:** Text format (human-readable)</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**BAM:** Binary compressed SAM (smaller, faster)</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**CRAM:** Further compressed (reference-based)</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>**Key fields:**</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Read name, flag, chromosome, position</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CIGAR string (alignment representation)</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mapping quality, mate pair info</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>**Example SAM line:**</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="in">READ1  99  chr1  12345  60  100M  =  12445  200  ACGT...  IIII...</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="fu">#### VCF (Variant Call Format)</span></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>**What it is:** Standard format for variant data</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>**Contains:**</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chromosome, position, reference allele</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alternate allele(s)</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quality scores</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Genotype information</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annotations (if added)</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>**Example:**</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="in">#CHROM  POS     ID      REF  ALT  QUAL  FILTER  INFO</span></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="in">chr19   45411941  rs429358  T   C   100   PASS   ...</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="fu">#### BED</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>**What it is:** Simple format for genomic regions/features</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>**Structure:**</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="in">chr1  1000  2000  feature1  100  +</span></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="in">chr1  3000  4000  feature2  200  -</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>**Columns:** chromosome, start, end, (optional: name, score, strand)</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>**Uses:**</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Defining regions of interest</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Gene annotations</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Coverage calculations</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GFF/GTF</span></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>**What it is:** Gene annotation formats</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>**Contains:**</span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Gene, transcript, exon coordinates</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Gene IDs, names, biotypes</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Used by RNA-seq quantification tools</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="fu">## Common Analysis Workflows</span></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variant Calling Pipeline</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="in">Raw FASTQ reads</span></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="in">Quality Control (FastQC)</span></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="in">Read Trimming (Trimmomatic/cutadapt)</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="in">Alignment to Reference (BWA/Bowtie2)</span></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="in">BAM Processing (SAMtools: sort, index)</span></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="in">Mark Duplicates (GATK/Picard)</span></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="in">Base Quality Recalibration (GATK)</span></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="in">Variant Calling (GATK/FreeBayes)</span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a><span class="in">Variant Filtering</span></span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a><span class="in">Variant Annotation (VEP/SnpEff)</span></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="in">Downstream Analysis</span></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a><span class="fu">### RNA-seq Analysis Pipeline</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="in">Raw FASTQ reads</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="in">Quality Control (FastQC)</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="in">Trimming (if needed)</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="in">Alignment (STAR/HISAT2) OR Pseudo-alignment (Salmon/Kallisto)</span></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a><span class="in">Quantification (featureCounts/Salmon)</span></span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="in">Quality Control (MultiQC)</span></span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a><span class="in">Differential Expression (DESeq2/edgeR)</span></span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a><span class="in">Pathway Analysis</span></span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a><span class="in">    ↓</span></span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a><span class="in">Visualization</span></span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a><span class="fu">## GWAS Concepts</span></span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a><span class="fu">### What is GWAS?</span></span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>Genome-Wide Association Study identifies genetic variants associated with traits or diseases by scanning genomes of many individuals.</span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a><span class="fu">### Key Components</span></span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>**SNP Arrays/Genotyping**</span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Common variants (MAF &gt; 1%)</span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Millions of SNPs tested simultaneously</span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cost-effective for large cohorts</span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>**Statistical Associations**</span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Testing each SNP for association with disease</span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>P-value threshold: typically 5×10⁻⁸ (genome-wide significance)</span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiple testing correction</span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a>**Manhattan Plots**</span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Visualize GWAS results</span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>X-axis: chromosomal position</span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Y-axis: -log10(p-value)</span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Peaks indicate associated loci</span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a><span class="fu">### GWAS in Dementia Research</span></span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a>Major GWAS findings for Alzheimer's:</span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>APOE region (chromosome 19) - strongest signal</span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Immune-related genes (TREM2, CR1, CD33)</span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lipid metabolism genes (CLU, ABCA7)</span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Endocytosis genes (BIN1, PICALM)</span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a>**Polygenic Risk Scores (PRS)**</span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Combines effects of many variants</span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Predicts individual genetic risk</span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Useful for risk stratification in clinical studies</span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a><span class="fu">## Linkage Disequilibrium (LD)</span></span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>**What it is:** Non-random association of alleles at different loci</span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a>**Why it matters:**</span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>GWAS signals often tag multiple correlated variants</span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fine-mapping needed to identify causal variants</span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Different LD patterns across populations</span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a>**Tools for LD analysis:**</span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PLINK</span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>LDLink (online)</span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ensembl browser</span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a><span class="fu">## Functional Genomics</span></span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a><span class="fu">### Understanding Variant Effects</span></span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a>Not all variants are equal:</span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a>**Variant Types by Impact:**</span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**High impact:** Stop gained/lost, frameshift</span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Moderate impact:** Missense, in-frame indels</span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Low impact:** Synonymous variants</span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Modifier:** Intronic, intergenic</span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a>**Regulatory Variants**</span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Affect gene expression</span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Located in enhancers, promoters</span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can be more common than coding variants</span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Harder to interpret but equally important</span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a><span class="fu">### Expression QTLs (eQTLs)</span></span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a>**What they are:** Genetic variants associated with gene expression levels</span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a>**Applications in dementia:**</span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Connect GWAS variants to affected genes</span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understand mechanisms</span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Brain-specific eQTL databases (GTEx, BrainSeq)</span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a><span class="fu">### Multi-Omics Integration</span></span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a>Combining data types for comprehensive understanding:</span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Genomics + Transcriptomics:** Which variants affect gene expression?</span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Genomics + Proteomics:** Protein-level effects of variants</span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Genomics + Epigenomics:** DNA methylation, histone modifications</span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Single-cell multi-omics:** Cell-type-specific effects</span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a><span class="fu">## Population Genetics Considerations</span></span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ancestry and Dementia Risk</span></span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a>**Why it matters:**</span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-403"><a href="#cb7-403" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Allele frequencies vary by ancestry</span>
+<span id="cb7-404"><a href="#cb7-404" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>APOE ε4 prevalence differs across populations</span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PRS trained on European ancestry may not transfer well</span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a>**Best Practices:**</span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Include diverse populations in studies</span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Report ancestry-specific results</span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consider population stratification</span>
+<span id="cb7-412"><a href="#cb7-412" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use ancestry-informed analyses</span>
+<span id="cb7-413"><a href="#cb7-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-414"><a href="#cb7-414" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-415"><a href="#cb7-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-416"><a href="#cb7-416" aria-hidden="true" tabindex="-1"></a><span class="fu">### Family-Based Studies</span></span>
+<span id="cb7-417"><a href="#cb7-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-418"><a href="#cb7-418" aria-hidden="true" tabindex="-1"></a>**Approaches:**</span>
+<span id="cb7-419"><a href="#cb7-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-420"><a href="#cb7-420" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Linkage analysis for rare familial forms</span>
+<span id="cb7-421"><a href="#cb7-421" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Segregation analysis</span>
+<span id="cb7-422"><a href="#cb7-422" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Parent-offspring trios for de novo mutations</span>
+<span id="cb7-423"><a href="#cb7-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-424"><a href="#cb7-424" aria-hidden="true" tabindex="-1"></a>**Advantages:**</span>
+<span id="cb7-425"><a href="#cb7-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-426"><a href="#cb7-426" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>More power for rare variants</span>
+<span id="cb7-427"><a href="#cb7-427" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Phasing information</span>
+<span id="cb7-428"><a href="#cb7-428" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Controls for population structure</span>
+<span id="cb7-429"><a href="#cb7-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-430"><a href="#cb7-430" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-431"><a href="#cb7-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-432"><a href="#cb7-432" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reference Genomes</span></span>
+<span id="cb7-433"><a href="#cb7-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-434"><a href="#cb7-434" aria-hidden="true" tabindex="-1"></a><span class="fu">### Human Reference Assembly</span></span>
+<span id="cb7-435"><a href="#cb7-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-436"><a href="#cb7-436" aria-hidden="true" tabindex="-1"></a>**Current versions:**</span>
+<span id="cb7-437"><a href="#cb7-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-438"><a href="#cb7-438" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**GRCh38/hg38:** Current standard (2013, regularly updated)</span>
+<span id="cb7-439"><a href="#cb7-439" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**GRCh37/hg19:** Previous version (still widely used)</span>
+<span id="cb7-440"><a href="#cb7-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-441"><a href="#cb7-441" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb7-442"><a href="#cb7-442" aria-hidden="true" tabindex="-1"></a><span class="fu">## Critical: Check Your Reference!</span></span>
+<span id="cb7-443"><a href="#cb7-443" aria-hidden="true" tabindex="-1"></a>Always verify which reference genome was used. Coordinates differ between versions. Mixing them causes errors.</span>
+<span id="cb7-444"><a href="#cb7-444" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-445"><a href="#cb7-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-446"><a href="#cb7-446" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-447"><a href="#cb7-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-448"><a href="#cb7-448" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reference Files Needed</span></span>
+<span id="cb7-449"><a href="#cb7-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-450"><a href="#cb7-450" aria-hidden="true" tabindex="-1"></a>For variant calling you'll need:</span>
+<span id="cb7-451"><a href="#cb7-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-452"><a href="#cb7-452" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reference FASTA file (<span class="in">`.fasta`</span> or <span class="in">`.fa`</span>)</span>
+<span id="cb7-453"><a href="#cb7-453" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Index files (<span class="in">`.fai`</span>, <span class="in">`.dict`</span>)</span>
+<span id="cb7-454"><a href="#cb7-454" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Known variants (dbSNP, 1000 Genomes)</span>
+<span id="cb7-455"><a href="#cb7-455" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Gene annotations (GTF/GFF)</span>
+<span id="cb7-456"><a href="#cb7-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-457"><a href="#cb7-457" aria-hidden="true" tabindex="-1"></a>**Where to download:**</span>
+<span id="cb7-458"><a href="#cb7-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-459"><a href="#cb7-459" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NCBI, Ensembl, UCSC Genome Browser</span>
+<span id="cb7-460"><a href="#cb7-460" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>GATK Resource Bundle</span>
+<span id="cb7-461"><a href="#cb7-461" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Illumina iGenomes</span>
+<span id="cb7-462"><a href="#cb7-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-463"><a href="#cb7-463" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-464"><a href="#cb7-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-465"><a href="#cb7-465" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quality Metrics</span></span>
+<span id="cb7-466"><a href="#cb7-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-467"><a href="#cb7-467" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sequencing Quality</span></span>
+<span id="cb7-468"><a href="#cb7-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-469"><a href="#cb7-469" aria-hidden="true" tabindex="-1"></a>**Key metrics to check:**</span>
+<span id="cb7-470"><a href="#cb7-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-471"><a href="#cb7-471" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Q30:** Percentage of bases with quality score ≥ 30 (99.9% accuracy)</span>
+<span id="cb7-472"><a href="#cb7-472" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Coverage:** Average depth across genome/exome</span>
+<span id="cb7-473"><a href="#cb7-473" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Uniformity:** Even coverage distribution</span>
+<span id="cb7-474"><a href="#cb7-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Duplication rate:** PCR duplicates (should be &lt;20%)</span>
+<span id="cb7-475"><a href="#cb7-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-476"><a href="#cb7-476" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-477"><a href="#cb7-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-478"><a href="#cb7-478" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Quality</span></span>
+<span id="cb7-479"><a href="#cb7-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-480"><a href="#cb7-480" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Mapping rate:** % reads that align (should be &gt;90%)</span>
+<span id="cb7-481"><a href="#cb7-481" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Properly paired:** For paired-end data</span>
+<span id="cb7-482"><a href="#cb7-482" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Insert size distribution:** Expected range for library</span>
+<span id="cb7-483"><a href="#cb7-483" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Chimeric reads:** Abnormally high suggests contamination</span>
+<span id="cb7-484"><a href="#cb7-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-485"><a href="#cb7-485" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-486"><a href="#cb7-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-487"><a href="#cb7-487" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variant Quality</span></span>
+<span id="cb7-488"><a href="#cb7-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-489"><a href="#cb7-489" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Transition/transversion ratio (Ti/Tv):** ~2.0-2.1 for WGS (whole genome)</span>
+<span id="cb7-490"><a href="#cb7-490" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Het/hom ratio:** Expected ranges vary by analysis type</span>
+<span id="cb7-491"><a href="#cb7-491" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Mendelian errors:** For family data</span>
+<span id="cb7-492"><a href="#cb7-492" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Known variant concordance:** Compare to dbSNP</span>
+<span id="cb7-493"><a href="#cb7-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-494"><a href="#cb7-494" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-495"><a href="#cb7-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-496"><a href="#cb7-496" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ethical Considerations</span></span>
+<span id="cb7-497"><a href="#cb7-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-498"><a href="#cb7-498" aria-hidden="true" tabindex="-1"></a><span class="fu">### APOE Genotyping</span></span>
+<span id="cb7-499"><a href="#cb7-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-500"><a href="#cb7-500" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb7-501"><a href="#cb7-501" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ethical Note</span></span>
+<span id="cb7-502"><a href="#cb7-502" aria-hidden="true" tabindex="-1"></a>APOE status has implications for AD risk. Special consent and genetic counseling considerations apply.</span>
+<span id="cb7-503"><a href="#cb7-503" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-504"><a href="#cb7-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-505"><a href="#cb7-505" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-506"><a href="#cb7-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-507"><a href="#cb7-507" aria-hidden="true" tabindex="-1"></a><span class="fu">### Incidental Findings</span></span>
+<span id="cb7-508"><a href="#cb7-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-509"><a href="#cb7-509" aria-hidden="true" tabindex="-1"></a>When sequencing, you may discover:</span>
+<span id="cb7-510"><a href="#cb7-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-511"><a href="#cb7-511" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pathogenic variants unrelated to dementia</span>
+<span id="cb7-512"><a href="#cb7-512" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Carrier status for recessive conditions</span>
+<span id="cb7-513"><a href="#cb7-513" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pharmacogenetic variants</span>
+<span id="cb7-514"><a href="#cb7-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-515"><a href="#cb7-515" aria-hidden="true" tabindex="-1"></a>**Best practices:**</span>
+<span id="cb7-516"><a href="#cb7-516" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-517"><a href="#cb7-517" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Follow institutional policies</span>
+<span id="cb7-518"><a href="#cb7-518" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consider secondary findings policies (ACMG guidelines)</span>
+<span id="cb7-519"><a href="#cb7-519" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prepare return of results protocols</span>
+<span id="cb7-520"><a href="#cb7-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-521"><a href="#cb7-521" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-522"><a href="#cb7-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-523"><a href="#cb7-523" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Management</span></span>
+<span id="cb7-524"><a href="#cb7-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-525"><a href="#cb7-525" aria-hidden="true" tabindex="-1"></a><span class="fu">### Storage Requirements</span></span>
+<span id="cb7-526"><a href="#cb7-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-527"><a href="#cb7-527" aria-hidden="true" tabindex="-1"></a>Typical file sizes:</span>
+<span id="cb7-528"><a href="#cb7-528" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-529"><a href="#cb7-529" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Raw FASTQ (30x WGS): ~100-200 GB per sample</span>
+<span id="cb7-530"><a href="#cb7-530" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>BAM file: ~30-50 GB per sample</span>
+<span id="cb7-531"><a href="#cb7-531" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>VCF file: 1-10 GB (depending on samples)</span>
+<span id="cb7-532"><a href="#cb7-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-533"><a href="#cb7-533" aria-hidden="true" tabindex="-1"></a>**Tips:**</span>
+<span id="cb7-534"><a href="#cb7-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-535"><a href="#cb7-535" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Compress files (gzip, bgzip)</span>
+<span id="cb7-536"><a href="#cb7-536" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use CRAM instead of BAM when possible</span>
+<span id="cb7-537"><a href="#cb7-537" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Archive raw data, keep processed files accessible</span>
+<span id="cb7-538"><a href="#cb7-538" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Plan for backups!</span>
+<span id="cb7-539"><a href="#cb7-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-540"><a href="#cb7-540" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-541"><a href="#cb7-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-542"><a href="#cb7-542" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Sharing</span></span>
+<span id="cb7-543"><a href="#cb7-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-544"><a href="#cb7-544" aria-hidden="true" tabindex="-1"></a>**Public repositories:**</span>
+<span id="cb7-545"><a href="#cb7-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-546"><a href="#cb7-546" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**dbGaP:** Controlled access for human data</span>
+<span id="cb7-547"><a href="#cb7-547" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**European Genome-phenome Archive (EGA)**</span>
+<span id="cb7-548"><a href="#cb7-548" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Sequence Read Archive (SRA):** Raw sequencing data</span>
+<span id="cb7-549"><a href="#cb7-549" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-550"><a href="#cb7-550" aria-hidden="true" tabindex="-1"></a>**Considerations:**</span>
+<span id="cb7-551"><a href="#cb7-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-552"><a href="#cb7-552" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Patient consent for data sharing</span>
+<span id="cb7-553"><a href="#cb7-553" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>De-identification requirements</span>
+<span id="cb7-554"><a href="#cb7-554" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Institutional data sharing policies</span>
+<span id="cb7-555"><a href="#cb7-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-556"><a href="#cb7-556" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-557"><a href="#cb7-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-558"><a href="#cb7-558" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dementia Genomics Resources</span></span>
+<span id="cb7-559"><a href="#cb7-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-560"><a href="#cb7-560" aria-hidden="true" tabindex="-1"></a><span class="fu">### Databases</span></span>
+<span id="cb7-561"><a href="#cb7-561" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-562"><a href="#cb7-562" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">AlzGene</span><span class="co">](http://www.alzgene.org/)</span>: AD genetic association database</span>
+<span id="cb7-563"><a href="#cb7-563" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GWAS Catalog</span><span class="co">](https://www.ebi.ac.uk/gwas/)</span>: All GWAS results</span>
+<span id="cb7-564"><a href="#cb7-564" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">PGS Catalog</span><span class="co">](https://www.pgscatalog.org/)</span>: Polygenic scores</span>
+<span id="cb7-565"><a href="#cb7-565" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">ClinVar</span><span class="co">](https://www.ncbi.nlm.nih.gov/clinvar/)</span>: Clinical variant interpretations</span>
+<span id="cb7-566"><a href="#cb7-566" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">gnomAD</span><span class="co">](https://gnomad.broadinstitute.org/)</span>: Population allele frequencies</span>
+<span id="cb7-567"><a href="#cb7-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-568"><a href="#cb7-568" aria-hidden="true" tabindex="-1"></a><span class="fu">### Consortia</span></span>
+<span id="cb7-569"><a href="#cb7-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-570"><a href="#cb7-570" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**IGAP** (International Genomics of Alzheimer's Project)</span>
+<span id="cb7-571"><a href="#cb7-571" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**ADGC** (Alzheimer Disease Genetics Consortium)</span>
+<span id="cb7-572"><a href="#cb7-572" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**CHARGE** (Cohorts for Heart and Aging Research in Genomic Epidemiology)</span>
+<span id="cb7-573"><a href="#cb7-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-574"><a href="#cb7-574" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-575"><a href="#cb7-575" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-576"><a href="#cb7-576" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
+<span id="cb7-577"><a href="#cb7-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-578"><a href="#cb7-578" aria-hidden="true" tabindex="-1"></a>Now that you understand the fundamentals:</span>
+<span id="cb7-579"><a href="#cb7-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-580"><a href="#cb7-580" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Practice with <span class="co">[</span><span class="ot">Tutorials &amp; Workshops</span><span class="co">](tutorials-workshops.qmd)</span></span>
+<span id="cb7-581"><a href="#cb7-581" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Set up <span class="co">[</span><span class="ot">Essential Tools</span><span class="co">](tools-setup.qmd)</span> for your analyses</span>
+<span id="cb7-582"><a href="#cb7-582" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Implement <span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span> for reproducibility</span>
+<span id="cb7-583"><a href="#cb7-583" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Explore additional <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources.qmd)</span> for deeper learning</span>
+<span id="cb7-584"><a href="#cb7-584" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-585"><a href="#cb7-585" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-586"><a href="#cb7-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-587"><a href="#cb7-587" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Reading</span></span>
+<span id="cb7-588"><a href="#cb7-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-589"><a href="#cb7-589" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb7-590"><a href="#cb7-590" aria-hidden="true" tabindex="-1"></a><span class="fu">## Recommended Papers</span></span>
+<span id="cb7-591"><a href="#cb7-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-592"><a href="#cb7-592" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lambert et al. (2013) "Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer's disease"</span>
+<span id="cb7-593"><a href="#cb7-593" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kunkle et al. (2019) "Genetic meta-analysis of diagnosed Alzheimer's disease identifies new risk loci"</span>
+<span id="cb7-594"><a href="#cb7-594" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bellenguez et al. (2022) "New insights into the genetic etiology of Alzheimer's disease and related dementias"</span>
+<span id="cb7-595"><a href="#cb7-595" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>UK Dementia Research Institute</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.ukdri.ac.uk/">
+<p>UKDRI</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
