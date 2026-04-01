@@ -10,6 +10,8 @@ format:
 
 This toolkit is designed to help new and continuing researchers get started with bioinformatics work in a way that is organised, reproducible, and easy to hand over. It is especially aimed at people working in institutional research settings, where projects need to remain understandable and usable beyond the person who first set them up.
 
+The core idea running through the site is simple: reproducibility and onboarding are the same problem. If a new person cannot understand how to start, the work is not truly reproducible.
+
 ::: {.callout-tip}
 ## Start Here
 If you are beginning a new piece of work, start with [Start Here](start-here.qmd), then set up a consistent layout on [Reproducible Project Structure](reproducible-project-structure.qmd), and review [Institutional GitHub](institutional-github.qmd) before you begin sharing or collaborating.
@@ -61,6 +63,9 @@ Track every analysis you run - parameters, data sources, results, and interpreta
 **📁 Consistent Folder Structure**
 Use the same basic layout for every project so collaborators can immediately tell where scripts, data, results, and documentation live. See [Reproducible Project Structure](reproducible-project-structure.qmd).
 
+**🚪 Treat the README as the front door**
+The first file in a repository should tell someone what the project is, how to start, where the data lives, and who maintains it.
+
 **🔄 Version Control Everything**
 Use Git for code, documentation, and lightweight configuration. Decide early whether the work should live on a personal repository or on the [Institutional GitHub](institutional-github.qmd).
 
@@ -87,6 +92,14 @@ If you are unsure where to begin, use this order:
 ## Use This as a Working Reference
 This toolkit is intended to be revisited during real projects, not just read once. Use it when you start new work, when you need to tidy a repository, or when you are handing work over to someone else.
 :::
+
+## A Useful Final Check
+
+Before you call a repository "done enough", ask:
+
+> Could someone who does not know this project find the right place to start quickly, with no help from me?
+
+If not, the repository usually needs one of three things: a clearer README, a clearer structure, or better onboarding notes.
 
 ---
 

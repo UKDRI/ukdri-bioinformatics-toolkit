@@ -152,6 +152,8 @@ For a new project, the best sequence is:
 
 Every project needs a good README. Include:
 
+Treat the README as the front door to the project. It should help a new person understand what the repository is, where to start, and where to find the important pieces.
+
 **Essential sections:** - Project overview and goals - Data sources and description - How to run the analysis - Software requirements - Key results/conclusions - Authors and dates
 
 **Example README template:**
@@ -299,6 +301,20 @@ Before considering an analysis complete, verify:
 -   [ ] **Output data described** (what files contain, how to interpret)
 -   [ ] **Dependencies listed** (all required software, libraries, data)
 -   [ ] **Test data provided** (or documented where to get it)
+
+------------------------------------------------------------------------
+
+## The New Starter Test
+
+Before you consider a repository ready to hand over, ask:
+
+> Could someone who does not know this project find the right place to start quickly, with no help from me?
+
+If the answer is no, the repository usually needs one or more of:
+
+- a README that says what this is and how to start
+- a clearer folder structure
+- better onboarding or project notes
 
 ------------------------------------------------------------------------
 

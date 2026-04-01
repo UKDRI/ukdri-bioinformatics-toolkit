@@ -172,21 +172,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#why-consistency-matters" id="toc-why-consistency-matters" class="nav-link active" data-scroll-target="#why-consistency-matters">Why Consistency Matters</a></li>
-  <li><a href="#a-simple-standard-layout" id="toc-a-simple-standard-layout" class="nav-link" data-scroll-target="#a-simple-standard-layout">A Simple Standard Layout</a></li>
+  <li><a href="#three-things-every-shared-repository-needs" id="toc-three-things-every-shared-repository-needs" class="nav-link" data-scroll-target="#three-things-every-shared-repository-needs">Three Things Every Shared Repository Needs</a></li>
+  <li><a href="#a-gin-tonic-style-project-layout" id="toc-a-gin-tonic-style-project-layout" class="nav-link" data-scroll-target="#a-gin-tonic-style-project-layout">A GIN-Tonic-Style Project Layout</a></li>
   <li><a href="#what-belongs-in-each-folder" id="toc-what-belongs-in-each-folder" class="nav-link" data-scroll-target="#what-belongs-in-each-folder">What Belongs in Each Folder</a>
   <ul class="collapse">
   <li><a href="#readme.md" id="toc-readme.md" class="nav-link" data-scroll-target="#readme.md"><code>README.md</code></a></li>
-  <li><a href="#dataraw" id="toc-dataraw" class="nav-link" data-scroll-target="#dataraw"><code>data/raw/</code></a></li>
-  <li><a href="#dataprocessed" id="toc-dataprocessed" class="nav-link" data-scroll-target="#dataprocessed"><code>data/processed/</code></a></li>
-  <li><a href="#datareference" id="toc-datareference" class="nav-link" data-scroll-target="#datareference"><code>data/reference/</code></a></li>
-  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><code>scripts/</code></a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><code>results/</code></a></li>
-  <li><a href="#docs" id="toc-docs" class="nav-link" data-scroll-target="#docs"><code>docs/</code></a></li>
-  <li><a href="#env" id="toc-env" class="nav-link" data-scroll-target="#env"><code>env/</code></a></li>
+  <li><a href="#project_management" id="toc-project_management" class="nav-link" data-scroll-target="#project_management"><code>01-Project_management/</code></a></li>
+  <li><a href="#material_methods" id="toc-material_methods" class="nav-link" data-scroll-target="#material_methods"><code>02_material_methods/</code></a></li>
+  <li><a href="#data001_rawdata" id="toc-data001_rawdata" class="nav-link" data-scroll-target="#data001_rawdata"><code>03_data/001_rawdata/</code></a></li>
+  <li><a href="#data990_processed_data" id="toc-data990_processed_data" class="nav-link" data-scroll-target="#data990_processed_data"><code>03_data/990_processed_data/</code></a></li>
+  <li><a href="#data_analysis" id="toc-data_analysis" class="nav-link" data-scroll-target="#data_analysis"><code>04_data_analysis/</code></a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><code>05_figures/</code></a></li>
+  <li><a href="#dissemination" id="toc-dissemination" class="nav-link" data-scroll-target="#dissemination"><code>06_dissemination/</code></a></li>
+  <li><a href="#miscellaneous" id="toc-miscellaneous" class="nav-link" data-scroll-target="#miscellaneous"><code>07_miscellaneous/</code></a></li>
   </ul></li>
   <li><a href="#practical-rules" id="toc-practical-rules" class="nav-link" data-scroll-target="#practical-rules">Practical Rules</a></li>
   <li><a href="#why-this-helps" id="toc-why-this-helps" class="nav-link" data-scroll-target="#why-this-helps">Why This Helps</a></li>
-  <li><a href="#a-slightly-expanded-example" id="toc-a-slightly-expanded-example" class="nav-link" data-scroll-target="#a-slightly-expanded-example">A Slightly Expanded Example</a></li>
+  <li><a href="#why-this-helps-a-new-starter" id="toc-why-this-helps-a-new-starter" class="nav-link" data-scroll-target="#why-this-helps-a-new-starter">Why This Helps a New Starter</a></li>
   <li><a href="#relationship-to-github" id="toc-relationship-to-github" class="nav-link" data-scroll-target="#relationship-to-github">Relationship to GitHub</a></li>
   <li><a href="#start-simple" id="toc-start-simple" class="nav-link" data-scroll-target="#start-simple">Start Simple</a></li>
   </ul>
@@ -220,62 +222,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A consistent project structure makes work easier to understand, review, share, and continue. It reduces the time spent guessing where files live or which script produced which result.</p>
 <p>This follows the same general logic used in our GitHub reproducibility session and the GIN-tonic approach: keep projects intentional, keep data handling explicit, and separate raw inputs from derived outputs and working code.</p>
 </section>
-<section id="a-simple-standard-layout" class="level2">
-<h2 class="anchored" data-anchor-id="a-simple-standard-layout">A Simple Standard Layout</h2>
+<section id="three-things-every-shared-repository-needs" class="level2">
+<h2 class="anchored" data-anchor-id="three-things-every-shared-repository-needs">Three Things Every Shared Repository Needs</h2>
+<pre class="text"><code>lab-repo/
+├── README.md
+├── docs/
+│   └── onboarding.md
+└── projects/
+    └── project-template/</code></pre>
+<p>The minimal shared setup is:</p>
+<ul>
+<li>a <code>README.md</code> that explains what the repository is and how to start</li>
+<li>an onboarding note in <code>docs/</code> for new people joining the work</li>
+<li>a reusable project template with a consistent structure</li>
+</ul>
+</section>
+<section id="a-gin-tonic-style-project-layout" class="level2">
+<h2 class="anchored" data-anchor-id="a-gin-tonic-style-project-layout">A GIN-Tonic-Style Project Layout</h2>
 <pre class="text"><code>project_name/
 ├── README.md
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── reference/
-├── scripts/
-├── results/
-├── docs/
-└── env/</code></pre>
-<p>You can extend this if needed, but the default layout should stay simple and predictable.</p>
+├── 01-Project_management/
+├── 02_material_methods/
+├── 03_data/
+│   ├── 001_rawdata/
+│   └── 990_processed_data/
+├── 04_data_analysis/
+├── 05_figures/
+├── 06_dissemination/
+└── 07_miscellaneous/</code></pre>
+<p>You can extend this if needed, but the default layout should stay predictable and the top-level numbering should remain stable.</p>
 </section>
 <section id="what-belongs-in-each-folder" class="level2">
 <h2 class="anchored" data-anchor-id="what-belongs-in-each-folder">What Belongs in Each Folder</h2>
 <section id="readme.md" class="level3">
 <h3 class="anchored" data-anchor-id="readme.md"><code>README.md</code></h3>
-<p>The project overview. State the purpose of the repository, who maintains it, where the data lives, and how the repository is organised.</p>
+<p>The front door to the project. State the purpose of the repository, who maintains it, where the data lives, and how the repository is organised.</p>
 </section>
-<section id="dataraw" class="level3">
-<h3 class="anchored" data-anchor-id="dataraw"><code>data/raw/</code></h3>
+<section id="project_management" class="level3">
+<h3 class="anchored" data-anchor-id="project_management"><code>01-Project_management/</code></h3>
+<p>Project planning material, timelines, meeting notes, analysis logs, and administrative context.</p>
+</section>
+<section id="material_methods" class="level3">
+<h3 class="anchored" data-anchor-id="material_methods"><code>02_material_methods/</code></h3>
+<p>Methods notes, protocol information, sample descriptions, and other material needed to understand how the work is being done.</p>
+</section>
+<section id="data001_rawdata" class="level3">
+<h3 class="anchored" data-anchor-id="data001_rawdata"><code>03_data/001_rawdata/</code></h3>
 <p>Original input data. Treat this as read-only. Do not manually edit files here.</p>
 </section>
-<section id="dataprocessed" class="level3">
-<h3 class="anchored" data-anchor-id="dataprocessed"><code>data/processed/</code></h3>
+<section id="data990_processed_data" class="level3">
+<h3 class="anchored" data-anchor-id="data990_processed_data"><code>03_data/990_processed_data/</code></h3>
 <p>Derived data created from raw inputs. Anything here should be reproducible from documented steps.</p>
 </section>
-<section id="datareference" class="level3">
-<h3 class="anchored" data-anchor-id="datareference"><code>data/reference/</code></h3>
-<p>Reference genomes, annotations, or other static resources needed for analysis.</p>
+<section id="data_analysis" class="level3">
+<h3 class="anchored" data-anchor-id="data_analysis"><code>04_data_analysis/</code></h3>
+<p>Analysis code, scripts, and notebooks. If there is a clear execution order, use numbered file names such as <code>001_cleaning.R</code>, <code>002_model.R</code>, or <code>003_summary.qmd</code>.</p>
 </section>
-<section id="scripts" class="level3">
-<h3 class="anchored" data-anchor-id="scripts"><code>scripts/</code></h3>
-<p>Analysis code, helper scripts, notebooks that are part of the actual workflow, and small reusable utilities.</p>
-</section>
-<section id="results" class="level3">
-<h3 class="anchored" data-anchor-id="results"><code>results/</code></h3>
+<section id="figures" class="level3">
+<h3 class="anchored" data-anchor-id="figures"><code>05_figures/</code></h3>
 <p>Generated outputs such as tables, figures, reports, and summary files.</p>
 </section>
-<section id="docs" class="level3">
-<h3 class="anchored" data-anchor-id="docs"><code>docs/</code></h3>
-<p>Supporting project documentation such as methods notes, data dictionaries, decision logs, or handover notes.</p>
+<section id="dissemination" class="level3">
+<h3 class="anchored" data-anchor-id="dissemination"><code>06_dissemination/</code></h3>
+<p>Material prepared for sharing outwardly, such as presentation files, manuscript-supporting material, or polished outputs.</p>
 </section>
-<section id="env" class="level3">
-<h3 class="anchored" data-anchor-id="env"><code>env/</code></h3>
-<p>Environment and configuration information such as <code>environment.yml</code>, package lists, container definitions, or config files.</p>
+<section id="miscellaneous" class="level3">
+<h3 class="anchored" data-anchor-id="miscellaneous"><code>07_miscellaneous/</code></h3>
+<p>Environment and configuration information such as <code>environment.yml</code>, package lists, container definitions, small helper files, and project extras that do not fit elsewhere.</p>
 </section>
 </section>
 <section id="practical-rules" class="level2">
 <h2 class="anchored" data-anchor-id="practical-rules">Practical Rules</h2>
 <ul>
-<li>keep raw data separate from processed data</li>
-<li>keep code separate from outputs</li>
-<li>give folders names that reflect their purpose rather than the software used</li>
-<li>avoid scattering key files across the repository root</li>
+<li>keep the top-level numbered folders unchanged once a project starts</li>
+<li>treat <code>03_data/001_rawdata/</code> as read-only</li>
+<li>keep generated data separate from source data</li>
+<li>keep analysis code in <code>04_data_analysis/</code></li>
+<li>capture environment and configuration information early in <code>07_miscellaneous/</code></li>
 <li>document any departures from the standard structure in the README</li>
 </ul>
 </section>
@@ -289,28 +312,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>continuity, because the project does not depend on one person’s memory</li>
 </ul>
 </section>
-<section id="a-slightly-expanded-example" class="level2">
-<h2 class="anchored" data-anchor-id="a-slightly-expanded-example">A Slightly Expanded Example</h2>
+<section id="why-this-helps-a-new-starter" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-helps-a-new-starter">Why This Helps a New Starter</h2>
 <pre class="text"><code>project_name/
 ├── README.md
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── reference/
-├── scripts/
-│   ├── 01_qc.sh
-│   ├── 02_alignment.sh
-│   └── 03_summary.R
-├── results/
-│   ├── qc/
-│   ├── tables/
-│   └── figures/
-├── docs/
-│   ├── methods.md
-│   └── data-location.md
-└── env/
+├── 01-Project_management/
+├── 02_material_methods/
+├── 03_data/
+│   ├── 001_rawdata/
+│   └── 990_processed_data/
+├── 04_data_analysis/
+│   ├── 001_cleaning.R
+│   ├── 002_model.R
+│   └── 003_summary.qmd
+├── 05_figures/
+├── 06_dissemination/
+└── 07_miscellaneous/
     ├── environment.yml
     └── config.yml</code></pre>
+<p>Someone new can usually answer the key questions quickly:</p>
+<ul>
+<li>where do I start?</li>
+<li>which files are raw inputs?</li>
+<li>where does the analysis code live?</li>
+<li>where are outputs written?</li>
+<li>where is the software environment recorded?</li>
+</ul>
 </section>
 <section id="relationship-to-github" class="level2">
 <h2 class="anchored" data-anchor-id="relationship-to-github">Relationship to GitHub</h2>
@@ -327,6 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="start-simple">Start Simple</h2>
 <p>The goal is not to create a perfect structure up front. The goal is to start with a sensible default and avoid avoidable chaos.</p>
 <p>If you are beginning a new repository, use <a href="./start-here.html">Start Here</a> first and then apply this structure immediately.</p>
+<p>Do not wait until old projects are tidy before adopting this approach. The most useful change is to apply it to the next project you start.</p>
 
 
 <!-- -->
@@ -802,129 +830,158 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Reproducible Project Structure"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "A simple, consistent way to organise bioinformatics work from day 1"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Consistency Matters</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>A consistent project structure makes work easier to understand, review, share, and continue. It reduces the time spent guessing where files live or which script produced which result.</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>This follows the same general logic used in our GitHub reproducibility session and the GIN-tonic approach: keep projects intentional, keep data handling explicit, and separate raw inputs from derived outputs and working code.</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Simple Standard Layout</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="in">project_name/</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">├── data/</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── raw/</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── processed/</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── reference/</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">├── scripts/</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">├── results/</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">├── docs/</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">└── env/</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>You can extend this if needed, but the default layout should stay simple and predictable.</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## What Belongs in Each Folder</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### `README.md`</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>The project overview. State the purpose of the repository, who maintains it, where the data lives, and how the repository is organised.</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### `data/raw/`</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>Original input data. Treat this as read-only. Do not manually edit files here.</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### `data/processed/`</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>Derived data created from raw inputs. Anything here should be reproducible from documented steps.</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### `data/reference/`</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>Reference genomes, annotations, or other static resources needed for analysis.</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### `scripts/`</span></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>Analysis code, helper scripts, notebooks that are part of the actual workflow, and small reusable utilities.</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### `results/`</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>Generated outputs such as tables, figures, reports, and summary files.</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### `docs/`</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>Supporting project documentation such as methods notes, data dictionaries, decision logs, or handover notes.</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### `env/`</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>Environment and configuration information such as <span class="in">`environment.yml`</span>, package lists, container definitions, or config files.</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practical Rules</span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>keep raw data separate from processed data</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>keep code separate from outputs</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>give folders names that reflect their purpose rather than the software used</span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>avoid scattering key files across the repository root</span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>document any departures from the standard structure in the README</span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why This Helps</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>This kind of structure improves:</span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>reproducibility, because inputs, code, and outputs are clearly separated</span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>onboarding, because new starters can navigate a repository quickly</span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>collaboration, because other people can understand where to add or find material</span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>continuity, because the project does not depend on one person's memory</span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Slightly Expanded Example</span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="in">project_name/</span></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md</span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="in">├── data/</span></span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── raw/</span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── processed/</span></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── reference/</span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="in">├── scripts/</span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 01_qc.sh</span></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 02_alignment.sh</span></span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── 03_summary.R</span></span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="in">├── results/</span></span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── qc/</span></span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── tables/</span></span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── figures/</span></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="in">├── docs/</span></span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── methods.md</span></span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── data-location.md</span></span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="in">└── env/</span></span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a><span class="in">    ├── environment.yml</span></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="in">    └── config.yml</span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Relationship to GitHub</span></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>Not every file in a project belongs in GitHub, especially large or controlled data. The important thing is that the repository explains:</span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>what data was used</span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where that data lives</span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>what scripts were run</span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where outputs are written</span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>what someone else would need in order to rerun or extend the work</span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## Start Simple</span></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>The goal is not to create a perfect structure up front. The goal is to start with a sensible default and avoid avoidable chaos.</span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>If you are beginning a new repository, use <span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span> first and then apply this structure immediately.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Reproducible Project Structure"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "A simple, consistent way to organise bioinformatics work from day 1"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Consistency Matters</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>A consistent project structure makes work easier to understand, review, share, and continue. It reduces the time spent guessing where files live or which script produced which result.</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>This follows the same general logic used in our GitHub reproducibility session and the GIN-tonic approach: keep projects intentional, keep data handling explicit, and separate raw inputs from derived outputs and working code.</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three Things Every Shared Repository Needs</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">lab-repo/</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">├── docs/</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── onboarding.md</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">└── projects/</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="in">    └── project-template/</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>The minimal shared setup is:</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>a <span class="in">`README.md`</span> that explains what the repository is and how to start</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>an onboarding note in <span class="in">`docs/`</span> for new people joining the work</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>a reusable project template with a consistent structure</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## A GIN-Tonic-Style Project Layout</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="in">project_name/</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">├── 01-Project_management/</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="in">├── 02_material_methods/</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">├── 03_data/</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 001_rawdata/</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── 990_processed_data/</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="in">├── 04_data_analysis/</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">├── 05_figures/</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="in">├── 06_dissemination/</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="in">└── 07_miscellaneous/</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>You can extend this if needed, but the default layout should stay predictable and the top-level numbering should remain stable.</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## What Belongs in Each Folder</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### `README.md`</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>The front door to the project. State the purpose of the repository, who maintains it, where the data lives, and how the repository is organised.</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### `01-Project_management/`</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>Project planning material, timelines, meeting notes, analysis logs, and administrative context.</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### `02_material_methods/`</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>Methods notes, protocol information, sample descriptions, and other material needed to understand how the work is being done.</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### `03_data/001_rawdata/`</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>Original input data. Treat this as read-only. Do not manually edit files here.</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### `03_data/990_processed_data/`</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>Derived data created from raw inputs. Anything here should be reproducible from documented steps.</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### `04_data_analysis/`</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>Analysis code, scripts, and notebooks. If there is a clear execution order, use numbered file names such as <span class="in">`001_cleaning.R`</span>, <span class="in">`002_model.R`</span>, or <span class="in">`003_summary.qmd`</span>.</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### `05_figures/`</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>Generated outputs such as tables, figures, reports, and summary files.</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### `06_dissemination/`</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>Material prepared for sharing outwardly, such as presentation files, manuscript-supporting material, or polished outputs.</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### `07_miscellaneous/`</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>Environment and configuration information such as <span class="in">`environment.yml`</span>, package lists, container definitions, small helper files, and project extras that do not fit elsewhere.</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practical Rules</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>keep the top-level numbered folders unchanged once a project starts</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>treat <span class="in">`03_data/001_rawdata/`</span> as read-only</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>keep generated data separate from source data</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>keep analysis code in <span class="in">`04_data_analysis/`</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>capture environment and configuration information early in <span class="in">`07_miscellaneous/`</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>document any departures from the standard structure in the README</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why This Helps</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>This kind of structure improves:</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>reproducibility, because inputs, code, and outputs are clearly separated</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>onboarding, because new starters can navigate a repository quickly</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>collaboration, because other people can understand where to add or find material</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>continuity, because the project does not depend on one person's memory</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why This Helps a New Starter</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="in">project_name/</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="in">├── 01-Project_management/</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="in">├── 02_material_methods/</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="in">├── 03_data/</span></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 001_rawdata/</span></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── 990_processed_data/</span></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a><span class="in">├── 04_data_analysis/</span></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 001_cleaning.R</span></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── 002_model.R</span></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── 003_summary.qmd</span></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="in">├── 05_figures/</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="in">├── 06_dissemination/</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="in">└── 07_miscellaneous/</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="in">    ├── environment.yml</span></span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a><span class="in">    └── config.yml</span></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>Someone new can usually answer the key questions quickly:</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where do I start?</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>which files are raw inputs?</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where does the analysis code live?</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where are outputs written?</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where is the software environment recorded?</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## Relationship to GitHub</span></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>Not every file in a project belongs in GitHub, especially large or controlled data. The important thing is that the repository explains:</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>what data was used</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where that data lives</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>what scripts were run</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>where outputs are written</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>what someone else would need in order to rerun or extend the work</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## Start Simple</span></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>The goal is not to create a perfect structure up front. The goal is to start with a sensible default and avoid avoidable chaos.</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>If you are beginning a new repository, use <span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span> first and then apply this structure immediately.</span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>Do not wait until old projects are tidy before adopting this approach. The most useful change is to apply it to the next project you start.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

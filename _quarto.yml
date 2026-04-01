@@ -15,6 +15,8 @@ website:
         file: start-here.qmd
       - text: "Tools & Setup"
         file: tools-setup.qmd
+      - text: "Genomics Fundamentals"
+        file: genomics-fundamentals.qmd
       - text: "Project Structure"
         file: reproducible-project-structure.qmd
       - text: "Best Practices"

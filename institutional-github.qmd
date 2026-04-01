@@ -54,6 +54,8 @@ Good candidates include:
 
 If a project becomes important for shared work, move it or mirror it into the institutional GitHub rather than leaving critical material tied to one personal account.
 
+Personal GitHub can also play a different role: it can act as part of your visible professional portfolio. Public repositories, reports, and GitHub Pages sites provide evidence of how you work. That is useful for jobs, collaborations, and wider visibility, but it does not replace the need for shared institutional ownership where continuity matters.
+
 ## How to Request Access
 
 Access routes vary by group, but the practical principle is simple: ask the relevant repository owner, team lead, or GitHub organisation administrator to add you.
@@ -73,6 +75,7 @@ At minimum, each repository should have:
 
 - a `README.md` explaining what the repository is for
 - a clear folder structure
+- an obvious place for onboarding notes or project conventions where needed
 - enough documentation to understand where scripts, data references, and outputs belong
 - meaningful file and folder names
 - no sensitive or restricted data committed to a public repository
@@ -105,3 +108,5 @@ If data is controlled, document where it lives and how access is managed instead
 Treat the institutional GitHub as the place for work that should be reproducible, discoverable, and shared responsibly.
 
 If someone new joined the project next week, they should be able to find the repository, read the README, understand the structure, and know where to begin.
+
+That is the standard to aim for: not perfect polish, but a repository that passes the new starter test.

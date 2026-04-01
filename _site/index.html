@@ -136,6 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tools &amp; Setup</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./genomics-fundamentals.html"> 
+<span class="menu-text">Genomics Fundamentals</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./reproducible-project-structure.html"> 
 <span class="menu-text">Project Structure</span></a>
   </li>  
@@ -187,6 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#essential-habits" id="toc-essential-habits" class="nav-link" data-scroll-target="#essential-habits">Essential Habits</a></li>
   </ul></li>
   <li><a href="#a-practical-starting-sequence" id="toc-a-practical-starting-sequence" class="nav-link" data-scroll-target="#a-practical-starting-sequence">A Practical Starting Sequence</a></li>
+  <li><a href="#a-useful-final-check" id="toc-a-useful-final-check" class="nav-link" data-scroll-target="#a-useful-final-check">A Useful Final Check</a></li>
   <li><a href="#support-and-community" id="toc-support-and-community" class="nav-link" data-scroll-target="#support-and-community">Support and Community</a>
   <ul class="collapse">
   <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
@@ -222,6 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="about-this-toolkit" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-toolkit">About This Toolkit</h2>
 <p>This toolkit is designed to help new and continuing researchers get started with bioinformatics work in a way that is organised, reproducible, and easy to hand over. It is especially aimed at people working in institutional research settings, where projects need to remain understandable and usable beyond the person who first set them up.</p>
+<p>The core idea running through the site is simple: reproducibility and onboarding are the same problem. If a new person cannot understand how to start, the work is not truly reproducible.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -293,6 +299,7 @@ Documentation is Everything
 <h3 class="anchored" data-anchor-id="essential-habits">Essential Habits</h3>
 <p><strong>📝 Keep an Analysis Catalogue</strong> Track every analysis you run - parameters, data sources, results, and interpretations. We provide a template in the <a href="./best-practices.html">Best Practices</a> section.</p>
 <p><strong>📁 Consistent Folder Structure</strong> Use the same basic layout for every project so collaborators can immediately tell where scripts, data, results, and documentation live. See <a href="./reproducible-project-structure.html">Reproducible Project Structure</a>.</p>
+<p><strong>🚪 Treat the README as the front door</strong> The first file in a repository should tell someone what the project is, how to start, where the data lives, and who maintains it.</p>
 <p><strong>🔄 Version Control Everything</strong> Use Git for code, documentation, and lightweight configuration. Decide early whether the work should live on a personal repository or on the <a href="./institutional-github.html">Institutional GitHub</a>.</p>
 <p><strong>📊 Reproducibility First</strong> Write code that others (including future you) can run and understand. Use workflow management tools, document dependencies, and create clear README files.</p>
 <p><strong>🧪 Validate Your Results</strong> Always sanity-check your results. Use positive/negative controls, compare methods, and understand the biology behind your findings.</p>
@@ -323,6 +330,14 @@ Use This as a Working Reference
 <p>This toolkit is intended to be revisited during real projects, not just read once. Use it when you start new work, when you need to tidy a repository, or when you are handing work over to someone else.</p>
 </div>
 </div>
+</section>
+<section id="a-useful-final-check" class="level2">
+<h2 class="anchored" data-anchor-id="a-useful-final-check">A Useful Final Check</h2>
+<p>Before you call a repository “done enough”, ask:</p>
+<blockquote class="blockquote">
+<p>Could someone who does not know this project find the right place to start quickly, with no help from me?</p>
+</blockquote>
+<p>If not, the repository usually needs one of three things: a clearer README, a clearer structure, or better onboarding notes.</p>
 <hr>
 </section>
 <section id="support-and-community" class="level2">
@@ -832,104 +847,117 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This toolkit is designed to help new and continuing researchers get started with bioinformatics work in a way that is organised, reproducible, and easy to hand over. It is especially aimed at people working in institutional research settings, where projects need to remain understandable and usable beyond the person who first set them up.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Start Here</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>If you are beginning a new piece of work, start with <span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span>, then set up a consistent layout on <span class="co">[</span><span class="ot">Reproducible Project Structure</span><span class="co">](reproducible-project-structure.qmd)</span>, and review <span class="co">[</span><span class="ot">Institutional GitHub</span><span class="co">](institutional-github.qmd)</span> before you begin sharing or collaborating.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You'll Find Here</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>The core idea running through the site is simple: reproducibility and onboarding are the same problem. If a new person cannot understand how to start, the work is not truly reproducible.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Start Here</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>If you are beginning a new piece of work, start with <span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span>, then set up a consistent layout on <span class="co">[</span><span class="ot">Reproducible Project Structure</span><span class="co">](reproducible-project-structure.qmd)</span>, and review <span class="co">[</span><span class="ot">Institutional GitHub</span><span class="co">](institutional-github.qmd)</span> before you begin sharing or collaborating.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>This site is organised around a simple idea: start well, organise work consistently, document decisions, and use GitHub intentionally.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You'll Find Here</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Start Here](start-here.qmd)</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>A simple pathway for beginning a new project: decide where the work belongs, create the repository, add a README, define the structure, document the data, and make the first commit.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Tools &amp; Setup](tools-setup.qmd)</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Essential software and environment setup for day-to-day bioinformatics work.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Reproducible Project Structure](reproducible-project-structure.qmd)</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>A practical guide to organising folders, scripts, data, results, documentation, and environment information using a consistent structure influenced by the same principles covered in our GitHub reproducibility session.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Best Practices](best-practices.qmd)</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Core habits that keep work understandable and maintainable:</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Maintaining an analysis catalogue (with downloadable template)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documentation best practices</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Referencing and citation management</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Institutional GitHub](institutional-github.qmd)</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>How and when to use the institutional GitHub, what belongs there, and what minimum standards make shared repositories useful for collaboration and continuity.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Tutorials &amp; Workshops](tutorials-workshops.qmd)</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Curated learning resources when you need to build specific technical skills.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Resources](resources.qmd)</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Databases, communities, and reference material for ongoing work.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>This site is organised around a simple idea: start well, organise work consistently, document decisions, and use GitHub intentionally.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Start Here](start-here.qmd)</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>A simple pathway for beginning a new project: decide where the work belongs, create the repository, add a README, define the structure, document the data, and make the first commit.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Tools &amp; Setup](tools-setup.qmd)</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Essential software and environment setup for day-to-day bioinformatics work.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Reproducible Project Structure](reproducible-project-structure.qmd)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>A practical guide to organising folders, scripts, data, results, documentation, and environment information using a consistent structure influenced by the same principles covered in our GitHub reproducibility session.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Best Practices](best-practices.qmd)</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Core habits that keep work understandable and maintainable:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Maintaining an analysis catalogue (with downloadable template)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documentation best practices</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Referencing and citation management</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Institutional GitHub](institutional-github.qmd)</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>How and when to use the institutional GitHub, what belongs there, and what minimum standards make shared repositories useful for collaboration and continuity.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Tutorials &amp; Workshops](tutorials-workshops.qmd)</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Curated learning resources when you need to build specific technical skills.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Resources](resources.qmd)</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Databases, communities, and reference material for ongoing work.</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Principles for Success</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Documentation is Everything</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>From day one, document your analyses thoroughly. Your future self (and collaborators) will thank you. See our <span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span> page for templates and tips.</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Essential Habits</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Principles for Success</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Documentation is Everything</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>From day one, document your analyses thoroughly. Your future self (and collaborators) will thank you. See our <span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span> page for templates and tips.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**📝 Keep an Analysis Catalogue**</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Track every analysis you run - parameters, data sources, results, and interpretations. We provide a template in the <span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span> section.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>**📁 Consistent Folder Structure**</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Use the same basic layout for every project so collaborators can immediately tell where scripts, data, results, and documentation live. See <span class="co">[</span><span class="ot">Reproducible Project Structure</span><span class="co">](reproducible-project-structure.qmd)</span>.</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>**🔄 Version Control Everything**</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Use Git for code, documentation, and lightweight configuration. Decide early whether the work should live on a personal repository or on the <span class="co">[</span><span class="ot">Institutional GitHub</span><span class="co">](institutional-github.qmd)</span>.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>**📊 Reproducibility First**</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Write code that others (including future you) can run and understand. Use workflow management tools, document dependencies, and create clear README files.</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>**🧪 Validate Your Results**</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Always sanity-check your results. Use positive/negative controls, compare methods, and understand the biology behind your findings.</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Essential Habits</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>**📝 Keep an Analysis Catalogue**</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Track every analysis you run - parameters, data sources, results, and interpretations. We provide a template in the <span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span> section.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>**📁 Consistent Folder Structure**</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Use the same basic layout for every project so collaborators can immediately tell where scripts, data, results, and documentation live. See <span class="co">[</span><span class="ot">Reproducible Project Structure</span><span class="co">](reproducible-project-structure.qmd)</span>.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>**🚪 Treat the README as the front door**</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>The first file in a repository should tell someone what the project is, how to start, where the data lives, and who maintains it.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>**🔄 Version Control Everything**</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>Use Git for code, documentation, and lightweight configuration. Decide early whether the work should live on a personal repository or on the <span class="co">[</span><span class="ot">Institutional GitHub</span><span class="co">](institutional-github.qmd)</span>.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>**📊 Reproducibility First**</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Write code that others (including future you) can run and understand. Use workflow management tools, document dependencies, and create clear README files.</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Practical Starting Sequence</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>If you are unsure where to begin, use this order:</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Tools &amp; Setup</span><span class="co">](tools-setup.qmd)</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="co">[</span><span class="ot">Reproducible Project Structure</span><span class="co">](reproducible-project-structure.qmd)</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="co">[</span><span class="ot">Institutional GitHub</span><span class="co">](institutional-github.qmd)</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="co">[</span><span class="ot">Tutorials &amp; Workshops</span><span class="co">](tutorials-workshops.qmd)</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use This as a Working Reference</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>This toolkit is intended to be revisited during real projects, not just read once. Use it when you start new work, when you need to tidy a repository, or when you are handing work over to someone else.</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>**🧪 Validate Your Results**</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Always sanity-check your results. Use positive/negative controls, compare methods, and understand the biology behind your findings.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Practical Starting Sequence</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>If you are unsure where to begin, use this order:</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Tools &amp; Setup</span><span class="co">](tools-setup.qmd)</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="co">[</span><span class="ot">Reproducible Project Structure</span><span class="co">](reproducible-project-structure.qmd)</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="co">[</span><span class="ot">Best Practices</span><span class="co">](best-practices.qmd)</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="co">[</span><span class="ot">Institutional GitHub</span><span class="co">](institutional-github.qmd)</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="co">[</span><span class="ot">Tutorials &amp; Workshops</span><span class="co">](tutorials-workshops.qmd)</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Support and Community</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Help</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consult this toolkit first</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Check tool documentation and GitHub issues</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ask colleagues and local bioinformatics support</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Engage with online communities (Biostars, Stack Overflow, etc.)</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use This as a Working Reference</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>This toolkit is intended to be revisited during real projects, not just read once. Use it when you start new work, when you need to tidy a repository, or when you are handing work over to someone else.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Useful Final Check</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Before you call a repository "done enough", ask:</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Could someone who does not know this project find the right place to start quickly, with no help from me?</span></span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contributing</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>If not, the repository usually needs one of three things: a clearer README, a clearer structure, or better onboarding notes.</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>If you find broken links, have suggestions for additional resources, or want to contribute content, please reach out to the toolkit maintainers.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Support and Community</span></span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ready to Begin?</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Help</span></span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Start with <span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span> if you are setting up a new project, or go to <span class="co">[</span><span class="ot">Tools &amp; Setup</span><span class="co">](tools-setup.qmd)</span> if you need to configure your working environment first.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consult this toolkit first</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Check tool documentation and GitHub issues</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ask colleagues and local bioinformatics support</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Engage with online communities (Biostars, Stack Overflow, etc.)</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contributing</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>If you find broken links, have suggestions for additional resources, or want to contribute content, please reach out to the toolkit maintainers.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ready to Begin?</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Start with <span class="co">[</span><span class="ot">Start Here</span><span class="co">](start-here.qmd)</span> if you are setting up a new project, or go to <span class="co">[</span><span class="ot">Tools &amp; Setup</span><span class="co">](tools-setup.qmd)</span> if you need to configure your working environment first.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

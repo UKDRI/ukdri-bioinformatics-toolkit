@@ -11,6 +11,8 @@ format:
 
 Starting well makes everything easier later. The aim is not to create extra process. It is to make sure your work is understandable, reproducible, and easy to continue if someone else needs to pick it up.
 
+This is also the highest-leverage place to improve your practice. You do not need to refactor every old repository before you begin. Start the next project correctly.
+
 ::: {.callout-tip}
 ## The Short Version
 Before you write substantial analysis code, decide where the work belongs, create the repository, add a README, define the project structure, document the data location, and make the first commit.
@@ -39,6 +41,8 @@ Your `README.md` does not need to be long on day one. It should at least state:
 - what question or task it addresses
 - where the data lives
 - how the repository is organised
+
+Think of the README as the front door to the project. Someone opening the repository for the first time should be able to work out what it is and where to begin.
 
 ### 4. Set up a consistent project structure
 
@@ -86,6 +90,14 @@ This gives the project a clear starting point and a visible history.
 - the structure is predictable
 - key decisions are written down early
 - the work can be handed over without explanation in a corridor conversation
+
+## The New Starter Test
+
+Ask one final question early:
+
+> If someone joined the project next week, could they work out how to start without asking me for a guided tour?
+
+If the answer is no, improve the README, the structure, or the project notes before the repository gets more complicated.
 
 ## Where to Go Next
 
