@@ -1,0 +1,11 @@
+# macOS
+**/.DS_Store
+
+# Quarto local build/cache metadata
+.quarto/
+
+# R / RStudio local session state
+**/.Rhistory
+**/.RData
+**/.Ruserdata
+**/.Rproj.user/
