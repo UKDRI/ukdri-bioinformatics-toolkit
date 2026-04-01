@@ -9,24 +9,24 @@ website:
     background: primary
     logo: ""
     left:
-      - text: "Home"
-        file: index.qmd
-      - text: "Start Here"
+      - text: "Start"
         file: start-here.qmd
       - text: "Tools & Setup"
         file: tools-setup.qmd
-      - text: "Genomics Fundamentals"
-        file: genomics-fundamentals.qmd
       - text: "Project Structure"
         file: reproducible-project-structure.qmd
       - text: "Best Practices"
         file: best-practices.qmd
-      - text: "Institutional GitHub"
+      - text: "GitHub"
         file: institutional-github.qmd
-      - text: "Tutorials & Workshops"
-        file: tutorials-workshops.qmd
-      - text: "Resources"
-        file: resources.qmd
+      - text: "Learn More"
+        menu:
+          - text: "Genomics Fundamentals"
+            file: genomics-fundamentals.qmd
+          - text: "Tutorials & Workshops"
+            file: tutorials-workshops.qmd
+          - text: "Resources"
+            file: resources.qmd
   
   page-footer:
     left: "UK Dementia Research Institute"
