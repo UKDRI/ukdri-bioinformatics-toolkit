@@ -1,0 +1,123 @@
+---
+title: "Reproducible Project Structure"
+subtitle: "A simple, consistent way to organise bioinformatics work from day 1"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+
+## Why Consistency Matters
+
+A consistent project structure makes work easier to understand, review, share, and continue. It reduces the time spent guessing where files live or which script produced which result.
+
+This follows the same general logic used in our GitHub reproducibility session and the GIN-tonic approach: keep projects intentional, keep data handling explicit, and separate raw inputs from derived outputs and working code.
+
+## A Simple Standard Layout
+
+```text
+project_name/
+├── README.md
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── reference/
+├── scripts/
+├── results/
+├── docs/
+└── env/
+```
+
+You can extend this if needed, but the default layout should stay simple and predictable.
+
+## What Belongs in Each Folder
+
+### `README.md`
+
+The project overview. State the purpose of the repository, who maintains it, where the data lives, and how the repository is organised.
+
+### `data/raw/`
+
+Original input data. Treat this as read-only. Do not manually edit files here.
+
+### `data/processed/`
+
+Derived data created from raw inputs. Anything here should be reproducible from documented steps.
+
+### `data/reference/`
+
+Reference genomes, annotations, or other static resources needed for analysis.
+
+### `scripts/`
+
+Analysis code, helper scripts, notebooks that are part of the actual workflow, and small reusable utilities.
+
+### `results/`
+
+Generated outputs such as tables, figures, reports, and summary files.
+
+### `docs/`
+
+Supporting project documentation such as methods notes, data dictionaries, decision logs, or handover notes.
+
+### `env/`
+
+Environment and configuration information such as `environment.yml`, package lists, container definitions, or config files.
+
+## Practical Rules
+
+- keep raw data separate from processed data
+- keep code separate from outputs
+- give folders names that reflect their purpose rather than the software used
+- avoid scattering key files across the repository root
+- document any departures from the standard structure in the README
+
+## Why This Helps
+
+This kind of structure improves:
+
+- reproducibility, because inputs, code, and outputs are clearly separated
+- onboarding, because new starters can navigate a repository quickly
+- collaboration, because other people can understand where to add or find material
+- continuity, because the project does not depend on one person's memory
+
+## A Slightly Expanded Example
+
+```text
+project_name/
+├── README.md
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── reference/
+├── scripts/
+│   ├── 01_qc.sh
+│   ├── 02_alignment.sh
+│   └── 03_summary.R
+├── results/
+│   ├── qc/
+│   ├── tables/
+│   └── figures/
+├── docs/
+│   ├── methods.md
+│   └── data-location.md
+└── env/
+    ├── environment.yml
+    └── config.yml
+```
+
+## Relationship to GitHub
+
+Not every file in a project belongs in GitHub, especially large or controlled data. The important thing is that the repository explains:
+
+- what data was used
+- where that data lives
+- what scripts were run
+- where outputs are written
+- what someone else would need in order to rerun or extend the work
+
+## Start Simple
+
+The goal is not to create a perfect structure up front. The goal is to start with a sensible default and avoid avoidable chaos.
+
+If you are beginning a new repository, use [Start Here](start-here.qmd) first and then apply this structure immediately.

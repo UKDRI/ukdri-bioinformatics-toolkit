@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the UKDRI Bioinformatics Toolkit"
-subtitle: "Your comprehensive guide to genomics and bioinformatics for dementia research"
+subtitle: "A practical starting point for onboarding, reproducibility, and bioinformatics project organisation"
 format:
   html:
     toc: true
@@ -8,99 +8,41 @@ format:
 
 ## About This Toolkit
 
-Welcome! This toolkit is designed to help students and researchers at all levels get started with bioinformatics, with a special focus on genomics and dementia research. Whether you're an undergraduate taking your first steps, a PhD student diving deep into genomics data, or a career changer entering bioinformatics, you'll find resources here tailored to your needs.
+This toolkit is designed to help new and continuing researchers get started with bioinformatics work in a way that is organised, reproducible, and easy to hand over. It is especially aimed at people working in institutional research settings, where projects need to remain understandable and usable beyond the person who first set them up.
 
 ::: {.callout-tip}
-## Quick Start
-New to bioinformatics? Start with the [Tools & Setup](tools-setup.qmd) page, then explore our curated [Tutorials & Workshops](tutorials-workshops.qmd).
+## Start Here
+If you are beginning a new piece of work, start with [Start Here](start-here.qmd), then set up a consistent layout on [Reproducible Project Structure](reproducible-project-structure.qmd), and review [Institutional GitHub](institutional-github.qmd) before you begin sharing or collaborating.
 :::
 
 ## What You'll Find Here
 
-This toolkit is organized into several sections to help you navigate your bioinformatics journey:
+This site is organised around a simple idea: start well, organise work consistently, document decisions, and use GitHub intentionally.
 
-### 🛠️ [Tools & Setup](tools-setup.qmd)
-Essential software, databases, and computational tools you'll need, with installation guides and brief descriptions of what each tool does.
+### [Start Here](start-here.qmd)
+A simple pathway for beginning a new project: decide where the work belongs, create the repository, add a README, define the structure, document the data, and make the first commit.
 
-### 🧬 [Genomics Fundamentals](genomics-fundamentals.qmd)
-Core concepts in genomics, with a focus on dementia-related research applications.
+### [Tools & Setup](tools-setup.qmd)
+Essential software and environment setup for day-to-day bioinformatics work.
 
-### 📚 [Tutorials & Workshops](tutorials-workshops.qmd)
-A comprehensive, searchable catalogue of tutorials, courses, and workshops from leading institutions (EMBL-EBI, Carpentries, ARCCA, and more).
+### [Reproducible Project Structure](reproducible-project-structure.qmd)
+A practical guide to organising folders, scripts, data, results, documentation, and environment information using a consistent structure influenced by the same principles covered in our GitHub reproducibility session.
 
-### ✅ [Best Practices](best-practices.qmd)
-Critical skills for maintaining reproducible research:
+### [Best Practices](best-practices.qmd)
+Core habits that keep work understandable and maintainable:
 
-- How to structure your analysis folders
 - Maintaining an analysis catalogue (with downloadable template)
 - Documentation best practices
 - Referencing and citation management
 
-### 🔗 [Resources](resources.qmd)
-Additional databases, tools, communities, and resources for ongoing learning.
+### [Institutional GitHub](institutional-github.qmd)
+How and when to use the institutional GitHub, what belongs there, and what minimum standards make shared repositories useful for collaboration and continuity.
 
----
+### [Tutorials & Workshops](tutorials-workshops.qmd)
+Curated learning resources when you need to build specific technical skills.
 
-## Prerequisites
-
-### Background Knowledge
-This toolkit assumes mixed backgrounds - you might come from:
-
-- **Biology/Genetics**: Strong domain knowledge, learning computational skills
-- **Computer Science**: Strong programming skills, learning biology
-- **Statistics/Mathematics**: Strong analytical skills, learning both biology and implementation
-- **Complete beginner**: That's okay! Start with the fundamentals and work your way through
-
-### What You'll Need
-
-::: {.card}
-**Computing Setup**
-
-- Access to a Unix/Linux environment (native, WSL, or virtual machine)
-- Terminal/command line access
-- Text editor (VS Code, Sublime, nano, vim, etc.)
-- Access to HPC/cluster resources (recommended for large-scale analyses)
-:::
-
-::: {.card}
-**Programming Languages**
-
-We recommend familiarity with at least one of:
-
-- **Python**: Widely used for bioinformatics scripting and analysis
-- **R**: Essential for statistical analysis and visualization
-- **Bash/Shell**: Critical for working with command-line tools
-
-Don't worry if you're not proficient yet - we have tutorial links in the [Tutorials & Workshops](tutorials-workshops.qmd) section.
-:::
-
----
-
-## Learning Pathway Suggestions
-
-### For Complete Beginners
-
-1. Start with [Linux command line basics](tutorials-workshops.qmd#command-line)
-2. Learn [Git for version control](tutorials-workshops.qmd#version-control)
-3. Pick up [Python](tutorials-workshops.qmd#python) or [R basics](tutorials-workshops.qmd#r-programming)
-4. Explore [genomics data wrangling](tutorials-workshops.qmd#genomics-data)
-5. Begin with simple [variant calling tutorials](tutorials-workshops.qmd#variant-calling)
-
-### For Those with Biology Background
-
-1. Strengthen [command line skills](tutorials-workshops.qmd#command-line)
-2. Learn one scripting language ([Python](tutorials-workshops.qmd#python) recommended)
-3. Understand [NGS data types and formats](genomics-fundamentals.qmd)
-4. Practice with [workflow tools](tutorials-workshops.qmd#workflows) (Nextflow/Snakemake)
-5. Apply to [dementia genomics projects](genomics-fundamentals.qmd#dementia-genomics)
-
-### For Those with Computational Background
-
-1. Learn [biology and genomics fundamentals](genomics-fundamentals.qmd)
-2. Understand [NGS technologies](tutorials-workshops.qmd#ngs)
-3. Get familiar with [genomics file formats](genomics-fundamentals.qmd#file-formats)
-4. Explore [bioinformatics-specific tools](tools-setup.qmd)
-5. Apply skills to [functional genomics](tutorials-workshops.qmd#functional-genomics)
+### [Resources](resources.qmd)
+Databases, communities, and reference material for ongoing work.
 
 ---
 
@@ -117,10 +59,10 @@ From day one, document your analyses thoroughly. Your future self (and collabora
 Track every analysis you run - parameters, data sources, results, and interpretations. We provide a template in the [Best Practices](best-practices.qmd) section.
 
 **📁 Consistent Folder Structure**
-Use a standardized folder structure for all projects. This makes your work reproducible and easier to navigate.
+Use the same basic layout for every project so collaborators can immediately tell where scripts, data, results, and documentation live. See [Reproducible Project Structure](reproducible-project-structure.qmd).
 
 **🔄 Version Control Everything**
-Use Git for code and analysis scripts. Future you will be grateful.
+Use Git for code, documentation, and lightweight configuration. Decide early whether the work should live on a personal repository or on the [Institutional GitHub](institutional-github.qmd).
 
 **📊 Reproducibility First**
 Write code that others (including future you) can run and understand. Use workflow management tools, document dependencies, and create clear README files.
@@ -130,19 +72,20 @@ Always sanity-check your results. Use positive/negative controls, compare method
 
 ---
 
-## How to Use This Toolkit
+## A Practical Starting Sequence
 
-This is a **living resource** you can return to whenever you have questions:
+If you are unsure where to begin, use this order:
 
-- 🔍 **Use the search function** to find specific topics
-- 📑 **Bookmark pages** you reference frequently  
-- 💻 **Copy code snippets** directly from examples
-- 🔗 **Follow tutorial links** for deeper dives
-- 📧 **Share with colleagues** who might benefit
+1. [Start Here](start-here.qmd)
+2. [Tools & Setup](tools-setup.qmd)
+3. [Reproducible Project Structure](reproducible-project-structure.qmd)
+4. [Best Practices](best-practices.qmd)
+5. [Institutional GitHub](institutional-github.qmd)
+6. [Tutorials & Workshops](tutorials-workshops.qmd)
 
 ::: {.callout-note}
-## Keep Learning
-Bioinformatics is a rapidly evolving field. The tutorials and resources linked here are regularly updated by their maintainers. Set aside time for continuous learning!
+## Use This as a Working Reference
+This toolkit is intended to be revisited during real projects, not just read once. Use it when you start new work, when you need to tidy a repository, or when you are handing work over to someone else.
 :::
 
 ---
@@ -164,4 +107,4 @@ If you find broken links, have suggestions for additional resources, or want to 
 
 ## Ready to Begin?
 
-👉 Head to [Tools & Setup](tools-setup.qmd) to get your environment configured, or explore [Tutorials & Workshops](tutorials-workshops.qmd) to start learning!
+Start with [Start Here](start-here.qmd) if you are setting up a new project, or go to [Tools & Setup](tools-setup.qmd) if you need to configure your working environment first.

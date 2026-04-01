@@ -1,0 +1,107 @@
+---
+title: "Institutional GitHub"
+subtitle: "Using the institutional GitHub intentionally for continuity, collaboration, and reproducibility"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+## What the Institutional GitHub Is For
+
+The institutional GitHub exists to give teams a shared place to keep code, lightweight documentation, analysis templates, training material, and project repositories that should outlast any one person.
+
+It is not just a storage location. It supports shared ownership, discoverability, and continuity.
+
+## Why It Exists
+
+Institutional repositories help with:
+
+- continuity when staff or students move on
+- a central place for team, lab, or programme resources
+- easier onboarding for new starters
+- discoverability across groups and projects
+- shared responsibility for maintaining useful code and documentation
+
+For reproducible research, this matters because the work should still make sense when another person needs to rerun it, review it, or extend it.
+
+## Why You Should Use It
+
+Use the institutional GitHub when you want your work to be findable, maintainable, and shared appropriately within a group or programme.
+
+Good candidates include:
+
+- analysis repositories that support an active project
+- shared scripts or workflows
+- templates and starter repositories
+- training and onboarding material
+- code that multiple people may need to run or improve
+
+## Institutional GitHub or Personal GitHub?
+
+### Use the institutional GitHub when:
+
+- the work is connected to an institutional project, lab, or team
+- the repository should continue to exist beyond one person
+- multiple people need access or may contribute
+- the repository is part of onboarding, training, or shared infrastructure
+
+### Use a personal GitHub when:
+
+- you are experimenting privately before deciding whether the work should be shared more widely
+- the repository is clearly personal, exploratory, or outside institutional work
+- you are building something that is not yet ready for team visibility
+
+If a project becomes important for shared work, move it or mirror it into the institutional GitHub rather than leaving critical material tied to one personal account.
+
+## How to Request Access
+
+Access routes vary by group, but the practical principle is simple: ask the relevant repository owner, team lead, or GitHub organisation administrator to add you.
+
+When you ask, include:
+
+- your GitHub username
+- the team, lab, or project you need access to
+- whether you need repository creation rights or access to an existing repository
+- a short note on what work you need to do
+
+## Minimum Expectations for Institutional Repositories
+
+Repositories hosted on the institutional GitHub should be usable by someone other than the original author.
+
+At minimum, each repository should have:
+
+- a `README.md` explaining what the repository is for
+- a clear folder structure
+- enough documentation to understand where scripts, data references, and outputs belong
+- meaningful file and folder names
+- no sensitive or restricted data committed to a public repository
+
+## Practical Repository Standards
+
+Aim for repositories that make the following easy to answer:
+
+- what is this repository for?
+- who maintains it?
+- where does the data live?
+- how do I run or reuse this work?
+- what outputs should I expect?
+
+This does not require a large amount of documentation. It requires a small amount of clear documentation written early.
+
+## What Not to Put in a Public Repository
+
+Do not commit:
+
+- sensitive human data
+- identifiable participant information
+- credentials, keys, or passwords
+- files that you are not permitted to share
+
+If data is controlled, document where it lives and how access is managed instead of trying to place it in GitHub.
+
+## A Good Default Mindset
+
+Treat the institutional GitHub as the place for work that should be reproducible, discoverable, and shared responsibly.
+
+If someone new joined the project next week, they should be able to find the repository, read the README, understand the structure, and know where to begin.

@@ -1,0 +1,94 @@
+---
+title: "Start Here"
+subtitle: "A simple pathway for beginning a bioinformatics project well"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+## Why This Page Exists
+
+Starting well makes everything easier later. The aim is not to create extra process. It is to make sure your work is understandable, reproducible, and easy to continue if someone else needs to pick it up.
+
+::: {.callout-tip}
+## The Short Version
+Before you write substantial analysis code, decide where the work belongs, create the repository, add a README, define the project structure, document the data location, and make the first commit.
+:::
+
+## New Project Checklist
+
+### 1. Decide where the work belongs
+
+Ask early whether this should live on the [Institutional GitHub](institutional-github.qmd) or on a personal GitHub account.
+
+Use the institutional GitHub when the work is part of a shared project, needs continuity beyond one person, or should be easy for others in the group to discover and maintain.
+
+### 2. Create the repository
+
+Create the repository as soon as you know the work is worth keeping. A repository should exist before the project becomes difficult to reconstruct.
+
+Choose a short, descriptive name and avoid vague repository names such as `analysis-new` or `test-project`.
+
+### 3. Add a README immediately
+
+Your `README.md` does not need to be long on day one. It should at least state:
+
+- what the project is for
+- who owns or maintains it
+- what question or task it addresses
+- where the data lives
+- how the repository is organised
+
+### 4. Set up a consistent project structure
+
+Create the basic folders you expect to use before files start accumulating. This reduces confusion and makes it easier to keep raw data, scripts, results, and notes separate.
+
+Use the structure described on [Reproducible Project Structure](reproducible-project-structure.qmd).
+
+### 5. Document where the data lives
+
+Do this even if the data cannot be stored in the repository.
+
+Record:
+
+- the source of the data
+- where the raw data is stored
+- whether access is restricted
+- which files or folders are treated as read-only originals
+- where processed derivatives will be written
+
+### 6. Define the analysis question or plan
+
+Write down the initial aim in a few lines. This can be simple. The point is to make the purpose of the repository explicit from the beginning.
+
+Examples:
+
+- identify differentially expressed genes between two groups
+- run quality control and alignment for a sequencing batch
+- prepare a reproducible workflow for a cohort-level variant analysis
+
+### 7. Make the first commit
+
+Your first commit should usually include:
+
+- `README.md`
+- the initial folder structure
+- any starter scripts or notebooks
+- environment or dependency files if you already know them
+
+This gives the project a clear starting point and a visible history.
+
+## What Good Starts Usually Have in Common
+
+- the repository has a clear purpose
+- the data location is documented
+- the structure is predictable
+- key decisions are written down early
+- the work can be handed over without explanation in a corridor conversation
+
+## Where to Go Next
+
+- Go to [Tools & Setup](tools-setup.qmd) if you need to configure your environment
+- Go to [Reproducible Project Structure](reproducible-project-structure.qmd) to set up folders consistently
+- Go to [Institutional GitHub](institutional-github.qmd) to decide how the repository should be hosted and managed

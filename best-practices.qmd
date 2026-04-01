@@ -128,211 +128,21 @@ Report/Output: /results/wgs/batch1_variants/anAD004_final_report.html
 
 ## Project Folder Structure {#project-folder-structure}
 
-### Why Standard Structure Matters
+Detailed guidance on folder organisation now lives on [Reproducible Project Structure](reproducible-project-structure.qmd).
 
-Using a consistent folder structure for every analysis:
+The short version is:
 
--   You always know where to find things
--   Collaborators can navigate your projects
--   Scripts can use predictable paths
--   Easier to share and archive projects
+- use the same layout across projects
+- keep raw and processed data separate
+- keep scripts separate from results
+- document where data lives and how outputs are generated
+- make the repository understandable to someone joining later
 
-------------------------------------------------------------------------
+For a new project, the best sequence is:
 
-### Recommended Structure
-
-#### Visual Representation
-
-```         
-project_name/
-│
-├── README.md                      # Project overview and getting started
-├── config.yml                     # Configuration file (if using workflows)
-├── environment.yml                # Conda environment specification
-│
-├── data/                          # All input data
-│   ├── raw/                       # Original, unmodified data (READ-ONLY)
-│   │   ├── fastq/
-│   │   ├── vcf/
-│   │   └── metadata.csv
-│   ├── processed/                 # Cleaned/processed data
-│   │   ├── aligned/
-│   │   ├── filtered/
-│   │   └── normalized/
-│   └── reference/                 # Reference genomes, annotations
-│       ├── hg38.fa
-│       ├── genes.gtf
-│       └── dbsnp.vcf
-│
-├── scripts/                       # All analysis code
-│   ├── 01_qc_and_trimming.sh
-│   ├── 02_alignment.sh
-│   ├── 03_variant_calling.sh
-│   ├── 04_annotation.R
-│   └── utils/                     # Helper functions/modules
-│       ├── plot_functions.R
-│       └── filter_variants.py
-│
-├── workflows/                     # Workflow files (Snakemake/Nextflow)
-│   ├── Snakefile
-│   └── nextflow.config
-│
-├── results/                       # All analysis outputs
-│   ├── qc/
-│   │   ├── fastqc/
-│   │   └── multiqc_report.html
-│   ├── alignments/
-│   │   └── stats/
-│   ├── variants/
-│   │   ├── raw_variants.vcf
-│   │   ├── filtered_variants.vcf
-│   │   └── annotated_variants.vcf
-│   └── figures/
-│       ├── pca_plot.png
-│       ├── manhattan_plot.png
-│       └── expression_heatmap.pdf
-│
-├── reports/                       # Written reports, presentations
-│   ├── analysis_report.html       # Quarto/Rmarkdown output
-│   ├── weekly_updates/
-│   └── manuscript_figures/
-│
-├── logs/                          # Log files from analysis runs
-│   ├── slurm/                     # SLURM job logs
-│   ├── snakemake.log
-│   └── error_logs/
-│
-├── docs/                          # Additional documentation
-│   ├── methods.md
-│   ├── data_dictionary.md
-│   └── analysis_notes.md
-│
-└── archive/                       # Old/deprecated files (for reference)
-    └── old_scripts/
-```
-
-------------------------------------------------------------------------
-
-### Code to Create This Structure
-
-Copy and run this bash script to automatically create the folder structure:
-
-``` bash
-#!/bin/bash
-# Script to create standard bioinformatics project structure
-# Usage: bash create_project_structure.sh project_name
-
-PROJECT_NAME=$1
-
-if [ -z "$PROJECT_NAME" ]; then
-    echo "Error: Please provide a project name"
-    echo "Usage: bash create_project_structure.sh project_name"
-    exit 1
-fi
-
-echo "Creating project structure for: $PROJECT_NAME"
-
-# Create main project directory
-mkdir -p $PROJECT_NAME
-cd $PROJECT_NAME
-
-# Create directory structure
-mkdir -p data/{raw,processed,reference}/{fastq,vcf,bam}
-mkdir -p scripts/utils
-mkdir -p workflows
-mkdir -p results/{qc/{fastqc,multiqc},alignments/stats,variants,figures}
-mkdir -p reports/{weekly_updates,manuscript_figures}
-mkdir -p logs/{slurm,error_logs}
-mkdir -p docs
-mkdir -p archive/old_scripts
-
-# Create README template
-cat > README.md << 'EOF'
-# Project Name
-
-## Overview
-Brief description of the project, research question, and goals.
-
-## Data
-- **Source:** Where data comes from
-- **Sample size:** Number of samples/individuals
-- **Data type:** WGS, WES, RNA-seq, etc.
-
-## Analysis Pipeline
-1. Quality control
-2. Alignment/Mapping
-3. Variant calling / Quantification
-4. Annotation
-5. Statistical analysis
-
-## Key Results
-Summary of main findings (update as project progresses)
-
-## Requirements
-- Software dependencies (see environment.yml)
-- Computing resources needed
-- Reference data required
-
-## Usage
-How to reproduce the analysis:
-```bash
-# Example commands
-conda env create -f environment.yml
-conda activate project_env
-snakemake --cores 8
-```
-     
-
----
-
-### How to Use the Folder Structure Script
-
-The bash script above automatically creates all the folders and files. Here's how to use it:
-
-**Step 1: Save the script**
-
-Copy the entire bash script above (everything between the ` ```bash ` markers) and save it to a file called `create_project_structure.sh`
-
-You can do this by:
-- Opening a text editor (nano, vim, VS Code, etc.)
-- Pasting the script
-- Saving as `create_project_structure.sh`
-
-**Step 2: Make it executable**
-
-```bash
-chmod +x create_project_structure.sh
-```
-
-**Step 3: Run it with your project name**
-
-``` bash
-./create_project_structure.sh my_analysis_name
-```
-
-Replace `my_analysis_name` with whatever you want to call your project, for example: - `./create_project_structure.sh anAD001` - `./create_project_structure.sh rnaseq_hippocampus` - `./create_project_structure.sh variant_calling_batch1`
-
-**What happens:** The script creates a new folder with your project name, containing all the organized subfolders (data/, scripts/, results/, etc.) plus template files (README.md, .gitignore, etc.)
-
-::: callout-tip
-## Quick Tip
-
-You only need to create and save this script once. Then you can use it to set up the folder structure for all your future projects!
-:::
-
-------------------------------------------------------------------------
-
-### Key Principles
-
-::: callout-tip
-## Folder Structure Best Practices
-
-1.  **Never modify raw data:** Keep `data/raw/` read-only, always work with copies in `data/processed/`
-2.  **Number your scripts:** Prefix with numbers (01\_, 02\_) to show analysis order
-3.  **Use relative paths:** Scripts should work regardless of where the project is located
-4.  **One result, one file:** Don't overwrite results; create new files with dates/versions
-5.  **Document everything:** README files in each major directory explaining contents
-:::
+1. Start with [Start Here](start-here.qmd)
+2. Apply the structure on [Reproducible Project Structure](reproducible-project-structure.qmd)
+3. Keep the repository documented and version controlled from the first commit
 
 ------------------------------------------------------------------------
 
@@ -631,6 +441,6 @@ Your future self will thank you!
 ## Next Steps
 
 -   Download the [analysis catalogue template](#analysis-catalogue) and start using it today
--   Set up your next project with the [standard folder structure](#project-folder-structure)
+-   Set up your next project with [Reproducible Project Structure](reproducible-project-structure.qmd)
 -   Review [Tutorials & Workshops](tutorials-workshops.qmd) for more on reproducibility
 -   Explore [Tools & Setup](tools-setup.qmd) for workflow managers
